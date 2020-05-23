@@ -4,5 +4,8 @@ class Airlines {
   final Client client;
   final String baseUrl;
 
-  Airlines({this.client, this.baseUrl});
+  Airlines({
+    this.client,
+    this.baseUrl,
+  });
 }
