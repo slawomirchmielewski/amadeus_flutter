@@ -33,9 +33,9 @@ class Amadeus {
     String baseUrl;
 
     if (amadeusEnvironment == AmadeusEnvironment.test) {
-      baseUrl = "https://test.api.amadeus.com/";
+      baseUrl = "https://test.api.amadeus.com";
     } else {
-      baseUrl = "https://api.amadeus.com/";
+      baseUrl = "https://api.amadeus.com";
     }
 
     var amadeus = Amadeus._build();

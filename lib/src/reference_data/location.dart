@@ -9,7 +9,7 @@ class Location {
 
   Future<String> get() async {
     var response = await client
-        .get(Uri.parse("${baseUrl}v1/reference-data/locations/$locationId"));
+        .get(Uri.parse("$baseUrl/v1/reference-data/locations/$locationId"));
 
     return response.body;
   }

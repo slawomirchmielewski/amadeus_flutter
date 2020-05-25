@@ -11,17 +11,17 @@ class Locations {
     String subType,
     String countryCode,
   }) async {
-    Map<String, String> parematers = <String, String>{
+    Map<String, String> parameters = <String, String>{
       "kayword": keyword,
       "subType": subType,
       "countryCode": countryCode
     };
 
-    /*var response = await client.get(Uri.parse(
-        "${baseUrl}v1/reference-data/locations?subType=$subType&keyword=$keyword"));*/
+    /* var response = await client.get(Uri.parse(
+        "$baseUrl/v1/reference-data/locations?subType=$subType&keyword=$keyword"));*/
 
     var response =
-        await client.get("${baseUrl}v1/reference-data/", headers: parematers);
+        await client.get("$baseUrl/v1/reference-data/", headers: parameters);
 
     return response.body;
   }
