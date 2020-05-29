@@ -1,221 +1,88 @@
-import 'package:equatable/equatable.dart';
-
-class Location extends Equatable {
-  final String name;
-  final String subType;
-  final String type;
-  final String keyword;
-  final String detailedName;
-  final String timeZoneOffset;
-  final String iataCode;
-  final double relevance;
-  final GeoCode geoCode;
-  final Address address;
-  final Distance distance;
-  final Analytic analytic;
+class Location {
+  String type;
+  String subType;
+  String name;
+  String detailedName;
+  String id;
+  Self self;
+  String iataCode;
+  Address address;
 
   Location({
-    this.name,
     this.type,
     this.subType,
-    this.keyword,
+    this.name,
     this.detailedName,
-    this.timeZoneOffset,
+    this.id,
+    this.self,
     this.iataCode,
-    this.relevance,
-    this.geoCode,
     this.address,
-    this.distance,
-    this.analytic,
   });
 
-  factory Location.empty() {
-    return Location(
-        name: "",
-        type: "",
-        subType: "",
-        keyword: "",
-        detailedName: "",
-        timeZoneOffset: "",
-        iataCode: "",
-        relevance: 0.0,
-        geoCode: GeoCode(longitude: 0.0, latitude: 0.0),
-        analytic: Analytic.empty(),
-        address: Address.empty(),
-        distance: Distance.empty());
+  Location.fromJson(dynamic json) {
+    type = json['type'];
+    subType = json['subType'];
+    name = json['name'];
+    detailedName = json['detailedName'];
+    id = json['id'];
+    self = json['self'] != null ? new Self.fromJson(json['self']) : null;
+    iataCode = json['iataCode'];
+    address =
+        json['address'] != null ? new Address.fromJson(json['address']) : null;
   }
 
-  factory Location.fromJson(dynamic json) {
-    return Location(
-        name: json["name"] ?? "",
-        type: json["type"] ?? "",
-        subType: json["subType"] ?? "",
-        keyword: json["keyword"] ?? "",
-        detailedName: json["detailedName"] ?? "",
-        timeZoneOffset: json["timeZoneOffset"] ?? "",
-        iataCode: json["iataCode"] ?? "",
-        relevance: json["relevance"] ?? 0.0,
-        geoCode: GeoCode.fromJson(json["geoCode"]) ??
-            GeoCode(longitude: 0.0, latitude: 0.0),
-        analytic: Analytic.fromJson(json["analytic"]),
-        address: Address.fromJson(json["address"]) ?? Address.empty(),
-        distance: Distance.fromJson(json["distance"]) ?? Distance.empty());
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['type'] = this.type;
+    data['subType'] = this.subType;
+    data['name'] = this.name;
+    data['detailedName'] = this.detailedName;
+    data['id'] = this.id;
+    if (this.self != null) {
+      data['self'] = this.self.toJson();
+    }
+    data['iataCode'] = this.iataCode;
+    if (this.address != null) {
+      data['address'] = this.address.toJson();
+    }
+    return data;
   }
-
-  @override
-  List<Object> get props => [
-        name,
-        type,
-        subType,
-        keyword,
-        distance,
-        detailedName,
-        timeZoneOffset,
-        iataCode,
-        relevance,
-        geoCode,
-        analytic,
-        address,
-        distance,
-      ];
 }
 
-class GeoCode extends Equatable {
-  final double latitude;
-  final double longitude;
+class Self {
+  String href;
+  List<String> methods;
 
-  GeoCode({this.latitude, this.longitude});
+  Self({this.href, this.methods});
 
-  factory GeoCode.fromJson(dynamic json) {
-    return json != null
-        ? GeoCode(
-            latitude: json["latitude"] ?? 0.0,
-            longitude: json["longitude"] ?? 0.0)
-        : GeoCode(latitude: 0.0, longitude: 0.0);
+  Self.fromJson(Map<String, dynamic> json) {
+    href = json['href'];
+    methods = json['methods'].cast<String>();
   }
 
-  @override
-  List<Object> get props => [latitude, longitude];
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['href'] = this.href;
+    data['methods'] = this.methods;
+    return data;
+  }
 }
 
-class Address extends Equatable {
-  final String cityName;
-  final String cityCode;
-  final String countryName;
-  final String countryCode;
-  final String regionCode;
+class Address {
+  String cityName;
+  String countryName;
 
-  Address({
-    this.cityName,
-    this.cityCode,
-    this.countryName,
-    this.countryCode,
-    this.regionCode,
-  });
+  Address({this.cityName, this.countryName});
 
-  factory Address.empty() {
-    return Address(
-      countryCode: "",
-      countryName: "",
-      cityCode: "",
-      cityName: "",
-      regionCode: "",
-    );
+  Address.fromJson(Map<String, dynamic> json) {
+    cityName = json['cityName'];
+    countryName = json['countryName'];
   }
 
-  factory Address.fromJson(dynamic json) {
-    return json != null
-        ? Address(
-            cityName: json["cityName"] ?? "",
-            cityCode: json["cityCode"] ?? "",
-            countryName: json["countryName"] ?? "",
-            countryCode: json["countryCode"] ?? "",
-            regionCode: json["regionCode"] ?? "",
-          )
-        : Address.empty();
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['cityName'] = this.cityName;
+    data['countryName'] = this.countryName;
+    return data;
   }
-
-  @override
-  List<Object> get props => [
-        cityCode,
-        cityCode,
-        countryCode,
-        countryName,
-        regionCode,
-      ];
-}
-
-class Distance extends Equatable {
-  final int value;
-  final String unit;
-
-  Distance({this.value, this.unit});
-
-  factory Distance.empty() {
-    return Distance(value: 0, unit: "");
-  }
-
-  factory Distance.fromJson(dynamic json) {
-    return json != null
-        ? Distance(
-            value: json["value"] ?? 0,
-            unit: json["unit"] ?? "",
-          )
-        : Distance.empty();
-  }
-
-  @override
-  List<Object> get props => [value, unit];
-}
-
-class Analytic extends Equatable {
-  final Flights flights;
-  final Travelers travelers;
-
-  Analytic({this.flights, this.travelers});
-
-  factory Analytic.empty() {
-    return Analytic(flights: Flights(score: 0), travelers: Travelers(score: 0));
-  }
-
-  factory Analytic.fromJson(dynamic json) {
-    return json != null
-        ? Analytic(
-            flights: Flights.fromJson(json["flights"]),
-            travelers: Travelers.fromJson(json["travelers"]))
-        : Analytic.empty();
-  }
-
-  @override
-  List<Object> get props => [flights, travelers];
-}
-
-class Flights extends Equatable {
-  final int score;
-
-  Flights({this.score});
-
-  factory Flights.fromJson(dynamic json) {
-    return Flights(
-      score: json["score"] ?? 0,
-    );
-  }
-
-  @override
-  List<Object> get props => [score];
-}
-
-class Travelers extends Equatable {
-  final int score;
-
-  Travelers({this.score});
-
-  factory Travelers.fromJson(dynamic json) {
-    return Travelers(
-      score: json["score"] ?? 0,
-    );
-  }
-
-  @override
-  List<Object> get props => [score];
 }
