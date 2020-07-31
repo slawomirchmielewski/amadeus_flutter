@@ -8,7 +8,6 @@ import 'package:flutter/foundation.dart';
 import 'package:oauth2/oauth2.dart' as oauth2;
 
 export 'package:amadeus/src/resources/resources.dart';
-export 'package:amadeus/src/model/model.dart';
 
 enum AmadeusEnvironment {
   test,
