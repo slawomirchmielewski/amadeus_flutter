@@ -1,12 +1,14 @@
 library amadeus;
 
+import 'dart:io';
+
 import 'package:amadeus/src/airport.dart';
 import 'package:amadeus/src/booking.dart';
 import 'package:amadeus/src/reference_data.dart';
 import 'package:amadeus/src/shopping.dart';
-import 'package:flutter/foundation.dart';
 import 'package:oauth2/oauth2.dart' as oauth2;
-
+import 'package:meta/meta.dart';
+import 'package:path_provider/path_provider.dart';
 export 'package:amadeus/src/resources/resources.dart';
 
 enum AmadeusEnvironment {
@@ -42,6 +44,10 @@ class Amadeus {
 
     var client = await oauth2.clientCredentialsGrant(
         _authorizationEndpoint, clientId, clientSecret);
+
+    if (client.credentials.isExpired == true) {
+      client.refreshCredentials();
+    }
 
     amadeus.airport = Airport(client: client, baseUrl: baseUrl);
     amadeus.booking = Booking(client: client, baseUrl: baseUrl);

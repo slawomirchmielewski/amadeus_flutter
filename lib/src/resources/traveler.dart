@@ -68,6 +68,7 @@ class Name {
 }
 
 class Document {
+  String id;
   String number;
   String issuanceDate;
   String expiryDate;
@@ -75,9 +76,11 @@ class Document {
   String issuanceLocation;
   String nationality;
   String documentType;
+  String birthPlace;
   bool holder;
 
   Document({
+    this.id,
     this.number,
     this.issuanceDate,
     this.expiryDate,
@@ -85,6 +88,7 @@ class Document {
     this.issuanceLocation,
     this.nationality,
     this.documentType,
+    this.birthPlace,
     this.holder,
   });
 
@@ -96,6 +100,7 @@ class Document {
     issuanceLocation = json['issuanceLocation'];
     nationality = json['nationality'];
     documentType = json['documentType'];
+    birthPlace = json["birthPlace"];
     holder = json['holder'];
   }
 
@@ -108,6 +113,7 @@ class Document {
     data['issuanceLocation'] = this.issuanceLocation;
     data['nationality'] = this.nationality;
     data['documentType'] = this.documentType;
+    data['birthPlace'] = this.birthPlace;
     data['holder'] = this.holder;
     return data;
   }

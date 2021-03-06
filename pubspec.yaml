@@ -1,6 +1,6 @@
 name: amadeus
 description: Amadeus flutter API
-version: 0.0.1
+version: 0.0.1+1
 author: "slawek-elope"
 homepage: "elope.co.uk"
 
@@ -10,8 +10,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  oauth2: ^1.6.0
-  equatable: ^1.1.1
+  oauth2: ^1.6.3
+  equatable: ^1.2.5
+  path_provider: ^1.6.27
 
 dev_dependencies:
   flutter_test:

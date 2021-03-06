@@ -25,6 +25,7 @@ class FlightOffers {
     String excludedAirlineCodes,
     String nonStop,
     String currencyCode,
+    String maxPrice,
   }) async {
     Map<String, String> map = {
       "originLocationCode": originLocationCode,
@@ -39,7 +40,8 @@ class FlightOffers {
       "includeAirlineCodes": includeAirlineCodes,
       "excludedAirlineCodes": excludedAirlineCodes,
       "nonStop": nonStop,
-      "currencyCode": currencyCode
+      "currencyCode": currencyCode,
+      "maxPrice": maxPrice
     };
 
     String header = ParameterGenerator.generate(parameters: map);
