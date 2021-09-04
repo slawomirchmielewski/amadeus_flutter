@@ -1,16 +1,18 @@
 import 'package:oauth2/oauth2.dart';
+import 'package:http/http.dart' as http;
 
 class Location {
-  final Client client;
-  final String baseUrl;
-  final String locationId;
+  Location({
+    required Client client,
+    required String baseUrl,
+  })  : _client = client,
+        _baseUrl = baseUrl;
 
-  Location({this.client, this.baseUrl, this.locationId});
+  final Client _client;
+  final String _baseUrl;
 
-  Future<String> get() async {
-    var response = await client
-        .get(Uri.parse("$baseUrl/v1/reference-data/locations/$locationId"));
-
-    return response.body;
+  Future<http.Response> get({required String locationId}) async {
+    return await _client
+        .get(Uri.parse("$_baseUrl/v1/reference-data/locations/$locationId"));
   }
 }

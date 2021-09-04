@@ -1,25 +1,23 @@
-import 'package:flutter/foundation.dart';
+import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
 
 class FlightOrder {
-  final Client client;
-  final String baseUrl;
-  final String orderId;
-
   FlightOrder({
-    @required this.client,
-    @required this.orderId,
-    @required this.baseUrl,
-  });
+    required Client client,
+    required String baseUrl,
+  })  : _client = client,
+        _baseUrl = baseUrl;
 
-  Future<String> get() async {
-    var response = await client
-        .get(Uri.parse("$baseUrl/v1/booking/flight-orders/$orderId"));
+  late final Client _client;
+  late final String _baseUrl;
 
-    return response.body;
+  Future<http.Response> get({required String orderId}) async {
+    return await _client
+        .get(Uri.parse("$_baseUrl/v1/booking/flight-orders/$orderId"));
   }
 
-  delete() {
-    client.delete(Uri.parse("$baseUrl/v1/booking/flight-orders/$orderId"));
+  Future<http.Response> delete({required String orderId}) async {
+    return await _client
+        .delete(Uri.parse("$_baseUrl/v1/booking/flight-orders/$orderId"));
   }
 }

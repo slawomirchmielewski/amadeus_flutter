@@ -4,9 +4,8 @@ class Airport {
   final Client client;
   final String baseUrl;
 
-  Airport({this.client, this.baseUrl});
-
-  printCredentials() {
-    print(client.credentials.accessToken);
-  }
+  Airport({
+    required this.client,
+    required this.baseUrl,
+  });
 }

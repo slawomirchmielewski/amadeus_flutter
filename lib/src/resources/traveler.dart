@@ -1,175 +1,233 @@
-class Traveler {
-  String id;
-  String dateOfBirth;
-  String gender;
-  Name name;
-  List<Document> documents;
-  Contact contact;
+import 'package:equatable/equatable.dart';
 
-  Traveler({
-    this.id,
-    this.dateOfBirth,
-    this.gender,
-    this.name,
-    this.documents,
-    this.contact,
+class Traveler extends Equatable {
+  final String id;
+  final String dateOfBirth;
+  final String gender;
+  final Name name;
+  final List<Document> documents;
+  final Contact contact;
+
+  const Traveler({
+    required this.id,
+    required this.dateOfBirth,
+    required this.gender,
+    required this.name,
+    required this.documents,
+    required this.contact,
   });
 
-  Traveler.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    dateOfBirth = json['dateOfBirth'];
-    gender = json['gender'];
-    name = json['name'] != null ? new Name.fromJson(json['name']) : null;
-    if (json['documents'] != null) {
-      documents = new List<Document>();
-      json['documents'].forEach((v) {
-        documents.add(new Document.fromJson(v));
-      });
-    }
-    contact =
-        json['contact'] != null ? new Contact.fromJson(json['contact']) : null;
-  }
+  factory Traveler.fromJson(Map<String, dynamic> json) => Traveler(
+        id: (json['id'] ?? "") as String,
+        dateOfBirth: (json['dateOfBirth'] ?? "") as String,
+        gender: (json['gender'] ?? "") as String,
+        name: json['name'] != null
+            ? Name.fromJson(json['name'] as Map<String, dynamic>)
+            : Name.empty,
+        documents: json['documents'] != null
+            ? List<Document>.from((json['documents'] as List)
+                    .map((e) => Document.fromJson(e as Map<String, dynamic>)))
+                .toList()
+            : <Document>[],
+        contact: json['contact'] != null
+            ? Contact.fromJson(json['contact'] as Map<String, dynamic>)
+            : Contact.empty,
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['dateOfBirth'] = this.dateOfBirth;
-    data['gender'] = this.gender;
-    if (this.name != null) {
-      data['name'] = this.name.toJson();
-    }
-    if (this.documents != null) {
-      data['documents'] = this.documents.map((v) => v.toJson()).toList();
-    }
-    if (this.contact != null) {
-      data['contact'] = this.contact.toJson();
-    }
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'dateOfBirth': dateOfBirth,
+        'gender': gender,
+        'name': name.toJson(),
+        'documents': documents.map((v) => v.toJson()).toList(),
+        'contact': contact.toJson(),
+      };
+
+  static Traveler empty = Traveler(
+    id: "",
+    dateOfBirth: "",
+    gender: "",
+    name: Name.empty,
+    documents: const <Document>[],
+    contact: Contact.empty,
+  );
+
+  @override
+  List<Object?> get props => [
+        id,
+        dateOfBirth,
+        gender,
+        name,
+        documents,
+        contact,
+      ];
 }
 
-class Name {
-  String firstName;
-  String lastName;
+class Name extends Equatable {
+  final String firstName;
+  final String lastName;
 
-  Name({this.firstName, this.lastName});
+  const Name({required this.firstName, required this.lastName});
 
-  Name.fromJson(Map<String, dynamic> json) {
-    firstName = json['firstName'];
-    lastName = json['lastName'];
-  }
+  factory Name.fromJson(Map<String, dynamic> json) => Name(
+        firstName: (json['firstName'] ?? "") as String,
+        lastName: (json['lastName'] ?? "") as String,
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['firstName'] = this.firstName;
-    data['lastName'] = this.lastName;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'firstName': firstName,
+        'lastName': lastName,
+      };
+
+  static Name empty = const Name(firstName: "", lastName: "");
+
+  @override
+  List<Object?> get props => [firstName, lastName];
 }
 
-class Document {
-  String id;
-  String number;
-  String issuanceDate;
-  String expiryDate;
-  String issuanceCountry;
-  String issuanceLocation;
-  String nationality;
-  String documentType;
-  String birthPlace;
-  bool holder;
+class Document extends Equatable {
+  final String id;
+  final String number;
+  final String issuanceDate;
+  final String expiryDate;
+  final String issuanceCountry;
+  final String issuanceLocation;
+  final String nationality;
+  final String documentType;
+  final String birthPlace;
+  final bool holder;
 
-  Document({
-    this.id,
-    this.number,
-    this.issuanceDate,
-    this.expiryDate,
-    this.issuanceCountry,
-    this.issuanceLocation,
-    this.nationality,
-    this.documentType,
-    this.birthPlace,
-    this.holder,
+  const Document({
+    required this.id,
+    required this.number,
+    required this.issuanceDate,
+    required this.expiryDate,
+    required this.issuanceCountry,
+    required this.issuanceLocation,
+    required this.nationality,
+    required this.documentType,
+    required this.birthPlace,
+    required this.holder,
   });
 
-  Document.fromJson(Map<String, dynamic> json) {
-    number = json['number'];
-    issuanceDate = json['issuanceDate'];
-    expiryDate = json['expiryDate'];
-    issuanceCountry = json['issuanceCountry'];
-    issuanceLocation = json['issuanceLocation'];
-    nationality = json['nationality'];
-    documentType = json['documentType'];
-    birthPlace = json["birthPlace"];
-    holder = json['holder'];
-  }
+  factory Document.fromJson(Map<String, dynamic> json) => Document(
+        id: (json['id'] ?? "") as String,
+        number: (json['number'] ?? "") as String,
+        issuanceDate: (json['issuanceDate'] ?? "") as String,
+        expiryDate: (json['expiryDate'] ?? "") as String,
+        issuanceCountry: (json['issuanceCountry'] ?? "") as String,
+        issuanceLocation: (json['issuanceLocation'] ?? "") as String,
+        nationality: (json['nationality'] ?? "") as String,
+        documentType: (json['documentType'] ?? "") as String,
+        birthPlace: (json["birthPlace"] ?? "") as String,
+        holder: (json['holder'] ?? false) as bool,
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['number'] = this.number;
-    data['issuanceDate'] = this.issuanceDate;
-    data['expiryDate'] = this.expiryDate;
-    data['issuanceCountry'] = this.issuanceCountry;
-    data['issuanceLocation'] = this.issuanceLocation;
-    data['nationality'] = this.nationality;
-    data['documentType'] = this.documentType;
-    data['birthPlace'] = this.birthPlace;
-    data['holder'] = this.holder;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'number': number,
+        'issuanceDate': issuanceDate,
+        'expiryDate': expiryDate,
+        'issuanceCountry': issuanceCountry,
+        'issuanceLocation': issuanceLocation,
+        'nationality': nationality,
+        'documentType': documentType,
+        'birthPlace': birthPlace,
+        'holder': holder,
+      };
+
+  static Document empty = const Document(
+    id: "",
+    number: "",
+    issuanceDate: "",
+    expiryDate: "",
+    issuanceCountry: "",
+    issuanceLocation: "",
+    nationality: "",
+    documentType: "",
+    birthPlace: "",
+    holder: false,
+  );
+
+  @override
+  List<Object?> get props => [
+        id,
+        number,
+        issuanceDate,
+        expiryDate,
+        issuanceCountry,
+        issuanceLocation,
+        nationality,
+        documentType,
+        birthPlace,
+        holder,
+      ];
 }
 
-class Contact {
-  List<Phone> phones;
-  String emailAddress;
+class Contact extends Equatable {
+  final List<Phone> phones;
+  final String emailAddress;
 
-  Contact({
-    this.phones,
-    this.emailAddress,
+  const Contact({
+    required this.phones,
+    required this.emailAddress,
   });
 
-  Contact.fromJson(Map<String, dynamic> json) {
-    if (json['phones'] != null) {
-      phones = new List<Phone>();
-      json['phones'].forEach((v) {
-        phones.add(new Phone.fromJson(v));
-      });
-    }
-    emailAddress = json['emailAddress'];
-  }
+  factory Contact.fromJson(Map<String, dynamic> json) => Contact(
+        phones: json['phones'] != null
+            ? List<Phone>.from(
+                (json['phones'] as List).map(
+                  (e) => Phone.fromJson(e as Map<String, dynamic>),
+                ),
+              ).toList()
+            : <Phone>[],
+        emailAddress: (json['emailAddress'] ?? "") as String,
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.phones != null) {
-      data['phones'] = this.phones.map((v) => v.toJson()).toList();
-    }
-    data['emailAddress'] = this.emailAddress;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'phones': phones.map((v) => v.toJson()).toList(),
+        'emailAddress': emailAddress,
+      };
+
+  static Contact empty = const Contact(phones: <Phone>[], emailAddress: "");
+
+  @override
+  List<Object?> get props => [phones, emailAddress];
 }
 
-class Phone {
-  String deviceType;
-  String countryCallingCode;
-  String number;
+class Phone extends Equatable {
+  final String deviceType;
+  final String countryCallingCode;
+  final String number;
 
-  Phone({
-    this.deviceType,
-    this.countryCallingCode,
-    this.number,
+  const Phone({
+    required this.deviceType,
+    required this.countryCallingCode,
+    required this.number,
   });
 
-  Phone.fromJson(Map<String, dynamic> json) {
-    deviceType = json['deviceType'];
-    countryCallingCode = json['countryCallingCode'];
-    number = json['number'];
-  }
+  factory Phone.fromJson(Map<String, dynamic> json) => Phone(
+        deviceType: (json['deviceType'] ?? "") as String,
+        countryCallingCode: (json['countryCallingCode'] ?? "") as String,
+        number: (json['number'] ?? "") as String,
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['deviceType'] = this.deviceType;
-    data['countryCallingCode'] = this.countryCallingCode;
-    data['number'] = this.number;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'deviceType': deviceType,
+        'countryCallingCode': countryCallingCode,
+        'number': number,
+      };
+
+  static Phone empty = const Phone(
+    deviceType: "",
+    countryCallingCode: "",
+    number: "",
+  );
+
+  @override
+  List<Object?> get props => [
+        deviceType,
+        countryCallingCode,
+        number,
+      ];
 }

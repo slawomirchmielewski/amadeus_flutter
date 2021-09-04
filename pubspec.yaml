@@ -1,22 +1,26 @@
-name: amadeus
-description: Amadeus flutter API
+name: amadeus_flutter
+description: Amadeus Flutter API
 version: 0.0.1+1
-author: "slawek-elope"
-homepage: "elope.co.uk"
+author: "Slawomir Chmielewski"
+homepage: ""
 
 environment:
-  sdk: ">=2.8.0 <3.0.0"
+  sdk: ">=2.13.4<3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  oauth2: ^1.6.3
-  equatable: ^1.2.5
-  path_provider: ^1.6.27
+  http: ^0.13.3
+  equatable: ^2.0.3
+  oauth2: ^2.0.0
+  path_provider: ^2.0.3
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  lint: ^1.6.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

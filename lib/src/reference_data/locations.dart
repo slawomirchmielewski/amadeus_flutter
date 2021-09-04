@@ -1,30 +1,31 @@
 import 'package:amadeus/src/utils/parameters_generator.dart';
+import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
 
 class Locations {
-  final Client client;
-  final String baseUrl;
+  Locations({required Client client, required String baseUrl})
+      : _client = client,
+        _baseUrl = baseUrl;
 
-  Locations({this.client, this.baseUrl});
+  final Client _client;
+  final String _baseUrl;
 
-  Future<String> get({
-    String keyword,
-    String subType,
-    String countryCode,
-    String view,
+  Future<http.Response> get({
+    required String keyword,
+    required String subType,
+    String? countryCode,
+    String? view,
   }) async {
-    Map<String, String> parameters = {
+    Map<String, String?> map = {
       "keyword": keyword,
       "subType": subType,
       "countryCode": countryCode,
       "view": view
     };
 
-    String header = ParameterGenerator.generate(parameters: parameters);
+    String params = ParameterGenerator.generate(parameters: map);
 
-    var response = await client
-        .get(Uri.parse("$baseUrl/v1/reference-data/locations$header"));
-
-    return response.body;
+    return await _client
+        .get(Uri.parse("$_baseUrl/v1/reference-data/locations$params"));
   }
 }

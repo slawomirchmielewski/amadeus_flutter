@@ -1,416 +1,514 @@
-class FlightOfferSearch {
-  String type;
-  String id;
-  String source;
-  bool instantTicketingRequired;
-  bool nonHomogeneous;
-  bool oneWay;
-  String lastTicketingDate;
-  int numberOfBookableSeats;
-  List<Itinerary> itineraries;
-  Price price;
-  PricingOptions pricingOptions;
-  List<String> validatingAirlineCodes;
-  List<TravelerPricings> travelerPricings;
+import 'package:equatable/equatable.dart';
 
-  FlightOfferSearch({
-    this.type,
-    this.id,
-    this.source,
-    this.instantTicketingRequired,
-    this.nonHomogeneous,
-    this.oneWay,
-    this.lastTicketingDate,
-    this.numberOfBookableSeats,
-    this.itineraries,
-    this.price,
-    this.pricingOptions,
-    this.validatingAirlineCodes,
-    this.travelerPricings,
+class FlightOfferSearch extends Equatable {
+  final String type;
+  final String id;
+  final String source;
+  final bool instantTicketingRequired;
+  final bool nonHomogeneous;
+  final bool oneWay;
+  final String lastTicketingDate;
+  final int numberOfBookableSeats;
+  final List<Itinerary> itineraries;
+  final Price price;
+  final PricingOptions pricingOptions;
+  final List<String> validatingAirlineCodes;
+  final List<TravelerPricing> travelerPricings;
+
+  const FlightOfferSearch({
+    required this.type,
+    required this.id,
+    required this.source,
+    required this.instantTicketingRequired,
+    required this.nonHomogeneous,
+    required this.oneWay,
+    required this.lastTicketingDate,
+    required this.numberOfBookableSeats,
+    required this.itineraries,
+    required this.price,
+    required this.pricingOptions,
+    required this.validatingAirlineCodes,
+    required this.travelerPricings,
   });
 
-  FlightOfferSearch.fromJson(dynamic json) {
-    type = json['type'];
-    id = json['id'];
-    source = json['source'];
-    instantTicketingRequired = json['instantTicketingRequired'];
-    nonHomogeneous = json['nonHomogeneous'];
-    oneWay = json['oneWay'];
-    lastTicketingDate = json['lastTicketingDate'];
-    numberOfBookableSeats = json['numberOfBookableSeats'];
-    if (json['itineraries'] != null) {
-      itineraries = new List<Itinerary>();
-      json['itineraries'].forEach((v) {
-        itineraries.add(new Itinerary.fromJson(v));
-      });
-    }
-    price = json['price'] != null ? new Price.fromJson(json['price']) : null;
-    pricingOptions = json['pricingOptions'] != null
-        ? new PricingOptions.fromJson(json['pricingOptions'])
-        : null;
-    validatingAirlineCodes = json['validatingAirlineCodes'].cast<String>();
-    if (json['travelerPricings'] != null) {
-      travelerPricings = new List<TravelerPricings>();
-      json['travelerPricings'].forEach((v) {
-        travelerPricings.add(new TravelerPricings.fromJson(v));
-      });
-    }
-  }
+  factory FlightOfferSearch.fromJson(dynamic json) => FlightOfferSearch(
+        type: (json['type'] ?? "") as String,
+        id: (json['id'] ?? "") as String,
+        source: (json['source'] ?? "") as String,
+        instantTicketingRequired:
+            (json['instantTicketingRequired'] ?? false) as bool,
+        nonHomogeneous: (json['nonHomogeneous'] ?? false) as bool,
+        oneWay: (json['oneWay'] ?? true) as bool,
+        lastTicketingDate: (json['lastTicketingDate'] ?? "") as String,
+        numberOfBookableSeats: (json['numberOfBookableSeats'] ?? 0) as int,
+        itineraries: json['itineraries'] != null
+            ? List<Itinerary>.from((json['itineraries'] as List).map(
+                (e) => Itinerary.fromJson(e as Map<String, dynamic>),
+              )).toList()
+            : <Itinerary>[],
+        price: json['price'] != null
+            ? Price.fromJson(json['price'] as Map<String, dynamic>)
+            : Price.empty,
+        pricingOptions: json['pricingOptions'] != null
+            ? PricingOptions.fromJson(
+                json['pricingOptions'] as Map<String, dynamic>)
+            : PricingOptions.empty,
+        validatingAirlineCodes: json['validatingAirlineCodes'] != null
+            ? List<String>.from(
+                (json['validatingAirlineCodes'] as List).map((e) => e)).toList()
+            : <String>[],
+        travelerPricings: json['travelerPricings'] != null
+            ? List<TravelerPricing>.from((json['travelerPricings'] as List).map(
+                (e) => TravelerPricing.fromJson(e as Map<String, dynamic>),
+              )).toList()
+            : <TravelerPricing>[],
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['type'] = this.type;
-    data['id'] = this.id;
-    data['source'] = this.source;
-    data['instantTicketingRequired'] = this.instantTicketingRequired;
-    data['nonHomogeneous'] = this.nonHomogeneous;
-    data['oneWay'] = this.oneWay;
-    data['lastTicketingDate'] = this.lastTicketingDate;
-    data['numberOfBookableSeats'] = this.numberOfBookableSeats;
-    if (this.itineraries != null) {
-      data['itineraries'] = this.itineraries.map((v) => v.toJson()).toList();
-    }
-    if (this.price != null) {
-      data['price'] = this.price.toJson();
-    }
-    if (this.pricingOptions != null) {
-      data['pricingOptions'] = this.pricingOptions.toJson();
-    }
-    data['validatingAirlineCodes'] = this.validatingAirlineCodes;
-    if (this.travelerPricings != null) {
-      data['travelerPricings'] =
-          this.travelerPricings.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'type': type,
+        'id': id,
+        'source': source,
+        'instantTicketingRequired': instantTicketingRequired,
+        'nonHomogeneous': nonHomogeneous,
+        'oneWay': oneWay,
+        'lastTicketingDate': lastTicketingDate,
+        'numberOfBookableSeats': numberOfBookableSeats,
+        'itineraries': itineraries.map((v) => v.toJson()).toList(),
+        'price': price.toJson(),
+        'pricingOptions': pricingOptions.toJson(),
+        'validatingAirlineCodes': validatingAirlineCodes.map((e) => e).toList(),
+        'travelerPricings': travelerPricings.map((v) => v.toJson()).toList(),
+      };
+
+  @override
+  List<Object> get props => [
+        type,
+        id,
+        source,
+        instantTicketingRequired,
+        nonHomogeneous,
+        oneWay,
+        lastTicketingDate,
+        numberOfBookableSeats,
+        itineraries,
+        price,
+        pricingOptions,
+        validatingAirlineCodes,
+        travelerPricings,
+      ];
+
+  static FlightOfferSearch empty = FlightOfferSearch(
+    type: "",
+    id: "",
+    source: "",
+    instantTicketingRequired: false,
+    nonHomogeneous: false,
+    oneWay: true,
+    lastTicketingDate: "",
+    numberOfBookableSeats: 0,
+    itineraries: const <Itinerary>[],
+    price: Price.empty,
+    pricingOptions: PricingOptions.empty,
+    validatingAirlineCodes: const <String>[],
+    travelerPricings: const <TravelerPricing>[],
+  );
 }
 
-class Itinerary {
-  String duration;
-  List<Segment> segments;
+class Itinerary extends Equatable {
+  final String duration;
+  final List<Segment> segments;
 
-  Itinerary({this.duration, this.segments});
+  const Itinerary({required this.duration, required this.segments});
 
-  Itinerary.fromJson(Map<String, dynamic> json) {
-    duration = json['duration'];
-    if (json['segments'] != null) {
-      segments = new List<Segment>();
-      json['segments'].forEach((v) {
-        segments.add(new Segment.fromJson(v));
-      });
-    }
-  }
+  factory Itinerary.fromJson(Map<String, dynamic> json) => Itinerary(
+        duration: (json['duration'] ?? "") as String,
+        segments: json['segments'] != null
+            ? List<Segment>.from((json['segments'] as List)
+                    .map((e) => Segment.fromJson(e as Map<String, dynamic>)))
+                .toList()
+            : <Segment>[],
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['duration'] = this.duration;
-    if (this.segments != null) {
-      data['segments'] = this.segments.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'duration': duration,
+        'segments': segments.map((v) => v.toJson()).toList(),
+      };
+
+  @override
+  List<Object> get props => [duration, segments];
+
+  static Itinerary empty = const Itinerary(duration: "", segments: <Segment>[]);
 }
 
-class Segment {
-  Departure departure;
-  Departure arrival;
-  String carrierCode;
-  String number;
-  Aircraft aircraft;
-  Operating operating;
-  String duration;
-  String id;
-  int numberOfStops;
-  bool blacklistedInEU;
+class Segment extends Equatable {
+  final Departure departure;
+  final Departure arrival;
+  final String carrierCode;
+  final String number;
+  final Aircraft aircraft;
+  final Operating operating;
+  final String duration;
+  final String id;
+  final int numberOfStops;
+  final bool blacklistedInEU;
 
-  Segment({
-    this.departure,
-    this.arrival,
-    this.carrierCode,
-    this.number,
-    this.aircraft,
-    this.operating,
-    this.duration,
-    this.id,
-    this.numberOfStops,
-    this.blacklistedInEU,
+  const Segment({
+    required this.departure,
+    required this.arrival,
+    required this.carrierCode,
+    required this.number,
+    required this.aircraft,
+    required this.operating,
+    required this.duration,
+    required this.id,
+    required this.numberOfStops,
+    required this.blacklistedInEU,
   });
 
-  Segment.fromJson(Map<String, dynamic> json) {
-    departure = json['departure'] != null
-        ? new Departure.fromJson(json['departure'])
-        : null;
-    arrival = json['arrival'] != null
-        ? new Departure.fromJson(json['arrival'])
-        : null;
-    carrierCode = json['carrierCode'];
-    number = json['number'];
-    aircraft = json['aircraft'] != null
-        ? new Aircraft.fromJson(json['aircraft'])
-        : null;
-    operating = json['operating'] != null
-        ? new Operating.fromJson(json['operating'])
-        : null;
-    duration = json['duration'];
-    id = json['id'];
-    numberOfStops = json['numberOfStops'];
-    blacklistedInEU = json['blacklistedInEU'];
-  }
+  factory Segment.fromJson(Map<String, dynamic> json) => Segment(
+        departure: json['departure'] != null
+            ? Departure.fromJson(json['departure'] as Map<String, dynamic>)
+            : Departure.empty,
+        arrival: json['arrival'] != null
+            ? Departure.fromJson(json['arrival'] as Map<String, dynamic>)
+            : Departure.empty,
+        carrierCode: (json['carrierCode'] ?? "") as String,
+        number: (json['number'] ?? "") as String,
+        aircraft: json['aircraft'] != null
+            ? Aircraft.fromJson(json['aircraft'] as Map<String, dynamic>)
+            : Aircraft.empty,
+        operating: json['operating'] != null
+            ? Operating.fromJson(json['operating'] as Map<String, dynamic>)
+            : Operating.empty,
+        duration: (json['duration'] ?? "") as String,
+        id: (json['id'] ?? "") as String,
+        numberOfStops: (json['numberOfStops'] ?? 0) as int,
+        blacklistedInEU: (json['blacklistedInEU'] ?? false) as bool,
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.departure != null) {
-      data['departure'] = this.departure.toJson();
-    }
-    if (this.arrival != null) {
-      data['arrival'] = this.arrival.toJson();
-    }
-    data['carrierCode'] = this.carrierCode;
-    data['number'] = this.number;
-    if (this.aircraft != null) {
-      data['aircraft'] = this.aircraft.toJson();
-    }
-    if (this.operating != null) {
-      data['operating'] = this.operating.toJson();
-    }
-    data['duration'] = this.duration;
-    data['id'] = this.id;
-    data['numberOfStops'] = this.numberOfStops;
-    data['blacklistedInEU'] = this.blacklistedInEU;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'departure': departure.toJson(),
+        'arrival': arrival.toJson(),
+        'carrierCode': carrierCode,
+        'number': number,
+        'aircraft': aircraft.toJson(),
+        'operating': operating.toJson(),
+        'duration': duration,
+        'id': id,
+        'numberOfStops': numberOfStops,
+        'blacklistedInEU': blacklistedInEU,
+      };
+
+  @override
+  List<Object> get props => [
+        departure,
+        arrival,
+        carrierCode,
+        number,
+        aircraft,
+        operating,
+        duration,
+        id,
+        numberOfStops,
+        blacklistedInEU,
+      ];
+
+  static Segment empty = Segment(
+    departure: Departure.empty,
+    arrival: Departure.empty,
+    carrierCode: "",
+    number: "",
+    aircraft: Aircraft.empty,
+    operating: Operating.empty,
+    duration: "",
+    id: "",
+    numberOfStops: 0,
+    blacklistedInEU: false,
+  );
 }
 
-class Departure {
-  String iataCode;
-  String terminal;
-  String at;
+class Departure extends Equatable {
+  final String iataCode;
+  final String terminal;
+  final String at;
 
-  Departure({this.iataCode, this.terminal, this.at});
+  const Departure(
+      {required this.iataCode, required this.terminal, required this.at});
 
-  Departure.fromJson(Map<String, dynamic> json) {
-    iataCode = json['iataCode'];
-    terminal = json['terminal'];
-    at = json['at'];
-  }
+  factory Departure.fromJson(Map<String, dynamic> json) => Departure(
+        iataCode: (json['iataCode'] ?? "") as String,
+        terminal: (json['terminal'] ?? "") as String,
+        at: (json['at'] ?? "") as String,
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['iataCode'] = this.iataCode;
-    data['terminal'] = this.terminal;
-    data['at'] = this.at;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'iataCode': iataCode,
+        'terminal': terminal,
+        'at': at,
+      };
+
+  @override
+  List<Object> get props => [iataCode, terminal, at];
+
+  static Departure empty = const Departure(iataCode: "", terminal: "", at: "");
 }
 
-class Aircraft {
-  String code;
+class Aircraft extends Equatable {
+  final String code;
 
-  Aircraft({this.code});
+  const Aircraft({required this.code});
 
-  Aircraft.fromJson(Map<String, dynamic> json) {
-    code = json['code'];
-  }
+  factory Aircraft.fromJson(Map<String, dynamic> json) => Aircraft(
+        code: (json['code'] ?? "") as String,
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['code'] = this.code;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'code': code,
+      };
+
+  @override
+  List<Object> get props => [code];
+  static Aircraft empty = const Aircraft(code: "");
 }
 
-class Operating {
-  String carrierCode;
+class Operating extends Equatable {
+  final String carrierCode;
 
-  Operating({this.carrierCode});
+  const Operating({required this.carrierCode});
 
-  Operating.fromJson(Map<String, dynamic> json) {
-    carrierCode = json['carrierCode'];
-  }
+  factory Operating.fromJson(Map<String, dynamic> json) => Operating(
+        carrierCode: (json['carrierCode'] ?? "") as String,
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['carrierCode'] = this.carrierCode;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'carrierCode': carrierCode,
+      };
+
+  @override
+  List<Object?> get props => [carrierCode];
+
+  static Operating empty = const Operating(carrierCode: "");
 }
 
-class Price {
-  String currency;
-  String total;
-  String base;
-  List<Fees> fees;
-  String grandTotal;
+class Price extends Equatable {
+  final String currency;
+  final String total;
+  final String base;
+  final List<Fees> fees;
+  final String grandTotal;
 
-  Price({
-    this.currency,
-    this.total,
-    this.base,
-    this.fees,
-    this.grandTotal,
+  const Price({
+    required this.currency,
+    required this.total,
+    required this.base,
+    required this.fees,
+    required this.grandTotal,
   });
 
-  Price.fromJson(Map<String, dynamic> json) {
-    currency = json['currency'];
-    total = json['total'];
-    base = json['base'];
-    if (json['fees'] != null) {
-      fees = new List<Fees>();
-      json['fees'].forEach((v) {
-        fees.add(new Fees.fromJson(v));
-      });
-    }
-    grandTotal = json['grandTotal'];
-  }
+  factory Price.fromJson(Map<String, dynamic> json) => Price(
+        currency: (json['currency'] ?? "") as String,
+        total: (json['total'] ?? "") as String,
+        fees: json['fees'] != null
+            ? List<Fees>.from((json['fees'] as List).map(
+                (e) => Fees.fromJson(e as Map<String, dynamic>),
+              )).toList()
+            : <Fees>[],
+        grandTotal: (json['grandTotal'] ?? '') as String,
+        base: (json['base'] ?? "") as String,
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['currency'] = this.currency;
-    data['total'] = this.total;
-    data['base'] = this.base;
-    if (this.fees != null) {
-      data['fees'] = this.fees.map((v) => v.toJson()).toList();
-    }
-    data['grandTotal'] = this.grandTotal;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'currency': currency,
+        'total': total,
+        'base': base,
+        'fees': fees.map((v) => v.toJson()).toList(),
+        'grandTotal': grandTotal,
+      };
+
+  @override
+  List<Object?> get props => [currency, total, base, fees, grandTotal];
+
+  static Price empty = const Price(
+      currency: "", total: "", base: "", fees: <Fees>[], grandTotal: "");
 }
 
-class Fees {
-  String amount;
-  String type;
+class Fees extends Equatable {
+  final String amount;
+  final String type;
 
-  Fees({this.amount, this.type});
+  const Fees({required this.amount, required this.type});
 
-  Fees.fromJson(Map<String, dynamic> json) {
-    amount = json['amount'];
-    type = json['type'];
-  }
+  factory Fees.fromJson(Map<String, dynamic> json) => Fees(
+        amount: (json['amount'] ?? "") as String,
+        type: (json['type'] ?? "") as String,
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['amount'] = this.amount;
-    data['type'] = this.type;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'amount': amount,
+        'type': type,
+      };
+
+  @override
+  List<Object?> get props => [amount, type];
+
+  static Fees empty = const Fees(amount: "", type: "");
 }
 
-class PricingOptions {
-  List<String> fareType;
-  bool includedCheckedBagsOnly;
+class PricingOptions extends Equatable {
+  final List<String> fareType;
+  final bool includedCheckedBagsOnly;
 
-  PricingOptions({this.fareType, this.includedCheckedBagsOnly});
+  const PricingOptions(
+      {required this.fareType, required this.includedCheckedBagsOnly});
 
-  PricingOptions.fromJson(Map<String, dynamic> json) {
-    fareType = json['fareType'].cast<String>();
-    includedCheckedBagsOnly = json['includedCheckedBagsOnly'];
-  }
+  factory PricingOptions.fromJson(Map<String, dynamic> json) => PricingOptions(
+        fareType: (json['fareType'] ?? []) as List<String>,
+        includedCheckedBagsOnly:
+            (json['includedCheckedBagsOnly'] ?? false) as bool,
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['fareType'] = this.fareType;
-    data['includedCheckedBagsOnly'] = this.includedCheckedBagsOnly;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'fareType': fareType,
+        'includedCheckedBagsOnly': includedCheckedBagsOnly,
+      };
+
+  @override
+  List<Object?> get props => [fareType, includedCheckedBagsOnly];
+
+  static PricingOptions empty = const PricingOptions(
+    fareType: <String>[],
+    includedCheckedBagsOnly: false,
+  );
 }
 
-class TravelerPricings {
-  String travelerId;
-  String fareOption;
-  String travelerType;
-  Price price;
-  List<FareDetailsBySegment> fareDetailsBySegment;
+class TravelerPricing extends Equatable {
+  final String travelerId;
+  final String fareOption;
+  final String travelerType;
+  final Price price;
+  final List<FareDetailsBySegment> fareDetailsBySegment;
 
-  TravelerPricings({
-    this.travelerId,
-    this.fareOption,
-    this.travelerType,
-    this.price,
-    this.fareDetailsBySegment,
+  const TravelerPricing({
+    required this.travelerId,
+    required this.fareOption,
+    required this.travelerType,
+    required this.price,
+    required this.fareDetailsBySegment,
   });
 
-  TravelerPricings.fromJson(Map<String, dynamic> json) {
-    travelerId = json['travelerId'];
-    fareOption = json['fareOption'];
-    travelerType = json['travelerType'];
-    price = json['price'] != null ? new Price.fromJson(json['price']) : null;
-    if (json['fareDetailsBySegment'] != null) {
-      fareDetailsBySegment = new List<FareDetailsBySegment>();
-      json['fareDetailsBySegment'].forEach((v) {
-        fareDetailsBySegment.add(new FareDetailsBySegment.fromJson(v));
-      });
-    }
-  }
+  factory TravelerPricing.fromJson(Map<String, dynamic> json) =>
+      TravelerPricing(
+        travelerId: (json['travelerId'] ?? "") as String,
+        fareOption: (json['fareOption'] ?? "") as String,
+        travelerType: (json['travelerType'] ?? "") as String,
+        price: json['price'] != null
+            ? Price.fromJson(json['price'] as Map<String, dynamic>)
+            : Price.empty,
+        fareDetailsBySegment: json['fareDetailsBySegment'] != null
+            ? List<FareDetailsBySegment>.from(
+                (json['fareDetailsBySegment'] as List).map(
+                  (e) =>
+                      FareDetailsBySegment.fromJson(e as Map<String, dynamic>),
+                ),
+              ).toList()
+            : <FareDetailsBySegment>[],
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['travelerId'] = this.travelerId;
-    data['fareOption'] = this.fareOption;
-    data['travelerType'] = this.travelerType;
-    if (this.price != null) {
-      data['price'] = this.price.toJson();
-    }
-    if (this.fareDetailsBySegment != null) {
-      data['fareDetailsBySegment'] =
-          this.fareDetailsBySegment.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'travelerId': travelerId,
+        'fareOption': fareOption,
+        'travelerType': travelerType,
+        'price': price.toJson(),
+        'fareDetailsBySegment':
+            fareDetailsBySegment.map((v) => v.toJson()).toList(),
+      };
+
+  @override
+  List<Object?> get props =>
+      [travelerId, fareOption, travelerType, price, fareDetailsBySegment];
+
+  static TravelerPricing empty = TravelerPricing(
+    travelerId: "",
+    fareOption: "",
+    travelerType: "",
+    price: Price.empty,
+    fareDetailsBySegment: const <FareDetailsBySegment>[],
+  );
 }
 
-class FareDetailsBySegment {
-  String segmentId;
-  String cabin;
-  String fareBasis;
-  String segmentClass;
-  IncludedCheckedBags includedCheckedBags;
+class FareDetailsBySegment extends Equatable {
+  final String segmentId;
+  final String cabin;
+  final String fareBasis;
+  final String segmentClass;
+  final IncludedCheckedBags includedCheckedBags;
 
-  FareDetailsBySegment({
-    this.segmentId,
-    this.cabin,
-    this.fareBasis,
-    this.segmentClass,
-    this.includedCheckedBags,
+  const FareDetailsBySegment({
+    required this.segmentId,
+    required this.cabin,
+    required this.fareBasis,
+    required this.segmentClass,
+    required this.includedCheckedBags,
   });
 
-  FareDetailsBySegment.fromJson(Map<String, dynamic> json) {
-    segmentId = json['segmentId'];
-    cabin = json['cabin'];
-    fareBasis = json['fareBasis'];
-    segmentClass = json['class'];
-    includedCheckedBags = json['includedCheckedBags'] != null
-        ? new IncludedCheckedBags.fromJson(json['includedCheckedBags'])
-        : null;
-  }
+  factory FareDetailsBySegment.fromJson(Map<String, dynamic> json) =>
+      FareDetailsBySegment(
+        segmentId: (json['segmentId'] ?? "") as String,
+        cabin: (json['cabin'] ?? "") as String,
+        fareBasis: (json['fareBasis'] ?? "") as String,
+        segmentClass: (json['class'] ?? "") as String,
+        includedCheckedBags: json['includedCheckedBags'] != null
+            ? IncludedCheckedBags.fromJson(
+                json['includedCheckedBags'] as Map<String, dynamic>)
+            : IncludedCheckedBags.empty,
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['segmentId'] = this.segmentId;
-    data['cabin'] = this.cabin;
-    data['fareBasis'] = this.fareBasis;
-    data['class'] = this.segmentClass;
-    if (this.includedCheckedBags != null) {
-      data['includedCheckedBags'] = this.includedCheckedBags.toJson();
-    }
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'segmentId': segmentId,
+        'cabin': cabin,
+        'fareBasis': fareBasis,
+        'class': segmentClass,
+        'includedCheckedBags': includedCheckedBags.toJson(),
+      };
+
+  @override
+  List<Object?> get props => [
+        segmentId,
+        cabin,
+        fareBasis,
+        segmentClass,
+        includedCheckedBags,
+      ];
+
+  static FareDetailsBySegment empty = FareDetailsBySegment(
+    segmentId: '',
+    cabin: '',
+    fareBasis: '',
+    segmentClass: '',
+    includedCheckedBags: IncludedCheckedBags.empty,
+  );
 }
 
-class IncludedCheckedBags {
-  int weight;
-  String weightUnit;
+class IncludedCheckedBags extends Equatable {
+  final int weight;
+  final String weightUnit;
 
-  IncludedCheckedBags({this.weight, this.weightUnit});
+  const IncludedCheckedBags({required this.weight, required this.weightUnit});
 
-  IncludedCheckedBags.fromJson(Map<String, dynamic> json) {
-    weight = json['weight'];
-    weightUnit = json['weightUnit'];
-  }
+  factory IncludedCheckedBags.fromJson(Map<String, dynamic> json) =>
+      IncludedCheckedBags(
+        weight: (json['weight'] ?? 0) as int,
+        weightUnit: (json['weightUnit'] ?? "") as String,
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['weight'] = this.weight;
-    data['weightUnit'] = this.weightUnit;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        'weight': weight,
+        'weightUnit': weightUnit,
+      };
+
+  @override
+  List<Object?> get props => [weight, weightUnit];
+
+  static IncludedCheckedBags empty =
+      const IncludedCheckedBags(weight: 0, weightUnit: "");
 }

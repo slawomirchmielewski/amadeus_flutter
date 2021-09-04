@@ -1,8 +1,10 @@
 import 'package:oauth2/oauth2.dart';
 
 class Booking {
-  final Client client;
-  final String baseUrl;
+  Booking({required Client client, required String baseUrl})
+      : _client = client,
+        _baseUrl = baseUrl;
 
-  Booking({this.client, this.baseUrl});
+  final Client _client;
+  final String _baseUrl;
 }
