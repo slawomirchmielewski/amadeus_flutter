@@ -1,4 +1,4 @@
-import 'package:amadeus/src/utils/parameters_generator.dart';
+import 'package:amadeus_flutter/src/utils/parameters_generator.dart';
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
 
@@ -23,7 +23,6 @@ class FlightDates {
 
     final params = ParameterGenerator.generate(parameters: map);
 
-    return await _client
-        .get(Uri.parse("$_baseUrl/v1/shopping/flight-dates$params"));
+    return _client.get(Uri.parse("$_baseUrl/v1/shopping/flight-dates$params"));
   }
 }

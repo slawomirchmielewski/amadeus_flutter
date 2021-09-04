@@ -1,4 +1,4 @@
-import 'package:amadeus/src/shopping/availability/flight_availabilities.dart';
+import 'package:amadeus_flutter/src/shopping/availability/flight_availabilities.dart';
 import 'package:oauth2/oauth2.dart';
 
 class Availability {

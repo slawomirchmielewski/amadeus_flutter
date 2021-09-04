@@ -1,6 +1,6 @@
-import 'package:amadeus/src/shopping/flight_offers/flight_offers_price.dart';
-import 'package:amadeus/src/shopping/flight_offers/prediction.dart';
-import 'package:amadeus/src/shopping/flight_offers/upselling.dart';
+import 'package:amadeus_flutter/src/shopping/flight_offers/flight_offers_price.dart';
+import 'package:amadeus_flutter/src/shopping/flight_offers/prediction.dart';
+import 'package:amadeus_flutter/src/shopping/flight_offers/upselling.dart';
 import 'package:oauth2/oauth2.dart';
 
 class FlightOffers {

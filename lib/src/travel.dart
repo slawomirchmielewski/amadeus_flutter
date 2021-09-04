@@ -1,6 +1,6 @@
-import 'package:amadeus/src/travel/predictions.dart';
-import 'package:amadeus/src/travel/travel_analytics.dart';
-import 'package:amadeus/src/travel/trip_parser_jobs.dart';
+import 'package:amadeus_flutter/src/travel/predictions.dart';
+import 'package:amadeus_flutter/src/travel/travel_analytics.dart';
+import 'package:amadeus_flutter/src/travel/trip_parser_jobs.dart';
 import 'package:oauth2/oauth2.dart';
 
 class Travel {

@@ -1,5 +1,5 @@
-import 'package:amadeus/src/reference_data/locations/point_of_interest/by_square.dart';
-import 'package:amadeus/src/utils/parameters_generator.dart';
+import 'package:amadeus_flutter/src/reference_data/locations/point_of_interest/by_square.dart';
+import 'package:amadeus_flutter/src/utils/parameters_generator.dart';
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
 

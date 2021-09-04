@@ -1,4 +1,4 @@
-import 'package:amadeus/src/media/files/generated_photos.dart';
+import 'package:amadeus_flutter/src/media/files/generated_photos.dart';
 import 'package:oauth2/oauth2.dart';
 
 class Files {

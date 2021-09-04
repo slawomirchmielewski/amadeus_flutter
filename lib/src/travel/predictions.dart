@@ -1,5 +1,5 @@
-import 'package:amadeus/src/travel/predictions/flight_deley.dart';
-import 'package:amadeus/src/travel/predictions/trip_purpose.dart';
+import 'package:amadeus_flutter/src/travel/predictions/flight_deley.dart';
+import 'package:amadeus_flutter/src/travel/predictions/trip_purpose.dart';
 import 'package:oauth2/oauth2.dart';
 
 class Predictions {

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:amadeus/src/resources/flight_offers_body.dart';
+import 'package:amadeus_flutter/src/resources/flight_offers_body.dart';
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
 

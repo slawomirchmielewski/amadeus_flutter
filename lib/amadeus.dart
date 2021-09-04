@@ -1,18 +1,18 @@
 library amadeus;
 
-import 'package:amadeus/src/airport.dart';
-import 'package:amadeus/src/analytics.dart';
-import 'package:amadeus/src/booking.dart';
-import 'package:amadeus/src/e_reputation.dart';
-import 'package:amadeus/src/location.dart';
-import 'package:amadeus/src/media.dart';
-import 'package:amadeus/src/reference_data.dart';
-import 'package:amadeus/src/safety.dart';
-import 'package:amadeus/src/schedule.dart';
-import 'package:amadeus/src/shopping.dart';
-import 'package:amadeus/src/travel.dart';
+import 'package:amadeus_flutter/src/airport.dart';
+import 'package:amadeus_flutter/src/analytics.dart';
+import 'package:amadeus_flutter/src/booking.dart';
+import 'package:amadeus_flutter/src/e_reputation.dart';
+import 'package:amadeus_flutter/src/location.dart';
+import 'package:amadeus_flutter/src/media.dart';
+import 'package:amadeus_flutter/src/reference_data.dart';
+import 'package:amadeus_flutter/src/safety.dart';
+import 'package:amadeus_flutter/src/schedule.dart';
+import 'package:amadeus_flutter/src/shopping.dart';
+import 'package:amadeus_flutter/src/travel.dart';
 import 'package:oauth2/oauth2.dart' as oauth2;
-export 'package:amadeus/src/resources/resources.dart';
+export 'package:amadeus_flutter/src/resources/resources.dart';
 
 enum AmadeusEnvironment {
   test,

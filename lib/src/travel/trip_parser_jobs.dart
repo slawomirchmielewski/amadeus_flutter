@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import 'package:amadeus/src/travel/trip_parser/trip_parser_result.dart';
-import 'package:amadeus/src/travel/trip_parser/trip_parser_status.dart';
+import 'package:amadeus_flutter/src/travel/trip_parser/trip_parser_result.dart';
+import 'package:amadeus_flutter/src/travel/trip_parser/trip_parser_status.dart';
 import 'package:oauth2/oauth2.dart';
 
 class TripParserJobs {

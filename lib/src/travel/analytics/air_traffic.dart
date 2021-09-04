@@ -1,6 +1,6 @@
-import 'package:amadeus/src/travel/analytics/air_triffic/booked.dart';
-import 'package:amadeus/src/travel/analytics/air_triffic/busiest_period.dart';
-import 'package:amadeus/src/travel/analytics/air_triffic/traveled.dart';
+import 'package:amadeus_flutter/src/travel/analytics/air_triffic/booked.dart';
+import 'package:amadeus_flutter/src/travel/analytics/air_triffic/busiest_period.dart';
+import 'package:amadeus_flutter/src/travel/analytics/air_triffic/traveled.dart';
 import 'package:oauth2/oauth2.dart';
 
 class AirTraffic {

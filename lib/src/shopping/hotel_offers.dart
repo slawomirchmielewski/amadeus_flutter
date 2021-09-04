@@ -1,4 +1,4 @@
-import 'package:amadeus/src/utils/parameters_generator.dart';
+import 'package:amadeus_flutter/src/utils/parameters_generator.dart';
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
 
@@ -69,7 +69,7 @@ class HotelOffers {
 
     final params = ParameterGenerator.generate(parameters: map);
 
-    return await _client.get(
+    return _client.get(
       Uri.parse("$_baseUrl/v2/shopping/hotel-offers$params"),
     );
   }

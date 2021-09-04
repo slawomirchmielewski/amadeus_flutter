@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:amadeus/src/utils/parameters_generator.dart';
+import 'package:amadeus_flutter/src/utils/parameters_generator.dart';
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
 
@@ -23,7 +23,7 @@ class SeatMaps {
 
     final params = ParameterGenerator.generate(parameters: map);
 
-    return await _client.get(
+    return _client.get(
       Uri.parse("$_baseUrl/v1/shopping/seatmaps$params"),
     );
   }
@@ -33,7 +33,7 @@ class SeatMaps {
   }) async {
     final body = jsonEncode(map);
 
-    return await _client.post(
+    return _client.post(
       Uri.parse("$_baseUrl/v1/shopping/seatmaps"),
       body: body,
     );
