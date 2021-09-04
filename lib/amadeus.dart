@@ -4,7 +4,6 @@ import 'package:amadeus_flutter/src/airport.dart';
 import 'package:amadeus_flutter/src/analytics.dart';
 import 'package:amadeus_flutter/src/booking.dart';
 import 'package:amadeus_flutter/src/e_reputation.dart';
-import 'package:amadeus_flutter/src/location.dart';
 import 'package:amadeus_flutter/src/media.dart';
 import 'package:amadeus_flutter/src/reference_data.dart';
 import 'package:amadeus_flutter/src/safety.dart';
@@ -26,7 +25,6 @@ class Amadeus {
   late EReputation eReputation;
   late ReferenceData referenceData;
   late Shopping shopping;
-  late Location location;
   late Media media;
   late Safety safety;
   late Schedule schedule;
@@ -65,7 +63,6 @@ class Amadeus {
     amadeus.eReputation = EReputation(client: client, baseUrl: baseUrl);
     amadeus.referenceData = ReferenceData(client: client, baseUrl: baseUrl);
     amadeus.shopping = Shopping(client: client, baseUrl: baseUrl);
-    amadeus.location = Location(client: client, baseUrl: baseUrl);
     amadeus.media = Media(client: client, baseUrl: baseUrl);
     amadeus.safety = Safety(client: client, baseUrl: baseUrl);
     amadeus.schedule = Schedule(client: client, baseUrl: baseUrl);

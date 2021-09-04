@@ -8,11 +8,11 @@ class HotelSentiments {
   })  : _client = client,
         _baseUrl = baseUrl;
 
-  late Client _client;
-  late String _baseUrl;
+  late final Client _client;
+  late final String _baseUrl;
 
   Future<http.Response> get({required List<String> hotelIds}) async {
-    return await _client
+    return _client
         .get(Uri.parse("$_baseUrl/v2/e-reputation/hotel-sentiments/$hotelIds"));
   }
 }

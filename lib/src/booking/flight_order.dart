@@ -12,12 +12,12 @@ class FlightOrder {
   late final String _baseUrl;
 
   Future<http.Response> get({required String orderId}) async {
-    return await _client
+    return _client
         .get(Uri.parse("$_baseUrl/v1/booking/flight-orders/$orderId"));
   }
 
   Future<http.Response> delete({required String orderId}) async {
-    return await _client
+    return _client
         .delete(Uri.parse("$_baseUrl/v1/booking/flight-orders/$orderId"));
   }
 }
