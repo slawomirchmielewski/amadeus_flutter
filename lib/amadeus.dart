@@ -71,3 +71,10 @@ class Amadeus {
     return amadeus;
   }
 }
+
+class BaseProjest {
+  Future<void> initAmadues() async {
+    final Amadeus amadeus =
+        await Amadeus.build(clientId: "clientID", clientSecret: "clientSecret");
+  }
+}
