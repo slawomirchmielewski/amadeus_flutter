@@ -20,8 +20,8 @@ class FlightOffersSearch {
     required String destinationLocationCode,
     required String adults,
     required String departureDate,
+    required String max,
     String? returnDate,
-    String? max,
     String? children,
     String? infants,
     String? travelClass,
@@ -31,13 +31,13 @@ class FlightOffersSearch {
     String? currencyCode,
     String? maxPrice,
   }) async {
-    Map<String, String?> map = {
+    final Map<String, String?> map = {
       "originLocationCode": originLocationCode,
       "destinationLocationCode": destinationLocationCode,
       "departureDate": departureDate,
       "returnDate": returnDate,
       "adults": adults,
-      "max": max!,
+      "max": max,
       "children": children,
       "infants": infants,
       "travelClass": travelClass,
@@ -48,16 +48,19 @@ class FlightOffersSearch {
       "maxPrice": maxPrice
     };
 
-    String params = ParameterGenerator.generate(parameters: map);
-    return await _client
-        .get(Uri.parse("$_baseUrl/v2/shopping/flight-offers$params"));
+    final String params = ParameterGenerator.generate(parameters: map);
+    print(params);
+    return _client.get(Uri.parse("$_baseUrl/v2/shopping/flight-offers$params"));
   }
 
-  Future<http.Response> put(
-      {required FlightOffersBody flightOffersBody}) async {
-    final body = jsonEncode(flightOffersBody.toJson());
+  Future<http.Response> put({
+    required FlightOffersBody flightOffersBody,
+  }) async {
+    final body = jsonEncode(
+      flightOffersBody.toJson(),
+    );
 
-    return await _client.put(
+    return _client.put(
       Uri.parse("$_baseUrl/v2/shopping/flight-offers"),
       body: body,
     );

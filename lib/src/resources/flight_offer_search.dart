@@ -362,7 +362,9 @@ class PricingOptions extends Equatable {
       {required this.fareType, required this.includedCheckedBagsOnly});
 
   factory PricingOptions.fromJson(Map<String, dynamic> json) => PricingOptions(
-        fareType: (json['fareType'] ?? []) as List<String>,
+        fareType: (json['fareType'] != null
+            ? List<String>.from(json['fareType'] as List)
+            : []) as List<String>,
         includedCheckedBagsOnly:
             (json['includedCheckedBagsOnly'] ?? false) as bool,
       );

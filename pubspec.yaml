@@ -1,19 +1,18 @@
 name: amadeus_flutter
 description: Amadeus Flutter API
-version: 0.0.1+1
-author: "Slawomir Chmielewski"
-homepage: ""
+version: 0.0.1+2
+homepage: "https://github.com/slawomirchmielewski/amadeus_flutter"
 
 environment:
-  sdk: ">=2.13.4<3.0.0"
+  sdk: ">=2.15.0<3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  http: ^0.13.3
+  http: ^0.13.4
   equatable: ^2.0.3
   oauth2: ^2.0.0
-  path_provider: ^2.0.3
+  path_provider: ^2.0.8
 
 
 dev_dependencies:

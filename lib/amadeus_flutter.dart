@@ -51,7 +51,10 @@ class Amadeus {
     final Amadeus amadeus = Amadeus._build();
 
     final oauth2.Client client = await oauth2.clientCredentialsGrant(
-        _authorizationEndpoint, clientId, clientSecret);
+      _authorizationEndpoint,
+      clientId,
+      clientSecret,
+    );
 
     if (client.credentials.isExpired == true) {
       client.refreshCredentials();
