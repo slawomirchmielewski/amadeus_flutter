@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:amadeus_flutter/src/utils/credentials_refresher.dart';
 import 'package:amadeus_flutter/src/utils/parameters_generator.dart';
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
@@ -17,6 +18,7 @@ class SeatMaps {
   Future<http.Response> get({
     String? flightOrderId,
   }) async {
+    refreshCredentials(_client);
     final Map<String, String?> map = {
       'flightOrderId': flightOrderId,
     };
@@ -31,6 +33,7 @@ class SeatMaps {
   Future<http.Response> post({
     required Map<String, dynamic> map,
   }) async {
+    refreshCredentials(_client);
     final body = jsonEncode(map);
 
     return _client.post(

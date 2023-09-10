@@ -1,4 +1,5 @@
 import 'package:amadeus_flutter/src/shopping/activities/activities_by_square.dart';
+import 'package:amadeus_flutter/src/utils/credentials_refresher.dart';
 import 'package:amadeus_flutter/src/utils/parameters_generator.dart';
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
@@ -24,6 +25,7 @@ class Activities {
     required double latitude,
     required double longitude,
   }) async {
+    refreshCredentials(_client);
     final Map<String, String?> map = {
       'latitude': latitude.toString(),
       'longitude': longitude.toString(),
