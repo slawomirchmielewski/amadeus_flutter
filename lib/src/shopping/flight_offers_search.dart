@@ -45,7 +45,7 @@ class FlightOffersSearch {
       "excludedAirlineCodes": excludedAirlineCodes,
       "nonStop": nonStop,
       "currencyCode": currencyCode,
-      "maxPrice": maxPrice
+      "maxPrice": maxPrice,
     };
 
     final String params = generateParameters(parameters: map);

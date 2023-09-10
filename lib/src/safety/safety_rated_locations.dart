@@ -18,8 +18,10 @@ class SafetyRatedLocations {
 
   late SafetyRatedLocationsBySquare safetyRatedLocationsBySquare;
 
-  Future<http.Response> get(
-      {required double latitude, required double longitude}) async {
+  Future<http.Response> get({
+    required double latitude,
+    required double longitude,
+  }) async {
     final Map<String, String?> map = {
       'latitude': latitude.toString(),
       'longitude': longitude.toString(),

@@ -17,7 +17,8 @@ class FlightDelay {
     required FlightDelayPrediction flightDelayPrediction,
   }) async {
     final params = generateParameters(
-        parameters: flightDelayPrediction.toJson() as Map<String, String>);
+      parameters: flightDelayPrediction.toJson() as Map<String, String>,
+    );
 
     return _client.get(
       Uri.parse("$_baseUrl/v1/travel/predictions/flight-delay$params"),

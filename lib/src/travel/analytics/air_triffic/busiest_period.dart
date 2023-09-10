@@ -25,7 +25,8 @@ class BusiestPeriod {
 
     return _client.get(
       Uri.parse(
-          "$_baseUrl/v1/travel/analytics/air-traffic/busiest-period$params"),
+        "$_baseUrl/v1/travel/analytics/air-traffic/busiest-period$params",
+      ),
     );
   }
 }

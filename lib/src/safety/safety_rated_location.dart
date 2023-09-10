@@ -13,6 +13,7 @@ class SafetyRatedLocation {
 
   Future<http.Response> get({required String locationId}) async {
     return _client.get(
-        Uri.parse("$_baseUrl/v1/safety/safety-rated-locations/$locationId"));
+      Uri.parse("$_baseUrl/v1/safety/safety-rated-locations/$locationId"),
+    );
   }
 }
