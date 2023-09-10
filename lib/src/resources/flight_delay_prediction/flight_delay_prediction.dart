@@ -5,6 +5,7 @@ part 'flight_delay_prediction.g.dart';
 
 @freezed
 class FlightDelayPrediction with _$FlightDelayPrediction {
+  @JsonSerializable(explicitToJson: true)
   const factory FlightDelayPrediction({
     required String? originLocationCode,
     required String? destinationLocationCode,

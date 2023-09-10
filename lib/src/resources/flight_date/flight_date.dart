@@ -5,6 +5,7 @@ part 'flight_date.g.dart';
 
 @freezed
 class FlightDate with _$FlightDate {
+  @JsonSerializable(explicitToJson: true)
   const factory FlightDate({
     required String? type,
     required String? origin,

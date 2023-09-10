@@ -943,7 +943,8 @@ class __$$_SearchCriteriaCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_SearchCriteria implements _SearchCriteria {
   const _$_SearchCriteria(
       {required this.maxFlightOffers, required this.flightFilters});

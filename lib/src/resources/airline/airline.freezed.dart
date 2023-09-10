@@ -145,7 +145,8 @@ class __$$_AirlineCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_Airline implements _Airline {
   const _$_Airline(
       {required this.type,

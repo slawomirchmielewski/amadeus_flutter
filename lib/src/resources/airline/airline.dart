@@ -5,6 +5,7 @@ part 'airline.g.dart';
 
 @freezed
 class Airline with _$Airline {
+  @JsonSerializable(explicitToJson: true)
   const factory Airline({
     required String? type,
     required String? iataCode,

@@ -216,7 +216,8 @@ class __$$_FlightDelayPredictionCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_FlightDelayPrediction implements _FlightDelayPrediction {
   const _$_FlightDelayPrediction(
       {required this.originLocationCode,

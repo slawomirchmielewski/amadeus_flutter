@@ -93,7 +93,7 @@ _$_SearchCriteria _$$_SearchCriteriaFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_SearchCriteriaToJson(_$_SearchCriteria instance) =>
     <String, dynamic>{
       'maxFlightOffers': instance.maxFlightOffers,
-      'flightFilters': instance.flightFilters,
+      'flightFilters': instance.flightFilters?.toJson(),
     };
 
 _$_FlightFilters _$$_FlightFiltersFromJson(Map<String, dynamic> json) =>

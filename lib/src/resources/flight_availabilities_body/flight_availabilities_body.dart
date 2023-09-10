@@ -5,6 +5,7 @@ part 'flight_availabilities_body.g.dart';
 
 @freezed
 class FlightAvailabilitiesBody with _$FlightAvailabilitiesBody {
+  @JsonSerializable(explicitToJson: true)
   const factory FlightAvailabilitiesBody({
     required List<OriginDestination>? originDestinations,
     required List<FlightTraveler>? travelers,

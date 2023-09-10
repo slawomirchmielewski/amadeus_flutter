@@ -192,7 +192,8 @@ class __$$_TravelerCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_Traveler implements _Traveler {
   const _$_Traveler(
       {required this.id,

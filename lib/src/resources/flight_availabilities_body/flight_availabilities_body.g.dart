@@ -22,8 +22,9 @@ _$_FlightAvailabilitiesBody _$$_FlightAvailabilitiesBodyFromJson(
 Map<String, dynamic> _$$_FlightAvailabilitiesBodyToJson(
         _$_FlightAvailabilitiesBody instance) =>
     <String, dynamic>{
-      'originDestinations': instance.originDestinations,
-      'travelers': instance.travelers,
+      'originDestinations':
+          instance.originDestinations?.map((e) => e.toJson()).toList(),
+      'travelers': instance.travelers?.map((e) => e.toJson()).toList(),
       'sources': instance.sources,
     };
 

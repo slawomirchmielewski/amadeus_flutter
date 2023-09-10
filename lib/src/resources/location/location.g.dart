@@ -35,12 +35,12 @@ Map<String, dynamic> _$$_LocationToJson(_$_Location instance) =>
       'name': instance.name,
       'detailedName': instance.detailedName,
       'id': instance.id,
-      'self': instance.self,
+      'self': instance.self?.toJson(),
       'timeZoneOffset': instance.timeZoneOffset,
       'iataCode': instance.iataCode,
-      'geoCode': instance.geoCode,
-      'address': instance.address,
-      'analytics': instance.analytics,
+      'geoCode': instance.geoCode?.toJson(),
+      'address': instance.address?.toJson(),
+      'analytics': instance.analytics?.toJson(),
     };
 
 _$_Self _$$_SelfFromJson(Map<String, dynamic> json) => _$_Self(

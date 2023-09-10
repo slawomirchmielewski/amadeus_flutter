@@ -54,6 +54,7 @@ class OfferBodyTraveler with _$OfferBodyTraveler {
 
 @freezed
 class SearchCriteria with _$SearchCriteria {
+  @JsonSerializable(explicitToJson: true)
   const factory SearchCriteria({
     required int? maxFlightOffers,
     required FlightFilters? flightFilters,

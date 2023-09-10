@@ -45,11 +45,12 @@ Map<String, dynamic> _$$_FlightOfferSearchToJson(
       'oneWay': instance.oneWay,
       'lastTicketingDate': instance.lastTicketingDate,
       'numberOfBookableSeats': instance.numberOfBookableSeats,
-      'itineraries': instance.itineraries,
-      'price': instance.price,
-      'pricingOptions': instance.pricingOptions,
+      'itineraries': instance.itineraries?.map((e) => e.toJson()).toList(),
+      'price': instance.price?.toJson(),
+      'pricingOptions': instance.pricingOptions?.toJson(),
       'validatingAirlineCodes': instance.validatingAirlineCodes,
-      'travelerPricings': instance.travelerPricings,
+      'travelerPricings':
+          instance.travelerPricings?.map((e) => e.toJson()).toList(),
     };
 
 _$_Itinerary _$$_ItineraryFromJson(Map<String, dynamic> json) => _$_Itinerary(
@@ -223,13 +224,11 @@ Map<String, dynamic> _$$_FareDetailsBySegmentToJson(
 _$_IncludedCheckedBags _$$_IncludedCheckedBagsFromJson(
         Map<String, dynamic> json) =>
     _$_IncludedCheckedBags(
-      weight: (json['weight'] as num?)?.toDouble(),
-      weightUnit: json['weightUnit'] as String?,
+      quantity: json['quantity'] as int?,
     );
 
 Map<String, dynamic> _$$_IncludedCheckedBagsToJson(
         _$_IncludedCheckedBags instance) =>
     <String, dynamic>{
-      'weight': instance.weight,
-      'weightUnit': instance.weightUnit,
+      'quantity': instance.quantity,
     };

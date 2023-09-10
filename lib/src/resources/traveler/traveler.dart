@@ -5,6 +5,7 @@ part 'traveler.g.dart';
 
 @freezed
 class Traveler with _$Traveler {
+  @JsonSerializable(explicitToJson: true)
   const factory Traveler({
     required String? id,
     required String? dateOfBirth,

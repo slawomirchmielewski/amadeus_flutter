@@ -5,6 +5,7 @@ part 'flight_offer_search.g.dart';
 
 @freezed
 class FlightOfferSearch with _$FlightOfferSearch {
+  @JsonSerializable(explicitToJson: true)
   const factory FlightOfferSearch({
     required String? type,
     required String? id,
@@ -152,8 +153,7 @@ class FareDetailsBySegment with _$FareDetailsBySegment {
 @freezed
 class IncludedCheckedBags with _$IncludedCheckedBags {
   const factory IncludedCheckedBags({
-    required double? weight,
-    required String? weightUnit,
+    required int? quantity,
   }) = _IncludedCheckedBags;
 
   factory IncludedCheckedBags.fromJson(Map<String, Object?> json) =>

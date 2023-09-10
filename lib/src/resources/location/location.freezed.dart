@@ -287,7 +287,8 @@ class __$$_LocationCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_Location implements _Location {
   const _$_Location(
       {required this.type,

@@ -128,7 +128,8 @@ class __$$_FlightAvailabilitiesBodyCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_FlightAvailabilitiesBody implements _FlightAvailabilitiesBody {
   const _$_FlightAvailabilitiesBody(
       {required final List<OriginDestination>? originDestinations,

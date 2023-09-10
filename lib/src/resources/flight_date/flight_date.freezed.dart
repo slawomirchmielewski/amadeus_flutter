@@ -179,7 +179,8 @@ class __$$_FlightDateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_FlightDate implements _FlightDate {
   const _$_FlightDate(
       {required this.type,

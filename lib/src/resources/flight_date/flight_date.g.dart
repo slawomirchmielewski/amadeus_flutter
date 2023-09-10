@@ -25,7 +25,7 @@ Map<String, dynamic> _$$_FlightDateToJson(_$_FlightDate instance) =>
       'destination': instance.destination,
       'departureDate': instance.departureDate,
       'returnDate': instance.returnDate,
-      'price': instance.price,
+      'price': instance.price?.toJson(),
     };
 
 _$_Price _$$_PriceFromJson(Map<String, dynamic> json) => _$_Price(

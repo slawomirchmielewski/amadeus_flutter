@@ -26,9 +26,9 @@ Map<String, dynamic> _$$_TravelerToJson(_$_Traveler instance) =>
       'id': instance.id,
       'dateOfBirth': instance.dateOfBirth,
       'gender': instance.gender,
-      'name': instance.name,
-      'documents': instance.documents,
-      'contact': instance.contact,
+      'name': instance.name?.toJson(),
+      'documents': instance.documents?.map((e) => e.toJson()).toList(),
+      'contact': instance.contact?.toJson(),
     };
 
 _$_Name _$$_NameFromJson(Map<String, dynamic> json) => _$_Name(

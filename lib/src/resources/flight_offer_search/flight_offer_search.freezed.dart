@@ -287,7 +287,8 @@ class __$$_FlightOfferSearchCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_FlightOfferSearch implements _FlightOfferSearch {
   const _$_FlightOfferSearch(
       {required this.type,
@@ -2534,8 +2535,7 @@ IncludedCheckedBags _$IncludedCheckedBagsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$IncludedCheckedBags {
-  double? get weight => throw _privateConstructorUsedError;
-  String? get weightUnit => throw _privateConstructorUsedError;
+  int? get quantity => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -2549,7 +2549,7 @@ abstract class $IncludedCheckedBagsCopyWith<$Res> {
           IncludedCheckedBags value, $Res Function(IncludedCheckedBags) then) =
       _$IncludedCheckedBagsCopyWithImpl<$Res, IncludedCheckedBags>;
   @useResult
-  $Res call({double? weight, String? weightUnit});
+  $Res call({int? quantity});
 }
 
 /// @nodoc
@@ -2565,18 +2565,13 @@ class _$IncludedCheckedBagsCopyWithImpl<$Res, $Val extends IncludedCheckedBags>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? weight = freezed,
-    Object? weightUnit = freezed,
+    Object? quantity = freezed,
   }) {
     return _then(_value.copyWith(
-      weight: freezed == weight
-          ? _value.weight
-          : weight // ignore: cast_nullable_to_non_nullable
-              as double?,
-      weightUnit: freezed == weightUnit
-          ? _value.weightUnit
-          : weightUnit // ignore: cast_nullable_to_non_nullable
-              as String?,
+      quantity: freezed == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -2589,7 +2584,7 @@ abstract class _$$_IncludedCheckedBagsCopyWith<$Res>
       __$$_IncludedCheckedBagsCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double? weight, String? weightUnit});
+  $Res call({int? quantity});
 }
 
 /// @nodoc
@@ -2603,18 +2598,13 @@ class __$$_IncludedCheckedBagsCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? weight = freezed,
-    Object? weightUnit = freezed,
+    Object? quantity = freezed,
   }) {
     return _then(_$_IncludedCheckedBags(
-      weight: freezed == weight
-          ? _value.weight
-          : weight // ignore: cast_nullable_to_non_nullable
-              as double?,
-      weightUnit: freezed == weightUnit
-          ? _value.weightUnit
-          : weightUnit // ignore: cast_nullable_to_non_nullable
-              as String?,
+      quantity: freezed == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -2622,20 +2612,17 @@ class __$$_IncludedCheckedBagsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_IncludedCheckedBags implements _IncludedCheckedBags {
-  const _$_IncludedCheckedBags(
-      {required this.weight, required this.weightUnit});
+  const _$_IncludedCheckedBags({required this.quantity});
 
   factory _$_IncludedCheckedBags.fromJson(Map<String, dynamic> json) =>
       _$$_IncludedCheckedBagsFromJson(json);
 
   @override
-  final double? weight;
-  @override
-  final String? weightUnit;
+  final int? quantity;
 
   @override
   String toString() {
-    return 'IncludedCheckedBags(weight: $weight, weightUnit: $weightUnit)';
+    return 'IncludedCheckedBags(quantity: $quantity)';
   }
 
   @override
@@ -2643,14 +2630,13 @@ class _$_IncludedCheckedBags implements _IncludedCheckedBags {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_IncludedCheckedBags &&
-            (identical(other.weight, weight) || other.weight == weight) &&
-            (identical(other.weightUnit, weightUnit) ||
-                other.weightUnit == weightUnit));
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, weight, weightUnit);
+  int get hashCode => Object.hash(runtimeType, quantity);
 
   @JsonKey(ignore: true)
   @override
@@ -2668,17 +2654,14 @@ class _$_IncludedCheckedBags implements _IncludedCheckedBags {
 }
 
 abstract class _IncludedCheckedBags implements IncludedCheckedBags {
-  const factory _IncludedCheckedBags(
-      {required final double? weight,
-      required final String? weightUnit}) = _$_IncludedCheckedBags;
+  const factory _IncludedCheckedBags({required final int? quantity}) =
+      _$_IncludedCheckedBags;
 
   factory _IncludedCheckedBags.fromJson(Map<String, dynamic> json) =
       _$_IncludedCheckedBags.fromJson;
 
   @override
-  double? get weight;
-  @override
-  String? get weightUnit;
+  int? get quantity;
   @override
   @JsonKey(ignore: true)
   _$$_IncludedCheckedBagsCopyWith<_$_IncludedCheckedBags> get copyWith =>
