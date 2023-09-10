@@ -18,7 +18,7 @@ class Upselling {
   }) async {
     final body = jsonEncode(map);
 
-    return await _client.post(
+    return _client.post(
       Uri.parse("$_baseUrl/v1/shopping/flight-offers/upselling"),
       body: body,
     );

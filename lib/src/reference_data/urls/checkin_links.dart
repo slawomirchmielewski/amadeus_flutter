@@ -9,8 +9,8 @@ class CheckinLinks {
   })  : _client = client,
         _baseUrl = baseUrl;
 
-  late Client _client;
-  late String _baseUrl;
+  late final Client _client;
+  late final String _baseUrl;
 
   Future<http.Response> get({
     required String airlineCode,
@@ -21,9 +21,10 @@ class CheckinLinks {
       'language': language,
     };
 
-    final params = ParameterGenerator.generate(parameters: map);
+    final params = generateParameters(parameters: map);
 
-    return await _client.get(
-        Uri.parse("$_baseUrl/v1/reference-data/urls/checkin-links$params"));
+    return _client.get(
+      Uri.parse("$_baseUrl/v1/reference-data/urls/checkin-links$params"),
+    );
   }
 }

@@ -1,6 +1,5 @@
-import 'package:http/http.dart' as http;
-
 import 'package:amadeus_flutter/src/utils/parameters_generator.dart';
+import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
 
 class BusiestPeriod {
@@ -22,7 +21,7 @@ class BusiestPeriod {
       'period': period,
     };
 
-    final params = ParameterGenerator.generate(parameters: map);
+    final params = generateParameters(parameters: map);
 
     return _client.get(
       Uri.parse(

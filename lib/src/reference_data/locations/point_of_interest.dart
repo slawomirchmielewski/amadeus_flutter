@@ -14,7 +14,8 @@ class PointOfInterest {
   Future<http.Response> get({
     required String id,
   }) async {
-    return await _client
-        .get(Uri.parse("$_baseUrl/v1/reference-data/locations/pois/$id"));
+    return _client.get(
+      Uri.parse("$_baseUrl/v1/reference-data/locations/pois/$id"),
+    );
   }
 }

@@ -16,16 +16,17 @@ class Locations {
     String? countryCode,
     String? view,
   }) async {
-    Map<String, String?> map = {
+    final Map<String, String?> map = {
       "keyword": keyword,
       "subType": subType,
       "countryCode": countryCode,
-      "view": view
+      "view": view,
     };
 
-    String params = ParameterGenerator.generate(parameters: map);
+    final params = generateParameters(parameters: map);
 
-    return await _client
-        .get(Uri.parse("$_baseUrl/v1/reference-data/locations$params"));
+    return _client.get(
+      Uri.parse("$_baseUrl/v1/reference-data/locations$params"),
+    );
   }
 }

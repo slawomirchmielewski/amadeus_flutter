@@ -21,7 +21,7 @@ class FlightDates {
       'destination': destination,
     };
 
-    final params = ParameterGenerator.generate(parameters: map);
+    final params = generateParameters(parameters: map);
 
     return _client.get(Uri.parse("$_baseUrl/v1/shopping/flight-dates$params"));
   }

@@ -19,9 +19,10 @@ class Airlines {
       'airlineCodes': airlineCodes,
     };
 
-    final params = ParameterGenerator.generate(parameters: map);
+    final params = generateParameters(parameters: map);
 
-    return await _client
-        .get(Uri.parse("$_baseUrl/v1/reference-data/airlines$params"));
+    return _client.get(
+      Uri.parse("$_baseUrl/v1/reference-data/airlines$params"),
+    );
   }
 }

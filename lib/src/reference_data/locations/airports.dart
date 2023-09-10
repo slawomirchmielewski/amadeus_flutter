@@ -23,9 +23,10 @@ class Airports {
       'radius': radius?.toString(),
     };
 
-    final params = ParameterGenerator.generate(parameters: map);
+    final params = generateParameters(parameters: map);
 
-    return await _client
-        .get(Uri.parse("$_baseUrl/v1/reference-data/locations/pois$params"));
+    return _client.get(
+      Uri.parse("$_baseUrl/v1/reference-data/locations/pois$params"),
+    );
   }
 }

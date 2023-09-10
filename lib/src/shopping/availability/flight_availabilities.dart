@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:amadeus_flutter/src/resources/flight_availabilities_body.dart';
+import 'package:amadeus_flutter/src/resources/flight_availabilities_body/flight_availabilities_body.dart';
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
 
@@ -19,7 +19,7 @@ class FlightAvailabilities {
   }) async {
     final body = jsonEncode(flightAvailabilitiesBody.toJson());
 
-    return await _client.post(
+    return _client.post(
       Uri.parse("$_baseUrl/v1/shopping/availability/flight-availabilities"),
       body: body,
     );

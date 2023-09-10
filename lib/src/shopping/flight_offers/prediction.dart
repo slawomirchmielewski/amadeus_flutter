@@ -18,7 +18,7 @@ class Prediction {
   }) async {
     final body = jsonEncode(map);
 
-    return await _client.post(
+    return _client.post(
       Uri.parse("$_baseUrl/v2/shopping/flight-offers/prediction"),
       body: body,
     );

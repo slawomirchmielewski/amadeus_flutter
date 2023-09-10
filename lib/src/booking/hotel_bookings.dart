@@ -16,7 +16,7 @@ class HotelBookings {
   Future<http.Response> post({required Map<String, dynamic> map}) async {
     final body = jsonEncode(map);
 
-    return await _client.post(
+    return _client.post(
       Uri.parse("$_baseUrl/v1/booking/hotel-bookings"),
       body: body,
     );

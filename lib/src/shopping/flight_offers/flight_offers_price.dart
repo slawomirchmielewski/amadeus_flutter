@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:amadeus_flutter/src/resources/flight_offer_search.dart';
+import 'package:amadeus_flutter/src/resources/flight_offer_search/flight_offer_search.dart';
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
 
@@ -22,10 +22,10 @@ class FlightOffersPrice {
     final flightOffers = body;
 
     final pricing = {
-      "data": {"type": "flight-offers-pricing", "flightOffers": flightOffers}
+      "data": {"type": "flight-offers-pricing", "flightOffers": flightOffers},
     };
 
-    return await _client.post(
+    return _client.post(
       Uri.parse("$_baseUrl/v1/shopping/flight-offers/pricing"),
       body: pricing,
     );

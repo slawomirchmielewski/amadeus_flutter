@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:amadeus_flutter/src/resources/flight_offers_body.dart';
+import 'package:amadeus_flutter/src/resources/flight_offers_body/flight_offers_body.dart';
 import 'package:amadeus_flutter/src/utils/parameters_generator.dart';
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
@@ -48,8 +48,7 @@ class FlightOffersSearch {
       "maxPrice": maxPrice
     };
 
-    final String params = ParameterGenerator.generate(parameters: map);
-    print(params);
+    final String params = generateParameters(parameters: map);
     return _client.get(Uri.parse("$_baseUrl/v2/shopping/flight-offers$params"));
   }
 

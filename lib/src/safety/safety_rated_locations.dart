@@ -25,9 +25,10 @@ class SafetyRatedLocations {
       'longitude': longitude.toString(),
     };
 
-    final String params = ParameterGenerator.generate(parameters: map);
+    final String params = generateParameters(parameters: map);
 
-    return await _client
-        .get(Uri.parse("$_baseUrl/v1/safety/safety-rated-locations$params"));
+    return _client.get(
+      Uri.parse("$_baseUrl/v1/safety/safety-rated-locations$params"),
+    );
   }
 }

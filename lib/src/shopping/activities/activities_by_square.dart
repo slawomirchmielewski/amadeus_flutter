@@ -25,9 +25,10 @@ class ActivitiesBySquare {
       'east': east.toString(),
     };
 
-    final String params = ParameterGenerator.generate(parameters: map);
+    final String params = generateParameters(parameters: map);
 
-    return await _client
-        .get(Uri.parse("$_baseUrl/v1/shopping/activities/by-square$params"));
+    return _client.get(
+      Uri.parse("$_baseUrl/v1/shopping/activities/by-square$params"),
+    );
   }
 }

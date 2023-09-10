@@ -1,7 +1,6 @@
-import 'package:http/http.dart' as http;
-
-import 'package:amadeus_flutter/src/resources/flight_delay_prediction.dart';
+import 'package:amadeus_flutter/src/resources/flight_delay_prediction/flight_delay_prediction.dart';
 import 'package:amadeus_flutter/src/utils/parameters_generator.dart';
+import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
 
 class FlightDelay {
@@ -17,7 +16,7 @@ class FlightDelay {
   Future<http.Response> get({
     required FlightDelayPrediction flightDelayPrediction,
   }) async {
-    final params = ParameterGenerator.generate(
+    final params = generateParameters(
         parameters: flightDelayPrediction.toJson() as Map<String, String>);
 
     return _client.get(

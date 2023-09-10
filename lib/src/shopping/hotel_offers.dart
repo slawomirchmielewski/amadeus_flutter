@@ -67,7 +67,7 @@ class HotelOffers {
       'cacheControl': cacheControl,
     };
 
-    final params = ParameterGenerator.generate(parameters: map);
+    final params = generateParameters(parameters: map);
 
     return _client.get(
       Uri.parse("$_baseUrl/v2/shopping/hotel-offers$params"),

@@ -1,5 +1,3 @@
-library amadeus;
-
 import 'package:amadeus_flutter/src/airport.dart';
 import 'package:amadeus_flutter/src/analytics.dart';
 import 'package:amadeus_flutter/src/booking.dart';
@@ -11,6 +9,7 @@ import 'package:amadeus_flutter/src/schedule.dart';
 import 'package:amadeus_flutter/src/shopping.dart';
 import 'package:amadeus_flutter/src/travel.dart';
 import 'package:oauth2/oauth2.dart' as oauth2;
+
 export 'package:amadeus_flutter/src/resources/resources.dart';
 
 enum AmadeusEnvironment {
@@ -37,7 +36,7 @@ class Amadeus {
     required String clientSecret,
     AmadeusEnvironment? amadeusEnvironment = AmadeusEnvironment.test,
   }) async {
-    final _authorizationEndpoint =
+    final authorizationEndpoint =
         Uri.parse("https://test.api.amadeus.com/v1/security/oauth2/token");
 
     late String baseUrl;
@@ -51,14 +50,10 @@ class Amadeus {
     final Amadeus amadeus = Amadeus._build();
 
     final oauth2.Client client = await oauth2.clientCredentialsGrant(
-      _authorizationEndpoint,
+      authorizationEndpoint,
       clientId,
       clientSecret,
     );
-
-    if (client.credentials.isExpired == true) {
-      client.refreshCredentials();
-    }
 
     amadeus.airport = Airport(client: client, baseUrl: baseUrl);
     amadeus.analytics = Analytics(client: client, baseUrl: baseUrl);

@@ -23,9 +23,8 @@ void main() async {
 
     final data = result['data'] as List;
 
-    final List<FlightOfferSearch> flights =
-        data.map((e) => FlightOfferSearch.fromJson(e)).toList();
-
-    print(flights.length);
+    final List<FlightOfferSearch> flights = data
+        .map((e) => FlightOfferSearch.fromJson(e as Map<String, dynamic>))
+        .toList();
   }
 }

@@ -15,15 +15,16 @@ class RecommendedLocations {
     String? travelerCountryCode,
     String? destinationCountryCodes,
   }) async {
-    Map<String, String?> map = {
+    final Map<String, String?> map = {
       'cityCodes': cityCodes,
       'travelerCountryCode': travelerCountryCode,
-      'destinationCountryCodes': destinationCountryCodes
+      'destinationCountryCodes': destinationCountryCodes,
     };
 
-    String params = ParameterGenerator.generate(parameters: map);
+    final params = generateParameters(parameters: map);
 
-    return await _client.get(
-        Uri.parse("$_baseUrl/v1/reference-data/recommended-locations$params"));
+    return _client.get(
+      Uri.parse("$_baseUrl/v1/reference-data/recommended-locations$params"),
+    );
   }
 }

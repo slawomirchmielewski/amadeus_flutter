@@ -14,7 +14,8 @@ class Activity {
   Future<http.Response> get({
     required String activityId,
   }) async {
-    return await _client
-        .get(Uri.parse("$_baseUrl/v1/shopping/activities/$activityId"));
+    return _client.get(
+      Uri.parse("$_baseUrl/v1/shopping/activities/$activityId"),
+    );
   }
 }

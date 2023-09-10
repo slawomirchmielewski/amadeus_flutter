@@ -21,7 +21,7 @@ class SeatMaps {
       'flightOrderId': flightOrderId,
     };
 
-    final params = ParameterGenerator.generate(parameters: map);
+    final params = generateParameters(parameters: map);
 
     return _client.get(
       Uri.parse("$_baseUrl/v1/shopping/seatmaps$params"),

@@ -14,7 +14,7 @@ class HotelOffer {
   Future<http.Response> get({
     required String hotelId,
   }) async {
-    return await _client.get(
+    return _client.get(
       Uri.parse("$_baseUrl/v2/shopping/hotel-offers/$hotelId"),
     );
   }
