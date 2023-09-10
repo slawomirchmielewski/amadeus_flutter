@@ -20,12 +20,12 @@ FlightDate _$FlightDateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FlightDate {
-  String get type => throw _privateConstructorUsedError;
-  String get origin => throw _privateConstructorUsedError;
-  String get destination => throw _privateConstructorUsedError;
-  String get departureDate => throw _privateConstructorUsedError;
-  String get returnDate => throw _privateConstructorUsedError;
-  Price get price => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
+  String? get origin => throw _privateConstructorUsedError;
+  String? get destination => throw _privateConstructorUsedError;
+  String? get departureDate => throw _privateConstructorUsedError;
+  String? get returnDate => throw _privateConstructorUsedError;
+  Price? get price => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,14 +40,14 @@ abstract class $FlightDateCopyWith<$Res> {
       _$FlightDateCopyWithImpl<$Res, FlightDate>;
   @useResult
   $Res call(
-      {String type,
-      String origin,
-      String destination,
-      String departureDate,
-      String returnDate,
-      Price price});
+      {String? type,
+      String? origin,
+      String? destination,
+      String? departureDate,
+      String? returnDate,
+      Price? price});
 
-  $PriceCopyWith<$Res> get price;
+  $PriceCopyWith<$Res>? get price;
 }
 
 /// @nodoc
@@ -63,45 +63,49 @@ class _$FlightDateCopyWithImpl<$Res, $Val extends FlightDate>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
-    Object? origin = null,
-    Object? destination = null,
-    Object? departureDate = null,
-    Object? returnDate = null,
-    Object? price = null,
+    Object? type = freezed,
+    Object? origin = freezed,
+    Object? destination = freezed,
+    Object? departureDate = freezed,
+    Object? returnDate = freezed,
+    Object? price = freezed,
   }) {
     return _then(_value.copyWith(
-      type: null == type
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      origin: null == origin
+              as String?,
+      origin: freezed == origin
           ? _value.origin
           : origin // ignore: cast_nullable_to_non_nullable
-              as String,
-      destination: null == destination
+              as String?,
+      destination: freezed == destination
           ? _value.destination
           : destination // ignore: cast_nullable_to_non_nullable
-              as String,
-      departureDate: null == departureDate
+              as String?,
+      departureDate: freezed == departureDate
           ? _value.departureDate
           : departureDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      returnDate: null == returnDate
+              as String?,
+      returnDate: freezed == returnDate
           ? _value.returnDate
           : returnDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      price: null == price
+              as String?,
+      price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as Price,
+              as Price?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $PriceCopyWith<$Res> get price {
-    return $PriceCopyWith<$Res>(_value.price, (value) {
+  $PriceCopyWith<$Res>? get price {
+    if (_value.price == null) {
+      return null;
+    }
+
+    return $PriceCopyWith<$Res>(_value.price!, (value) {
       return _then(_value.copyWith(price: value) as $Val);
     });
   }
@@ -116,15 +120,15 @@ abstract class _$$_FlightDateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String type,
-      String origin,
-      String destination,
-      String departureDate,
-      String returnDate,
-      Price price});
+      {String? type,
+      String? origin,
+      String? destination,
+      String? departureDate,
+      String? returnDate,
+      Price? price});
 
   @override
-  $PriceCopyWith<$Res> get price;
+  $PriceCopyWith<$Res>? get price;
 }
 
 /// @nodoc
@@ -138,38 +142,38 @@ class __$$_FlightDateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
-    Object? origin = null,
-    Object? destination = null,
-    Object? departureDate = null,
-    Object? returnDate = null,
-    Object? price = null,
+    Object? type = freezed,
+    Object? origin = freezed,
+    Object? destination = freezed,
+    Object? departureDate = freezed,
+    Object? returnDate = freezed,
+    Object? price = freezed,
   }) {
     return _then(_$_FlightDate(
-      type: null == type
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      origin: null == origin
+              as String?,
+      origin: freezed == origin
           ? _value.origin
           : origin // ignore: cast_nullable_to_non_nullable
-              as String,
-      destination: null == destination
+              as String?,
+      destination: freezed == destination
           ? _value.destination
           : destination // ignore: cast_nullable_to_non_nullable
-              as String,
-      departureDate: null == departureDate
+              as String?,
+      departureDate: freezed == departureDate
           ? _value.departureDate
           : departureDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      returnDate: null == returnDate
+              as String?,
+      returnDate: freezed == returnDate
           ? _value.returnDate
           : returnDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      price: null == price
+              as String?,
+      price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as Price,
+              as Price?,
     ));
   }
 }
@@ -189,17 +193,17 @@ class _$_FlightDate implements _FlightDate {
       _$$_FlightDateFromJson(json);
 
   @override
-  final String type;
+  final String? type;
   @override
-  final String origin;
+  final String? origin;
   @override
-  final String destination;
+  final String? destination;
   @override
-  final String departureDate;
+  final String? departureDate;
   @override
-  final String returnDate;
+  final String? returnDate;
   @override
-  final Price price;
+  final Price? price;
 
   @override
   String toString() {
@@ -243,28 +247,28 @@ class _$_FlightDate implements _FlightDate {
 
 abstract class _FlightDate implements FlightDate {
   const factory _FlightDate(
-      {required final String type,
-      required final String origin,
-      required final String destination,
-      required final String departureDate,
-      required final String returnDate,
-      required final Price price}) = _$_FlightDate;
+      {required final String? type,
+      required final String? origin,
+      required final String? destination,
+      required final String? departureDate,
+      required final String? returnDate,
+      required final Price? price}) = _$_FlightDate;
 
   factory _FlightDate.fromJson(Map<String, dynamic> json) =
       _$_FlightDate.fromJson;
 
   @override
-  String get type;
+  String? get type;
   @override
-  String get origin;
+  String? get origin;
   @override
-  String get destination;
+  String? get destination;
   @override
-  String get departureDate;
+  String? get departureDate;
   @override
-  String get returnDate;
+  String? get returnDate;
   @override
-  Price get price;
+  Price? get price;
   @override
   @JsonKey(ignore: true)
   _$$_FlightDateCopyWith<_$_FlightDate> get copyWith =>
@@ -277,7 +281,7 @@ Price _$PriceFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Price {
-  double get total => throw _privateConstructorUsedError;
+  double? get total => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -289,7 +293,7 @@ abstract class $PriceCopyWith<$Res> {
   factory $PriceCopyWith(Price value, $Res Function(Price) then) =
       _$PriceCopyWithImpl<$Res, Price>;
   @useResult
-  $Res call({double total});
+  $Res call({double? total});
 }
 
 /// @nodoc
@@ -305,13 +309,13 @@ class _$PriceCopyWithImpl<$Res, $Val extends Price>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? total = null,
+    Object? total = freezed,
   }) {
     return _then(_value.copyWith(
-      total: null == total
+      total: freezed == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
     ) as $Val);
   }
 }
@@ -322,7 +326,7 @@ abstract class _$$_PriceCopyWith<$Res> implements $PriceCopyWith<$Res> {
       __$$_PriceCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double total});
+  $Res call({double? total});
 }
 
 /// @nodoc
@@ -334,13 +338,13 @@ class __$$_PriceCopyWithImpl<$Res> extends _$PriceCopyWithImpl<$Res, _$_Price>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? total = null,
+    Object? total = freezed,
   }) {
     return _then(_$_Price(
-      total: null == total
+      total: freezed == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
     ));
   }
 }
@@ -354,7 +358,7 @@ class _$_Price implements _Price {
       _$$_PriceFromJson(json);
 
   @override
-  final double total;
+  final double? total;
 
   @override
   String toString() {
@@ -388,12 +392,12 @@ class _$_Price implements _Price {
 }
 
 abstract class _Price implements Price {
-  const factory _Price({required final double total}) = _$_Price;
+  const factory _Price({required final double? total}) = _$_Price;
 
   factory _Price.fromJson(Map<String, dynamic> json) = _$_Price.fromJson;
 
   @override
-  double get total;
+  double? get total;
   @override
   @JsonKey(ignore: true)
   _$$_PriceCopyWith<_$_Price> get copyWith =>

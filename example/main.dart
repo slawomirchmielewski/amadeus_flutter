@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:amadeus_flutter/amadeus_flutter.dart';
 import 'package:http/http.dart';
 
@@ -15,7 +17,7 @@ void main() async {
     max: '1',
   );
 
-  /*if (response.statusCode == 200) {
+  if (response.statusCode == 200) {
     final Map<String, dynamic> result =
         jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -23,7 +25,8 @@ void main() async {
 
     final List<FlightOfferSearch> flights = data
         .map((e) => FlightOfferSearch.fromJson(e as Map<String, dynamic>))
-        .toList();*/
+        .toList();
 
-  print(response.body);
+    print(flights);
+  }
 }

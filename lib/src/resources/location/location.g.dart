@@ -7,17 +7,25 @@ part of 'location.dart';
 // **************************************************************************
 
 _$_Location _$$_LocationFromJson(Map<String, dynamic> json) => _$_Location(
-      type: json['type'] as String,
-      subType: json['subType'] as String,
-      name: json['name'] as String,
-      detailedName: json['detailedName'] as String,
-      id: json['id'] as String,
-      self: Self.fromJson(json['self'] as Map<String, dynamic>),
-      timeZoneOffset: json['timeZoneOffset'] as String,
-      iataCode: json['iataCode'] as String,
-      geoCode: GeoCode.fromJson(json['geoCode'] as Map<String, dynamic>),
-      address: Address.fromJson(json['address'] as Map<String, dynamic>),
-      analytics: Analytics.fromJson(json['analytics'] as Map<String, dynamic>),
+      type: json['type'] as String?,
+      subType: json['subType'] as String?,
+      name: json['name'] as String?,
+      detailedName: json['detailedName'] as String?,
+      id: json['id'] as String?,
+      self: json['self'] == null
+          ? null
+          : Self.fromJson(json['self'] as Map<String, dynamic>),
+      timeZoneOffset: json['timeZoneOffset'] as String?,
+      iataCode: json['iataCode'] as String?,
+      geoCode: json['geoCode'] == null
+          ? null
+          : GeoCode.fromJson(json['geoCode'] as Map<String, dynamic>),
+      address: json['address'] == null
+          ? null
+          : Address.fromJson(json['address'] as Map<String, dynamic>),
+      analytics: json['analytics'] == null
+          ? null
+          : Analytics.fromJson(json['analytics'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_LocationToJson(_$_Location instance) =>
@@ -36,9 +44,9 @@ Map<String, dynamic> _$$_LocationToJson(_$_Location instance) =>
     };
 
 _$_Self _$$_SelfFromJson(Map<String, dynamic> json) => _$_Self(
-      href: json['href'] as String,
+      href: json['href'] as String?,
       methods:
-          (json['methods'] as List<dynamic>).map((e) => e as String).toList(),
+          (json['methods'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$$_SelfToJson(_$_Self instance) => <String, dynamic>{
@@ -47,8 +55,8 @@ Map<String, dynamic> _$$_SelfToJson(_$_Self instance) => <String, dynamic>{
     };
 
 _$_GeoCode _$$_GeoCodeFromJson(Map<String, dynamic> json) => _$_GeoCode(
-      latitude: (json['latitude'] as num).toDouble(),
-      longitude: (json['longitude'] as num).toDouble(),
+      latitude: (json['latitude'] as num?)?.toDouble(),
+      longitude: (json['longitude'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$$_GeoCodeToJson(_$_GeoCode instance) =>
@@ -58,12 +66,12 @@ Map<String, dynamic> _$$_GeoCodeToJson(_$_GeoCode instance) =>
     };
 
 _$_Address _$$_AddressFromJson(Map<String, dynamic> json) => _$_Address(
-      cityName: json['cityName'] as String,
-      cityCode: json['cityCode'] as String,
-      countryName: json['countryName'] as String,
-      countryCode: json['countryCode'] as String,
-      stateCode: json['stateCode'] as String,
-      regionCode: json['regionCode'] as String,
+      cityName: json['cityName'] as String?,
+      cityCode: json['cityCode'] as String?,
+      countryName: json['countryName'] as String?,
+      countryCode: json['countryCode'] as String?,
+      stateCode: json['stateCode'] as String?,
+      regionCode: json['regionCode'] as String?,
     );
 
 Map<String, dynamic> _$$_AddressToJson(_$_Address instance) =>
@@ -77,7 +85,9 @@ Map<String, dynamic> _$$_AddressToJson(_$_Address instance) =>
     };
 
 _$_Analytics _$$_AnalyticsFromJson(Map<String, dynamic> json) => _$_Analytics(
-      travelers: Travelers.fromJson(json['travelers'] as Map<String, dynamic>),
+      travelers: json['travelers'] == null
+          ? null
+          : Travelers.fromJson(json['travelers'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_AnalyticsToJson(_$_Analytics instance) =>
@@ -86,7 +96,7 @@ Map<String, dynamic> _$$_AnalyticsToJson(_$_Analytics instance) =>
     };
 
 _$_Travelers _$$_TravelersFromJson(Map<String, dynamic> json) => _$_Travelers(
-      score: json['score'] as int,
+      score: json['score'] as int?,
     );
 
 Map<String, dynamic> _$$_TravelersToJson(_$_Travelers instance) =>

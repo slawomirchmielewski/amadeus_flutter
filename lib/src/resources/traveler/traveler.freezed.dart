@@ -20,12 +20,12 @@ Traveler _$TravelerFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Traveler {
-  String get id => throw _privateConstructorUsedError;
-  String get dateOfBirth => throw _privateConstructorUsedError;
-  String get gender => throw _privateConstructorUsedError;
-  Name get name => throw _privateConstructorUsedError;
-  List<Document> get documents => throw _privateConstructorUsedError;
-  Contact get contact => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get dateOfBirth => throw _privateConstructorUsedError;
+  String? get gender => throw _privateConstructorUsedError;
+  Name? get name => throw _privateConstructorUsedError;
+  List<Document>? get documents => throw _privateConstructorUsedError;
+  Contact? get contact => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,15 +39,15 @@ abstract class $TravelerCopyWith<$Res> {
       _$TravelerCopyWithImpl<$Res, Traveler>;
   @useResult
   $Res call(
-      {String id,
-      String dateOfBirth,
-      String gender,
-      Name name,
-      List<Document> documents,
-      Contact contact});
+      {String? id,
+      String? dateOfBirth,
+      String? gender,
+      Name? name,
+      List<Document>? documents,
+      Contact? contact});
 
-  $NameCopyWith<$Res> get name;
-  $ContactCopyWith<$Res> get contact;
+  $NameCopyWith<$Res>? get name;
+  $ContactCopyWith<$Res>? get contact;
 }
 
 /// @nodoc
@@ -63,53 +63,61 @@ class _$TravelerCopyWithImpl<$Res, $Val extends Traveler>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? dateOfBirth = null,
-    Object? gender = null,
-    Object? name = null,
-    Object? documents = null,
-    Object? contact = null,
+    Object? id = freezed,
+    Object? dateOfBirth = freezed,
+    Object? gender = freezed,
+    Object? name = freezed,
+    Object? documents = freezed,
+    Object? contact = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      dateOfBirth: null == dateOfBirth
+              as String?,
+      dateOfBirth: freezed == dateOfBirth
           ? _value.dateOfBirth
           : dateOfBirth // ignore: cast_nullable_to_non_nullable
-              as String,
-      gender: null == gender
+              as String?,
+      gender: freezed == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as Name,
-      documents: null == documents
+              as Name?,
+      documents: freezed == documents
           ? _value.documents
           : documents // ignore: cast_nullable_to_non_nullable
-              as List<Document>,
-      contact: null == contact
+              as List<Document>?,
+      contact: freezed == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
-              as Contact,
+              as Contact?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $NameCopyWith<$Res> get name {
-    return $NameCopyWith<$Res>(_value.name, (value) {
+  $NameCopyWith<$Res>? get name {
+    if (_value.name == null) {
+      return null;
+    }
+
+    return $NameCopyWith<$Res>(_value.name!, (value) {
       return _then(_value.copyWith(name: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ContactCopyWith<$Res> get contact {
-    return $ContactCopyWith<$Res>(_value.contact, (value) {
+  $ContactCopyWith<$Res>? get contact {
+    if (_value.contact == null) {
+      return null;
+    }
+
+    return $ContactCopyWith<$Res>(_value.contact!, (value) {
       return _then(_value.copyWith(contact: value) as $Val);
     });
   }
@@ -123,17 +131,17 @@ abstract class _$$_TravelerCopyWith<$Res> implements $TravelerCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id,
-      String dateOfBirth,
-      String gender,
-      Name name,
-      List<Document> documents,
-      Contact contact});
+      {String? id,
+      String? dateOfBirth,
+      String? gender,
+      Name? name,
+      List<Document>? documents,
+      Contact? contact});
 
   @override
-  $NameCopyWith<$Res> get name;
+  $NameCopyWith<$Res>? get name;
   @override
-  $ContactCopyWith<$Res> get contact;
+  $ContactCopyWith<$Res>? get contact;
 }
 
 /// @nodoc
@@ -147,38 +155,38 @@ class __$$_TravelerCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? dateOfBirth = null,
-    Object? gender = null,
-    Object? name = null,
-    Object? documents = null,
-    Object? contact = null,
+    Object? id = freezed,
+    Object? dateOfBirth = freezed,
+    Object? gender = freezed,
+    Object? name = freezed,
+    Object? documents = freezed,
+    Object? contact = freezed,
   }) {
     return _then(_$_Traveler(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      dateOfBirth: null == dateOfBirth
+              as String?,
+      dateOfBirth: freezed == dateOfBirth
           ? _value.dateOfBirth
           : dateOfBirth // ignore: cast_nullable_to_non_nullable
-              as String,
-      gender: null == gender
+              as String?,
+      gender: freezed == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as Name,
-      documents: null == documents
+              as Name?,
+      documents: freezed == documents
           ? _value._documents
           : documents // ignore: cast_nullable_to_non_nullable
-              as List<Document>,
-      contact: null == contact
+              as List<Document>?,
+      contact: freezed == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
-              as Contact,
+              as Contact?,
     ));
   }
 }
@@ -191,7 +199,7 @@ class _$_Traveler implements _Traveler {
       required this.dateOfBirth,
       required this.gender,
       required this.name,
-      required final List<Document> documents,
+      required final List<Document>? documents,
       required this.contact})
       : _documents = documents;
 
@@ -199,23 +207,25 @@ class _$_Traveler implements _Traveler {
       _$$_TravelerFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
-  final String dateOfBirth;
+  final String? dateOfBirth;
   @override
-  final String gender;
+  final String? gender;
   @override
-  final Name name;
-  final List<Document> _documents;
+  final Name? name;
+  final List<Document>? _documents;
   @override
-  List<Document> get documents {
+  List<Document>? get documents {
+    final value = _documents;
+    if (value == null) return null;
     if (_documents is EqualUnmodifiableListView) return _documents;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_documents);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  final Contact contact;
+  final Contact? contact;
 
   @override
   String toString() {
@@ -258,27 +268,27 @@ class _$_Traveler implements _Traveler {
 
 abstract class _Traveler implements Traveler {
   const factory _Traveler(
-      {required final String id,
-      required final String dateOfBirth,
-      required final String gender,
-      required final Name name,
-      required final List<Document> documents,
-      required final Contact contact}) = _$_Traveler;
+      {required final String? id,
+      required final String? dateOfBirth,
+      required final String? gender,
+      required final Name? name,
+      required final List<Document>? documents,
+      required final Contact? contact}) = _$_Traveler;
 
   factory _Traveler.fromJson(Map<String, dynamic> json) = _$_Traveler.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
-  String get dateOfBirth;
+  String? get dateOfBirth;
   @override
-  String get gender;
+  String? get gender;
   @override
-  Name get name;
+  Name? get name;
   @override
-  List<Document> get documents;
+  List<Document>? get documents;
   @override
-  Contact get contact;
+  Contact? get contact;
   @override
   @JsonKey(ignore: true)
   _$$_TravelerCopyWith<_$_Traveler> get copyWith =>
@@ -291,8 +301,8 @@ Name _$NameFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Name {
-  String get firstName => throw _privateConstructorUsedError;
-  String get lastName => throw _privateConstructorUsedError;
+  String? get firstName => throw _privateConstructorUsedError;
+  String? get lastName => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -304,7 +314,7 @@ abstract class $NameCopyWith<$Res> {
   factory $NameCopyWith(Name value, $Res Function(Name) then) =
       _$NameCopyWithImpl<$Res, Name>;
   @useResult
-  $Res call({String firstName, String lastName});
+  $Res call({String? firstName, String? lastName});
 }
 
 /// @nodoc
@@ -320,18 +330,18 @@ class _$NameCopyWithImpl<$Res, $Val extends Name>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? firstName = null,
-    Object? lastName = null,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
   }) {
     return _then(_value.copyWith(
-      firstName: null == firstName
+      firstName: freezed == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
+              as String?,
+      lastName: freezed == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -342,7 +352,7 @@ abstract class _$$_NameCopyWith<$Res> implements $NameCopyWith<$Res> {
       __$$_NameCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String firstName, String lastName});
+  $Res call({String? firstName, String? lastName});
 }
 
 /// @nodoc
@@ -354,18 +364,18 @@ class __$$_NameCopyWithImpl<$Res> extends _$NameCopyWithImpl<$Res, _$_Name>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? firstName = null,
-    Object? lastName = null,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
   }) {
     return _then(_$_Name(
-      firstName: null == firstName
+      firstName: freezed == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
+              as String?,
+      lastName: freezed == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -378,9 +388,9 @@ class _$_Name implements _Name {
   factory _$_Name.fromJson(Map<String, dynamic> json) => _$$_NameFromJson(json);
 
   @override
-  final String firstName;
+  final String? firstName;
   @override
-  final String lastName;
+  final String? lastName;
 
   @override
   String toString() {
@@ -418,15 +428,15 @@ class _$_Name implements _Name {
 
 abstract class _Name implements Name {
   const factory _Name(
-      {required final String firstName,
-      required final String lastName}) = _$_Name;
+      {required final String? firstName,
+      required final String? lastName}) = _$_Name;
 
   factory _Name.fromJson(Map<String, dynamic> json) = _$_Name.fromJson;
 
   @override
-  String get firstName;
+  String? get firstName;
   @override
-  String get lastName;
+  String? get lastName;
   @override
   @JsonKey(ignore: true)
   _$$_NameCopyWith<_$_Name> get copyWith => throw _privateConstructorUsedError;
@@ -438,15 +448,15 @@ Document _$DocumentFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Document {
-  String get id => throw _privateConstructorUsedError;
-  String get number => throw _privateConstructorUsedError;
-  String get issuanceDate => throw _privateConstructorUsedError;
-  String get expiryDate => throw _privateConstructorUsedError;
-  String get issuanceCountry => throw _privateConstructorUsedError;
-  String get issuanceLocation => throw _privateConstructorUsedError;
-  String get nationality => throw _privateConstructorUsedError;
-  String get documentType => throw _privateConstructorUsedError;
-  String get birthPlace => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get number => throw _privateConstructorUsedError;
+  String? get issuanceDate => throw _privateConstructorUsedError;
+  String? get expiryDate => throw _privateConstructorUsedError;
+  String? get issuanceCountry => throw _privateConstructorUsedError;
+  String? get issuanceLocation => throw _privateConstructorUsedError;
+  String? get nationality => throw _privateConstructorUsedError;
+  String? get documentType => throw _privateConstructorUsedError;
+  String? get birthPlace => throw _privateConstructorUsedError;
   bool get holder => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -461,15 +471,15 @@ abstract class $DocumentCopyWith<$Res> {
       _$DocumentCopyWithImpl<$Res, Document>;
   @useResult
   $Res call(
-      {String id,
-      String number,
-      String issuanceDate,
-      String expiryDate,
-      String issuanceCountry,
-      String issuanceLocation,
-      String nationality,
-      String documentType,
-      String birthPlace,
+      {String? id,
+      String? number,
+      String? issuanceDate,
+      String? expiryDate,
+      String? issuanceCountry,
+      String? issuanceLocation,
+      String? nationality,
+      String? documentType,
+      String? birthPlace,
       bool holder});
 }
 
@@ -486,54 +496,54 @@ class _$DocumentCopyWithImpl<$Res, $Val extends Document>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? number = null,
-    Object? issuanceDate = null,
-    Object? expiryDate = null,
-    Object? issuanceCountry = null,
-    Object? issuanceLocation = null,
-    Object? nationality = null,
-    Object? documentType = null,
-    Object? birthPlace = null,
+    Object? id = freezed,
+    Object? number = freezed,
+    Object? issuanceDate = freezed,
+    Object? expiryDate = freezed,
+    Object? issuanceCountry = freezed,
+    Object? issuanceLocation = freezed,
+    Object? nationality = freezed,
+    Object? documentType = freezed,
+    Object? birthPlace = freezed,
     Object? holder = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      number: null == number
+              as String?,
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as String,
-      issuanceDate: null == issuanceDate
+              as String?,
+      issuanceDate: freezed == issuanceDate
           ? _value.issuanceDate
           : issuanceDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      expiryDate: null == expiryDate
+              as String?,
+      expiryDate: freezed == expiryDate
           ? _value.expiryDate
           : expiryDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      issuanceCountry: null == issuanceCountry
+              as String?,
+      issuanceCountry: freezed == issuanceCountry
           ? _value.issuanceCountry
           : issuanceCountry // ignore: cast_nullable_to_non_nullable
-              as String,
-      issuanceLocation: null == issuanceLocation
+              as String?,
+      issuanceLocation: freezed == issuanceLocation
           ? _value.issuanceLocation
           : issuanceLocation // ignore: cast_nullable_to_non_nullable
-              as String,
-      nationality: null == nationality
+              as String?,
+      nationality: freezed == nationality
           ? _value.nationality
           : nationality // ignore: cast_nullable_to_non_nullable
-              as String,
-      documentType: null == documentType
+              as String?,
+      documentType: freezed == documentType
           ? _value.documentType
           : documentType // ignore: cast_nullable_to_non_nullable
-              as String,
-      birthPlace: null == birthPlace
+              as String?,
+      birthPlace: freezed == birthPlace
           ? _value.birthPlace
           : birthPlace // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       holder: null == holder
           ? _value.holder
           : holder // ignore: cast_nullable_to_non_nullable
@@ -550,15 +560,15 @@ abstract class _$$_DocumentCopyWith<$Res> implements $DocumentCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id,
-      String number,
-      String issuanceDate,
-      String expiryDate,
-      String issuanceCountry,
-      String issuanceLocation,
-      String nationality,
-      String documentType,
-      String birthPlace,
+      {String? id,
+      String? number,
+      String? issuanceDate,
+      String? expiryDate,
+      String? issuanceCountry,
+      String? issuanceLocation,
+      String? nationality,
+      String? documentType,
+      String? birthPlace,
       bool holder});
 }
 
@@ -573,54 +583,54 @@ class __$$_DocumentCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? number = null,
-    Object? issuanceDate = null,
-    Object? expiryDate = null,
-    Object? issuanceCountry = null,
-    Object? issuanceLocation = null,
-    Object? nationality = null,
-    Object? documentType = null,
-    Object? birthPlace = null,
+    Object? id = freezed,
+    Object? number = freezed,
+    Object? issuanceDate = freezed,
+    Object? expiryDate = freezed,
+    Object? issuanceCountry = freezed,
+    Object? issuanceLocation = freezed,
+    Object? nationality = freezed,
+    Object? documentType = freezed,
+    Object? birthPlace = freezed,
     Object? holder = null,
   }) {
     return _then(_$_Document(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      number: null == number
+              as String?,
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as String,
-      issuanceDate: null == issuanceDate
+              as String?,
+      issuanceDate: freezed == issuanceDate
           ? _value.issuanceDate
           : issuanceDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      expiryDate: null == expiryDate
+              as String?,
+      expiryDate: freezed == expiryDate
           ? _value.expiryDate
           : expiryDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      issuanceCountry: null == issuanceCountry
+              as String?,
+      issuanceCountry: freezed == issuanceCountry
           ? _value.issuanceCountry
           : issuanceCountry // ignore: cast_nullable_to_non_nullable
-              as String,
-      issuanceLocation: null == issuanceLocation
+              as String?,
+      issuanceLocation: freezed == issuanceLocation
           ? _value.issuanceLocation
           : issuanceLocation // ignore: cast_nullable_to_non_nullable
-              as String,
-      nationality: null == nationality
+              as String?,
+      nationality: freezed == nationality
           ? _value.nationality
           : nationality // ignore: cast_nullable_to_non_nullable
-              as String,
-      documentType: null == documentType
+              as String?,
+      documentType: freezed == documentType
           ? _value.documentType
           : documentType // ignore: cast_nullable_to_non_nullable
-              as String,
-      birthPlace: null == birthPlace
+              as String?,
+      birthPlace: freezed == birthPlace
           ? _value.birthPlace
           : birthPlace // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       holder: null == holder
           ? _value.holder
           : holder // ignore: cast_nullable_to_non_nullable
@@ -648,23 +658,23 @@ class _$_Document implements _Document {
       _$$_DocumentFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
-  final String number;
+  final String? number;
   @override
-  final String issuanceDate;
+  final String? issuanceDate;
   @override
-  final String expiryDate;
+  final String? expiryDate;
   @override
-  final String issuanceCountry;
+  final String? issuanceCountry;
   @override
-  final String issuanceLocation;
+  final String? issuanceLocation;
   @override
-  final String nationality;
+  final String? nationality;
   @override
-  final String documentType;
+  final String? documentType;
   @override
-  final String birthPlace;
+  final String? birthPlace;
   @override
   final bool holder;
 
@@ -728,37 +738,37 @@ class _$_Document implements _Document {
 
 abstract class _Document implements Document {
   const factory _Document(
-      {required final String id,
-      required final String number,
-      required final String issuanceDate,
-      required final String expiryDate,
-      required final String issuanceCountry,
-      required final String issuanceLocation,
-      required final String nationality,
-      required final String documentType,
-      required final String birthPlace,
+      {required final String? id,
+      required final String? number,
+      required final String? issuanceDate,
+      required final String? expiryDate,
+      required final String? issuanceCountry,
+      required final String? issuanceLocation,
+      required final String? nationality,
+      required final String? documentType,
+      required final String? birthPlace,
       required final bool holder}) = _$_Document;
 
   factory _Document.fromJson(Map<String, dynamic> json) = _$_Document.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
-  String get number;
+  String? get number;
   @override
-  String get issuanceDate;
+  String? get issuanceDate;
   @override
-  String get expiryDate;
+  String? get expiryDate;
   @override
-  String get issuanceCountry;
+  String? get issuanceCountry;
   @override
-  String get issuanceLocation;
+  String? get issuanceLocation;
   @override
-  String get nationality;
+  String? get nationality;
   @override
-  String get documentType;
+  String? get documentType;
   @override
-  String get birthPlace;
+  String? get birthPlace;
   @override
   bool get holder;
   @override
@@ -773,8 +783,8 @@ Contact _$ContactFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Contact {
-  List<Phone> get phones => throw _privateConstructorUsedError;
-  String get emailAddress => throw _privateConstructorUsedError;
+  List<Phone>? get phones => throw _privateConstructorUsedError;
+  String? get emailAddress => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -786,7 +796,7 @@ abstract class $ContactCopyWith<$Res> {
   factory $ContactCopyWith(Contact value, $Res Function(Contact) then) =
       _$ContactCopyWithImpl<$Res, Contact>;
   @useResult
-  $Res call({List<Phone> phones, String emailAddress});
+  $Res call({List<Phone>? phones, String? emailAddress});
 }
 
 /// @nodoc
@@ -802,18 +812,18 @@ class _$ContactCopyWithImpl<$Res, $Val extends Contact>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? phones = null,
-    Object? emailAddress = null,
+    Object? phones = freezed,
+    Object? emailAddress = freezed,
   }) {
     return _then(_value.copyWith(
-      phones: null == phones
+      phones: freezed == phones
           ? _value.phones
           : phones // ignore: cast_nullable_to_non_nullable
-              as List<Phone>,
-      emailAddress: null == emailAddress
+              as List<Phone>?,
+      emailAddress: freezed == emailAddress
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -825,7 +835,7 @@ abstract class _$$_ContactCopyWith<$Res> implements $ContactCopyWith<$Res> {
       __$$_ContactCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Phone> phones, String emailAddress});
+  $Res call({List<Phone>? phones, String? emailAddress});
 }
 
 /// @nodoc
@@ -838,18 +848,18 @@ class __$$_ContactCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? phones = null,
-    Object? emailAddress = null,
+    Object? phones = freezed,
+    Object? emailAddress = freezed,
   }) {
     return _then(_$_Contact(
-      phones: null == phones
+      phones: freezed == phones
           ? _value._phones
           : phones // ignore: cast_nullable_to_non_nullable
-              as List<Phone>,
-      emailAddress: null == emailAddress
+              as List<Phone>?,
+      emailAddress: freezed == emailAddress
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -858,22 +868,24 @@ class __$$_ContactCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Contact implements _Contact {
   const _$_Contact(
-      {required final List<Phone> phones, required this.emailAddress})
+      {required final List<Phone>? phones, required this.emailAddress})
       : _phones = phones;
 
   factory _$_Contact.fromJson(Map<String, dynamic> json) =>
       _$$_ContactFromJson(json);
 
-  final List<Phone> _phones;
+  final List<Phone>? _phones;
   @override
-  List<Phone> get phones {
+  List<Phone>? get phones {
+    final value = _phones;
+    if (value == null) return null;
     if (_phones is EqualUnmodifiableListView) return _phones;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_phones);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  final String emailAddress;
+  final String? emailAddress;
 
   @override
   String toString() {
@@ -911,15 +923,15 @@ class _$_Contact implements _Contact {
 
 abstract class _Contact implements Contact {
   const factory _Contact(
-      {required final List<Phone> phones,
-      required final String emailAddress}) = _$_Contact;
+      {required final List<Phone>? phones,
+      required final String? emailAddress}) = _$_Contact;
 
   factory _Contact.fromJson(Map<String, dynamic> json) = _$_Contact.fromJson;
 
   @override
-  List<Phone> get phones;
+  List<Phone>? get phones;
   @override
-  String get emailAddress;
+  String? get emailAddress;
   @override
   @JsonKey(ignore: true)
   _$$_ContactCopyWith<_$_Contact> get copyWith =>
@@ -932,9 +944,9 @@ Phone _$PhoneFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Phone {
-  String get deviceType => throw _privateConstructorUsedError;
-  String get countryCallingCode => throw _privateConstructorUsedError;
-  String get number => throw _privateConstructorUsedError;
+  String? get deviceType => throw _privateConstructorUsedError;
+  String? get countryCallingCode => throw _privateConstructorUsedError;
+  String? get number => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -946,7 +958,7 @@ abstract class $PhoneCopyWith<$Res> {
   factory $PhoneCopyWith(Phone value, $Res Function(Phone) then) =
       _$PhoneCopyWithImpl<$Res, Phone>;
   @useResult
-  $Res call({String deviceType, String countryCallingCode, String number});
+  $Res call({String? deviceType, String? countryCallingCode, String? number});
 }
 
 /// @nodoc
@@ -962,23 +974,23 @@ class _$PhoneCopyWithImpl<$Res, $Val extends Phone>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? deviceType = null,
-    Object? countryCallingCode = null,
-    Object? number = null,
+    Object? deviceType = freezed,
+    Object? countryCallingCode = freezed,
+    Object? number = freezed,
   }) {
     return _then(_value.copyWith(
-      deviceType: null == deviceType
+      deviceType: freezed == deviceType
           ? _value.deviceType
           : deviceType // ignore: cast_nullable_to_non_nullable
-              as String,
-      countryCallingCode: null == countryCallingCode
+              as String?,
+      countryCallingCode: freezed == countryCallingCode
           ? _value.countryCallingCode
           : countryCallingCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      number: null == number
+              as String?,
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -989,7 +1001,7 @@ abstract class _$$_PhoneCopyWith<$Res> implements $PhoneCopyWith<$Res> {
       __$$_PhoneCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String deviceType, String countryCallingCode, String number});
+  $Res call({String? deviceType, String? countryCallingCode, String? number});
 }
 
 /// @nodoc
@@ -1001,23 +1013,23 @@ class __$$_PhoneCopyWithImpl<$Res> extends _$PhoneCopyWithImpl<$Res, _$_Phone>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? deviceType = null,
-    Object? countryCallingCode = null,
-    Object? number = null,
+    Object? deviceType = freezed,
+    Object? countryCallingCode = freezed,
+    Object? number = freezed,
   }) {
     return _then(_$_Phone(
-      deviceType: null == deviceType
+      deviceType: freezed == deviceType
           ? _value.deviceType
           : deviceType // ignore: cast_nullable_to_non_nullable
-              as String,
-      countryCallingCode: null == countryCallingCode
+              as String?,
+      countryCallingCode: freezed == countryCallingCode
           ? _value.countryCallingCode
           : countryCallingCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      number: null == number
+              as String?,
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -1034,11 +1046,11 @@ class _$_Phone implements _Phone {
       _$$_PhoneFromJson(json);
 
   @override
-  final String deviceType;
+  final String? deviceType;
   @override
-  final String countryCallingCode;
+  final String? countryCallingCode;
   @override
-  final String number;
+  final String? number;
 
   @override
   String toString() {
@@ -1078,18 +1090,18 @@ class _$_Phone implements _Phone {
 
 abstract class _Phone implements Phone {
   const factory _Phone(
-      {required final String deviceType,
-      required final String countryCallingCode,
-      required final String number}) = _$_Phone;
+      {required final String? deviceType,
+      required final String? countryCallingCode,
+      required final String? number}) = _$_Phone;
 
   factory _Phone.fromJson(Map<String, dynamic> json) = _$_Phone.fromJson;
 
   @override
-  String get deviceType;
+  String? get deviceType;
   @override
-  String get countryCallingCode;
+  String? get countryCallingCode;
   @override
-  String get number;
+  String? get number;
   @override
   @JsonKey(ignore: true)
   _$$_PhoneCopyWith<_$_Phone> get copyWith =>

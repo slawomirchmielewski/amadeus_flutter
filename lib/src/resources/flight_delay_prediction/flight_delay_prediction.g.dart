@@ -9,16 +9,16 @@ part of 'flight_delay_prediction.dart';
 _$_FlightDelayPrediction _$$_FlightDelayPredictionFromJson(
         Map<String, dynamic> json) =>
     _$_FlightDelayPrediction(
-      originLocationCode: json['originLocationCode'] as String,
-      destinationLocationCode: json['destinationLocationCode'] as String,
-      departureDate: json['departureDate'] as String,
-      departureTime: json['departureTime'] as String,
-      arrivalDate: json['arrivalDate'] as String,
-      arrivalTime: json['arrivalTime'] as String,
-      aircraftCode: json['aircraftCode'] as String,
-      carrierCode: json['carrierCode'] as String,
-      flightNumber: json['flightNumber'] as String,
-      duration: json['duration'] as String,
+      originLocationCode: json['originLocationCode'] as String?,
+      destinationLocationCode: json['destinationLocationCode'] as String?,
+      departureDate: json['departureDate'] as String?,
+      departureTime: json['departureTime'] as String?,
+      arrivalDate: json['arrivalDate'] as String?,
+      arrivalTime: json['arrivalTime'] as String?,
+      aircraftCode: json['aircraftCode'] as String?,
+      carrierCode: json['carrierCode'] as String?,
+      flightNumber: json['flightNumber'] as String?,
+      duration: json['duration'] as String?,
     );
 
 Map<String, dynamic> _$$_FlightDelayPredictionToJson(

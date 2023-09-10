@@ -8,25 +8,29 @@ part of 'flight_offer_search.dart';
 
 _$_FlightOfferSearch _$$_FlightOfferSearchFromJson(Map<String, dynamic> json) =>
     _$_FlightOfferSearch(
-      type: json['type'] as String,
-      id: json['id'] as String,
-      source: json['source'] as String,
-      instantTicketingRequired: json['instantTicketingRequired'] as bool,
-      nonHomogeneous: json['nonHomogeneous'] as bool,
-      oneWay: json['oneWay'] as bool,
-      lastTicketingDate: json['lastTicketingDate'] as String,
-      numberOfBookableSeats: json['numberOfBookableSeats'] as int,
-      itineraries: (json['itineraries'] as List<dynamic>)
-          .map((e) => Itinerary.fromJson(e as Map<String, dynamic>))
+      type: json['type'] as String?,
+      id: json['id'] as String?,
+      source: json['source'] as String?,
+      instantTicketingRequired: json['instantTicketingRequired'] as bool?,
+      nonHomogeneous: json['nonHomogeneous'] as bool?,
+      oneWay: json['oneWay'] as bool?,
+      lastTicketingDate: json['lastTicketingDate'] as String?,
+      numberOfBookableSeats: json['numberOfBookableSeats'] as int?,
+      itineraries: (json['itineraries'] as List<dynamic>?)
+          ?.map((e) => Itinerary.fromJson(e as Map<String, dynamic>))
           .toList(),
-      price: OfferPrice.fromJson(json['price'] as Map<String, dynamic>),
-      pricingOptions: PricingOptions.fromJson(
-          json['pricingOptions'] as Map<String, dynamic>),
-      validatingAirlineCodes: (json['validatingAirlineCodes'] as List<dynamic>)
-          .map((e) => e as String)
+      price: json['price'] == null
+          ? null
+          : OfferPrice.fromJson(json['price'] as Map<String, dynamic>),
+      pricingOptions: json['pricingOptions'] == null
+          ? null
+          : PricingOptions.fromJson(
+              json['pricingOptions'] as Map<String, dynamic>),
+      validatingAirlineCodes: (json['validatingAirlineCodes'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
-      travelerPricings: (json['travelerPricings'] as List<dynamic>)
-          .map((e) => TravelerPricing.fromJson(e as Map<String, dynamic>))
+      travelerPricings: (json['travelerPricings'] as List<dynamic>?)
+          ?.map((e) => TravelerPricing.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -49,9 +53,9 @@ Map<String, dynamic> _$$_FlightOfferSearchToJson(
     };
 
 _$_Itinerary _$$_ItineraryFromJson(Map<String, dynamic> json) => _$_Itinerary(
-      duration: json['duration'] as String,
-      segments: (json['segments'] as List<dynamic>)
-          .map((e) => Segment.fromJson(e as Map<String, dynamic>))
+      duration: json['duration'] as String?,
+      segments: (json['segments'] as List<dynamic>?)
+          ?.map((e) => Segment.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -62,16 +66,24 @@ Map<String, dynamic> _$$_ItineraryToJson(_$_Itinerary instance) =>
     };
 
 _$_Segment _$$_SegmentFromJson(Map<String, dynamic> json) => _$_Segment(
-      departure: Departure.fromJson(json['departure'] as Map<String, dynamic>),
-      arrival: Departure.fromJson(json['arrival'] as Map<String, dynamic>),
-      carrierCode: json['carrierCode'] as String,
-      number: json['number'] as String,
-      aircraft: Aircraft.fromJson(json['aircraft'] as Map<String, dynamic>),
-      operating: Operating.fromJson(json['operating'] as Map<String, dynamic>),
-      duration: json['duration'] as String,
-      id: json['id'] as String,
-      numberOfStops: json['numberOfStops'] as int,
-      blacklistedInEU: json['blacklistedInEU'] as bool,
+      departure: json['departure'] == null
+          ? null
+          : Departure.fromJson(json['departure'] as Map<String, dynamic>),
+      arrival: json['arrival'] == null
+          ? null
+          : Departure.fromJson(json['arrival'] as Map<String, dynamic>),
+      carrierCode: json['carrierCode'] as String?,
+      number: json['number'] as String?,
+      aircraft: json['aircraft'] == null
+          ? null
+          : Aircraft.fromJson(json['aircraft'] as Map<String, dynamic>),
+      operating: json['operating'] == null
+          ? null
+          : Operating.fromJson(json['operating'] as Map<String, dynamic>),
+      duration: json['duration'] as String?,
+      id: json['id'] as String?,
+      numberOfStops: json['numberOfStops'] as int?,
+      blacklistedInEU: json['blacklistedInEU'] as bool?,
     );
 
 Map<String, dynamic> _$$_SegmentToJson(_$_Segment instance) =>
@@ -89,9 +101,9 @@ Map<String, dynamic> _$$_SegmentToJson(_$_Segment instance) =>
     };
 
 _$_Departure _$$_DepartureFromJson(Map<String, dynamic> json) => _$_Departure(
-      iataCode: json['iataCode'] as String,
-      terminal: json['terminal'] as String,
-      at: json['at'] as String,
+      iataCode: json['iataCode'] as String?,
+      terminal: json['terminal'] as String?,
+      at: json['at'] as String?,
     );
 
 Map<String, dynamic> _$$_DepartureToJson(_$_Departure instance) =>
@@ -102,7 +114,7 @@ Map<String, dynamic> _$$_DepartureToJson(_$_Departure instance) =>
     };
 
 _$_Aircraft _$$_AircraftFromJson(Map<String, dynamic> json) => _$_Aircraft(
-      code: json['code'] as String,
+      code: json['code'] as String?,
     );
 
 Map<String, dynamic> _$$_AircraftToJson(_$_Aircraft instance) =>
@@ -111,7 +123,7 @@ Map<String, dynamic> _$$_AircraftToJson(_$_Aircraft instance) =>
     };
 
 _$_Operating _$$_OperatingFromJson(Map<String, dynamic> json) => _$_Operating(
-      carrierCode: json['carrierCode'] as String,
+      carrierCode: json['carrierCode'] as String?,
     );
 
 Map<String, dynamic> _$$_OperatingToJson(_$_Operating instance) =>
@@ -121,13 +133,13 @@ Map<String, dynamic> _$$_OperatingToJson(_$_Operating instance) =>
 
 _$_OfferPrice _$$_OfferPriceFromJson(Map<String, dynamic> json) =>
     _$_OfferPrice(
-      currency: json['currency'] as String,
-      total: json['total'] as String,
-      base: json['base'] as String,
-      fees: (json['fees'] as List<dynamic>)
-          .map((e) => Fees.fromJson(e as Map<String, dynamic>))
+      currency: json['currency'] as String?,
+      total: json['total'] as String?,
+      base: json['base'] as String?,
+      fees: (json['fees'] as List<dynamic>?)
+          ?.map((e) => Fees.fromJson(e as Map<String, dynamic>))
           .toList(),
-      grandTotal: json['grandTotal'] as String,
+      grandTotal: json['grandTotal'] as String?,
     );
 
 Map<String, dynamic> _$$_OfferPriceToJson(_$_OfferPrice instance) =>
@@ -140,8 +152,8 @@ Map<String, dynamic> _$$_OfferPriceToJson(_$_OfferPrice instance) =>
     };
 
 _$_Fees _$$_FeesFromJson(Map<String, dynamic> json) => _$_Fees(
-      amount: json['amount'] as String,
-      type: json['type'] as String,
+      amount: json['amount'] as String?,
+      type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$_FeesToJson(_$_Fees instance) => <String, dynamic>{
@@ -151,9 +163,10 @@ Map<String, dynamic> _$$_FeesToJson(_$_Fees instance) => <String, dynamic>{
 
 _$_PricingOptions _$$_PricingOptionsFromJson(Map<String, dynamic> json) =>
     _$_PricingOptions(
-      fareType:
-          (json['fareType'] as List<dynamic>).map((e) => e as String).toList(),
-      includedCheckedBagsOnly: json['includedCheckedBagsOnly'] as bool,
+      fareType: (json['fareType'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      includedCheckedBagsOnly: json['includedCheckedBagsOnly'] as bool?,
     );
 
 Map<String, dynamic> _$$_PricingOptionsToJson(_$_PricingOptions instance) =>
@@ -164,12 +177,14 @@ Map<String, dynamic> _$$_PricingOptionsToJson(_$_PricingOptions instance) =>
 
 _$_TravelerPricing _$$_TravelerPricingFromJson(Map<String, dynamic> json) =>
     _$_TravelerPricing(
-      travelerId: json['travelerId'] as String,
-      fareOption: json['fareOption'] as String,
-      travelerType: json['travelerType'] as String,
-      price: OfferPrice.fromJson(json['price'] as Map<String, dynamic>),
-      fareDetailsBySegment: (json['fareDetailsBySegment'] as List<dynamic>)
-          .map((e) => FareDetailsBySegment.fromJson(e as Map<String, dynamic>))
+      travelerId: json['travelerId'] as String?,
+      fareOption: json['fareOption'] as String?,
+      travelerType: json['travelerType'] as String?,
+      price: json['price'] == null
+          ? null
+          : OfferPrice.fromJson(json['price'] as Map<String, dynamic>),
+      fareDetailsBySegment: (json['fareDetailsBySegment'] as List<dynamic>?)
+          ?.map((e) => FareDetailsBySegment.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -185,12 +200,14 @@ Map<String, dynamic> _$$_TravelerPricingToJson(_$_TravelerPricing instance) =>
 _$_FareDetailsBySegment _$$_FareDetailsBySegmentFromJson(
         Map<String, dynamic> json) =>
     _$_FareDetailsBySegment(
-      segmentId: json['segmentId'] as String,
-      cabin: json['cabin'] as String,
-      fareBasis: json['fareBasis'] as String,
-      segmentClass: json['segmentClass'] as String,
-      includedCheckedBags: IncludedCheckedBags.fromJson(
-          json['includedCheckedBags'] as Map<String, dynamic>),
+      segmentId: json['segmentId'] as String?,
+      cabin: json['cabin'] as String?,
+      fareBasis: json['fareBasis'] as String?,
+      segmentClass: json['segmentClass'] as String?,
+      includedCheckedBags: json['includedCheckedBags'] == null
+          ? null
+          : IncludedCheckedBags.fromJson(
+              json['includedCheckedBags'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_FareDetailsBySegmentToJson(
@@ -206,8 +223,8 @@ Map<String, dynamic> _$$_FareDetailsBySegmentToJson(
 _$_IncludedCheckedBags _$$_IncludedCheckedBagsFromJson(
         Map<String, dynamic> json) =>
     _$_IncludedCheckedBags(
-      weight: (json['weight'] as num).toDouble(),
-      weightUnit: json['weightUnit'] as String,
+      weight: (json['weight'] as num?)?.toDouble(),
+      weightUnit: json['weightUnit'] as String?,
     );
 
 Map<String, dynamic> _$$_IncludedCheckedBagsToJson(

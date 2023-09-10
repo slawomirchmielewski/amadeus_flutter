@@ -6,19 +6,19 @@ part 'flight_offer_search.g.dart';
 @freezed
 class FlightOfferSearch with _$FlightOfferSearch {
   const factory FlightOfferSearch({
-    required String type,
-    required String id,
-    required String source,
-    required bool instantTicketingRequired,
-    required bool nonHomogeneous,
-    required bool oneWay,
-    required String lastTicketingDate,
-    required int numberOfBookableSeats,
-    required List<Itinerary> itineraries,
-    required OfferPrice price,
-    required PricingOptions pricingOptions,
-    required List<String> validatingAirlineCodes,
-    required List<TravelerPricing> travelerPricings,
+    required String? type,
+    required String? id,
+    required String? source,
+    required bool? instantTicketingRequired,
+    required bool? nonHomogeneous,
+    required bool? oneWay,
+    required String? lastTicketingDate,
+    required int? numberOfBookableSeats,
+    required List<Itinerary>? itineraries,
+    required OfferPrice? price,
+    required PricingOptions? pricingOptions,
+    required List<String>? validatingAirlineCodes,
+    required List<TravelerPricing>? travelerPricings,
   }) = _FlightOfferSearch;
 
   factory FlightOfferSearch.fromJson(Map<String, Object?> json) =>
@@ -28,8 +28,8 @@ class FlightOfferSearch with _$FlightOfferSearch {
 @freezed
 class Itinerary with _$Itinerary {
   const factory Itinerary({
-    required String duration,
-    required List<Segment> segments,
+    required String? duration,
+    required List<Segment>? segments,
   }) = _Itinerary;
 
   factory Itinerary.fromJson(Map<String, Object?> json) =>
@@ -39,16 +39,16 @@ class Itinerary with _$Itinerary {
 @freezed
 class Segment with _$Segment {
   const factory Segment({
-    required Departure departure,
-    required Departure arrival,
-    required String carrierCode,
-    required String number,
-    required Aircraft aircraft,
-    required Operating operating,
-    required String duration,
-    required String id,
-    required int numberOfStops,
-    required bool blacklistedInEU,
+    required Departure? departure,
+    required Departure? arrival,
+    required String? carrierCode,
+    required String? number,
+    required Aircraft? aircraft,
+    required Operating? operating,
+    required String? duration,
+    required String? id,
+    required int? numberOfStops,
+    required bool? blacklistedInEU,
   }) = _Segment;
 
   factory Segment.fromJson(Map<String, Object?> json) =>
@@ -58,9 +58,9 @@ class Segment with _$Segment {
 @freezed
 class Departure with _$Departure {
   const factory Departure({
-    required String iataCode,
-    required String terminal,
-    required String at,
+    required String? iataCode,
+    required String? terminal,
+    required String? at,
   }) = _Departure;
 
   factory Departure.fromJson(Map<String, Object?> json) =>
@@ -70,7 +70,7 @@ class Departure with _$Departure {
 @freezed
 class Aircraft with _$Aircraft {
   const factory Aircraft({
-    required String code,
+    required String? code,
   }) = _Aircraft;
 
   factory Aircraft.fromJson(Map<String, Object?> json) =>
@@ -79,7 +79,9 @@ class Aircraft with _$Aircraft {
 
 @freezed
 class Operating with _$Operating {
-  const factory Operating({required String carrierCode}) = _Operating;
+  const factory Operating({
+    required String? carrierCode,
+  }) = _Operating;
   factory Operating.fromJson(Map<String, Object?> json) =>
       _$OperatingFromJson(json);
 }
@@ -87,11 +89,11 @@ class Operating with _$Operating {
 @freezed
 class OfferPrice with _$OfferPrice {
   const factory OfferPrice({
-    required String currency,
-    required String total,
-    required String base,
-    required List<Fees> fees,
-    required String grandTotal,
+    required String? currency,
+    required String? total,
+    required String? base,
+    required List<Fees>? fees,
+    required String? grandTotal,
   }) = _OfferPrice;
 
   factory OfferPrice.fromJson(Map<String, Object?> json) =>
@@ -101,8 +103,8 @@ class OfferPrice with _$OfferPrice {
 @freezed
 class Fees with _$Fees {
   const factory Fees({
-    required String amount,
-    required String type,
+    required String? amount,
+    required String? type,
   }) = _Fees;
 
   factory Fees.fromJson(Map<String, Object?> json) => _$FeesFromJson(json);
@@ -111,8 +113,8 @@ class Fees with _$Fees {
 @freezed
 class PricingOptions with _$PricingOptions {
   const factory PricingOptions({
-    required List<String> fareType,
-    required bool includedCheckedBagsOnly,
+    required List<String>? fareType,
+    required bool? includedCheckedBagsOnly,
   }) = _PricingOptions;
 
   factory PricingOptions.fromJson(Map<String, Object?> json) =>
@@ -122,11 +124,11 @@ class PricingOptions with _$PricingOptions {
 @freezed
 class TravelerPricing with _$TravelerPricing {
   const factory TravelerPricing({
-    required String travelerId,
-    required String fareOption,
-    required String travelerType,
-    required OfferPrice price,
-    required List<FareDetailsBySegment> fareDetailsBySegment,
+    required String? travelerId,
+    required String? fareOption,
+    required String? travelerType,
+    required OfferPrice? price,
+    required List<FareDetailsBySegment>? fareDetailsBySegment,
   }) = _TravelerPricing;
 
   factory TravelerPricing.fromJson(Map<String, Object?> json) =>
@@ -136,11 +138,11 @@ class TravelerPricing with _$TravelerPricing {
 @freezed
 class FareDetailsBySegment with _$FareDetailsBySegment {
   const factory FareDetailsBySegment({
-    required String segmentId,
-    required String cabin,
-    required String fareBasis,
-    required String segmentClass,
-    required IncludedCheckedBags includedCheckedBags,
+    required String? segmentId,
+    required String? cabin,
+    required String? fareBasis,
+    required String? segmentClass,
+    required IncludedCheckedBags? includedCheckedBags,
   }) = _FareDetailsBySegment;
 
   factory FareDetailsBySegment.fromJson(Map<String, Object?> json) =>
@@ -150,8 +152,8 @@ class FareDetailsBySegment with _$FareDetailsBySegment {
 @freezed
 class IncludedCheckedBags with _$IncludedCheckedBags {
   const factory IncludedCheckedBags({
-    required double weight,
-    required String weightUnit,
+    required double? weight,
+    required String? weightUnit,
   }) = _IncludedCheckedBags;
 
   factory IncludedCheckedBags.fromJson(Map<String, Object?> json) =>

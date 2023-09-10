@@ -8,18 +8,20 @@ part of 'flight_offers_body.dart';
 
 _$_FlightOffersBody _$$_FlightOffersBodyFromJson(Map<String, dynamic> json) =>
     _$_FlightOffersBody(
-      currencyCode: json['currencyCode'] as String,
-      originDestinations: (json['originDestinations'] as List<dynamic>)
-          .map((e) =>
+      currencyCode: json['currencyCode'] as String?,
+      originDestinations: (json['originDestinations'] as List<dynamic>?)
+          ?.map((e) =>
               OffersOriginDestination.fromJson(e as Map<String, dynamic>))
           .toList(),
-      travelers: (json['travelers'] as List<dynamic>)
-          .map((e) => OfferBodyTraveler.fromJson(e as Map<String, dynamic>))
+      travelers: (json['travelers'] as List<dynamic>?)
+          ?.map((e) => OfferBodyTraveler.fromJson(e as Map<String, dynamic>))
           .toList(),
       sources:
-          (json['sources'] as List<dynamic>).map((e) => e as String).toList(),
-      searchCriteria: SearchCriteria.fromJson(
-          json['searchCriteria'] as Map<String, dynamic>),
+          (json['sources'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      searchCriteria: json['searchCriteria'] == null
+          ? null
+          : SearchCriteria.fromJson(
+              json['searchCriteria'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_FlightOffersBodyToJson(_$_FlightOffersBody instance) =>
@@ -34,11 +36,13 @@ Map<String, dynamic> _$$_FlightOffersBodyToJson(_$_FlightOffersBody instance) =>
 _$_OffersOriginDestination _$$_OffersOriginDestinationFromJson(
         Map<String, dynamic> json) =>
     _$_OffersOriginDestination(
-      id: json['id'] as String,
-      originLocationCode: json['originLocationCode'] as String,
-      destinationLocationCode: json['destinationLocationCode'] as String,
-      departureDateTimeRange: DepartureDateTimeRange.fromJson(
-          json['departureDateTimeRange'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      originLocationCode: json['originLocationCode'] as String?,
+      destinationLocationCode: json['destinationLocationCode'] as String?,
+      departureDateTimeRange: json['departureDateTimeRange'] == null
+          ? null
+          : DepartureDateTimeRange.fromJson(
+              json['departureDateTimeRange'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_OffersOriginDestinationToJson(
@@ -53,8 +57,8 @@ Map<String, dynamic> _$$_OffersOriginDestinationToJson(
 _$_DepartureDateTimeRange _$$_DepartureDateTimeRangeFromJson(
         Map<String, dynamic> json) =>
     _$_DepartureDateTimeRange(
-      date: json['date'] as String,
-      time: json['time'] as String,
+      date: json['date'] as String?,
+      time: json['time'] as String?,
     );
 
 Map<String, dynamic> _$$_DepartureDateTimeRangeToJson(
@@ -66,8 +70,8 @@ Map<String, dynamic> _$$_DepartureDateTimeRangeToJson(
 
 _$_OfferBodyTraveler _$$_OfferBodyTravelerFromJson(Map<String, dynamic> json) =>
     _$_OfferBodyTraveler(
-      id: json['id'] as String,
-      travelerType: json['travelerType'] as String,
+      id: json['id'] as String?,
+      travelerType: json['travelerType'] as String?,
     );
 
 Map<String, dynamic> _$$_OfferBodyTravelerToJson(
@@ -79,9 +83,11 @@ Map<String, dynamic> _$$_OfferBodyTravelerToJson(
 
 _$_SearchCriteria _$$_SearchCriteriaFromJson(Map<String, dynamic> json) =>
     _$_SearchCriteria(
-      maxFlightOffers: json['maxFlightOffers'] as int,
-      flightFilters:
-          FlightFilters.fromJson(json['flightFilters'] as Map<String, dynamic>),
+      maxFlightOffers: json['maxFlightOffers'] as int?,
+      flightFilters: json['flightFilters'] == null
+          ? null
+          : FlightFilters.fromJson(
+              json['flightFilters'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_SearchCriteriaToJson(_$_SearchCriteria instance) =>
@@ -92,11 +98,13 @@ Map<String, dynamic> _$$_SearchCriteriaToJson(_$_SearchCriteria instance) =>
 
 _$_FlightFilters _$$_FlightFiltersFromJson(Map<String, dynamic> json) =>
     _$_FlightFilters(
-      cabinRestrictions: (json['cabinRestrictions'] as List<dynamic>)
-          .map((e) => CabinRestriction.fromJson(e as Map<String, dynamic>))
+      cabinRestrictions: (json['cabinRestrictions'] as List<dynamic>?)
+          ?.map((e) => CabinRestriction.fromJson(e as Map<String, dynamic>))
           .toList(),
-      carrierRestrictions: CarrierRestrictions.fromJson(
-          json['carrierRestrictions'] as Map<String, dynamic>),
+      carrierRestrictions: json['carrierRestrictions'] == null
+          ? null
+          : CarrierRestrictions.fromJson(
+              json['carrierRestrictions'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_FlightFiltersToJson(_$_FlightFilters instance) =>
@@ -107,10 +115,10 @@ Map<String, dynamic> _$$_FlightFiltersToJson(_$_FlightFilters instance) =>
 
 _$_CabinRestriction _$$_CabinRestrictionFromJson(Map<String, dynamic> json) =>
     _$_CabinRestriction(
-      cabin: json['cabin'] as String,
-      coverage: json['coverage'] as String,
-      originDestinationIds: (json['originDestinationIds'] as List<dynamic>)
-          .map((e) => e as String)
+      cabin: json['cabin'] as String?,
+      coverage: json['coverage'] as String?,
+      originDestinationIds: (json['originDestinationIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
     );
 
@@ -124,8 +132,8 @@ Map<String, dynamic> _$$_CabinRestrictionToJson(_$_CabinRestriction instance) =>
 _$_CarrierRestrictions _$$_CarrierRestrictionsFromJson(
         Map<String, dynamic> json) =>
     _$_CarrierRestrictions(
-      excludedCarrierCodes: (json['excludedCarrierCodes'] as List<dynamic>)
-          .map((e) => e as String)
+      excludedCarrierCodes: (json['excludedCarrierCodes'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
     );
 

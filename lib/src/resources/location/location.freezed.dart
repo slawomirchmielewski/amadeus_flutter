@@ -20,17 +20,17 @@ Location _$LocationFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Location {
-  String get type => throw _privateConstructorUsedError;
-  String get subType => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get detailedName => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
-  Self get self => throw _privateConstructorUsedError;
-  String get timeZoneOffset => throw _privateConstructorUsedError;
-  String get iataCode => throw _privateConstructorUsedError;
-  GeoCode get geoCode => throw _privateConstructorUsedError;
-  Address get address => throw _privateConstructorUsedError;
-  Analytics get analytics => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
+  String? get subType => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get detailedName => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  Self? get self => throw _privateConstructorUsedError;
+  String? get timeZoneOffset => throw _privateConstructorUsedError;
+  String? get iataCode => throw _privateConstructorUsedError;
+  GeoCode? get geoCode => throw _privateConstructorUsedError;
+  Address? get address => throw _privateConstructorUsedError;
+  Analytics? get analytics => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,22 +44,22 @@ abstract class $LocationCopyWith<$Res> {
       _$LocationCopyWithImpl<$Res, Location>;
   @useResult
   $Res call(
-      {String type,
-      String subType,
-      String name,
-      String detailedName,
-      String id,
-      Self self,
-      String timeZoneOffset,
-      String iataCode,
-      GeoCode geoCode,
-      Address address,
-      Analytics analytics});
+      {String? type,
+      String? subType,
+      String? name,
+      String? detailedName,
+      String? id,
+      Self? self,
+      String? timeZoneOffset,
+      String? iataCode,
+      GeoCode? geoCode,
+      Address? address,
+      Analytics? analytics});
 
-  $SelfCopyWith<$Res> get self;
-  $GeoCodeCopyWith<$Res> get geoCode;
-  $AddressCopyWith<$Res> get address;
-  $AnalyticsCopyWith<$Res> get analytics;
+  $SelfCopyWith<$Res>? get self;
+  $GeoCodeCopyWith<$Res>? get geoCode;
+  $AddressCopyWith<$Res>? get address;
+  $AnalyticsCopyWith<$Res>? get analytics;
 }
 
 /// @nodoc
@@ -75,94 +75,110 @@ class _$LocationCopyWithImpl<$Res, $Val extends Location>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
-    Object? subType = null,
-    Object? name = null,
-    Object? detailedName = null,
-    Object? id = null,
-    Object? self = null,
-    Object? timeZoneOffset = null,
-    Object? iataCode = null,
-    Object? geoCode = null,
-    Object? address = null,
-    Object? analytics = null,
+    Object? type = freezed,
+    Object? subType = freezed,
+    Object? name = freezed,
+    Object? detailedName = freezed,
+    Object? id = freezed,
+    Object? self = freezed,
+    Object? timeZoneOffset = freezed,
+    Object? iataCode = freezed,
+    Object? geoCode = freezed,
+    Object? address = freezed,
+    Object? analytics = freezed,
   }) {
     return _then(_value.copyWith(
-      type: null == type
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      subType: null == subType
+              as String?,
+      subType: freezed == subType
           ? _value.subType
           : subType // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      detailedName: null == detailedName
+              as String?,
+      detailedName: freezed == detailedName
           ? _value.detailedName
           : detailedName // ignore: cast_nullable_to_non_nullable
-              as String,
-      id: null == id
+              as String?,
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      self: null == self
+              as String?,
+      self: freezed == self
           ? _value.self
           : self // ignore: cast_nullable_to_non_nullable
-              as Self,
-      timeZoneOffset: null == timeZoneOffset
+              as Self?,
+      timeZoneOffset: freezed == timeZoneOffset
           ? _value.timeZoneOffset
           : timeZoneOffset // ignore: cast_nullable_to_non_nullable
-              as String,
-      iataCode: null == iataCode
+              as String?,
+      iataCode: freezed == iataCode
           ? _value.iataCode
           : iataCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      geoCode: null == geoCode
+              as String?,
+      geoCode: freezed == geoCode
           ? _value.geoCode
           : geoCode // ignore: cast_nullable_to_non_nullable
-              as GeoCode,
-      address: null == address
+              as GeoCode?,
+      address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as Address,
-      analytics: null == analytics
+              as Address?,
+      analytics: freezed == analytics
           ? _value.analytics
           : analytics // ignore: cast_nullable_to_non_nullable
-              as Analytics,
+              as Analytics?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $SelfCopyWith<$Res> get self {
-    return $SelfCopyWith<$Res>(_value.self, (value) {
+  $SelfCopyWith<$Res>? get self {
+    if (_value.self == null) {
+      return null;
+    }
+
+    return $SelfCopyWith<$Res>(_value.self!, (value) {
       return _then(_value.copyWith(self: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $GeoCodeCopyWith<$Res> get geoCode {
-    return $GeoCodeCopyWith<$Res>(_value.geoCode, (value) {
+  $GeoCodeCopyWith<$Res>? get geoCode {
+    if (_value.geoCode == null) {
+      return null;
+    }
+
+    return $GeoCodeCopyWith<$Res>(_value.geoCode!, (value) {
       return _then(_value.copyWith(geoCode: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $AddressCopyWith<$Res> get address {
-    return $AddressCopyWith<$Res>(_value.address, (value) {
+  $AddressCopyWith<$Res>? get address {
+    if (_value.address == null) {
+      return null;
+    }
+
+    return $AddressCopyWith<$Res>(_value.address!, (value) {
       return _then(_value.copyWith(address: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $AnalyticsCopyWith<$Res> get analytics {
-    return $AnalyticsCopyWith<$Res>(_value.analytics, (value) {
+  $AnalyticsCopyWith<$Res>? get analytics {
+    if (_value.analytics == null) {
+      return null;
+    }
+
+    return $AnalyticsCopyWith<$Res>(_value.analytics!, (value) {
       return _then(_value.copyWith(analytics: value) as $Val);
     });
   }
@@ -176,26 +192,26 @@ abstract class _$$_LocationCopyWith<$Res> implements $LocationCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String type,
-      String subType,
-      String name,
-      String detailedName,
-      String id,
-      Self self,
-      String timeZoneOffset,
-      String iataCode,
-      GeoCode geoCode,
-      Address address,
-      Analytics analytics});
+      {String? type,
+      String? subType,
+      String? name,
+      String? detailedName,
+      String? id,
+      Self? self,
+      String? timeZoneOffset,
+      String? iataCode,
+      GeoCode? geoCode,
+      Address? address,
+      Analytics? analytics});
 
   @override
-  $SelfCopyWith<$Res> get self;
+  $SelfCopyWith<$Res>? get self;
   @override
-  $GeoCodeCopyWith<$Res> get geoCode;
+  $GeoCodeCopyWith<$Res>? get geoCode;
   @override
-  $AddressCopyWith<$Res> get address;
+  $AddressCopyWith<$Res>? get address;
   @override
-  $AnalyticsCopyWith<$Res> get analytics;
+  $AnalyticsCopyWith<$Res>? get analytics;
 }
 
 /// @nodoc
@@ -209,63 +225,63 @@ class __$$_LocationCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
-    Object? subType = null,
-    Object? name = null,
-    Object? detailedName = null,
-    Object? id = null,
-    Object? self = null,
-    Object? timeZoneOffset = null,
-    Object? iataCode = null,
-    Object? geoCode = null,
-    Object? address = null,
-    Object? analytics = null,
+    Object? type = freezed,
+    Object? subType = freezed,
+    Object? name = freezed,
+    Object? detailedName = freezed,
+    Object? id = freezed,
+    Object? self = freezed,
+    Object? timeZoneOffset = freezed,
+    Object? iataCode = freezed,
+    Object? geoCode = freezed,
+    Object? address = freezed,
+    Object? analytics = freezed,
   }) {
     return _then(_$_Location(
-      type: null == type
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      subType: null == subType
+              as String?,
+      subType: freezed == subType
           ? _value.subType
           : subType // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      detailedName: null == detailedName
+              as String?,
+      detailedName: freezed == detailedName
           ? _value.detailedName
           : detailedName // ignore: cast_nullable_to_non_nullable
-              as String,
-      id: null == id
+              as String?,
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      self: null == self
+              as String?,
+      self: freezed == self
           ? _value.self
           : self // ignore: cast_nullable_to_non_nullable
-              as Self,
-      timeZoneOffset: null == timeZoneOffset
+              as Self?,
+      timeZoneOffset: freezed == timeZoneOffset
           ? _value.timeZoneOffset
           : timeZoneOffset // ignore: cast_nullable_to_non_nullable
-              as String,
-      iataCode: null == iataCode
+              as String?,
+      iataCode: freezed == iataCode
           ? _value.iataCode
           : iataCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      geoCode: null == geoCode
+              as String?,
+      geoCode: freezed == geoCode
           ? _value.geoCode
           : geoCode // ignore: cast_nullable_to_non_nullable
-              as GeoCode,
-      address: null == address
+              as GeoCode?,
+      address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as Address,
-      analytics: null == analytics
+              as Address?,
+      analytics: freezed == analytics
           ? _value.analytics
           : analytics // ignore: cast_nullable_to_non_nullable
-              as Analytics,
+              as Analytics?,
     ));
   }
 }
@@ -290,27 +306,27 @@ class _$_Location implements _Location {
       _$$_LocationFromJson(json);
 
   @override
-  final String type;
+  final String? type;
   @override
-  final String subType;
+  final String? subType;
   @override
-  final String name;
+  final String? name;
   @override
-  final String detailedName;
+  final String? detailedName;
   @override
-  final String id;
+  final String? id;
   @override
-  final Self self;
+  final Self? self;
   @override
-  final String timeZoneOffset;
+  final String? timeZoneOffset;
   @override
-  final String iataCode;
+  final String? iataCode;
   @override
-  final GeoCode geoCode;
+  final GeoCode? geoCode;
   @override
-  final Address address;
+  final Address? address;
   @override
-  final Analytics analytics;
+  final Analytics? analytics;
 
   @override
   String toString() {
@@ -371,42 +387,42 @@ class _$_Location implements _Location {
 
 abstract class _Location implements Location {
   const factory _Location(
-      {required final String type,
-      required final String subType,
-      required final String name,
-      required final String detailedName,
-      required final String id,
-      required final Self self,
-      required final String timeZoneOffset,
-      required final String iataCode,
-      required final GeoCode geoCode,
-      required final Address address,
-      required final Analytics analytics}) = _$_Location;
+      {required final String? type,
+      required final String? subType,
+      required final String? name,
+      required final String? detailedName,
+      required final String? id,
+      required final Self? self,
+      required final String? timeZoneOffset,
+      required final String? iataCode,
+      required final GeoCode? geoCode,
+      required final Address? address,
+      required final Analytics? analytics}) = _$_Location;
 
   factory _Location.fromJson(Map<String, dynamic> json) = _$_Location.fromJson;
 
   @override
-  String get type;
+  String? get type;
   @override
-  String get subType;
+  String? get subType;
   @override
-  String get name;
+  String? get name;
   @override
-  String get detailedName;
+  String? get detailedName;
   @override
-  String get id;
+  String? get id;
   @override
-  Self get self;
+  Self? get self;
   @override
-  String get timeZoneOffset;
+  String? get timeZoneOffset;
   @override
-  String get iataCode;
+  String? get iataCode;
   @override
-  GeoCode get geoCode;
+  GeoCode? get geoCode;
   @override
-  Address get address;
+  Address? get address;
   @override
-  Analytics get analytics;
+  Analytics? get analytics;
   @override
   @JsonKey(ignore: true)
   _$$_LocationCopyWith<_$_Location> get copyWith =>
@@ -419,8 +435,8 @@ Self _$SelfFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Self {
-  String get href => throw _privateConstructorUsedError;
-  List<String> get methods => throw _privateConstructorUsedError;
+  String? get href => throw _privateConstructorUsedError;
+  List<String>? get methods => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -432,7 +448,7 @@ abstract class $SelfCopyWith<$Res> {
   factory $SelfCopyWith(Self value, $Res Function(Self) then) =
       _$SelfCopyWithImpl<$Res, Self>;
   @useResult
-  $Res call({String href, List<String> methods});
+  $Res call({String? href, List<String>? methods});
 }
 
 /// @nodoc
@@ -448,18 +464,18 @@ class _$SelfCopyWithImpl<$Res, $Val extends Self>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? href = null,
-    Object? methods = null,
+    Object? href = freezed,
+    Object? methods = freezed,
   }) {
     return _then(_value.copyWith(
-      href: null == href
+      href: freezed == href
           ? _value.href
           : href // ignore: cast_nullable_to_non_nullable
-              as String,
-      methods: null == methods
+              as String?,
+      methods: freezed == methods
           ? _value.methods
           : methods // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
     ) as $Val);
   }
 }
@@ -470,7 +486,7 @@ abstract class _$$_SelfCopyWith<$Res> implements $SelfCopyWith<$Res> {
       __$$_SelfCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String href, List<String> methods});
+  $Res call({String? href, List<String>? methods});
 }
 
 /// @nodoc
@@ -482,18 +498,18 @@ class __$$_SelfCopyWithImpl<$Res> extends _$SelfCopyWithImpl<$Res, _$_Self>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? href = null,
-    Object? methods = null,
+    Object? href = freezed,
+    Object? methods = freezed,
   }) {
     return _then(_$_Self(
-      href: null == href
+      href: freezed == href
           ? _value.href
           : href // ignore: cast_nullable_to_non_nullable
-              as String,
-      methods: null == methods
+              as String?,
+      methods: freezed == methods
           ? _value._methods
           : methods // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
     ));
   }
 }
@@ -501,19 +517,21 @@ class __$$_SelfCopyWithImpl<$Res> extends _$SelfCopyWithImpl<$Res, _$_Self>
 /// @nodoc
 @JsonSerializable()
 class _$_Self implements _Self {
-  const _$_Self({required this.href, required final List<String> methods})
+  const _$_Self({required this.href, required final List<String>? methods})
       : _methods = methods;
 
   factory _$_Self.fromJson(Map<String, dynamic> json) => _$$_SelfFromJson(json);
 
   @override
-  final String href;
-  final List<String> _methods;
+  final String? href;
+  final List<String>? _methods;
   @override
-  List<String> get methods {
+  List<String>? get methods {
+    final value = _methods;
+    if (value == null) return null;
     if (_methods is EqualUnmodifiableListView) return _methods;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_methods);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -551,15 +569,15 @@ class _$_Self implements _Self {
 
 abstract class _Self implements Self {
   const factory _Self(
-      {required final String href,
-      required final List<String> methods}) = _$_Self;
+      {required final String? href,
+      required final List<String>? methods}) = _$_Self;
 
   factory _Self.fromJson(Map<String, dynamic> json) = _$_Self.fromJson;
 
   @override
-  String get href;
+  String? get href;
   @override
-  List<String> get methods;
+  List<String>? get methods;
   @override
   @JsonKey(ignore: true)
   _$$_SelfCopyWith<_$_Self> get copyWith => throw _privateConstructorUsedError;
@@ -571,8 +589,8 @@ GeoCode _$GeoCodeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GeoCode {
-  double get latitude => throw _privateConstructorUsedError;
-  double get longitude => throw _privateConstructorUsedError;
+  double? get latitude => throw _privateConstructorUsedError;
+  double? get longitude => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -584,7 +602,7 @@ abstract class $GeoCodeCopyWith<$Res> {
   factory $GeoCodeCopyWith(GeoCode value, $Res Function(GeoCode) then) =
       _$GeoCodeCopyWithImpl<$Res, GeoCode>;
   @useResult
-  $Res call({double latitude, double longitude});
+  $Res call({double? latitude, double? longitude});
 }
 
 /// @nodoc
@@ -600,18 +618,18 @@ class _$GeoCodeCopyWithImpl<$Res, $Val extends GeoCode>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? latitude = null,
-    Object? longitude = null,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
   }) {
     return _then(_value.copyWith(
-      latitude: null == latitude
+      latitude: freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
-              as double,
-      longitude: null == longitude
+              as double?,
+      longitude: freezed == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
     ) as $Val);
   }
 }
@@ -623,7 +641,7 @@ abstract class _$$_GeoCodeCopyWith<$Res> implements $GeoCodeCopyWith<$Res> {
       __$$_GeoCodeCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double latitude, double longitude});
+  $Res call({double? latitude, double? longitude});
 }
 
 /// @nodoc
@@ -636,18 +654,18 @@ class __$$_GeoCodeCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? latitude = null,
-    Object? longitude = null,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
   }) {
     return _then(_$_GeoCode(
-      latitude: null == latitude
+      latitude: freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
-              as double,
-      longitude: null == longitude
+              as double?,
+      longitude: freezed == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
     ));
   }
 }
@@ -661,9 +679,9 @@ class _$_GeoCode implements _GeoCode {
       _$$_GeoCodeFromJson(json);
 
   @override
-  final double latitude;
+  final double? latitude;
   @override
-  final double longitude;
+  final double? longitude;
 
   @override
   String toString() {
@@ -701,15 +719,15 @@ class _$_GeoCode implements _GeoCode {
 
 abstract class _GeoCode implements GeoCode {
   const factory _GeoCode(
-      {required final double latitude,
-      required final double longitude}) = _$_GeoCode;
+      {required final double? latitude,
+      required final double? longitude}) = _$_GeoCode;
 
   factory _GeoCode.fromJson(Map<String, dynamic> json) = _$_GeoCode.fromJson;
 
   @override
-  double get latitude;
+  double? get latitude;
   @override
-  double get longitude;
+  double? get longitude;
   @override
   @JsonKey(ignore: true)
   _$$_GeoCodeCopyWith<_$_GeoCode> get copyWith =>
@@ -722,12 +740,12 @@ Address _$AddressFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Address {
-  String get cityName => throw _privateConstructorUsedError;
-  String get cityCode => throw _privateConstructorUsedError;
-  String get countryName => throw _privateConstructorUsedError;
-  String get countryCode => throw _privateConstructorUsedError;
-  String get stateCode => throw _privateConstructorUsedError;
-  String get regionCode => throw _privateConstructorUsedError;
+  String? get cityName => throw _privateConstructorUsedError;
+  String? get cityCode => throw _privateConstructorUsedError;
+  String? get countryName => throw _privateConstructorUsedError;
+  String? get countryCode => throw _privateConstructorUsedError;
+  String? get stateCode => throw _privateConstructorUsedError;
+  String? get regionCode => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -740,12 +758,12 @@ abstract class $AddressCopyWith<$Res> {
       _$AddressCopyWithImpl<$Res, Address>;
   @useResult
   $Res call(
-      {String cityName,
-      String cityCode,
-      String countryName,
-      String countryCode,
-      String stateCode,
-      String regionCode});
+      {String? cityName,
+      String? cityCode,
+      String? countryName,
+      String? countryCode,
+      String? stateCode,
+      String? regionCode});
 }
 
 /// @nodoc
@@ -761,38 +779,38 @@ class _$AddressCopyWithImpl<$Res, $Val extends Address>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cityName = null,
-    Object? cityCode = null,
-    Object? countryName = null,
-    Object? countryCode = null,
-    Object? stateCode = null,
-    Object? regionCode = null,
+    Object? cityName = freezed,
+    Object? cityCode = freezed,
+    Object? countryName = freezed,
+    Object? countryCode = freezed,
+    Object? stateCode = freezed,
+    Object? regionCode = freezed,
   }) {
     return _then(_value.copyWith(
-      cityName: null == cityName
+      cityName: freezed == cityName
           ? _value.cityName
           : cityName // ignore: cast_nullable_to_non_nullable
-              as String,
-      cityCode: null == cityCode
+              as String?,
+      cityCode: freezed == cityCode
           ? _value.cityCode
           : cityCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      countryName: null == countryName
+              as String?,
+      countryName: freezed == countryName
           ? _value.countryName
           : countryName // ignore: cast_nullable_to_non_nullable
-              as String,
-      countryCode: null == countryCode
+              as String?,
+      countryCode: freezed == countryCode
           ? _value.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      stateCode: null == stateCode
+              as String?,
+      stateCode: freezed == stateCode
           ? _value.stateCode
           : stateCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      regionCode: null == regionCode
+              as String?,
+      regionCode: freezed == regionCode
           ? _value.regionCode
           : regionCode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -805,12 +823,12 @@ abstract class _$$_AddressCopyWith<$Res> implements $AddressCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String cityName,
-      String cityCode,
-      String countryName,
-      String countryCode,
-      String stateCode,
-      String regionCode});
+      {String? cityName,
+      String? cityCode,
+      String? countryName,
+      String? countryCode,
+      String? stateCode,
+      String? regionCode});
 }
 
 /// @nodoc
@@ -823,38 +841,38 @@ class __$$_AddressCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cityName = null,
-    Object? cityCode = null,
-    Object? countryName = null,
-    Object? countryCode = null,
-    Object? stateCode = null,
-    Object? regionCode = null,
+    Object? cityName = freezed,
+    Object? cityCode = freezed,
+    Object? countryName = freezed,
+    Object? countryCode = freezed,
+    Object? stateCode = freezed,
+    Object? regionCode = freezed,
   }) {
     return _then(_$_Address(
-      cityName: null == cityName
+      cityName: freezed == cityName
           ? _value.cityName
           : cityName // ignore: cast_nullable_to_non_nullable
-              as String,
-      cityCode: null == cityCode
+              as String?,
+      cityCode: freezed == cityCode
           ? _value.cityCode
           : cityCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      countryName: null == countryName
+              as String?,
+      countryName: freezed == countryName
           ? _value.countryName
           : countryName // ignore: cast_nullable_to_non_nullable
-              as String,
-      countryCode: null == countryCode
+              as String?,
+      countryCode: freezed == countryCode
           ? _value.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      stateCode: null == stateCode
+              as String?,
+      stateCode: freezed == stateCode
           ? _value.stateCode
           : stateCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      regionCode: null == regionCode
+              as String?,
+      regionCode: freezed == regionCode
           ? _value.regionCode
           : regionCode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -874,17 +892,17 @@ class _$_Address implements _Address {
       _$$_AddressFromJson(json);
 
   @override
-  final String cityName;
+  final String? cityName;
   @override
-  final String cityCode;
+  final String? cityCode;
   @override
-  final String countryName;
+  final String? countryName;
   @override
-  final String countryCode;
+  final String? countryCode;
   @override
-  final String stateCode;
+  final String? stateCode;
   @override
-  final String regionCode;
+  final String? regionCode;
 
   @override
   String toString() {
@@ -931,27 +949,27 @@ class _$_Address implements _Address {
 
 abstract class _Address implements Address {
   const factory _Address(
-      {required final String cityName,
-      required final String cityCode,
-      required final String countryName,
-      required final String countryCode,
-      required final String stateCode,
-      required final String regionCode}) = _$_Address;
+      {required final String? cityName,
+      required final String? cityCode,
+      required final String? countryName,
+      required final String? countryCode,
+      required final String? stateCode,
+      required final String? regionCode}) = _$_Address;
 
   factory _Address.fromJson(Map<String, dynamic> json) = _$_Address.fromJson;
 
   @override
-  String get cityName;
+  String? get cityName;
   @override
-  String get cityCode;
+  String? get cityCode;
   @override
-  String get countryName;
+  String? get countryName;
   @override
-  String get countryCode;
+  String? get countryCode;
   @override
-  String get stateCode;
+  String? get stateCode;
   @override
-  String get regionCode;
+  String? get regionCode;
   @override
   @JsonKey(ignore: true)
   _$$_AddressCopyWith<_$_Address> get copyWith =>
@@ -964,7 +982,7 @@ Analytics _$AnalyticsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Analytics {
-  Travelers get travelers => throw _privateConstructorUsedError;
+  Travelers? get travelers => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -977,9 +995,9 @@ abstract class $AnalyticsCopyWith<$Res> {
   factory $AnalyticsCopyWith(Analytics value, $Res Function(Analytics) then) =
       _$AnalyticsCopyWithImpl<$Res, Analytics>;
   @useResult
-  $Res call({Travelers travelers});
+  $Res call({Travelers? travelers});
 
-  $TravelersCopyWith<$Res> get travelers;
+  $TravelersCopyWith<$Res>? get travelers;
 }
 
 /// @nodoc
@@ -995,20 +1013,24 @@ class _$AnalyticsCopyWithImpl<$Res, $Val extends Analytics>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? travelers = null,
+    Object? travelers = freezed,
   }) {
     return _then(_value.copyWith(
-      travelers: null == travelers
+      travelers: freezed == travelers
           ? _value.travelers
           : travelers // ignore: cast_nullable_to_non_nullable
-              as Travelers,
+              as Travelers?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $TravelersCopyWith<$Res> get travelers {
-    return $TravelersCopyWith<$Res>(_value.travelers, (value) {
+  $TravelersCopyWith<$Res>? get travelers {
+    if (_value.travelers == null) {
+      return null;
+    }
+
+    return $TravelersCopyWith<$Res>(_value.travelers!, (value) {
       return _then(_value.copyWith(travelers: value) as $Val);
     });
   }
@@ -1021,10 +1043,10 @@ abstract class _$$_AnalyticsCopyWith<$Res> implements $AnalyticsCopyWith<$Res> {
       __$$_AnalyticsCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Travelers travelers});
+  $Res call({Travelers? travelers});
 
   @override
-  $TravelersCopyWith<$Res> get travelers;
+  $TravelersCopyWith<$Res>? get travelers;
 }
 
 /// @nodoc
@@ -1038,13 +1060,13 @@ class __$$_AnalyticsCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? travelers = null,
+    Object? travelers = freezed,
   }) {
     return _then(_$_Analytics(
-      travelers: null == travelers
+      travelers: freezed == travelers
           ? _value.travelers
           : travelers // ignore: cast_nullable_to_non_nullable
-              as Travelers,
+              as Travelers?,
     ));
   }
 }
@@ -1058,7 +1080,7 @@ class _$_Analytics implements _Analytics {
       _$$_AnalyticsFromJson(json);
 
   @override
-  final Travelers travelers;
+  final Travelers? travelers;
 
   @override
   String toString() {
@@ -1093,13 +1115,14 @@ class _$_Analytics implements _Analytics {
 }
 
 abstract class _Analytics implements Analytics {
-  const factory _Analytics({required final Travelers travelers}) = _$_Analytics;
+  const factory _Analytics({required final Travelers? travelers}) =
+      _$_Analytics;
 
   factory _Analytics.fromJson(Map<String, dynamic> json) =
       _$_Analytics.fromJson;
 
   @override
-  Travelers get travelers;
+  Travelers? get travelers;
   @override
   @JsonKey(ignore: true)
   _$$_AnalyticsCopyWith<_$_Analytics> get copyWith =>
@@ -1112,7 +1135,7 @@ Travelers _$TravelersFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Travelers {
-  int get score => throw _privateConstructorUsedError;
+  int? get score => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1125,7 +1148,7 @@ abstract class $TravelersCopyWith<$Res> {
   factory $TravelersCopyWith(Travelers value, $Res Function(Travelers) then) =
       _$TravelersCopyWithImpl<$Res, Travelers>;
   @useResult
-  $Res call({int score});
+  $Res call({int? score});
 }
 
 /// @nodoc
@@ -1141,13 +1164,13 @@ class _$TravelersCopyWithImpl<$Res, $Val extends Travelers>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? score = null,
+    Object? score = freezed,
   }) {
     return _then(_value.copyWith(
-      score: null == score
+      score: freezed == score
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ) as $Val);
   }
 }
@@ -1159,7 +1182,7 @@ abstract class _$$_TravelersCopyWith<$Res> implements $TravelersCopyWith<$Res> {
       __$$_TravelersCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int score});
+  $Res call({int? score});
 }
 
 /// @nodoc
@@ -1173,13 +1196,13 @@ class __$$_TravelersCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? score = null,
+    Object? score = freezed,
   }) {
     return _then(_$_Travelers(
-      score: null == score
+      score: freezed == score
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -1193,7 +1216,7 @@ class _$_Travelers implements _Travelers {
       _$$_TravelersFromJson(json);
 
   @override
-  final int score;
+  final int? score;
 
   @override
   String toString() {
@@ -1227,13 +1250,13 @@ class _$_Travelers implements _Travelers {
 }
 
 abstract class _Travelers implements Travelers {
-  const factory _Travelers({required final int score}) = _$_Travelers;
+  const factory _Travelers({required final int? score}) = _$_Travelers;
 
   factory _Travelers.fromJson(Map<String, dynamic> json) =
       _$_Travelers.fromJson;
 
   @override
-  int get score;
+  int? get score;
   @override
   @JsonKey(ignore: true)
   _$$_TravelersCopyWith<_$_Travelers> get copyWith =>

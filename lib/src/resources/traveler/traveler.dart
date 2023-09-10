@@ -6,12 +6,12 @@ part 'traveler.g.dart';
 @freezed
 class Traveler with _$Traveler {
   const factory Traveler({
-    required String id,
-    required String dateOfBirth,
-    required String gender,
-    required Name name,
-    required List<Document> documents,
-    required Contact contact,
+    required String? id,
+    required String? dateOfBirth,
+    required String? gender,
+    required Name? name,
+    required List<Document>? documents,
+    required Contact? contact,
   }) = _Traveler;
 
   factory Traveler.fromJson(Map<String, Object?> json) =>
@@ -20,8 +20,10 @@ class Traveler with _$Traveler {
 
 @freezed
 class Name with _$Name {
-  const factory Name({required String firstName, required String lastName}) =
-      _Name;
+  const factory Name({
+    required String? firstName,
+    required String? lastName,
+  }) = _Name;
 
   factory Name.fromJson(Map<String, Object?> json) => _$NameFromJson(json);
 }
@@ -29,15 +31,15 @@ class Name with _$Name {
 @freezed
 class Document with _$Document {
   const factory Document({
-    required String id,
-    required String number,
-    required String issuanceDate,
-    required String expiryDate,
-    required String issuanceCountry,
-    required String issuanceLocation,
-    required String nationality,
-    required String documentType,
-    required String birthPlace,
+    required String? id,
+    required String? number,
+    required String? issuanceDate,
+    required String? expiryDate,
+    required String? issuanceCountry,
+    required String? issuanceLocation,
+    required String? nationality,
+    required String? documentType,
+    required String? birthPlace,
     required bool holder,
   }) = _Document;
 
@@ -48,8 +50,8 @@ class Document with _$Document {
 @freezed
 class Contact with _$Contact {
   const factory Contact({
-    required List<Phone> phones,
-    required String emailAddress,
+    required List<Phone>? phones,
+    required String? emailAddress,
   }) = _Contact;
 
   factory Contact.fromJson(Map<String, Object?> json) =>
@@ -59,9 +61,9 @@ class Contact with _$Contact {
 @freezed
 class Phone with _$Phone {
   const factory Phone({
-    required String deviceType,
-    required String countryCallingCode,
-    required String number,
+    required String? deviceType,
+    required String? countryCallingCode,
+    required String? number,
   }) = _Phone;
 
   factory Phone.fromJson(Map<String, Object?> json) => _$PhoneFromJson(json);

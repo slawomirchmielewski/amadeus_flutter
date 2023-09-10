@@ -20,11 +20,11 @@ Airline _$AirlineFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Airline {
-  String get type => throw _privateConstructorUsedError;
-  String get iataCode => throw _privateConstructorUsedError;
-  String get icaoCode => throw _privateConstructorUsedError;
-  String get businessName => throw _privateConstructorUsedError;
-  String get commonName => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
+  String? get iataCode => throw _privateConstructorUsedError;
+  String? get icaoCode => throw _privateConstructorUsedError;
+  String? get businessName => throw _privateConstructorUsedError;
+  String? get commonName => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,11 +37,11 @@ abstract class $AirlineCopyWith<$Res> {
       _$AirlineCopyWithImpl<$Res, Airline>;
   @useResult
   $Res call(
-      {String type,
-      String iataCode,
-      String icaoCode,
-      String businessName,
-      String commonName});
+      {String? type,
+      String? iataCode,
+      String? icaoCode,
+      String? businessName,
+      String? commonName});
 }
 
 /// @nodoc
@@ -57,33 +57,33 @@ class _$AirlineCopyWithImpl<$Res, $Val extends Airline>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
-    Object? iataCode = null,
-    Object? icaoCode = null,
-    Object? businessName = null,
-    Object? commonName = null,
+    Object? type = freezed,
+    Object? iataCode = freezed,
+    Object? icaoCode = freezed,
+    Object? businessName = freezed,
+    Object? commonName = freezed,
   }) {
     return _then(_value.copyWith(
-      type: null == type
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      iataCode: null == iataCode
+              as String?,
+      iataCode: freezed == iataCode
           ? _value.iataCode
           : iataCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      icaoCode: null == icaoCode
+              as String?,
+      icaoCode: freezed == icaoCode
           ? _value.icaoCode
           : icaoCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      businessName: null == businessName
+              as String?,
+      businessName: freezed == businessName
           ? _value.businessName
           : businessName // ignore: cast_nullable_to_non_nullable
-              as String,
-      commonName: null == commonName
+              as String?,
+      commonName: freezed == commonName
           ? _value.commonName
           : commonName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -96,11 +96,11 @@ abstract class _$$_AirlineCopyWith<$Res> implements $AirlineCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String type,
-      String iataCode,
-      String icaoCode,
-      String businessName,
-      String commonName});
+      {String? type,
+      String? iataCode,
+      String? icaoCode,
+      String? businessName,
+      String? commonName});
 }
 
 /// @nodoc
@@ -113,33 +113,33 @@ class __$$_AirlineCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
-    Object? iataCode = null,
-    Object? icaoCode = null,
-    Object? businessName = null,
-    Object? commonName = null,
+    Object? type = freezed,
+    Object? iataCode = freezed,
+    Object? icaoCode = freezed,
+    Object? businessName = freezed,
+    Object? commonName = freezed,
   }) {
     return _then(_$_Airline(
-      type: null == type
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      iataCode: null == iataCode
+              as String?,
+      iataCode: freezed == iataCode
           ? _value.iataCode
           : iataCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      icaoCode: null == icaoCode
+              as String?,
+      icaoCode: freezed == icaoCode
           ? _value.icaoCode
           : icaoCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      businessName: null == businessName
+              as String?,
+      businessName: freezed == businessName
           ? _value.businessName
           : businessName // ignore: cast_nullable_to_non_nullable
-              as String,
-      commonName: null == commonName
+              as String?,
+      commonName: freezed == commonName
           ? _value.commonName
           : commonName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -158,15 +158,15 @@ class _$_Airline implements _Airline {
       _$$_AirlineFromJson(json);
 
   @override
-  final String type;
+  final String? type;
   @override
-  final String iataCode;
+  final String? iataCode;
   @override
-  final String icaoCode;
+  final String? icaoCode;
   @override
-  final String businessName;
+  final String? businessName;
   @override
-  final String commonName;
+  final String? commonName;
 
   @override
   String toString() {
@@ -210,24 +210,24 @@ class _$_Airline implements _Airline {
 
 abstract class _Airline implements Airline {
   const factory _Airline(
-      {required final String type,
-      required final String iataCode,
-      required final String icaoCode,
-      required final String businessName,
-      required final String commonName}) = _$_Airline;
+      {required final String? type,
+      required final String? iataCode,
+      required final String? icaoCode,
+      required final String? businessName,
+      required final String? commonName}) = _$_Airline;
 
   factory _Airline.fromJson(Map<String, dynamic> json) = _$_Airline.fromJson;
 
   @override
-  String get type;
+  String? get type;
   @override
-  String get iataCode;
+  String? get iataCode;
   @override
-  String get icaoCode;
+  String? get icaoCode;
   @override
-  String get businessName;
+  String? get businessName;
   @override
-  String get commonName;
+  String? get commonName;
   @override
   @JsonKey(ignore: true)
   _$$_AirlineCopyWith<_$_Airline> get copyWith =>

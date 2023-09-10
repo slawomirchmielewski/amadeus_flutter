@@ -21,16 +21,16 @@ FlightDelayPrediction _$FlightDelayPredictionFromJson(
 
 /// @nodoc
 mixin _$FlightDelayPrediction {
-  String get originLocationCode => throw _privateConstructorUsedError;
-  String get destinationLocationCode => throw _privateConstructorUsedError;
-  String get departureDate => throw _privateConstructorUsedError;
-  String get departureTime => throw _privateConstructorUsedError;
-  String get arrivalDate => throw _privateConstructorUsedError;
-  String get arrivalTime => throw _privateConstructorUsedError;
-  String get aircraftCode => throw _privateConstructorUsedError;
-  String get carrierCode => throw _privateConstructorUsedError;
-  String get flightNumber => throw _privateConstructorUsedError;
-  String get duration => throw _privateConstructorUsedError;
+  String? get originLocationCode => throw _privateConstructorUsedError;
+  String? get destinationLocationCode => throw _privateConstructorUsedError;
+  String? get departureDate => throw _privateConstructorUsedError;
+  String? get departureTime => throw _privateConstructorUsedError;
+  String? get arrivalDate => throw _privateConstructorUsedError;
+  String? get arrivalTime => throw _privateConstructorUsedError;
+  String? get aircraftCode => throw _privateConstructorUsedError;
+  String? get carrierCode => throw _privateConstructorUsedError;
+  String? get flightNumber => throw _privateConstructorUsedError;
+  String? get duration => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,16 +45,16 @@ abstract class $FlightDelayPredictionCopyWith<$Res> {
       _$FlightDelayPredictionCopyWithImpl<$Res, FlightDelayPrediction>;
   @useResult
   $Res call(
-      {String originLocationCode,
-      String destinationLocationCode,
-      String departureDate,
-      String departureTime,
-      String arrivalDate,
-      String arrivalTime,
-      String aircraftCode,
-      String carrierCode,
-      String flightNumber,
-      String duration});
+      {String? originLocationCode,
+      String? destinationLocationCode,
+      String? departureDate,
+      String? departureTime,
+      String? arrivalDate,
+      String? arrivalTime,
+      String? aircraftCode,
+      String? carrierCode,
+      String? flightNumber,
+      String? duration});
 }
 
 /// @nodoc
@@ -71,58 +71,58 @@ class _$FlightDelayPredictionCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? originLocationCode = null,
-    Object? destinationLocationCode = null,
-    Object? departureDate = null,
-    Object? departureTime = null,
-    Object? arrivalDate = null,
-    Object? arrivalTime = null,
-    Object? aircraftCode = null,
-    Object? carrierCode = null,
-    Object? flightNumber = null,
-    Object? duration = null,
+    Object? originLocationCode = freezed,
+    Object? destinationLocationCode = freezed,
+    Object? departureDate = freezed,
+    Object? departureTime = freezed,
+    Object? arrivalDate = freezed,
+    Object? arrivalTime = freezed,
+    Object? aircraftCode = freezed,
+    Object? carrierCode = freezed,
+    Object? flightNumber = freezed,
+    Object? duration = freezed,
   }) {
     return _then(_value.copyWith(
-      originLocationCode: null == originLocationCode
+      originLocationCode: freezed == originLocationCode
           ? _value.originLocationCode
           : originLocationCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      destinationLocationCode: null == destinationLocationCode
+              as String?,
+      destinationLocationCode: freezed == destinationLocationCode
           ? _value.destinationLocationCode
           : destinationLocationCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      departureDate: null == departureDate
+              as String?,
+      departureDate: freezed == departureDate
           ? _value.departureDate
           : departureDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      departureTime: null == departureTime
+              as String?,
+      departureTime: freezed == departureTime
           ? _value.departureTime
           : departureTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      arrivalDate: null == arrivalDate
+              as String?,
+      arrivalDate: freezed == arrivalDate
           ? _value.arrivalDate
           : arrivalDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      arrivalTime: null == arrivalTime
+              as String?,
+      arrivalTime: freezed == arrivalTime
           ? _value.arrivalTime
           : arrivalTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      aircraftCode: null == aircraftCode
+              as String?,
+      aircraftCode: freezed == aircraftCode
           ? _value.aircraftCode
           : aircraftCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      carrierCode: null == carrierCode
+              as String?,
+      carrierCode: freezed == carrierCode
           ? _value.carrierCode
           : carrierCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      flightNumber: null == flightNumber
+              as String?,
+      flightNumber: freezed == flightNumber
           ? _value.flightNumber
           : flightNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      duration: null == duration
+              as String?,
+      duration: freezed == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -136,16 +136,16 @@ abstract class _$$_FlightDelayPredictionCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String originLocationCode,
-      String destinationLocationCode,
-      String departureDate,
-      String departureTime,
-      String arrivalDate,
-      String arrivalTime,
-      String aircraftCode,
-      String carrierCode,
-      String flightNumber,
-      String duration});
+      {String? originLocationCode,
+      String? destinationLocationCode,
+      String? departureDate,
+      String? departureTime,
+      String? arrivalDate,
+      String? arrivalTime,
+      String? aircraftCode,
+      String? carrierCode,
+      String? flightNumber,
+      String? duration});
 }
 
 /// @nodoc
@@ -159,58 +159,58 @@ class __$$_FlightDelayPredictionCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? originLocationCode = null,
-    Object? destinationLocationCode = null,
-    Object? departureDate = null,
-    Object? departureTime = null,
-    Object? arrivalDate = null,
-    Object? arrivalTime = null,
-    Object? aircraftCode = null,
-    Object? carrierCode = null,
-    Object? flightNumber = null,
-    Object? duration = null,
+    Object? originLocationCode = freezed,
+    Object? destinationLocationCode = freezed,
+    Object? departureDate = freezed,
+    Object? departureTime = freezed,
+    Object? arrivalDate = freezed,
+    Object? arrivalTime = freezed,
+    Object? aircraftCode = freezed,
+    Object? carrierCode = freezed,
+    Object? flightNumber = freezed,
+    Object? duration = freezed,
   }) {
     return _then(_$_FlightDelayPrediction(
-      originLocationCode: null == originLocationCode
+      originLocationCode: freezed == originLocationCode
           ? _value.originLocationCode
           : originLocationCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      destinationLocationCode: null == destinationLocationCode
+              as String?,
+      destinationLocationCode: freezed == destinationLocationCode
           ? _value.destinationLocationCode
           : destinationLocationCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      departureDate: null == departureDate
+              as String?,
+      departureDate: freezed == departureDate
           ? _value.departureDate
           : departureDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      departureTime: null == departureTime
+              as String?,
+      departureTime: freezed == departureTime
           ? _value.departureTime
           : departureTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      arrivalDate: null == arrivalDate
+              as String?,
+      arrivalDate: freezed == arrivalDate
           ? _value.arrivalDate
           : arrivalDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      arrivalTime: null == arrivalTime
+              as String?,
+      arrivalTime: freezed == arrivalTime
           ? _value.arrivalTime
           : arrivalTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      aircraftCode: null == aircraftCode
+              as String?,
+      aircraftCode: freezed == aircraftCode
           ? _value.aircraftCode
           : aircraftCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      carrierCode: null == carrierCode
+              as String?,
+      carrierCode: freezed == carrierCode
           ? _value.carrierCode
           : carrierCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      flightNumber: null == flightNumber
+              as String?,
+      flightNumber: freezed == flightNumber
           ? _value.flightNumber
           : flightNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      duration: null == duration
+              as String?,
+      duration: freezed == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -234,25 +234,25 @@ class _$_FlightDelayPrediction implements _FlightDelayPrediction {
       _$$_FlightDelayPredictionFromJson(json);
 
   @override
-  final String originLocationCode;
+  final String? originLocationCode;
   @override
-  final String destinationLocationCode;
+  final String? destinationLocationCode;
   @override
-  final String departureDate;
+  final String? departureDate;
   @override
-  final String departureTime;
+  final String? departureTime;
   @override
-  final String arrivalDate;
+  final String? arrivalDate;
   @override
-  final String arrivalTime;
+  final String? arrivalTime;
   @override
-  final String aircraftCode;
+  final String? aircraftCode;
   @override
-  final String carrierCode;
+  final String? carrierCode;
   @override
-  final String flightNumber;
+  final String? flightNumber;
   @override
-  final String duration;
+  final String? duration;
 
   @override
   String toString() {
@@ -319,40 +319,40 @@ class _$_FlightDelayPrediction implements _FlightDelayPrediction {
 
 abstract class _FlightDelayPrediction implements FlightDelayPrediction {
   const factory _FlightDelayPrediction(
-      {required final String originLocationCode,
-      required final String destinationLocationCode,
-      required final String departureDate,
-      required final String departureTime,
-      required final String arrivalDate,
-      required final String arrivalTime,
-      required final String aircraftCode,
-      required final String carrierCode,
-      required final String flightNumber,
-      required final String duration}) = _$_FlightDelayPrediction;
+      {required final String? originLocationCode,
+      required final String? destinationLocationCode,
+      required final String? departureDate,
+      required final String? departureTime,
+      required final String? arrivalDate,
+      required final String? arrivalTime,
+      required final String? aircraftCode,
+      required final String? carrierCode,
+      required final String? flightNumber,
+      required final String? duration}) = _$_FlightDelayPrediction;
 
   factory _FlightDelayPrediction.fromJson(Map<String, dynamic> json) =
       _$_FlightDelayPrediction.fromJson;
 
   @override
-  String get originLocationCode;
+  String? get originLocationCode;
   @override
-  String get destinationLocationCode;
+  String? get destinationLocationCode;
   @override
-  String get departureDate;
+  String? get departureDate;
   @override
-  String get departureTime;
+  String? get departureTime;
   @override
-  String get arrivalDate;
+  String? get arrivalDate;
   @override
-  String get arrivalTime;
+  String? get arrivalTime;
   @override
-  String get aircraftCode;
+  String? get aircraftCode;
   @override
-  String get carrierCode;
+  String? get carrierCode;
   @override
-  String get flightNumber;
+  String? get flightNumber;
   @override
-  String get duration;
+  String? get duration;
   @override
   @JsonKey(ignore: true)
   _$$_FlightDelayPredictionCopyWith<_$_FlightDelayPrediction> get copyWith =>

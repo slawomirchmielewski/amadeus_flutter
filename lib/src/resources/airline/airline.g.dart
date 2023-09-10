@@ -7,11 +7,11 @@ part of 'airline.dart';
 // **************************************************************************
 
 _$_Airline _$$_AirlineFromJson(Map<String, dynamic> json) => _$_Airline(
-      type: json['type'] as String,
-      iataCode: json['iataCode'] as String,
-      icaoCode: json['icaoCode'] as String,
-      businessName: json['businessName'] as String,
-      commonName: json['commonName'] as String,
+      type: json['type'] as String?,
+      iataCode: json['iataCode'] as String?,
+      icaoCode: json['icaoCode'] as String?,
+      businessName: json['businessName'] as String?,
+      commonName: json['commonName'] as String?,
     );
 
 Map<String, dynamic> _$$_AirlineToJson(_$_Airline instance) =>

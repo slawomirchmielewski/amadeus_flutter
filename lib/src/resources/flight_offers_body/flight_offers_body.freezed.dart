@@ -20,12 +20,12 @@ FlightOffersBody _$FlightOffersBodyFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FlightOffersBody {
-  String get currencyCode => throw _privateConstructorUsedError;
-  List<OffersOriginDestination> get originDestinations =>
+  String? get currencyCode => throw _privateConstructorUsedError;
+  List<OffersOriginDestination>? get originDestinations =>
       throw _privateConstructorUsedError;
-  List<OfferBodyTraveler> get travelers => throw _privateConstructorUsedError;
-  List<String> get sources => throw _privateConstructorUsedError;
-  SearchCriteria get searchCriteria => throw _privateConstructorUsedError;
+  List<OfferBodyTraveler>? get travelers => throw _privateConstructorUsedError;
+  List<String>? get sources => throw _privateConstructorUsedError;
+  SearchCriteria? get searchCriteria => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,13 +40,13 @@ abstract class $FlightOffersBodyCopyWith<$Res> {
       _$FlightOffersBodyCopyWithImpl<$Res, FlightOffersBody>;
   @useResult
   $Res call(
-      {String currencyCode,
-      List<OffersOriginDestination> originDestinations,
-      List<OfferBodyTraveler> travelers,
-      List<String> sources,
-      SearchCriteria searchCriteria});
+      {String? currencyCode,
+      List<OffersOriginDestination>? originDestinations,
+      List<OfferBodyTraveler>? travelers,
+      List<String>? sources,
+      SearchCriteria? searchCriteria});
 
-  $SearchCriteriaCopyWith<$Res> get searchCriteria;
+  $SearchCriteriaCopyWith<$Res>? get searchCriteria;
 }
 
 /// @nodoc
@@ -62,40 +62,44 @@ class _$FlightOffersBodyCopyWithImpl<$Res, $Val extends FlightOffersBody>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currencyCode = null,
-    Object? originDestinations = null,
-    Object? travelers = null,
-    Object? sources = null,
-    Object? searchCriteria = null,
+    Object? currencyCode = freezed,
+    Object? originDestinations = freezed,
+    Object? travelers = freezed,
+    Object? sources = freezed,
+    Object? searchCriteria = freezed,
   }) {
     return _then(_value.copyWith(
-      currencyCode: null == currencyCode
+      currencyCode: freezed == currencyCode
           ? _value.currencyCode
           : currencyCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      originDestinations: null == originDestinations
+              as String?,
+      originDestinations: freezed == originDestinations
           ? _value.originDestinations
           : originDestinations // ignore: cast_nullable_to_non_nullable
-              as List<OffersOriginDestination>,
-      travelers: null == travelers
+              as List<OffersOriginDestination>?,
+      travelers: freezed == travelers
           ? _value.travelers
           : travelers // ignore: cast_nullable_to_non_nullable
-              as List<OfferBodyTraveler>,
-      sources: null == sources
+              as List<OfferBodyTraveler>?,
+      sources: freezed == sources
           ? _value.sources
           : sources // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      searchCriteria: null == searchCriteria
+              as List<String>?,
+      searchCriteria: freezed == searchCriteria
           ? _value.searchCriteria
           : searchCriteria // ignore: cast_nullable_to_non_nullable
-              as SearchCriteria,
+              as SearchCriteria?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $SearchCriteriaCopyWith<$Res> get searchCriteria {
-    return $SearchCriteriaCopyWith<$Res>(_value.searchCriteria, (value) {
+  $SearchCriteriaCopyWith<$Res>? get searchCriteria {
+    if (_value.searchCriteria == null) {
+      return null;
+    }
+
+    return $SearchCriteriaCopyWith<$Res>(_value.searchCriteria!, (value) {
       return _then(_value.copyWith(searchCriteria: value) as $Val);
     });
   }
@@ -110,14 +114,14 @@ abstract class _$$_FlightOffersBodyCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String currencyCode,
-      List<OffersOriginDestination> originDestinations,
-      List<OfferBodyTraveler> travelers,
-      List<String> sources,
-      SearchCriteria searchCriteria});
+      {String? currencyCode,
+      List<OffersOriginDestination>? originDestinations,
+      List<OfferBodyTraveler>? travelers,
+      List<String>? sources,
+      SearchCriteria? searchCriteria});
 
   @override
-  $SearchCriteriaCopyWith<$Res> get searchCriteria;
+  $SearchCriteriaCopyWith<$Res>? get searchCriteria;
 }
 
 /// @nodoc
@@ -131,33 +135,33 @@ class __$$_FlightOffersBodyCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currencyCode = null,
-    Object? originDestinations = null,
-    Object? travelers = null,
-    Object? sources = null,
-    Object? searchCriteria = null,
+    Object? currencyCode = freezed,
+    Object? originDestinations = freezed,
+    Object? travelers = freezed,
+    Object? sources = freezed,
+    Object? searchCriteria = freezed,
   }) {
     return _then(_$_FlightOffersBody(
-      currencyCode: null == currencyCode
+      currencyCode: freezed == currencyCode
           ? _value.currencyCode
           : currencyCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      originDestinations: null == originDestinations
+              as String?,
+      originDestinations: freezed == originDestinations
           ? _value._originDestinations
           : originDestinations // ignore: cast_nullable_to_non_nullable
-              as List<OffersOriginDestination>,
-      travelers: null == travelers
+              as List<OffersOriginDestination>?,
+      travelers: freezed == travelers
           ? _value._travelers
           : travelers // ignore: cast_nullable_to_non_nullable
-              as List<OfferBodyTraveler>,
-      sources: null == sources
+              as List<OfferBodyTraveler>?,
+      sources: freezed == sources
           ? _value._sources
           : sources // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      searchCriteria: null == searchCriteria
+              as List<String>?,
+      searchCriteria: freezed == searchCriteria
           ? _value.searchCriteria
           : searchCriteria // ignore: cast_nullable_to_non_nullable
-              as SearchCriteria,
+              as SearchCriteria?,
     ));
   }
 }
@@ -167,9 +171,9 @@ class __$$_FlightOffersBodyCopyWithImpl<$Res>
 class _$_FlightOffersBody implements _FlightOffersBody {
   const _$_FlightOffersBody(
       {required this.currencyCode,
-      required final List<OffersOriginDestination> originDestinations,
-      required final List<OfferBodyTraveler> travelers,
-      required final List<String> sources,
+      required final List<OffersOriginDestination>? originDestinations,
+      required final List<OfferBodyTraveler>? travelers,
+      required final List<String>? sources,
       required this.searchCriteria})
       : _originDestinations = originDestinations,
         _travelers = travelers,
@@ -179,34 +183,40 @@ class _$_FlightOffersBody implements _FlightOffersBody {
       _$$_FlightOffersBodyFromJson(json);
 
   @override
-  final String currencyCode;
-  final List<OffersOriginDestination> _originDestinations;
+  final String? currencyCode;
+  final List<OffersOriginDestination>? _originDestinations;
   @override
-  List<OffersOriginDestination> get originDestinations {
+  List<OffersOriginDestination>? get originDestinations {
+    final value = _originDestinations;
+    if (value == null) return null;
     if (_originDestinations is EqualUnmodifiableListView)
       return _originDestinations;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_originDestinations);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<OfferBodyTraveler> _travelers;
+  final List<OfferBodyTraveler>? _travelers;
   @override
-  List<OfferBodyTraveler> get travelers {
+  List<OfferBodyTraveler>? get travelers {
+    final value = _travelers;
+    if (value == null) return null;
     if (_travelers is EqualUnmodifiableListView) return _travelers;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_travelers);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<String> _sources;
+  final List<String>? _sources;
   @override
-  List<String> get sources {
+  List<String>? get sources {
+    final value = _sources;
+    if (value == null) return null;
     if (_sources is EqualUnmodifiableListView) return _sources;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_sources);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  final SearchCriteria searchCriteria;
+  final SearchCriteria? searchCriteria;
 
   @override
   String toString() {
@@ -255,25 +265,25 @@ class _$_FlightOffersBody implements _FlightOffersBody {
 
 abstract class _FlightOffersBody implements FlightOffersBody {
   const factory _FlightOffersBody(
-      {required final String currencyCode,
-      required final List<OffersOriginDestination> originDestinations,
-      required final List<OfferBodyTraveler> travelers,
-      required final List<String> sources,
-      required final SearchCriteria searchCriteria}) = _$_FlightOffersBody;
+      {required final String? currencyCode,
+      required final List<OffersOriginDestination>? originDestinations,
+      required final List<OfferBodyTraveler>? travelers,
+      required final List<String>? sources,
+      required final SearchCriteria? searchCriteria}) = _$_FlightOffersBody;
 
   factory _FlightOffersBody.fromJson(Map<String, dynamic> json) =
       _$_FlightOffersBody.fromJson;
 
   @override
-  String get currencyCode;
+  String? get currencyCode;
   @override
-  List<OffersOriginDestination> get originDestinations;
+  List<OffersOriginDestination>? get originDestinations;
   @override
-  List<OfferBodyTraveler> get travelers;
+  List<OfferBodyTraveler>? get travelers;
   @override
-  List<String> get sources;
+  List<String>? get sources;
   @override
-  SearchCriteria get searchCriteria;
+  SearchCriteria? get searchCriteria;
   @override
   @JsonKey(ignore: true)
   _$$_FlightOffersBodyCopyWith<_$_FlightOffersBody> get copyWith =>
@@ -287,10 +297,10 @@ OffersOriginDestination _$OffersOriginDestinationFromJson(
 
 /// @nodoc
 mixin _$OffersOriginDestination {
-  String get id => throw _privateConstructorUsedError;
-  String get originLocationCode => throw _privateConstructorUsedError;
-  String get destinationLocationCode => throw _privateConstructorUsedError;
-  DepartureDateTimeRange get departureDateTimeRange =>
+  String? get id => throw _privateConstructorUsedError;
+  String? get originLocationCode => throw _privateConstructorUsedError;
+  String? get destinationLocationCode => throw _privateConstructorUsedError;
+  DepartureDateTimeRange? get departureDateTimeRange =>
       throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -306,12 +316,12 @@ abstract class $OffersOriginDestinationCopyWith<$Res> {
       _$OffersOriginDestinationCopyWithImpl<$Res, OffersOriginDestination>;
   @useResult
   $Res call(
-      {String id,
-      String originLocationCode,
-      String destinationLocationCode,
-      DepartureDateTimeRange departureDateTimeRange});
+      {String? id,
+      String? originLocationCode,
+      String? destinationLocationCode,
+      DepartureDateTimeRange? departureDateTimeRange});
 
-  $DepartureDateTimeRangeCopyWith<$Res> get departureDateTimeRange;
+  $DepartureDateTimeRangeCopyWith<$Res>? get departureDateTimeRange;
 }
 
 /// @nodoc
@@ -328,35 +338,39 @@ class _$OffersOriginDestinationCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? originLocationCode = null,
-    Object? destinationLocationCode = null,
-    Object? departureDateTimeRange = null,
+    Object? id = freezed,
+    Object? originLocationCode = freezed,
+    Object? destinationLocationCode = freezed,
+    Object? departureDateTimeRange = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      originLocationCode: null == originLocationCode
+              as String?,
+      originLocationCode: freezed == originLocationCode
           ? _value.originLocationCode
           : originLocationCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      destinationLocationCode: null == destinationLocationCode
+              as String?,
+      destinationLocationCode: freezed == destinationLocationCode
           ? _value.destinationLocationCode
           : destinationLocationCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      departureDateTimeRange: null == departureDateTimeRange
+              as String?,
+      departureDateTimeRange: freezed == departureDateTimeRange
           ? _value.departureDateTimeRange
           : departureDateTimeRange // ignore: cast_nullable_to_non_nullable
-              as DepartureDateTimeRange,
+              as DepartureDateTimeRange?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $DepartureDateTimeRangeCopyWith<$Res> get departureDateTimeRange {
-    return $DepartureDateTimeRangeCopyWith<$Res>(_value.departureDateTimeRange,
+  $DepartureDateTimeRangeCopyWith<$Res>? get departureDateTimeRange {
+    if (_value.departureDateTimeRange == null) {
+      return null;
+    }
+
+    return $DepartureDateTimeRangeCopyWith<$Res>(_value.departureDateTimeRange!,
         (value) {
       return _then(_value.copyWith(departureDateTimeRange: value) as $Val);
     });
@@ -372,13 +386,13 @@ abstract class _$$_OffersOriginDestinationCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      String originLocationCode,
-      String destinationLocationCode,
-      DepartureDateTimeRange departureDateTimeRange});
+      {String? id,
+      String? originLocationCode,
+      String? destinationLocationCode,
+      DepartureDateTimeRange? departureDateTimeRange});
 
   @override
-  $DepartureDateTimeRangeCopyWith<$Res> get departureDateTimeRange;
+  $DepartureDateTimeRangeCopyWith<$Res>? get departureDateTimeRange;
 }
 
 /// @nodoc
@@ -393,28 +407,28 @@ class __$$_OffersOriginDestinationCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? originLocationCode = null,
-    Object? destinationLocationCode = null,
-    Object? departureDateTimeRange = null,
+    Object? id = freezed,
+    Object? originLocationCode = freezed,
+    Object? destinationLocationCode = freezed,
+    Object? departureDateTimeRange = freezed,
   }) {
     return _then(_$_OffersOriginDestination(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      originLocationCode: null == originLocationCode
+              as String?,
+      originLocationCode: freezed == originLocationCode
           ? _value.originLocationCode
           : originLocationCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      destinationLocationCode: null == destinationLocationCode
+              as String?,
+      destinationLocationCode: freezed == destinationLocationCode
           ? _value.destinationLocationCode
           : destinationLocationCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      departureDateTimeRange: null == departureDateTimeRange
+              as String?,
+      departureDateTimeRange: freezed == departureDateTimeRange
           ? _value.departureDateTimeRange
           : departureDateTimeRange // ignore: cast_nullable_to_non_nullable
-              as DepartureDateTimeRange,
+              as DepartureDateTimeRange?,
     ));
   }
 }
@@ -432,13 +446,13 @@ class _$_OffersOriginDestination implements _OffersOriginDestination {
       _$$_OffersOriginDestinationFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
-  final String originLocationCode;
+  final String? originLocationCode;
   @override
-  final String destinationLocationCode;
+  final String? destinationLocationCode;
   @override
-  final DepartureDateTimeRange departureDateTimeRange;
+  final DepartureDateTimeRange? departureDateTimeRange;
 
   @override
   String toString() {
@@ -483,23 +497,23 @@ class _$_OffersOriginDestination implements _OffersOriginDestination {
 
 abstract class _OffersOriginDestination implements OffersOriginDestination {
   const factory _OffersOriginDestination(
-          {required final String id,
-          required final String originLocationCode,
-          required final String destinationLocationCode,
-          required final DepartureDateTimeRange departureDateTimeRange}) =
+          {required final String? id,
+          required final String? originLocationCode,
+          required final String? destinationLocationCode,
+          required final DepartureDateTimeRange? departureDateTimeRange}) =
       _$_OffersOriginDestination;
 
   factory _OffersOriginDestination.fromJson(Map<String, dynamic> json) =
       _$_OffersOriginDestination.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
-  String get originLocationCode;
+  String? get originLocationCode;
   @override
-  String get destinationLocationCode;
+  String? get destinationLocationCode;
   @override
-  DepartureDateTimeRange get departureDateTimeRange;
+  DepartureDateTimeRange? get departureDateTimeRange;
   @override
   @JsonKey(ignore: true)
   _$$_OffersOriginDestinationCopyWith<_$_OffersOriginDestination>
@@ -513,8 +527,8 @@ DepartureDateTimeRange _$DepartureDateTimeRangeFromJson(
 
 /// @nodoc
 mixin _$DepartureDateTimeRange {
-  String get date => throw _privateConstructorUsedError;
-  String get time => throw _privateConstructorUsedError;
+  String? get date => throw _privateConstructorUsedError;
+  String? get time => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -528,7 +542,7 @@ abstract class $DepartureDateTimeRangeCopyWith<$Res> {
           $Res Function(DepartureDateTimeRange) then) =
       _$DepartureDateTimeRangeCopyWithImpl<$Res, DepartureDateTimeRange>;
   @useResult
-  $Res call({String date, String time});
+  $Res call({String? date, String? time});
 }
 
 /// @nodoc
@@ -545,18 +559,18 @@ class _$DepartureDateTimeRangeCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? date = null,
-    Object? time = null,
+    Object? date = freezed,
+    Object? time = freezed,
   }) {
     return _then(_value.copyWith(
-      date: null == date
+      date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as String,
-      time: null == time
+              as String?,
+      time: freezed == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -569,7 +583,7 @@ abstract class _$$_DepartureDateTimeRangeCopyWith<$Res>
       __$$_DepartureDateTimeRangeCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String date, String time});
+  $Res call({String? date, String? time});
 }
 
 /// @nodoc
@@ -584,18 +598,18 @@ class __$$_DepartureDateTimeRangeCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? date = null,
-    Object? time = null,
+    Object? date = freezed,
+    Object? time = freezed,
   }) {
     return _then(_$_DepartureDateTimeRange(
-      date: null == date
+      date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as String,
-      time: null == time
+              as String?,
+      time: freezed == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -609,9 +623,9 @@ class _$_DepartureDateTimeRange implements _DepartureDateTimeRange {
       _$$_DepartureDateTimeRangeFromJson(json);
 
   @override
-  final String date;
+  final String? date;
   @override
-  final String time;
+  final String? time;
 
   @override
   String toString() {
@@ -648,16 +662,16 @@ class _$_DepartureDateTimeRange implements _DepartureDateTimeRange {
 
 abstract class _DepartureDateTimeRange implements DepartureDateTimeRange {
   const factory _DepartureDateTimeRange(
-      {required final String date,
-      required final String time}) = _$_DepartureDateTimeRange;
+      {required final String? date,
+      required final String? time}) = _$_DepartureDateTimeRange;
 
   factory _DepartureDateTimeRange.fromJson(Map<String, dynamic> json) =
       _$_DepartureDateTimeRange.fromJson;
 
   @override
-  String get date;
+  String? get date;
   @override
-  String get time;
+  String? get time;
   @override
   @JsonKey(ignore: true)
   _$$_DepartureDateTimeRangeCopyWith<_$_DepartureDateTimeRange> get copyWith =>
@@ -670,8 +684,8 @@ OfferBodyTraveler _$OfferBodyTravelerFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OfferBodyTraveler {
-  String get id => throw _privateConstructorUsedError;
-  String get travelerType => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get travelerType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -685,7 +699,7 @@ abstract class $OfferBodyTravelerCopyWith<$Res> {
           OfferBodyTraveler value, $Res Function(OfferBodyTraveler) then) =
       _$OfferBodyTravelerCopyWithImpl<$Res, OfferBodyTraveler>;
   @useResult
-  $Res call({String id, String travelerType});
+  $Res call({String? id, String? travelerType});
 }
 
 /// @nodoc
@@ -701,18 +715,18 @@ class _$OfferBodyTravelerCopyWithImpl<$Res, $Val extends OfferBodyTraveler>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? travelerType = null,
+    Object? id = freezed,
+    Object? travelerType = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      travelerType: null == travelerType
+              as String?,
+      travelerType: freezed == travelerType
           ? _value.travelerType
           : travelerType // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -725,7 +739,7 @@ abstract class _$$_OfferBodyTravelerCopyWith<$Res>
       __$$_OfferBodyTravelerCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String travelerType});
+  $Res call({String? id, String? travelerType});
 }
 
 /// @nodoc
@@ -739,18 +753,18 @@ class __$$_OfferBodyTravelerCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? travelerType = null,
+    Object? id = freezed,
+    Object? travelerType = freezed,
   }) {
     return _then(_$_OfferBodyTraveler(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      travelerType: null == travelerType
+              as String?,
+      travelerType: freezed == travelerType
           ? _value.travelerType
           : travelerType // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -764,9 +778,9 @@ class _$_OfferBodyTraveler implements _OfferBodyTraveler {
       _$$_OfferBodyTravelerFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
-  final String travelerType;
+  final String? travelerType;
 
   @override
   String toString() {
@@ -804,16 +818,16 @@ class _$_OfferBodyTraveler implements _OfferBodyTraveler {
 
 abstract class _OfferBodyTraveler implements OfferBodyTraveler {
   const factory _OfferBodyTraveler(
-      {required final String id,
-      required final String travelerType}) = _$_OfferBodyTraveler;
+      {required final String? id,
+      required final String? travelerType}) = _$_OfferBodyTraveler;
 
   factory _OfferBodyTraveler.fromJson(Map<String, dynamic> json) =
       _$_OfferBodyTraveler.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
-  String get travelerType;
+  String? get travelerType;
   @override
   @JsonKey(ignore: true)
   _$$_OfferBodyTravelerCopyWith<_$_OfferBodyTraveler> get copyWith =>
@@ -826,8 +840,8 @@ SearchCriteria _$SearchCriteriaFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SearchCriteria {
-  int get maxFlightOffers => throw _privateConstructorUsedError;
-  FlightFilters get flightFilters => throw _privateConstructorUsedError;
+  int? get maxFlightOffers => throw _privateConstructorUsedError;
+  FlightFilters? get flightFilters => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -841,9 +855,9 @@ abstract class $SearchCriteriaCopyWith<$Res> {
           SearchCriteria value, $Res Function(SearchCriteria) then) =
       _$SearchCriteriaCopyWithImpl<$Res, SearchCriteria>;
   @useResult
-  $Res call({int maxFlightOffers, FlightFilters flightFilters});
+  $Res call({int? maxFlightOffers, FlightFilters? flightFilters});
 
-  $FlightFiltersCopyWith<$Res> get flightFilters;
+  $FlightFiltersCopyWith<$Res>? get flightFilters;
 }
 
 /// @nodoc
@@ -859,25 +873,29 @@ class _$SearchCriteriaCopyWithImpl<$Res, $Val extends SearchCriteria>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? maxFlightOffers = null,
-    Object? flightFilters = null,
+    Object? maxFlightOffers = freezed,
+    Object? flightFilters = freezed,
   }) {
     return _then(_value.copyWith(
-      maxFlightOffers: null == maxFlightOffers
+      maxFlightOffers: freezed == maxFlightOffers
           ? _value.maxFlightOffers
           : maxFlightOffers // ignore: cast_nullable_to_non_nullable
-              as int,
-      flightFilters: null == flightFilters
+              as int?,
+      flightFilters: freezed == flightFilters
           ? _value.flightFilters
           : flightFilters // ignore: cast_nullable_to_non_nullable
-              as FlightFilters,
+              as FlightFilters?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $FlightFiltersCopyWith<$Res> get flightFilters {
-    return $FlightFiltersCopyWith<$Res>(_value.flightFilters, (value) {
+  $FlightFiltersCopyWith<$Res>? get flightFilters {
+    if (_value.flightFilters == null) {
+      return null;
+    }
+
+    return $FlightFiltersCopyWith<$Res>(_value.flightFilters!, (value) {
       return _then(_value.copyWith(flightFilters: value) as $Val);
     });
   }
@@ -891,10 +909,10 @@ abstract class _$$_SearchCriteriaCopyWith<$Res>
       __$$_SearchCriteriaCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int maxFlightOffers, FlightFilters flightFilters});
+  $Res call({int? maxFlightOffers, FlightFilters? flightFilters});
 
   @override
-  $FlightFiltersCopyWith<$Res> get flightFilters;
+  $FlightFiltersCopyWith<$Res>? get flightFilters;
 }
 
 /// @nodoc
@@ -908,18 +926,18 @@ class __$$_SearchCriteriaCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? maxFlightOffers = null,
-    Object? flightFilters = null,
+    Object? maxFlightOffers = freezed,
+    Object? flightFilters = freezed,
   }) {
     return _then(_$_SearchCriteria(
-      maxFlightOffers: null == maxFlightOffers
+      maxFlightOffers: freezed == maxFlightOffers
           ? _value.maxFlightOffers
           : maxFlightOffers // ignore: cast_nullable_to_non_nullable
-              as int,
-      flightFilters: null == flightFilters
+              as int?,
+      flightFilters: freezed == flightFilters
           ? _value.flightFilters
           : flightFilters // ignore: cast_nullable_to_non_nullable
-              as FlightFilters,
+              as FlightFilters?,
     ));
   }
 }
@@ -934,9 +952,9 @@ class _$_SearchCriteria implements _SearchCriteria {
       _$$_SearchCriteriaFromJson(json);
 
   @override
-  final int maxFlightOffers;
+  final int? maxFlightOffers;
   @override
-  final FlightFilters flightFilters;
+  final FlightFilters? flightFilters;
 
   @override
   String toString() {
@@ -974,16 +992,16 @@ class _$_SearchCriteria implements _SearchCriteria {
 
 abstract class _SearchCriteria implements SearchCriteria {
   const factory _SearchCriteria(
-      {required final int maxFlightOffers,
-      required final FlightFilters flightFilters}) = _$_SearchCriteria;
+      {required final int? maxFlightOffers,
+      required final FlightFilters? flightFilters}) = _$_SearchCriteria;
 
   factory _SearchCriteria.fromJson(Map<String, dynamic> json) =
       _$_SearchCriteria.fromJson;
 
   @override
-  int get maxFlightOffers;
+  int? get maxFlightOffers;
   @override
-  FlightFilters get flightFilters;
+  FlightFilters? get flightFilters;
   @override
   @JsonKey(ignore: true)
   _$$_SearchCriteriaCopyWith<_$_SearchCriteria> get copyWith =>
@@ -996,9 +1014,9 @@ FlightFilters _$FlightFiltersFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FlightFilters {
-  List<CabinRestriction> get cabinRestrictions =>
+  List<CabinRestriction>? get cabinRestrictions =>
       throw _privateConstructorUsedError;
-  CarrierRestrictions get carrierRestrictions =>
+  CarrierRestrictions? get carrierRestrictions =>
       throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1014,10 +1032,10 @@ abstract class $FlightFiltersCopyWith<$Res> {
       _$FlightFiltersCopyWithImpl<$Res, FlightFilters>;
   @useResult
   $Res call(
-      {List<CabinRestriction> cabinRestrictions,
-      CarrierRestrictions carrierRestrictions});
+      {List<CabinRestriction>? cabinRestrictions,
+      CarrierRestrictions? carrierRestrictions});
 
-  $CarrierRestrictionsCopyWith<$Res> get carrierRestrictions;
+  $CarrierRestrictionsCopyWith<$Res>? get carrierRestrictions;
 }
 
 /// @nodoc
@@ -1033,25 +1051,29 @@ class _$FlightFiltersCopyWithImpl<$Res, $Val extends FlightFilters>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cabinRestrictions = null,
-    Object? carrierRestrictions = null,
+    Object? cabinRestrictions = freezed,
+    Object? carrierRestrictions = freezed,
   }) {
     return _then(_value.copyWith(
-      cabinRestrictions: null == cabinRestrictions
+      cabinRestrictions: freezed == cabinRestrictions
           ? _value.cabinRestrictions
           : cabinRestrictions // ignore: cast_nullable_to_non_nullable
-              as List<CabinRestriction>,
-      carrierRestrictions: null == carrierRestrictions
+              as List<CabinRestriction>?,
+      carrierRestrictions: freezed == carrierRestrictions
           ? _value.carrierRestrictions
           : carrierRestrictions // ignore: cast_nullable_to_non_nullable
-              as CarrierRestrictions,
+              as CarrierRestrictions?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CarrierRestrictionsCopyWith<$Res> get carrierRestrictions {
-    return $CarrierRestrictionsCopyWith<$Res>(_value.carrierRestrictions,
+  $CarrierRestrictionsCopyWith<$Res>? get carrierRestrictions {
+    if (_value.carrierRestrictions == null) {
+      return null;
+    }
+
+    return $CarrierRestrictionsCopyWith<$Res>(_value.carrierRestrictions!,
         (value) {
       return _then(_value.copyWith(carrierRestrictions: value) as $Val);
     });
@@ -1067,11 +1089,11 @@ abstract class _$$_FlightFiltersCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<CabinRestriction> cabinRestrictions,
-      CarrierRestrictions carrierRestrictions});
+      {List<CabinRestriction>? cabinRestrictions,
+      CarrierRestrictions? carrierRestrictions});
 
   @override
-  $CarrierRestrictionsCopyWith<$Res> get carrierRestrictions;
+  $CarrierRestrictionsCopyWith<$Res>? get carrierRestrictions;
 }
 
 /// @nodoc
@@ -1085,18 +1107,18 @@ class __$$_FlightFiltersCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cabinRestrictions = null,
-    Object? carrierRestrictions = null,
+    Object? cabinRestrictions = freezed,
+    Object? carrierRestrictions = freezed,
   }) {
     return _then(_$_FlightFilters(
-      cabinRestrictions: null == cabinRestrictions
+      cabinRestrictions: freezed == cabinRestrictions
           ? _value._cabinRestrictions
           : cabinRestrictions // ignore: cast_nullable_to_non_nullable
-              as List<CabinRestriction>,
-      carrierRestrictions: null == carrierRestrictions
+              as List<CabinRestriction>?,
+      carrierRestrictions: freezed == carrierRestrictions
           ? _value.carrierRestrictions
           : carrierRestrictions // ignore: cast_nullable_to_non_nullable
-              as CarrierRestrictions,
+              as CarrierRestrictions?,
     ));
   }
 }
@@ -1105,24 +1127,26 @@ class __$$_FlightFiltersCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_FlightFilters implements _FlightFilters {
   const _$_FlightFilters(
-      {required final List<CabinRestriction> cabinRestrictions,
+      {required final List<CabinRestriction>? cabinRestrictions,
       required this.carrierRestrictions})
       : _cabinRestrictions = cabinRestrictions;
 
   factory _$_FlightFilters.fromJson(Map<String, dynamic> json) =>
       _$$_FlightFiltersFromJson(json);
 
-  final List<CabinRestriction> _cabinRestrictions;
+  final List<CabinRestriction>? _cabinRestrictions;
   @override
-  List<CabinRestriction> get cabinRestrictions {
+  List<CabinRestriction>? get cabinRestrictions {
+    final value = _cabinRestrictions;
+    if (value == null) return null;
     if (_cabinRestrictions is EqualUnmodifiableListView)
       return _cabinRestrictions;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_cabinRestrictions);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  final CarrierRestrictions carrierRestrictions;
+  final CarrierRestrictions? carrierRestrictions;
 
   @override
   String toString() {
@@ -1163,17 +1187,17 @@ class _$_FlightFilters implements _FlightFilters {
 
 abstract class _FlightFilters implements FlightFilters {
   const factory _FlightFilters(
-          {required final List<CabinRestriction> cabinRestrictions,
-          required final CarrierRestrictions carrierRestrictions}) =
+          {required final List<CabinRestriction>? cabinRestrictions,
+          required final CarrierRestrictions? carrierRestrictions}) =
       _$_FlightFilters;
 
   factory _FlightFilters.fromJson(Map<String, dynamic> json) =
       _$_FlightFilters.fromJson;
 
   @override
-  List<CabinRestriction> get cabinRestrictions;
+  List<CabinRestriction>? get cabinRestrictions;
   @override
-  CarrierRestrictions get carrierRestrictions;
+  CarrierRestrictions? get carrierRestrictions;
   @override
   @JsonKey(ignore: true)
   _$$_FlightFiltersCopyWith<_$_FlightFilters> get copyWith =>
@@ -1186,9 +1210,9 @@ CabinRestriction _$CabinRestrictionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CabinRestriction {
-  String get cabin => throw _privateConstructorUsedError;
-  String get coverage => throw _privateConstructorUsedError;
-  List<String> get originDestinationIds => throw _privateConstructorUsedError;
+  String? get cabin => throw _privateConstructorUsedError;
+  String? get coverage => throw _privateConstructorUsedError;
+  List<String>? get originDestinationIds => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1202,7 +1226,8 @@ abstract class $CabinRestrictionCopyWith<$Res> {
           CabinRestriction value, $Res Function(CabinRestriction) then) =
       _$CabinRestrictionCopyWithImpl<$Res, CabinRestriction>;
   @useResult
-  $Res call({String cabin, String coverage, List<String> originDestinationIds});
+  $Res call(
+      {String? cabin, String? coverage, List<String>? originDestinationIds});
 }
 
 /// @nodoc
@@ -1218,23 +1243,23 @@ class _$CabinRestrictionCopyWithImpl<$Res, $Val extends CabinRestriction>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cabin = null,
-    Object? coverage = null,
-    Object? originDestinationIds = null,
+    Object? cabin = freezed,
+    Object? coverage = freezed,
+    Object? originDestinationIds = freezed,
   }) {
     return _then(_value.copyWith(
-      cabin: null == cabin
+      cabin: freezed == cabin
           ? _value.cabin
           : cabin // ignore: cast_nullable_to_non_nullable
-              as String,
-      coverage: null == coverage
+              as String?,
+      coverage: freezed == coverage
           ? _value.coverage
           : coverage // ignore: cast_nullable_to_non_nullable
-              as String,
-      originDestinationIds: null == originDestinationIds
+              as String?,
+      originDestinationIds: freezed == originDestinationIds
           ? _value.originDestinationIds
           : originDestinationIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
     ) as $Val);
   }
 }
@@ -1247,7 +1272,8 @@ abstract class _$$_CabinRestrictionCopyWith<$Res>
       __$$_CabinRestrictionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String cabin, String coverage, List<String> originDestinationIds});
+  $Res call(
+      {String? cabin, String? coverage, List<String>? originDestinationIds});
 }
 
 /// @nodoc
@@ -1261,23 +1287,23 @@ class __$$_CabinRestrictionCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cabin = null,
-    Object? coverage = null,
-    Object? originDestinationIds = null,
+    Object? cabin = freezed,
+    Object? coverage = freezed,
+    Object? originDestinationIds = freezed,
   }) {
     return _then(_$_CabinRestriction(
-      cabin: null == cabin
+      cabin: freezed == cabin
           ? _value.cabin
           : cabin // ignore: cast_nullable_to_non_nullable
-              as String,
-      coverage: null == coverage
+              as String?,
+      coverage: freezed == coverage
           ? _value.coverage
           : coverage // ignore: cast_nullable_to_non_nullable
-              as String,
-      originDestinationIds: null == originDestinationIds
+              as String?,
+      originDestinationIds: freezed == originDestinationIds
           ? _value._originDestinationIds
           : originDestinationIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
     ));
   }
 }
@@ -1288,23 +1314,25 @@ class _$_CabinRestriction implements _CabinRestriction {
   const _$_CabinRestriction(
       {required this.cabin,
       required this.coverage,
-      required final List<String> originDestinationIds})
+      required final List<String>? originDestinationIds})
       : _originDestinationIds = originDestinationIds;
 
   factory _$_CabinRestriction.fromJson(Map<String, dynamic> json) =>
       _$$_CabinRestrictionFromJson(json);
 
   @override
-  final String cabin;
+  final String? cabin;
   @override
-  final String coverage;
-  final List<String> _originDestinationIds;
+  final String? coverage;
+  final List<String>? _originDestinationIds;
   @override
-  List<String> get originDestinationIds {
+  List<String>? get originDestinationIds {
+    final value = _originDestinationIds;
+    if (value == null) return null;
     if (_originDestinationIds is EqualUnmodifiableListView)
       return _originDestinationIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_originDestinationIds);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -1345,19 +1373,19 @@ class _$_CabinRestriction implements _CabinRestriction {
 
 abstract class _CabinRestriction implements CabinRestriction {
   const factory _CabinRestriction(
-      {required final String cabin,
-      required final String coverage,
-      required final List<String> originDestinationIds}) = _$_CabinRestriction;
+      {required final String? cabin,
+      required final String? coverage,
+      required final List<String>? originDestinationIds}) = _$_CabinRestriction;
 
   factory _CabinRestriction.fromJson(Map<String, dynamic> json) =
       _$_CabinRestriction.fromJson;
 
   @override
-  String get cabin;
+  String? get cabin;
   @override
-  String get coverage;
+  String? get coverage;
   @override
-  List<String> get originDestinationIds;
+  List<String>? get originDestinationIds;
   @override
   @JsonKey(ignore: true)
   _$$_CabinRestrictionCopyWith<_$_CabinRestriction> get copyWith =>
@@ -1370,7 +1398,7 @@ CarrierRestrictions _$CarrierRestrictionsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CarrierRestrictions {
-  List<String> get excludedCarrierCodes => throw _privateConstructorUsedError;
+  List<String>? get excludedCarrierCodes => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1384,7 +1412,7 @@ abstract class $CarrierRestrictionsCopyWith<$Res> {
           CarrierRestrictions value, $Res Function(CarrierRestrictions) then) =
       _$CarrierRestrictionsCopyWithImpl<$Res, CarrierRestrictions>;
   @useResult
-  $Res call({List<String> excludedCarrierCodes});
+  $Res call({List<String>? excludedCarrierCodes});
 }
 
 /// @nodoc
@@ -1400,13 +1428,13 @@ class _$CarrierRestrictionsCopyWithImpl<$Res, $Val extends CarrierRestrictions>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? excludedCarrierCodes = null,
+    Object? excludedCarrierCodes = freezed,
   }) {
     return _then(_value.copyWith(
-      excludedCarrierCodes: null == excludedCarrierCodes
+      excludedCarrierCodes: freezed == excludedCarrierCodes
           ? _value.excludedCarrierCodes
           : excludedCarrierCodes // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
     ) as $Val);
   }
 }
@@ -1419,7 +1447,7 @@ abstract class _$$_CarrierRestrictionsCopyWith<$Res>
       __$$_CarrierRestrictionsCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<String> excludedCarrierCodes});
+  $Res call({List<String>? excludedCarrierCodes});
 }
 
 /// @nodoc
@@ -1433,13 +1461,13 @@ class __$$_CarrierRestrictionsCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? excludedCarrierCodes = null,
+    Object? excludedCarrierCodes = freezed,
   }) {
     return _then(_$_CarrierRestrictions(
-      excludedCarrierCodes: null == excludedCarrierCodes
+      excludedCarrierCodes: freezed == excludedCarrierCodes
           ? _value._excludedCarrierCodes
           : excludedCarrierCodes // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
     ));
   }
 }
@@ -1448,19 +1476,21 @@ class __$$_CarrierRestrictionsCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CarrierRestrictions implements _CarrierRestrictions {
   const _$_CarrierRestrictions(
-      {required final List<String> excludedCarrierCodes})
+      {required final List<String>? excludedCarrierCodes})
       : _excludedCarrierCodes = excludedCarrierCodes;
 
   factory _$_CarrierRestrictions.fromJson(Map<String, dynamic> json) =>
       _$$_CarrierRestrictionsFromJson(json);
 
-  final List<String> _excludedCarrierCodes;
+  final List<String>? _excludedCarrierCodes;
   @override
-  List<String> get excludedCarrierCodes {
+  List<String>? get excludedCarrierCodes {
+    final value = _excludedCarrierCodes;
+    if (value == null) return null;
     if (_excludedCarrierCodes is EqualUnmodifiableListView)
       return _excludedCarrierCodes;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_excludedCarrierCodes);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -1499,14 +1529,14 @@ class _$_CarrierRestrictions implements _CarrierRestrictions {
 
 abstract class _CarrierRestrictions implements CarrierRestrictions {
   const factory _CarrierRestrictions(
-          {required final List<String> excludedCarrierCodes}) =
+          {required final List<String>? excludedCarrierCodes}) =
       _$_CarrierRestrictions;
 
   factory _CarrierRestrictions.fromJson(Map<String, dynamic> json) =
       _$_CarrierRestrictions.fromJson;
 
   @override
-  List<String> get excludedCarrierCodes;
+  List<String>? get excludedCarrierCodes;
   @override
   @JsonKey(ignore: true)
   _$$_CarrierRestrictionsCopyWith<_$_CarrierRestrictions> get copyWith =>

@@ -9,14 +9,14 @@ part of 'flight_availabilities_body.dart';
 _$_FlightAvailabilitiesBody _$$_FlightAvailabilitiesBodyFromJson(
         Map<String, dynamic> json) =>
     _$_FlightAvailabilitiesBody(
-      originDestinations: (json['originDestinations'] as List<dynamic>)
-          .map((e) => OriginDestination.fromJson(e as Map<String, dynamic>))
+      originDestinations: (json['originDestinations'] as List<dynamic>?)
+          ?.map((e) => OriginDestination.fromJson(e as Map<String, dynamic>))
           .toList(),
-      travelers: (json['travelers'] as List<dynamic>)
-          .map((e) => FlightTraveler.fromJson(e as Map<String, dynamic>))
+      travelers: (json['travelers'] as List<dynamic>?)
+          ?.map((e) => FlightTraveler.fromJson(e as Map<String, dynamic>))
           .toList(),
       sources:
-          (json['sources'] as List<dynamic>).map((e) => e as String).toList(),
+          (json['sources'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$$_FlightAvailabilitiesBodyToJson(
@@ -29,11 +29,13 @@ Map<String, dynamic> _$$_FlightAvailabilitiesBodyToJson(
 
 _$_OriginDestination _$$_OriginDestinationFromJson(Map<String, dynamic> json) =>
     _$_OriginDestination(
-      id: json['id'] as String,
-      originLocationCode: json['originLocationCode'] as String,
-      destinationLocationCode: json['destinationLocationCode'] as String,
-      departureDateTime: DepartureDateTime.fromJson(
-          json['departureDateTime'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      originLocationCode: json['originLocationCode'] as String?,
+      destinationLocationCode: json['destinationLocationCode'] as String?,
+      departureDateTime: json['departureDateTime'] == null
+          ? null
+          : DepartureDateTime.fromJson(
+              json['departureDateTime'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_OriginDestinationToJson(
@@ -47,8 +49,8 @@ Map<String, dynamic> _$$_OriginDestinationToJson(
 
 _$_DepartureDateTime _$$_DepartureDateTimeFromJson(Map<String, dynamic> json) =>
     _$_DepartureDateTime(
-      date: json['date'] as String,
-      time: json['time'] as String,
+      date: json['date'] as String?,
+      time: json['time'] as String?,
     );
 
 Map<String, dynamic> _$$_DepartureDateTimeToJson(
@@ -60,8 +62,8 @@ Map<String, dynamic> _$$_DepartureDateTimeToJson(
 
 _$_FlightTraveler _$$_FlightTravelerFromJson(Map<String, dynamic> json) =>
     _$_FlightTraveler(
-      id: json['id'] as String,
-      travelerType: json['travelerType'] as String,
+      id: json['id'] as String?,
+      travelerType: json['travelerType'] as String?,
     );
 
 Map<String, dynamic> _$$_FlightTravelerToJson(_$_FlightTraveler instance) =>
