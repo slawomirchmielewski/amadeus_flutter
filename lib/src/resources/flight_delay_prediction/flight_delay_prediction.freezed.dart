@@ -12,7 +12,7 @@ part of 'flight_delay_prediction.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 FlightDelayPrediction _$FlightDelayPredictionFromJson(
     Map<String, dynamic> json) {
@@ -32,8 +32,12 @@ mixin _$FlightDelayPrediction {
   String? get flightNumber => throw _privateConstructorUsedError;
   String? get duration => throw _privateConstructorUsedError;
 
+  /// Serializes this FlightDelayPrediction to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FlightDelayPrediction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FlightDelayPredictionCopyWith<FlightDelayPrediction> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -68,6 +72,8 @@ class _$FlightDelayPredictionCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FlightDelayPrediction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -128,11 +134,12 @@ class _$FlightDelayPredictionCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_FlightDelayPredictionCopyWith<$Res>
+abstract class _$$FlightDelayPredictionImplCopyWith<$Res>
     implements $FlightDelayPredictionCopyWith<$Res> {
-  factory _$$_FlightDelayPredictionCopyWith(_$_FlightDelayPrediction value,
-          $Res Function(_$_FlightDelayPrediction) then) =
-      __$$_FlightDelayPredictionCopyWithImpl<$Res>;
+  factory _$$FlightDelayPredictionImplCopyWith(
+          _$FlightDelayPredictionImpl value,
+          $Res Function(_$FlightDelayPredictionImpl) then) =
+      __$$FlightDelayPredictionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -149,13 +156,16 @@ abstract class _$$_FlightDelayPredictionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FlightDelayPredictionCopyWithImpl<$Res>
-    extends _$FlightDelayPredictionCopyWithImpl<$Res, _$_FlightDelayPrediction>
-    implements _$$_FlightDelayPredictionCopyWith<$Res> {
-  __$$_FlightDelayPredictionCopyWithImpl(_$_FlightDelayPrediction _value,
-      $Res Function(_$_FlightDelayPrediction) _then)
+class __$$FlightDelayPredictionImplCopyWithImpl<$Res>
+    extends _$FlightDelayPredictionCopyWithImpl<$Res,
+        _$FlightDelayPredictionImpl>
+    implements _$$FlightDelayPredictionImplCopyWith<$Res> {
+  __$$FlightDelayPredictionImplCopyWithImpl(_$FlightDelayPredictionImpl _value,
+      $Res Function(_$FlightDelayPredictionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FlightDelayPrediction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -170,7 +180,7 @@ class __$$_FlightDelayPredictionCopyWithImpl<$Res>
     Object? flightNumber = freezed,
     Object? duration = freezed,
   }) {
-    return _then(_$_FlightDelayPrediction(
+    return _then(_$FlightDelayPredictionImpl(
       originLocationCode: freezed == originLocationCode
           ? _value.originLocationCode
           : originLocationCode // ignore: cast_nullable_to_non_nullable
@@ -218,8 +228,8 @@ class __$$_FlightDelayPredictionCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$_FlightDelayPrediction implements _FlightDelayPrediction {
-  const _$_FlightDelayPrediction(
+class _$FlightDelayPredictionImpl implements _FlightDelayPrediction {
+  const _$FlightDelayPredictionImpl(
       {required this.originLocationCode,
       required this.destinationLocationCode,
       required this.departureDate,
@@ -231,8 +241,8 @@ class _$_FlightDelayPrediction implements _FlightDelayPrediction {
       required this.flightNumber,
       required this.duration});
 
-  factory _$_FlightDelayPrediction.fromJson(Map<String, dynamic> json) =>
-      _$$_FlightDelayPredictionFromJson(json);
+  factory _$FlightDelayPredictionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FlightDelayPredictionImplFromJson(json);
 
   @override
   final String? originLocationCode;
@@ -261,10 +271,10 @@ class _$_FlightDelayPrediction implements _FlightDelayPrediction {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FlightDelayPrediction &&
+            other is _$FlightDelayPredictionImpl &&
             (identical(other.originLocationCode, originLocationCode) ||
                 other.originLocationCode == originLocationCode) &&
             (identical(
@@ -288,7 +298,7 @@ class _$_FlightDelayPrediction implements _FlightDelayPrediction {
                 other.duration == duration));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -303,16 +313,18 @@ class _$_FlightDelayPrediction implements _FlightDelayPrediction {
       flightNumber,
       duration);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FlightDelayPrediction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FlightDelayPredictionCopyWith<_$_FlightDelayPrediction> get copyWith =>
-      __$$_FlightDelayPredictionCopyWithImpl<_$_FlightDelayPrediction>(
-          this, _$identity);
+  _$$FlightDelayPredictionImplCopyWith<_$FlightDelayPredictionImpl>
+      get copyWith => __$$FlightDelayPredictionImplCopyWithImpl<
+          _$FlightDelayPredictionImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FlightDelayPredictionToJson(
+    return _$$FlightDelayPredictionImplToJson(
       this,
     );
   }
@@ -329,10 +341,10 @@ abstract class _FlightDelayPrediction implements FlightDelayPrediction {
       required final String? aircraftCode,
       required final String? carrierCode,
       required final String? flightNumber,
-      required final String? duration}) = _$_FlightDelayPrediction;
+      required final String? duration}) = _$FlightDelayPredictionImpl;
 
   factory _FlightDelayPrediction.fromJson(Map<String, dynamic> json) =
-      _$_FlightDelayPrediction.fromJson;
+      _$FlightDelayPredictionImpl.fromJson;
 
   @override
   String? get originLocationCode;
@@ -354,8 +366,11 @@ abstract class _FlightDelayPrediction implements FlightDelayPrediction {
   String? get flightNumber;
   @override
   String? get duration;
+
+  /// Create a copy of FlightDelayPrediction
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_FlightDelayPredictionCopyWith<_$_FlightDelayPrediction> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FlightDelayPredictionImplCopyWith<_$FlightDelayPredictionImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'traveler.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Traveler _$TravelerFromJson(Map<String, dynamic> json) {
   return _Traveler.fromJson(json);
@@ -27,8 +27,12 @@ mixin _$Traveler {
   List<Document>? get documents => throw _privateConstructorUsedError;
   Contact? get contact => throw _privateConstructorUsedError;
 
+  /// Serializes this Traveler to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Traveler
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TravelerCopyWith<Traveler> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,6 +64,8 @@ class _$TravelerCopyWithImpl<$Res, $Val extends Traveler>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Traveler
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -98,6 +104,8 @@ class _$TravelerCopyWithImpl<$Res, $Val extends Traveler>
     ) as $Val);
   }
 
+  /// Create a copy of Traveler
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NameCopyWith<$Res>? get name {
@@ -110,6 +118,8 @@ class _$TravelerCopyWithImpl<$Res, $Val extends Traveler>
     });
   }
 
+  /// Create a copy of Traveler
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ContactCopyWith<$Res>? get contact {
@@ -124,10 +134,11 @@ class _$TravelerCopyWithImpl<$Res, $Val extends Traveler>
 }
 
 /// @nodoc
-abstract class _$$_TravelerCopyWith<$Res> implements $TravelerCopyWith<$Res> {
-  factory _$$_TravelerCopyWith(
-          _$_Traveler value, $Res Function(_$_Traveler) then) =
-      __$$_TravelerCopyWithImpl<$Res>;
+abstract class _$$TravelerImplCopyWith<$Res>
+    implements $TravelerCopyWith<$Res> {
+  factory _$$TravelerImplCopyWith(
+          _$TravelerImpl value, $Res Function(_$TravelerImpl) then) =
+      __$$TravelerImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -145,13 +156,15 @@ abstract class _$$_TravelerCopyWith<$Res> implements $TravelerCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TravelerCopyWithImpl<$Res>
-    extends _$TravelerCopyWithImpl<$Res, _$_Traveler>
-    implements _$$_TravelerCopyWith<$Res> {
-  __$$_TravelerCopyWithImpl(
-      _$_Traveler _value, $Res Function(_$_Traveler) _then)
+class __$$TravelerImplCopyWithImpl<$Res>
+    extends _$TravelerCopyWithImpl<$Res, _$TravelerImpl>
+    implements _$$TravelerImplCopyWith<$Res> {
+  __$$TravelerImplCopyWithImpl(
+      _$TravelerImpl _value, $Res Function(_$TravelerImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Traveler
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -162,7 +175,7 @@ class __$$_TravelerCopyWithImpl<$Res>
     Object? documents = freezed,
     Object? contact = freezed,
   }) {
-    return _then(_$_Traveler(
+    return _then(_$TravelerImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -194,8 +207,8 @@ class __$$_TravelerCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$_Traveler implements _Traveler {
-  const _$_Traveler(
+class _$TravelerImpl implements _Traveler {
+  const _$TravelerImpl(
       {required this.id,
       required this.dateOfBirth,
       required this.gender,
@@ -204,8 +217,8 @@ class _$_Traveler implements _Traveler {
       required this.contact})
       : _documents = documents;
 
-  factory _$_Traveler.fromJson(Map<String, dynamic> json) =>
-      _$$_TravelerFromJson(json);
+  factory _$TravelerImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TravelerImplFromJson(json);
 
   @override
   final String? id;
@@ -234,10 +247,10 @@ class _$_Traveler implements _Traveler {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Traveler &&
+            other is _$TravelerImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.dateOfBirth, dateOfBirth) ||
                 other.dateOfBirth == dateOfBirth) &&
@@ -248,20 +261,22 @@ class _$_Traveler implements _Traveler {
             (identical(other.contact, contact) || other.contact == contact));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, dateOfBirth, gender, name,
       const DeepCollectionEquality().hash(_documents), contact);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Traveler
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TravelerCopyWith<_$_Traveler> get copyWith =>
-      __$$_TravelerCopyWithImpl<_$_Traveler>(this, _$identity);
+  _$$TravelerImplCopyWith<_$TravelerImpl> get copyWith =>
+      __$$TravelerImplCopyWithImpl<_$TravelerImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TravelerToJson(
+    return _$$TravelerImplToJson(
       this,
     );
   }
@@ -274,9 +289,10 @@ abstract class _Traveler implements Traveler {
       required final String? gender,
       required final Name? name,
       required final List<Document>? documents,
-      required final Contact? contact}) = _$_Traveler;
+      required final Contact? contact}) = _$TravelerImpl;
 
-  factory _Traveler.fromJson(Map<String, dynamic> json) = _$_Traveler.fromJson;
+  factory _Traveler.fromJson(Map<String, dynamic> json) =
+      _$TravelerImpl.fromJson;
 
   @override
   String? get id;
@@ -290,9 +306,12 @@ abstract class _Traveler implements Traveler {
   List<Document>? get documents;
   @override
   Contact? get contact;
+
+  /// Create a copy of Traveler
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_TravelerCopyWith<_$_Traveler> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TravelerImplCopyWith<_$TravelerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -305,8 +324,12 @@ mixin _$Name {
   String? get firstName => throw _privateConstructorUsedError;
   String? get lastName => throw _privateConstructorUsedError;
 
+  /// Serializes this Name to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Name
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NameCopyWith<Name> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -328,6 +351,8 @@ class _$NameCopyWithImpl<$Res, $Val extends Name>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Name
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -348,27 +373,31 @@ class _$NameCopyWithImpl<$Res, $Val extends Name>
 }
 
 /// @nodoc
-abstract class _$$_NameCopyWith<$Res> implements $NameCopyWith<$Res> {
-  factory _$$_NameCopyWith(_$_Name value, $Res Function(_$_Name) then) =
-      __$$_NameCopyWithImpl<$Res>;
+abstract class _$$NameImplCopyWith<$Res> implements $NameCopyWith<$Res> {
+  factory _$$NameImplCopyWith(
+          _$NameImpl value, $Res Function(_$NameImpl) then) =
+      __$$NameImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? firstName, String? lastName});
 }
 
 /// @nodoc
-class __$$_NameCopyWithImpl<$Res> extends _$NameCopyWithImpl<$Res, _$_Name>
-    implements _$$_NameCopyWith<$Res> {
-  __$$_NameCopyWithImpl(_$_Name _value, $Res Function(_$_Name) _then)
+class __$$NameImplCopyWithImpl<$Res>
+    extends _$NameCopyWithImpl<$Res, _$NameImpl>
+    implements _$$NameImplCopyWith<$Res> {
+  __$$NameImplCopyWithImpl(_$NameImpl _value, $Res Function(_$NameImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Name
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? firstName = freezed,
     Object? lastName = freezed,
   }) {
-    return _then(_$_Name(
+    return _then(_$NameImpl(
       firstName: freezed == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -383,10 +412,11 @@ class __$$_NameCopyWithImpl<$Res> extends _$NameCopyWithImpl<$Res, _$_Name>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Name implements _Name {
-  const _$_Name({required this.firstName, required this.lastName});
+class _$NameImpl implements _Name {
+  const _$NameImpl({required this.firstName, required this.lastName});
 
-  factory _$_Name.fromJson(Map<String, dynamic> json) => _$$_NameFromJson(json);
+  factory _$NameImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NameImplFromJson(json);
 
   @override
   final String? firstName;
@@ -399,29 +429,31 @@ class _$_Name implements _Name {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Name &&
+            other is _$NameImpl &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, firstName, lastName);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Name
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NameCopyWith<_$_Name> get copyWith =>
-      __$$_NameCopyWithImpl<_$_Name>(this, _$identity);
+  _$$NameImplCopyWith<_$NameImpl> get copyWith =>
+      __$$NameImplCopyWithImpl<_$NameImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NameToJson(
+    return _$$NameImplToJson(
       this,
     );
   }
@@ -430,17 +462,21 @@ class _$_Name implements _Name {
 abstract class _Name implements Name {
   const factory _Name(
       {required final String? firstName,
-      required final String? lastName}) = _$_Name;
+      required final String? lastName}) = _$NameImpl;
 
-  factory _Name.fromJson(Map<String, dynamic> json) = _$_Name.fromJson;
+  factory _Name.fromJson(Map<String, dynamic> json) = _$NameImpl.fromJson;
 
   @override
   String? get firstName;
   @override
   String? get lastName;
+
+  /// Create a copy of Name
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_NameCopyWith<_$_Name> get copyWith => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$NameImplCopyWith<_$NameImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 Document _$DocumentFromJson(Map<String, dynamic> json) {
@@ -460,8 +496,12 @@ mixin _$Document {
   String? get birthPlace => throw _privateConstructorUsedError;
   bool get holder => throw _privateConstructorUsedError;
 
+  /// Serializes this Document to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Document
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DocumentCopyWith<Document> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -494,6 +534,8 @@ class _$DocumentCopyWithImpl<$Res, $Val extends Document>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Document
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -554,10 +596,11 @@ class _$DocumentCopyWithImpl<$Res, $Val extends Document>
 }
 
 /// @nodoc
-abstract class _$$_DocumentCopyWith<$Res> implements $DocumentCopyWith<$Res> {
-  factory _$$_DocumentCopyWith(
-          _$_Document value, $Res Function(_$_Document) then) =
-      __$$_DocumentCopyWithImpl<$Res>;
+abstract class _$$DocumentImplCopyWith<$Res>
+    implements $DocumentCopyWith<$Res> {
+  factory _$$DocumentImplCopyWith(
+          _$DocumentImpl value, $Res Function(_$DocumentImpl) then) =
+      __$$DocumentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -574,13 +617,15 @@ abstract class _$$_DocumentCopyWith<$Res> implements $DocumentCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_DocumentCopyWithImpl<$Res>
-    extends _$DocumentCopyWithImpl<$Res, _$_Document>
-    implements _$$_DocumentCopyWith<$Res> {
-  __$$_DocumentCopyWithImpl(
-      _$_Document _value, $Res Function(_$_Document) _then)
+class __$$DocumentImplCopyWithImpl<$Res>
+    extends _$DocumentCopyWithImpl<$Res, _$DocumentImpl>
+    implements _$$DocumentImplCopyWith<$Res> {
+  __$$DocumentImplCopyWithImpl(
+      _$DocumentImpl _value, $Res Function(_$DocumentImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Document
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -595,7 +640,7 @@ class __$$_DocumentCopyWithImpl<$Res>
     Object? birthPlace = freezed,
     Object? holder = null,
   }) {
-    return _then(_$_Document(
+    return _then(_$DocumentImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -642,8 +687,8 @@ class __$$_DocumentCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Document implements _Document {
-  const _$_Document(
+class _$DocumentImpl implements _Document {
+  const _$DocumentImpl(
       {required this.id,
       required this.number,
       required this.issuanceDate,
@@ -655,8 +700,8 @@ class _$_Document implements _Document {
       required this.birthPlace,
       required this.holder});
 
-  factory _$_Document.fromJson(Map<String, dynamic> json) =>
-      _$$_DocumentFromJson(json);
+  factory _$DocumentImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DocumentImplFromJson(json);
 
   @override
   final String? id;
@@ -685,10 +730,10 @@ class _$_Document implements _Document {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Document &&
+            other is _$DocumentImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.number, number) || other.number == number) &&
             (identical(other.issuanceDate, issuanceDate) ||
@@ -708,7 +753,7 @@ class _$_Document implements _Document {
             (identical(other.holder, holder) || other.holder == holder));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -723,15 +768,17 @@ class _$_Document implements _Document {
       birthPlace,
       holder);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Document
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DocumentCopyWith<_$_Document> get copyWith =>
-      __$$_DocumentCopyWithImpl<_$_Document>(this, _$identity);
+  _$$DocumentImplCopyWith<_$DocumentImpl> get copyWith =>
+      __$$DocumentImplCopyWithImpl<_$DocumentImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DocumentToJson(
+    return _$$DocumentImplToJson(
       this,
     );
   }
@@ -748,9 +795,10 @@ abstract class _Document implements Document {
       required final String? nationality,
       required final String? documentType,
       required final String? birthPlace,
-      required final bool holder}) = _$_Document;
+      required final bool holder}) = _$DocumentImpl;
 
-  factory _Document.fromJson(Map<String, dynamic> json) = _$_Document.fromJson;
+  factory _Document.fromJson(Map<String, dynamic> json) =
+      _$DocumentImpl.fromJson;
 
   @override
   String? get id;
@@ -772,9 +820,12 @@ abstract class _Document implements Document {
   String? get birthPlace;
   @override
   bool get holder;
+
+  /// Create a copy of Document
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_DocumentCopyWith<_$_Document> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DocumentImplCopyWith<_$DocumentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -787,8 +838,12 @@ mixin _$Contact {
   List<Phone>? get phones => throw _privateConstructorUsedError;
   String? get emailAddress => throw _privateConstructorUsedError;
 
+  /// Serializes this Contact to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Contact
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ContactCopyWith<Contact> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -810,6 +865,8 @@ class _$ContactCopyWithImpl<$Res, $Val extends Contact>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Contact
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -830,29 +887,32 @@ class _$ContactCopyWithImpl<$Res, $Val extends Contact>
 }
 
 /// @nodoc
-abstract class _$$_ContactCopyWith<$Res> implements $ContactCopyWith<$Res> {
-  factory _$$_ContactCopyWith(
-          _$_Contact value, $Res Function(_$_Contact) then) =
-      __$$_ContactCopyWithImpl<$Res>;
+abstract class _$$ContactImplCopyWith<$Res> implements $ContactCopyWith<$Res> {
+  factory _$$ContactImplCopyWith(
+          _$ContactImpl value, $Res Function(_$ContactImpl) then) =
+      __$$ContactImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<Phone>? phones, String? emailAddress});
 }
 
 /// @nodoc
-class __$$_ContactCopyWithImpl<$Res>
-    extends _$ContactCopyWithImpl<$Res, _$_Contact>
-    implements _$$_ContactCopyWith<$Res> {
-  __$$_ContactCopyWithImpl(_$_Contact _value, $Res Function(_$_Contact) _then)
+class __$$ContactImplCopyWithImpl<$Res>
+    extends _$ContactCopyWithImpl<$Res, _$ContactImpl>
+    implements _$$ContactImplCopyWith<$Res> {
+  __$$ContactImplCopyWithImpl(
+      _$ContactImpl _value, $Res Function(_$ContactImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Contact
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? phones = freezed,
     Object? emailAddress = freezed,
   }) {
-    return _then(_$_Contact(
+    return _then(_$ContactImpl(
       phones: freezed == phones
           ? _value._phones
           : phones // ignore: cast_nullable_to_non_nullable
@@ -867,13 +927,13 @@ class __$$_ContactCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Contact implements _Contact {
-  const _$_Contact(
+class _$ContactImpl implements _Contact {
+  const _$ContactImpl(
       {required final List<Phone>? phones, required this.emailAddress})
       : _phones = phones;
 
-  factory _$_Contact.fromJson(Map<String, dynamic> json) =>
-      _$$_ContactFromJson(json);
+  factory _$ContactImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ContactImplFromJson(json);
 
   final List<Phone>? _phones;
   @override
@@ -894,29 +954,31 @@ class _$_Contact implements _Contact {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Contact &&
+            other is _$ContactImpl &&
             const DeepCollectionEquality().equals(other._phones, _phones) &&
             (identical(other.emailAddress, emailAddress) ||
                 other.emailAddress == emailAddress));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_phones), emailAddress);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Contact
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ContactCopyWith<_$_Contact> get copyWith =>
-      __$$_ContactCopyWithImpl<_$_Contact>(this, _$identity);
+  _$$ContactImplCopyWith<_$ContactImpl> get copyWith =>
+      __$$ContactImplCopyWithImpl<_$ContactImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ContactToJson(
+    return _$$ContactImplToJson(
       this,
     );
   }
@@ -925,17 +987,20 @@ class _$_Contact implements _Contact {
 abstract class _Contact implements Contact {
   const factory _Contact(
       {required final List<Phone>? phones,
-      required final String? emailAddress}) = _$_Contact;
+      required final String? emailAddress}) = _$ContactImpl;
 
-  factory _Contact.fromJson(Map<String, dynamic> json) = _$_Contact.fromJson;
+  factory _Contact.fromJson(Map<String, dynamic> json) = _$ContactImpl.fromJson;
 
   @override
   List<Phone>? get phones;
   @override
   String? get emailAddress;
+
+  /// Create a copy of Contact
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_ContactCopyWith<_$_Contact> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ContactImplCopyWith<_$ContactImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -949,8 +1014,12 @@ mixin _$Phone {
   String? get countryCallingCode => throw _privateConstructorUsedError;
   String? get number => throw _privateConstructorUsedError;
 
+  /// Serializes this Phone to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Phone
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PhoneCopyWith<Phone> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -972,6 +1041,8 @@ class _$PhoneCopyWithImpl<$Res, $Val extends Phone>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Phone
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -997,20 +1068,25 @@ class _$PhoneCopyWithImpl<$Res, $Val extends Phone>
 }
 
 /// @nodoc
-abstract class _$$_PhoneCopyWith<$Res> implements $PhoneCopyWith<$Res> {
-  factory _$$_PhoneCopyWith(_$_Phone value, $Res Function(_$_Phone) then) =
-      __$$_PhoneCopyWithImpl<$Res>;
+abstract class _$$PhoneImplCopyWith<$Res> implements $PhoneCopyWith<$Res> {
+  factory _$$PhoneImplCopyWith(
+          _$PhoneImpl value, $Res Function(_$PhoneImpl) then) =
+      __$$PhoneImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? deviceType, String? countryCallingCode, String? number});
 }
 
 /// @nodoc
-class __$$_PhoneCopyWithImpl<$Res> extends _$PhoneCopyWithImpl<$Res, _$_Phone>
-    implements _$$_PhoneCopyWith<$Res> {
-  __$$_PhoneCopyWithImpl(_$_Phone _value, $Res Function(_$_Phone) _then)
+class __$$PhoneImplCopyWithImpl<$Res>
+    extends _$PhoneCopyWithImpl<$Res, _$PhoneImpl>
+    implements _$$PhoneImplCopyWith<$Res> {
+  __$$PhoneImplCopyWithImpl(
+      _$PhoneImpl _value, $Res Function(_$PhoneImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Phone
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1018,7 +1094,7 @@ class __$$_PhoneCopyWithImpl<$Res> extends _$PhoneCopyWithImpl<$Res, _$_Phone>
     Object? countryCallingCode = freezed,
     Object? number = freezed,
   }) {
-    return _then(_$_Phone(
+    return _then(_$PhoneImpl(
       deviceType: freezed == deviceType
           ? _value.deviceType
           : deviceType // ignore: cast_nullable_to_non_nullable
@@ -1037,14 +1113,14 @@ class __$$_PhoneCopyWithImpl<$Res> extends _$PhoneCopyWithImpl<$Res, _$_Phone>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Phone implements _Phone {
-  const _$_Phone(
+class _$PhoneImpl implements _Phone {
+  const _$PhoneImpl(
       {required this.deviceType,
       required this.countryCallingCode,
       required this.number});
 
-  factory _$_Phone.fromJson(Map<String, dynamic> json) =>
-      _$$_PhoneFromJson(json);
+  factory _$PhoneImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PhoneImplFromJson(json);
 
   @override
   final String? deviceType;
@@ -1059,10 +1135,10 @@ class _$_Phone implements _Phone {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Phone &&
+            other is _$PhoneImpl &&
             (identical(other.deviceType, deviceType) ||
                 other.deviceType == deviceType) &&
             (identical(other.countryCallingCode, countryCallingCode) ||
@@ -1070,20 +1146,22 @@ class _$_Phone implements _Phone {
             (identical(other.number, number) || other.number == number));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, deviceType, countryCallingCode, number);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Phone
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PhoneCopyWith<_$_Phone> get copyWith =>
-      __$$_PhoneCopyWithImpl<_$_Phone>(this, _$identity);
+  _$$PhoneImplCopyWith<_$PhoneImpl> get copyWith =>
+      __$$PhoneImplCopyWithImpl<_$PhoneImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PhoneToJson(
+    return _$$PhoneImplToJson(
       this,
     );
   }
@@ -1093,9 +1171,9 @@ abstract class _Phone implements Phone {
   const factory _Phone(
       {required final String? deviceType,
       required final String? countryCallingCode,
-      required final String? number}) = _$_Phone;
+      required final String? number}) = _$PhoneImpl;
 
-  factory _Phone.fromJson(Map<String, dynamic> json) = _$_Phone.fromJson;
+  factory _Phone.fromJson(Map<String, dynamic> json) = _$PhoneImpl.fromJson;
 
   @override
   String? get deviceType;
@@ -1103,8 +1181,11 @@ abstract class _Phone implements Phone {
   String? get countryCallingCode;
   @override
   String? get number;
+
+  /// Create a copy of Phone
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_PhoneCopyWith<_$_Phone> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PhoneImplCopyWith<_$PhoneImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -6,9 +6,9 @@ part of 'flight_availabilities_body.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FlightAvailabilitiesBody _$$_FlightAvailabilitiesBodyFromJson(
+_$FlightAvailabilitiesBodyImpl _$$FlightAvailabilitiesBodyImplFromJson(
         Map<String, dynamic> json) =>
-    _$_FlightAvailabilitiesBody(
+    _$FlightAvailabilitiesBodyImpl(
       originDestinations: (json['originDestinations'] as List<dynamic>?)
           ?.map((e) => OriginDestination.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -19,8 +19,8 @@ _$_FlightAvailabilitiesBody _$$_FlightAvailabilitiesBodyFromJson(
           (json['sources'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$_FlightAvailabilitiesBodyToJson(
-        _$_FlightAvailabilitiesBody instance) =>
+Map<String, dynamic> _$$FlightAvailabilitiesBodyImplToJson(
+        _$FlightAvailabilitiesBodyImpl instance) =>
     <String, dynamic>{
       'originDestinations':
           instance.originDestinations?.map((e) => e.toJson()).toList(),
@@ -28,8 +28,9 @@ Map<String, dynamic> _$$_FlightAvailabilitiesBodyToJson(
       'sources': instance.sources,
     };
 
-_$_OriginDestination _$$_OriginDestinationFromJson(Map<String, dynamic> json) =>
-    _$_OriginDestination(
+_$OriginDestinationImpl _$$OriginDestinationImplFromJson(
+        Map<String, dynamic> json) =>
+    _$OriginDestinationImpl(
       id: json['id'] as String?,
       originLocationCode: json['originLocationCode'] as String?,
       destinationLocationCode: json['destinationLocationCode'] as String?,
@@ -39,8 +40,8 @@ _$_OriginDestination _$$_OriginDestinationFromJson(Map<String, dynamic> json) =>
               json['departureDateTime'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_OriginDestinationToJson(
-        _$_OriginDestination instance) =>
+Map<String, dynamic> _$$OriginDestinationImplToJson(
+        _$OriginDestinationImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'originLocationCode': instance.originLocationCode,
@@ -48,26 +49,28 @@ Map<String, dynamic> _$$_OriginDestinationToJson(
       'departureDateTime': instance.departureDateTime,
     };
 
-_$_DepartureDateTime _$$_DepartureDateTimeFromJson(Map<String, dynamic> json) =>
-    _$_DepartureDateTime(
+_$DepartureDateTimeImpl _$$DepartureDateTimeImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DepartureDateTimeImpl(
       date: json['date'] as String?,
       time: json['time'] as String?,
     );
 
-Map<String, dynamic> _$$_DepartureDateTimeToJson(
-        _$_DepartureDateTime instance) =>
+Map<String, dynamic> _$$DepartureDateTimeImplToJson(
+        _$DepartureDateTimeImpl instance) =>
     <String, dynamic>{
       'date': instance.date,
       'time': instance.time,
     };
 
-_$_FlightTraveler _$$_FlightTravelerFromJson(Map<String, dynamic> json) =>
-    _$_FlightTraveler(
+_$FlightTravelerImpl _$$FlightTravelerImplFromJson(Map<String, dynamic> json) =>
+    _$FlightTravelerImpl(
       id: json['id'] as String?,
       travelerType: json['travelerType'] as String?,
     );
 
-Map<String, dynamic> _$$_FlightTravelerToJson(_$_FlightTraveler instance) =>
+Map<String, dynamic> _$$FlightTravelerImplToJson(
+        _$FlightTravelerImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'travelerType': instance.travelerType,

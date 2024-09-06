@@ -12,7 +12,7 @@ part of 'flight_offer_search.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 FlightOfferSearch _$FlightOfferSearchFromJson(Map<String, dynamic> json) {
   return _FlightOfferSearch.fromJson(json);
@@ -36,8 +36,12 @@ mixin _$FlightOfferSearch {
   List<TravelerPricing>? get travelerPricings =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this FlightOfferSearch to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FlightOfferSearch
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FlightOfferSearchCopyWith<FlightOfferSearch> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -77,6 +81,8 @@ class _$FlightOfferSearchCopyWithImpl<$Res, $Val extends FlightOfferSearch>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FlightOfferSearch
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -150,6 +156,8 @@ class _$FlightOfferSearchCopyWithImpl<$Res, $Val extends FlightOfferSearch>
     ) as $Val);
   }
 
+  /// Create a copy of FlightOfferSearch
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OfferPriceCopyWith<$Res>? get price {
@@ -162,6 +170,8 @@ class _$FlightOfferSearchCopyWithImpl<$Res, $Val extends FlightOfferSearch>
     });
   }
 
+  /// Create a copy of FlightOfferSearch
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PricingOptionsCopyWith<$Res>? get pricingOptions {
@@ -176,11 +186,11 @@ class _$FlightOfferSearchCopyWithImpl<$Res, $Val extends FlightOfferSearch>
 }
 
 /// @nodoc
-abstract class _$$_FlightOfferSearchCopyWith<$Res>
+abstract class _$$FlightOfferSearchImplCopyWith<$Res>
     implements $FlightOfferSearchCopyWith<$Res> {
-  factory _$$_FlightOfferSearchCopyWith(_$_FlightOfferSearch value,
-          $Res Function(_$_FlightOfferSearch) then) =
-      __$$_FlightOfferSearchCopyWithImpl<$Res>;
+  factory _$$FlightOfferSearchImplCopyWith(_$FlightOfferSearchImpl value,
+          $Res Function(_$FlightOfferSearchImpl) then) =
+      __$$FlightOfferSearchImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -205,13 +215,15 @@ abstract class _$$_FlightOfferSearchCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FlightOfferSearchCopyWithImpl<$Res>
-    extends _$FlightOfferSearchCopyWithImpl<$Res, _$_FlightOfferSearch>
-    implements _$$_FlightOfferSearchCopyWith<$Res> {
-  __$$_FlightOfferSearchCopyWithImpl(
-      _$_FlightOfferSearch _value, $Res Function(_$_FlightOfferSearch) _then)
+class __$$FlightOfferSearchImplCopyWithImpl<$Res>
+    extends _$FlightOfferSearchCopyWithImpl<$Res, _$FlightOfferSearchImpl>
+    implements _$$FlightOfferSearchImplCopyWith<$Res> {
+  __$$FlightOfferSearchImplCopyWithImpl(_$FlightOfferSearchImpl _value,
+      $Res Function(_$FlightOfferSearchImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FlightOfferSearch
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -229,7 +241,7 @@ class __$$_FlightOfferSearchCopyWithImpl<$Res>
     Object? validatingAirlineCodes = freezed,
     Object? travelerPricings = freezed,
   }) {
-    return _then(_$_FlightOfferSearch(
+    return _then(_$FlightOfferSearchImpl(
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -289,8 +301,8 @@ class __$$_FlightOfferSearchCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$_FlightOfferSearch implements _FlightOfferSearch {
-  const _$_FlightOfferSearch(
+class _$FlightOfferSearchImpl implements _FlightOfferSearch {
+  const _$FlightOfferSearchImpl(
       {required this.type,
       required this.id,
       required this.source,
@@ -308,8 +320,8 @@ class _$_FlightOfferSearch implements _FlightOfferSearch {
         _validatingAirlineCodes = validatingAirlineCodes,
         _travelerPricings = travelerPricings;
 
-  factory _$_FlightOfferSearch.fromJson(Map<String, dynamic> json) =>
-      _$$_FlightOfferSearchFromJson(json);
+  factory _$FlightOfferSearchImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FlightOfferSearchImplFromJson(json);
 
   @override
   final String? type;
@@ -369,10 +381,10 @@ class _$_FlightOfferSearch implements _FlightOfferSearch {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FlightOfferSearch &&
+            other is _$FlightOfferSearchImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.source, source) || other.source == source) &&
@@ -397,7 +409,7 @@ class _$_FlightOfferSearch implements _FlightOfferSearch {
                 .equals(other._travelerPricings, _travelerPricings));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -415,16 +427,18 @@ class _$_FlightOfferSearch implements _FlightOfferSearch {
       const DeepCollectionEquality().hash(_validatingAirlineCodes),
       const DeepCollectionEquality().hash(_travelerPricings));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FlightOfferSearch
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FlightOfferSearchCopyWith<_$_FlightOfferSearch> get copyWith =>
-      __$$_FlightOfferSearchCopyWithImpl<_$_FlightOfferSearch>(
+  _$$FlightOfferSearchImplCopyWith<_$FlightOfferSearchImpl> get copyWith =>
+      __$$FlightOfferSearchImplCopyWithImpl<_$FlightOfferSearchImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FlightOfferSearchToJson(
+    return _$$FlightOfferSearchImplToJson(
       this,
     );
   }
@@ -445,10 +459,10 @@ abstract class _FlightOfferSearch implements FlightOfferSearch {
           required final PricingOptions? pricingOptions,
           required final List<String>? validatingAirlineCodes,
           required final List<TravelerPricing>? travelerPricings}) =
-      _$_FlightOfferSearch;
+      _$FlightOfferSearchImpl;
 
   factory _FlightOfferSearch.fromJson(Map<String, dynamic> json) =
-      _$_FlightOfferSearch.fromJson;
+      _$FlightOfferSearchImpl.fromJson;
 
   @override
   String? get type;
@@ -476,9 +490,12 @@ abstract class _FlightOfferSearch implements FlightOfferSearch {
   List<String>? get validatingAirlineCodes;
   @override
   List<TravelerPricing>? get travelerPricings;
+
+  /// Create a copy of FlightOfferSearch
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_FlightOfferSearchCopyWith<_$_FlightOfferSearch> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FlightOfferSearchImplCopyWith<_$FlightOfferSearchImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -491,8 +508,12 @@ mixin _$Itinerary {
   String? get duration => throw _privateConstructorUsedError;
   List<Segment>? get segments => throw _privateConstructorUsedError;
 
+  /// Serializes this Itinerary to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Itinerary
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ItineraryCopyWith<Itinerary> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -515,6 +536,8 @@ class _$ItineraryCopyWithImpl<$Res, $Val extends Itinerary>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Itinerary
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -535,30 +558,33 @@ class _$ItineraryCopyWithImpl<$Res, $Val extends Itinerary>
 }
 
 /// @nodoc
-abstract class _$$_ItineraryCopyWith<$Res> implements $ItineraryCopyWith<$Res> {
-  factory _$$_ItineraryCopyWith(
-          _$_Itinerary value, $Res Function(_$_Itinerary) then) =
-      __$$_ItineraryCopyWithImpl<$Res>;
+abstract class _$$ItineraryImplCopyWith<$Res>
+    implements $ItineraryCopyWith<$Res> {
+  factory _$$ItineraryImplCopyWith(
+          _$ItineraryImpl value, $Res Function(_$ItineraryImpl) then) =
+      __$$ItineraryImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? duration, List<Segment>? segments});
 }
 
 /// @nodoc
-class __$$_ItineraryCopyWithImpl<$Res>
-    extends _$ItineraryCopyWithImpl<$Res, _$_Itinerary>
-    implements _$$_ItineraryCopyWith<$Res> {
-  __$$_ItineraryCopyWithImpl(
-      _$_Itinerary _value, $Res Function(_$_Itinerary) _then)
+class __$$ItineraryImplCopyWithImpl<$Res>
+    extends _$ItineraryCopyWithImpl<$Res, _$ItineraryImpl>
+    implements _$$ItineraryImplCopyWith<$Res> {
+  __$$ItineraryImplCopyWithImpl(
+      _$ItineraryImpl _value, $Res Function(_$ItineraryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Itinerary
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? duration = freezed,
     Object? segments = freezed,
   }) {
-    return _then(_$_Itinerary(
+    return _then(_$ItineraryImpl(
       duration: freezed == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
@@ -573,13 +599,13 @@ class __$$_ItineraryCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Itinerary implements _Itinerary {
-  const _$_Itinerary(
+class _$ItineraryImpl implements _Itinerary {
+  const _$ItineraryImpl(
       {required this.duration, required final List<Segment>? segments})
       : _segments = segments;
 
-  factory _$_Itinerary.fromJson(Map<String, dynamic> json) =>
-      _$$_ItineraryFromJson(json);
+  factory _$ItineraryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ItineraryImplFromJson(json);
 
   @override
   final String? duration;
@@ -599,29 +625,31 @@ class _$_Itinerary implements _Itinerary {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Itinerary &&
+            other is _$ItineraryImpl &&
             (identical(other.duration, duration) ||
                 other.duration == duration) &&
             const DeepCollectionEquality().equals(other._segments, _segments));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, duration, const DeepCollectionEquality().hash(_segments));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Itinerary
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ItineraryCopyWith<_$_Itinerary> get copyWith =>
-      __$$_ItineraryCopyWithImpl<_$_Itinerary>(this, _$identity);
+  _$$ItineraryImplCopyWith<_$ItineraryImpl> get copyWith =>
+      __$$ItineraryImplCopyWithImpl<_$ItineraryImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ItineraryToJson(
+    return _$$ItineraryImplToJson(
       this,
     );
   }
@@ -630,18 +658,21 @@ class _$_Itinerary implements _Itinerary {
 abstract class _Itinerary implements Itinerary {
   const factory _Itinerary(
       {required final String? duration,
-      required final List<Segment>? segments}) = _$_Itinerary;
+      required final List<Segment>? segments}) = _$ItineraryImpl;
 
   factory _Itinerary.fromJson(Map<String, dynamic> json) =
-      _$_Itinerary.fromJson;
+      _$ItineraryImpl.fromJson;
 
   @override
   String? get duration;
   @override
   List<Segment>? get segments;
+
+  /// Create a copy of Itinerary
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_ItineraryCopyWith<_$_Itinerary> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ItineraryImplCopyWith<_$ItineraryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -662,8 +693,12 @@ mixin _$Segment {
   int? get numberOfStops => throw _privateConstructorUsedError;
   bool? get blacklistedInEU => throw _privateConstructorUsedError;
 
+  /// Serializes this Segment to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Segment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SegmentCopyWith<Segment> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -700,6 +735,8 @@ class _$SegmentCopyWithImpl<$Res, $Val extends Segment>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Segment
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -758,6 +795,8 @@ class _$SegmentCopyWithImpl<$Res, $Val extends Segment>
     ) as $Val);
   }
 
+  /// Create a copy of Segment
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DepartureCopyWith<$Res>? get departure {
@@ -770,6 +809,8 @@ class _$SegmentCopyWithImpl<$Res, $Val extends Segment>
     });
   }
 
+  /// Create a copy of Segment
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DepartureCopyWith<$Res>? get arrival {
@@ -782,6 +823,8 @@ class _$SegmentCopyWithImpl<$Res, $Val extends Segment>
     });
   }
 
+  /// Create a copy of Segment
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AircraftCopyWith<$Res>? get aircraft {
@@ -794,6 +837,8 @@ class _$SegmentCopyWithImpl<$Res, $Val extends Segment>
     });
   }
 
+  /// Create a copy of Segment
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OperatingCopyWith<$Res>? get operating {
@@ -808,10 +853,10 @@ class _$SegmentCopyWithImpl<$Res, $Val extends Segment>
 }
 
 /// @nodoc
-abstract class _$$_SegmentCopyWith<$Res> implements $SegmentCopyWith<$Res> {
-  factory _$$_SegmentCopyWith(
-          _$_Segment value, $Res Function(_$_Segment) then) =
-      __$$_SegmentCopyWithImpl<$Res>;
+abstract class _$$SegmentImplCopyWith<$Res> implements $SegmentCopyWith<$Res> {
+  factory _$$SegmentImplCopyWith(
+          _$SegmentImpl value, $Res Function(_$SegmentImpl) then) =
+      __$$SegmentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -837,12 +882,15 @@ abstract class _$$_SegmentCopyWith<$Res> implements $SegmentCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_SegmentCopyWithImpl<$Res>
-    extends _$SegmentCopyWithImpl<$Res, _$_Segment>
-    implements _$$_SegmentCopyWith<$Res> {
-  __$$_SegmentCopyWithImpl(_$_Segment _value, $Res Function(_$_Segment) _then)
+class __$$SegmentImplCopyWithImpl<$Res>
+    extends _$SegmentCopyWithImpl<$Res, _$SegmentImpl>
+    implements _$$SegmentImplCopyWith<$Res> {
+  __$$SegmentImplCopyWithImpl(
+      _$SegmentImpl _value, $Res Function(_$SegmentImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Segment
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -857,7 +905,7 @@ class __$$_SegmentCopyWithImpl<$Res>
     Object? numberOfStops = freezed,
     Object? blacklistedInEU = freezed,
   }) {
-    return _then(_$_Segment(
+    return _then(_$SegmentImpl(
       departure: freezed == departure
           ? _value.departure
           : departure // ignore: cast_nullable_to_non_nullable
@@ -904,8 +952,8 @@ class __$$_SegmentCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Segment implements _Segment {
-  const _$_Segment(
+class _$SegmentImpl implements _Segment {
+  const _$SegmentImpl(
       {required this.departure,
       required this.arrival,
       required this.carrierCode,
@@ -917,8 +965,8 @@ class _$_Segment implements _Segment {
       required this.numberOfStops,
       required this.blacklistedInEU});
 
-  factory _$_Segment.fromJson(Map<String, dynamic> json) =>
-      _$$_SegmentFromJson(json);
+  factory _$SegmentImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SegmentImplFromJson(json);
 
   @override
   final Departure? departure;
@@ -947,10 +995,10 @@ class _$_Segment implements _Segment {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Segment &&
+            other is _$SegmentImpl &&
             (identical(other.departure, departure) ||
                 other.departure == departure) &&
             (identical(other.arrival, arrival) || other.arrival == arrival) &&
@@ -970,7 +1018,7 @@ class _$_Segment implements _Segment {
                 other.blacklistedInEU == blacklistedInEU));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -985,15 +1033,17 @@ class _$_Segment implements _Segment {
       numberOfStops,
       blacklistedInEU);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Segment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SegmentCopyWith<_$_Segment> get copyWith =>
-      __$$_SegmentCopyWithImpl<_$_Segment>(this, _$identity);
+  _$$SegmentImplCopyWith<_$SegmentImpl> get copyWith =>
+      __$$SegmentImplCopyWithImpl<_$SegmentImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SegmentToJson(
+    return _$$SegmentImplToJson(
       this,
     );
   }
@@ -1010,9 +1060,9 @@ abstract class _Segment implements Segment {
       required final String? duration,
       required final String? id,
       required final int? numberOfStops,
-      required final bool? blacklistedInEU}) = _$_Segment;
+      required final bool? blacklistedInEU}) = _$SegmentImpl;
 
-  factory _Segment.fromJson(Map<String, dynamic> json) = _$_Segment.fromJson;
+  factory _Segment.fromJson(Map<String, dynamic> json) = _$SegmentImpl.fromJson;
 
   @override
   Departure? get departure;
@@ -1034,9 +1084,12 @@ abstract class _Segment implements Segment {
   int? get numberOfStops;
   @override
   bool? get blacklistedInEU;
+
+  /// Create a copy of Segment
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SegmentCopyWith<_$_Segment> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SegmentImplCopyWith<_$SegmentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1050,8 +1103,12 @@ mixin _$Departure {
   String? get terminal => throw _privateConstructorUsedError;
   String? get at => throw _privateConstructorUsedError;
 
+  /// Serializes this Departure to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Departure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DepartureCopyWith<Departure> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1074,6 +1131,8 @@ class _$DepartureCopyWithImpl<$Res, $Val extends Departure>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Departure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1099,23 +1158,26 @@ class _$DepartureCopyWithImpl<$Res, $Val extends Departure>
 }
 
 /// @nodoc
-abstract class _$$_DepartureCopyWith<$Res> implements $DepartureCopyWith<$Res> {
-  factory _$$_DepartureCopyWith(
-          _$_Departure value, $Res Function(_$_Departure) then) =
-      __$$_DepartureCopyWithImpl<$Res>;
+abstract class _$$DepartureImplCopyWith<$Res>
+    implements $DepartureCopyWith<$Res> {
+  factory _$$DepartureImplCopyWith(
+          _$DepartureImpl value, $Res Function(_$DepartureImpl) then) =
+      __$$DepartureImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? iataCode, String? terminal, String? at});
 }
 
 /// @nodoc
-class __$$_DepartureCopyWithImpl<$Res>
-    extends _$DepartureCopyWithImpl<$Res, _$_Departure>
-    implements _$$_DepartureCopyWith<$Res> {
-  __$$_DepartureCopyWithImpl(
-      _$_Departure _value, $Res Function(_$_Departure) _then)
+class __$$DepartureImplCopyWithImpl<$Res>
+    extends _$DepartureCopyWithImpl<$Res, _$DepartureImpl>
+    implements _$$DepartureImplCopyWith<$Res> {
+  __$$DepartureImplCopyWithImpl(
+      _$DepartureImpl _value, $Res Function(_$DepartureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Departure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1123,7 +1185,7 @@ class __$$_DepartureCopyWithImpl<$Res>
     Object? terminal = freezed,
     Object? at = freezed,
   }) {
-    return _then(_$_Departure(
+    return _then(_$DepartureImpl(
       iataCode: freezed == iataCode
           ? _value.iataCode
           : iataCode // ignore: cast_nullable_to_non_nullable
@@ -1142,12 +1204,12 @@ class __$$_DepartureCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Departure implements _Departure {
-  const _$_Departure(
+class _$DepartureImpl implements _Departure {
+  const _$DepartureImpl(
       {required this.iataCode, required this.terminal, required this.at});
 
-  factory _$_Departure.fromJson(Map<String, dynamic> json) =>
-      _$$_DepartureFromJson(json);
+  factory _$DepartureImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DepartureImplFromJson(json);
 
   @override
   final String? iataCode;
@@ -1162,10 +1224,10 @@ class _$_Departure implements _Departure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Departure &&
+            other is _$DepartureImpl &&
             (identical(other.iataCode, iataCode) ||
                 other.iataCode == iataCode) &&
             (identical(other.terminal, terminal) ||
@@ -1173,19 +1235,21 @@ class _$_Departure implements _Departure {
             (identical(other.at, at) || other.at == at));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, iataCode, terminal, at);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Departure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DepartureCopyWith<_$_Departure> get copyWith =>
-      __$$_DepartureCopyWithImpl<_$_Departure>(this, _$identity);
+  _$$DepartureImplCopyWith<_$DepartureImpl> get copyWith =>
+      __$$DepartureImplCopyWithImpl<_$DepartureImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DepartureToJson(
+    return _$$DepartureImplToJson(
       this,
     );
   }
@@ -1195,10 +1259,10 @@ abstract class _Departure implements Departure {
   const factory _Departure(
       {required final String? iataCode,
       required final String? terminal,
-      required final String? at}) = _$_Departure;
+      required final String? at}) = _$DepartureImpl;
 
   factory _Departure.fromJson(Map<String, dynamic> json) =
-      _$_Departure.fromJson;
+      _$DepartureImpl.fromJson;
 
   @override
   String? get iataCode;
@@ -1206,9 +1270,12 @@ abstract class _Departure implements Departure {
   String? get terminal;
   @override
   String? get at;
+
+  /// Create a copy of Departure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_DepartureCopyWith<_$_Departure> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DepartureImplCopyWith<_$DepartureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1220,8 +1287,12 @@ Aircraft _$AircraftFromJson(Map<String, dynamic> json) {
 mixin _$Aircraft {
   String? get code => throw _privateConstructorUsedError;
 
+  /// Serializes this Aircraft to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Aircraft
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AircraftCopyWith<Aircraft> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1244,6 +1315,8 @@ class _$AircraftCopyWithImpl<$Res, $Val extends Aircraft>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Aircraft
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1259,29 +1332,32 @@ class _$AircraftCopyWithImpl<$Res, $Val extends Aircraft>
 }
 
 /// @nodoc
-abstract class _$$_AircraftCopyWith<$Res> implements $AircraftCopyWith<$Res> {
-  factory _$$_AircraftCopyWith(
-          _$_Aircraft value, $Res Function(_$_Aircraft) then) =
-      __$$_AircraftCopyWithImpl<$Res>;
+abstract class _$$AircraftImplCopyWith<$Res>
+    implements $AircraftCopyWith<$Res> {
+  factory _$$AircraftImplCopyWith(
+          _$AircraftImpl value, $Res Function(_$AircraftImpl) then) =
+      __$$AircraftImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? code});
 }
 
 /// @nodoc
-class __$$_AircraftCopyWithImpl<$Res>
-    extends _$AircraftCopyWithImpl<$Res, _$_Aircraft>
-    implements _$$_AircraftCopyWith<$Res> {
-  __$$_AircraftCopyWithImpl(
-      _$_Aircraft _value, $Res Function(_$_Aircraft) _then)
+class __$$AircraftImplCopyWithImpl<$Res>
+    extends _$AircraftCopyWithImpl<$Res, _$AircraftImpl>
+    implements _$$AircraftImplCopyWith<$Res> {
+  __$$AircraftImplCopyWithImpl(
+      _$AircraftImpl _value, $Res Function(_$AircraftImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Aircraft
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? code = freezed,
   }) {
-    return _then(_$_Aircraft(
+    return _then(_$AircraftImpl(
       code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -1292,11 +1368,11 @@ class __$$_AircraftCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Aircraft implements _Aircraft {
-  const _$_Aircraft({required this.code});
+class _$AircraftImpl implements _Aircraft {
+  const _$AircraftImpl({required this.code});
 
-  factory _$_Aircraft.fromJson(Map<String, dynamic> json) =>
-      _$$_AircraftFromJson(json);
+  factory _$AircraftImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AircraftImplFromJson(json);
 
   @override
   final String? code;
@@ -1307,41 +1383,47 @@ class _$_Aircraft implements _Aircraft {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Aircraft &&
+            other is _$AircraftImpl &&
             (identical(other.code, code) || other.code == code));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, code);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Aircraft
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AircraftCopyWith<_$_Aircraft> get copyWith =>
-      __$$_AircraftCopyWithImpl<_$_Aircraft>(this, _$identity);
+  _$$AircraftImplCopyWith<_$AircraftImpl> get copyWith =>
+      __$$AircraftImplCopyWithImpl<_$AircraftImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AircraftToJson(
+    return _$$AircraftImplToJson(
       this,
     );
   }
 }
 
 abstract class _Aircraft implements Aircraft {
-  const factory _Aircraft({required final String? code}) = _$_Aircraft;
+  const factory _Aircraft({required final String? code}) = _$AircraftImpl;
 
-  factory _Aircraft.fromJson(Map<String, dynamic> json) = _$_Aircraft.fromJson;
+  factory _Aircraft.fromJson(Map<String, dynamic> json) =
+      _$AircraftImpl.fromJson;
 
   @override
   String? get code;
+
+  /// Create a copy of Aircraft
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_AircraftCopyWith<_$_Aircraft> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AircraftImplCopyWith<_$AircraftImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1353,8 +1435,12 @@ Operating _$OperatingFromJson(Map<String, dynamic> json) {
 mixin _$Operating {
   String? get carrierCode => throw _privateConstructorUsedError;
 
+  /// Serializes this Operating to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Operating
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OperatingCopyWith<Operating> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1377,6 +1463,8 @@ class _$OperatingCopyWithImpl<$Res, $Val extends Operating>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Operating
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1392,29 +1480,32 @@ class _$OperatingCopyWithImpl<$Res, $Val extends Operating>
 }
 
 /// @nodoc
-abstract class _$$_OperatingCopyWith<$Res> implements $OperatingCopyWith<$Res> {
-  factory _$$_OperatingCopyWith(
-          _$_Operating value, $Res Function(_$_Operating) then) =
-      __$$_OperatingCopyWithImpl<$Res>;
+abstract class _$$OperatingImplCopyWith<$Res>
+    implements $OperatingCopyWith<$Res> {
+  factory _$$OperatingImplCopyWith(
+          _$OperatingImpl value, $Res Function(_$OperatingImpl) then) =
+      __$$OperatingImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? carrierCode});
 }
 
 /// @nodoc
-class __$$_OperatingCopyWithImpl<$Res>
-    extends _$OperatingCopyWithImpl<$Res, _$_Operating>
-    implements _$$_OperatingCopyWith<$Res> {
-  __$$_OperatingCopyWithImpl(
-      _$_Operating _value, $Res Function(_$_Operating) _then)
+class __$$OperatingImplCopyWithImpl<$Res>
+    extends _$OperatingCopyWithImpl<$Res, _$OperatingImpl>
+    implements _$$OperatingImplCopyWith<$Res> {
+  __$$OperatingImplCopyWithImpl(
+      _$OperatingImpl _value, $Res Function(_$OperatingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Operating
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? carrierCode = freezed,
   }) {
-    return _then(_$_Operating(
+    return _then(_$OperatingImpl(
       carrierCode: freezed == carrierCode
           ? _value.carrierCode
           : carrierCode // ignore: cast_nullable_to_non_nullable
@@ -1425,11 +1516,11 @@ class __$$_OperatingCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Operating implements _Operating {
-  const _$_Operating({required this.carrierCode});
+class _$OperatingImpl implements _Operating {
+  const _$OperatingImpl({required this.carrierCode});
 
-  factory _$_Operating.fromJson(Map<String, dynamic> json) =>
-      _$$_OperatingFromJson(json);
+  factory _$OperatingImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OperatingImplFromJson(json);
 
   @override
   final String? carrierCode;
@@ -1440,43 +1531,49 @@ class _$_Operating implements _Operating {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Operating &&
+            other is _$OperatingImpl &&
             (identical(other.carrierCode, carrierCode) ||
                 other.carrierCode == carrierCode));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, carrierCode);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Operating
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OperatingCopyWith<_$_Operating> get copyWith =>
-      __$$_OperatingCopyWithImpl<_$_Operating>(this, _$identity);
+  _$$OperatingImplCopyWith<_$OperatingImpl> get copyWith =>
+      __$$OperatingImplCopyWithImpl<_$OperatingImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OperatingToJson(
+    return _$$OperatingImplToJson(
       this,
     );
   }
 }
 
 abstract class _Operating implements Operating {
-  const factory _Operating({required final String? carrierCode}) = _$_Operating;
+  const factory _Operating({required final String? carrierCode}) =
+      _$OperatingImpl;
 
   factory _Operating.fromJson(Map<String, dynamic> json) =
-      _$_Operating.fromJson;
+      _$OperatingImpl.fromJson;
 
   @override
   String? get carrierCode;
+
+  /// Create a copy of Operating
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_OperatingCopyWith<_$_Operating> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$OperatingImplCopyWith<_$OperatingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1492,8 +1589,12 @@ mixin _$OfferPrice {
   List<Fees>? get fees => throw _privateConstructorUsedError;
   String? get grandTotal => throw _privateConstructorUsedError;
 
+  /// Serializes this OfferPrice to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OfferPrice
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OfferPriceCopyWith<OfferPrice> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1522,6 +1623,8 @@ class _$OfferPriceCopyWithImpl<$Res, $Val extends OfferPrice>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OfferPrice
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1557,11 +1660,11 @@ class _$OfferPriceCopyWithImpl<$Res, $Val extends OfferPrice>
 }
 
 /// @nodoc
-abstract class _$$_OfferPriceCopyWith<$Res>
+abstract class _$$OfferPriceImplCopyWith<$Res>
     implements $OfferPriceCopyWith<$Res> {
-  factory _$$_OfferPriceCopyWith(
-          _$_OfferPrice value, $Res Function(_$_OfferPrice) then) =
-      __$$_OfferPriceCopyWithImpl<$Res>;
+  factory _$$OfferPriceImplCopyWith(
+          _$OfferPriceImpl value, $Res Function(_$OfferPriceImpl) then) =
+      __$$OfferPriceImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1573,13 +1676,15 @@ abstract class _$$_OfferPriceCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_OfferPriceCopyWithImpl<$Res>
-    extends _$OfferPriceCopyWithImpl<$Res, _$_OfferPrice>
-    implements _$$_OfferPriceCopyWith<$Res> {
-  __$$_OfferPriceCopyWithImpl(
-      _$_OfferPrice _value, $Res Function(_$_OfferPrice) _then)
+class __$$OfferPriceImplCopyWithImpl<$Res>
+    extends _$OfferPriceCopyWithImpl<$Res, _$OfferPriceImpl>
+    implements _$$OfferPriceImplCopyWith<$Res> {
+  __$$OfferPriceImplCopyWithImpl(
+      _$OfferPriceImpl _value, $Res Function(_$OfferPriceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OfferPrice
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1589,7 +1694,7 @@ class __$$_OfferPriceCopyWithImpl<$Res>
     Object? fees = freezed,
     Object? grandTotal = freezed,
   }) {
-    return _then(_$_OfferPrice(
+    return _then(_$OfferPriceImpl(
       currency: freezed == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
@@ -1616,8 +1721,8 @@ class __$$_OfferPriceCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_OfferPrice implements _OfferPrice {
-  const _$_OfferPrice(
+class _$OfferPriceImpl implements _OfferPrice {
+  const _$OfferPriceImpl(
       {required this.currency,
       required this.total,
       required this.base,
@@ -1625,8 +1730,8 @@ class _$_OfferPrice implements _OfferPrice {
       required this.grandTotal})
       : _fees = fees;
 
-  factory _$_OfferPrice.fromJson(Map<String, dynamic> json) =>
-      _$$_OfferPriceFromJson(json);
+  factory _$OfferPriceImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OfferPriceImplFromJson(json);
 
   @override
   final String? currency;
@@ -1653,10 +1758,10 @@ class _$_OfferPrice implements _OfferPrice {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OfferPrice &&
+            other is _$OfferPriceImpl &&
             (identical(other.currency, currency) ||
                 other.currency == currency) &&
             (identical(other.total, total) || other.total == total) &&
@@ -1666,20 +1771,22 @@ class _$_OfferPrice implements _OfferPrice {
                 other.grandTotal == grandTotal));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, currency, total, base,
       const DeepCollectionEquality().hash(_fees), grandTotal);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OfferPrice
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OfferPriceCopyWith<_$_OfferPrice> get copyWith =>
-      __$$_OfferPriceCopyWithImpl<_$_OfferPrice>(this, _$identity);
+  _$$OfferPriceImplCopyWith<_$OfferPriceImpl> get copyWith =>
+      __$$OfferPriceImplCopyWithImpl<_$OfferPriceImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OfferPriceToJson(
+    return _$$OfferPriceImplToJson(
       this,
     );
   }
@@ -1691,10 +1798,10 @@ abstract class _OfferPrice implements OfferPrice {
       required final String? total,
       required final String? base,
       required final List<Fees>? fees,
-      required final String? grandTotal}) = _$_OfferPrice;
+      required final String? grandTotal}) = _$OfferPriceImpl;
 
   factory _OfferPrice.fromJson(Map<String, dynamic> json) =
-      _$_OfferPrice.fromJson;
+      _$OfferPriceImpl.fromJson;
 
   @override
   String? get currency;
@@ -1706,9 +1813,12 @@ abstract class _OfferPrice implements OfferPrice {
   List<Fees>? get fees;
   @override
   String? get grandTotal;
+
+  /// Create a copy of OfferPrice
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_OfferPriceCopyWith<_$_OfferPrice> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$OfferPriceImplCopyWith<_$OfferPriceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1721,8 +1831,12 @@ mixin _$Fees {
   String? get amount => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
 
+  /// Serializes this Fees to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Fees
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FeesCopyWith<Fees> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1744,6 +1858,8 @@ class _$FeesCopyWithImpl<$Res, $Val extends Fees>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Fees
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1764,27 +1880,31 @@ class _$FeesCopyWithImpl<$Res, $Val extends Fees>
 }
 
 /// @nodoc
-abstract class _$$_FeesCopyWith<$Res> implements $FeesCopyWith<$Res> {
-  factory _$$_FeesCopyWith(_$_Fees value, $Res Function(_$_Fees) then) =
-      __$$_FeesCopyWithImpl<$Res>;
+abstract class _$$FeesImplCopyWith<$Res> implements $FeesCopyWith<$Res> {
+  factory _$$FeesImplCopyWith(
+          _$FeesImpl value, $Res Function(_$FeesImpl) then) =
+      __$$FeesImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? amount, String? type});
 }
 
 /// @nodoc
-class __$$_FeesCopyWithImpl<$Res> extends _$FeesCopyWithImpl<$Res, _$_Fees>
-    implements _$$_FeesCopyWith<$Res> {
-  __$$_FeesCopyWithImpl(_$_Fees _value, $Res Function(_$_Fees) _then)
+class __$$FeesImplCopyWithImpl<$Res>
+    extends _$FeesCopyWithImpl<$Res, _$FeesImpl>
+    implements _$$FeesImplCopyWith<$Res> {
+  __$$FeesImplCopyWithImpl(_$FeesImpl _value, $Res Function(_$FeesImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Fees
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? amount = freezed,
     Object? type = freezed,
   }) {
-    return _then(_$_Fees(
+    return _then(_$FeesImpl(
       amount: freezed == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
@@ -1799,10 +1919,11 @@ class __$$_FeesCopyWithImpl<$Res> extends _$FeesCopyWithImpl<$Res, _$_Fees>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Fees implements _Fees {
-  const _$_Fees({required this.amount, required this.type});
+class _$FeesImpl implements _Fees {
+  const _$FeesImpl({required this.amount, required this.type});
 
-  factory _$_Fees.fromJson(Map<String, dynamic> json) => _$$_FeesFromJson(json);
+  factory _$FeesImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FeesImplFromJson(json);
 
   @override
   final String? amount;
@@ -1815,27 +1936,29 @@ class _$_Fees implements _Fees {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Fees &&
+            other is _$FeesImpl &&
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.type, type) || other.type == type));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, amount, type);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Fees
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FeesCopyWith<_$_Fees> get copyWith =>
-      __$$_FeesCopyWithImpl<_$_Fees>(this, _$identity);
+  _$$FeesImplCopyWith<_$FeesImpl> get copyWith =>
+      __$$FeesImplCopyWithImpl<_$FeesImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FeesToJson(
+    return _$$FeesImplToJson(
       this,
     );
   }
@@ -1843,17 +1966,22 @@ class _$_Fees implements _Fees {
 
 abstract class _Fees implements Fees {
   const factory _Fees(
-      {required final String? amount, required final String? type}) = _$_Fees;
+      {required final String? amount,
+      required final String? type}) = _$FeesImpl;
 
-  factory _Fees.fromJson(Map<String, dynamic> json) = _$_Fees.fromJson;
+  factory _Fees.fromJson(Map<String, dynamic> json) = _$FeesImpl.fromJson;
 
   @override
   String? get amount;
   @override
   String? get type;
+
+  /// Create a copy of Fees
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_FeesCopyWith<_$_Fees> get copyWith => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FeesImplCopyWith<_$FeesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 PricingOptions _$PricingOptionsFromJson(Map<String, dynamic> json) {
@@ -1865,8 +1993,12 @@ mixin _$PricingOptions {
   List<String>? get fareType => throw _privateConstructorUsedError;
   bool? get includedCheckedBagsOnly => throw _privateConstructorUsedError;
 
+  /// Serializes this PricingOptions to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PricingOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PricingOptionsCopyWith<PricingOptions> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1890,6 +2022,8 @@ class _$PricingOptionsCopyWithImpl<$Res, $Val extends PricingOptions>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PricingOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1910,31 +2044,33 @@ class _$PricingOptionsCopyWithImpl<$Res, $Val extends PricingOptions>
 }
 
 /// @nodoc
-abstract class _$$_PricingOptionsCopyWith<$Res>
+abstract class _$$PricingOptionsImplCopyWith<$Res>
     implements $PricingOptionsCopyWith<$Res> {
-  factory _$$_PricingOptionsCopyWith(
-          _$_PricingOptions value, $Res Function(_$_PricingOptions) then) =
-      __$$_PricingOptionsCopyWithImpl<$Res>;
+  factory _$$PricingOptionsImplCopyWith(_$PricingOptionsImpl value,
+          $Res Function(_$PricingOptionsImpl) then) =
+      __$$PricingOptionsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<String>? fareType, bool? includedCheckedBagsOnly});
 }
 
 /// @nodoc
-class __$$_PricingOptionsCopyWithImpl<$Res>
-    extends _$PricingOptionsCopyWithImpl<$Res, _$_PricingOptions>
-    implements _$$_PricingOptionsCopyWith<$Res> {
-  __$$_PricingOptionsCopyWithImpl(
-      _$_PricingOptions _value, $Res Function(_$_PricingOptions) _then)
+class __$$PricingOptionsImplCopyWithImpl<$Res>
+    extends _$PricingOptionsCopyWithImpl<$Res, _$PricingOptionsImpl>
+    implements _$$PricingOptionsImplCopyWith<$Res> {
+  __$$PricingOptionsImplCopyWithImpl(
+      _$PricingOptionsImpl _value, $Res Function(_$PricingOptionsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PricingOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? fareType = freezed,
     Object? includedCheckedBagsOnly = freezed,
   }) {
-    return _then(_$_PricingOptions(
+    return _then(_$PricingOptionsImpl(
       fareType: freezed == fareType
           ? _value._fareType
           : fareType // ignore: cast_nullable_to_non_nullable
@@ -1949,14 +2085,14 @@ class __$$_PricingOptionsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PricingOptions implements _PricingOptions {
-  const _$_PricingOptions(
+class _$PricingOptionsImpl implements _PricingOptions {
+  const _$PricingOptionsImpl(
       {required final List<String>? fareType,
       required this.includedCheckedBagsOnly})
       : _fareType = fareType;
 
-  factory _$_PricingOptions.fromJson(Map<String, dynamic> json) =>
-      _$$_PricingOptionsFromJson(json);
+  factory _$PricingOptionsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PricingOptionsImplFromJson(json);
 
   final List<String>? _fareType;
   @override
@@ -1977,30 +2113,33 @@ class _$_PricingOptions implements _PricingOptions {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PricingOptions &&
+            other is _$PricingOptionsImpl &&
             const DeepCollectionEquality().equals(other._fareType, _fareType) &&
             (identical(
                     other.includedCheckedBagsOnly, includedCheckedBagsOnly) ||
                 other.includedCheckedBagsOnly == includedCheckedBagsOnly));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_fareType), includedCheckedBagsOnly);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PricingOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PricingOptionsCopyWith<_$_PricingOptions> get copyWith =>
-      __$$_PricingOptionsCopyWithImpl<_$_PricingOptions>(this, _$identity);
+  _$$PricingOptionsImplCopyWith<_$PricingOptionsImpl> get copyWith =>
+      __$$PricingOptionsImplCopyWithImpl<_$PricingOptionsImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PricingOptionsToJson(
+    return _$$PricingOptionsImplToJson(
       this,
     );
   }
@@ -2009,18 +2148,21 @@ class _$_PricingOptions implements _PricingOptions {
 abstract class _PricingOptions implements PricingOptions {
   const factory _PricingOptions(
       {required final List<String>? fareType,
-      required final bool? includedCheckedBagsOnly}) = _$_PricingOptions;
+      required final bool? includedCheckedBagsOnly}) = _$PricingOptionsImpl;
 
   factory _PricingOptions.fromJson(Map<String, dynamic> json) =
-      _$_PricingOptions.fromJson;
+      _$PricingOptionsImpl.fromJson;
 
   @override
   List<String>? get fareType;
   @override
   bool? get includedCheckedBagsOnly;
+
+  /// Create a copy of PricingOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_PricingOptionsCopyWith<_$_PricingOptions> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PricingOptionsImplCopyWith<_$PricingOptionsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2037,8 +2179,12 @@ mixin _$TravelerPricing {
   List<FareDetailsBySegment>? get fareDetailsBySegment =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this TravelerPricing to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TravelerPricing
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TravelerPricingCopyWith<TravelerPricing> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2069,6 +2215,8 @@ class _$TravelerPricingCopyWithImpl<$Res, $Val extends TravelerPricing>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TravelerPricing
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2102,6 +2250,8 @@ class _$TravelerPricingCopyWithImpl<$Res, $Val extends TravelerPricing>
     ) as $Val);
   }
 
+  /// Create a copy of TravelerPricing
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OfferPriceCopyWith<$Res>? get price {
@@ -2116,11 +2266,11 @@ class _$TravelerPricingCopyWithImpl<$Res, $Val extends TravelerPricing>
 }
 
 /// @nodoc
-abstract class _$$_TravelerPricingCopyWith<$Res>
+abstract class _$$TravelerPricingImplCopyWith<$Res>
     implements $TravelerPricingCopyWith<$Res> {
-  factory _$$_TravelerPricingCopyWith(
-          _$_TravelerPricing value, $Res Function(_$_TravelerPricing) then) =
-      __$$_TravelerPricingCopyWithImpl<$Res>;
+  factory _$$TravelerPricingImplCopyWith(_$TravelerPricingImpl value,
+          $Res Function(_$TravelerPricingImpl) then) =
+      __$$TravelerPricingImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -2135,13 +2285,15 @@ abstract class _$$_TravelerPricingCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_TravelerPricingCopyWithImpl<$Res>
-    extends _$TravelerPricingCopyWithImpl<$Res, _$_TravelerPricing>
-    implements _$$_TravelerPricingCopyWith<$Res> {
-  __$$_TravelerPricingCopyWithImpl(
-      _$_TravelerPricing _value, $Res Function(_$_TravelerPricing) _then)
+class __$$TravelerPricingImplCopyWithImpl<$Res>
+    extends _$TravelerPricingCopyWithImpl<$Res, _$TravelerPricingImpl>
+    implements _$$TravelerPricingImplCopyWith<$Res> {
+  __$$TravelerPricingImplCopyWithImpl(
+      _$TravelerPricingImpl _value, $Res Function(_$TravelerPricingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TravelerPricing
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2151,7 +2303,7 @@ class __$$_TravelerPricingCopyWithImpl<$Res>
     Object? price = freezed,
     Object? fareDetailsBySegment = freezed,
   }) {
-    return _then(_$_TravelerPricing(
+    return _then(_$TravelerPricingImpl(
       travelerId: freezed == travelerId
           ? _value.travelerId
           : travelerId // ignore: cast_nullable_to_non_nullable
@@ -2178,8 +2330,8 @@ class __$$_TravelerPricingCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TravelerPricing implements _TravelerPricing {
-  const _$_TravelerPricing(
+class _$TravelerPricingImpl implements _TravelerPricing {
+  const _$TravelerPricingImpl(
       {required this.travelerId,
       required this.fareOption,
       required this.travelerType,
@@ -2187,8 +2339,8 @@ class _$_TravelerPricing implements _TravelerPricing {
       required final List<FareDetailsBySegment>? fareDetailsBySegment})
       : _fareDetailsBySegment = fareDetailsBySegment;
 
-  factory _$_TravelerPricing.fromJson(Map<String, dynamic> json) =>
-      _$$_TravelerPricingFromJson(json);
+  factory _$TravelerPricingImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TravelerPricingImplFromJson(json);
 
   @override
   final String? travelerId;
@@ -2215,10 +2367,10 @@ class _$_TravelerPricing implements _TravelerPricing {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TravelerPricing &&
+            other is _$TravelerPricingImpl &&
             (identical(other.travelerId, travelerId) ||
                 other.travelerId == travelerId) &&
             (identical(other.fareOption, fareOption) ||
@@ -2230,7 +2382,7 @@ class _$_TravelerPricing implements _TravelerPricing {
                 .equals(other._fareDetailsBySegment, _fareDetailsBySegment));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2240,15 +2392,18 @@ class _$_TravelerPricing implements _TravelerPricing {
       price,
       const DeepCollectionEquality().hash(_fareDetailsBySegment));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TravelerPricing
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TravelerPricingCopyWith<_$_TravelerPricing> get copyWith =>
-      __$$_TravelerPricingCopyWithImpl<_$_TravelerPricing>(this, _$identity);
+  _$$TravelerPricingImplCopyWith<_$TravelerPricingImpl> get copyWith =>
+      __$$TravelerPricingImplCopyWithImpl<_$TravelerPricingImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TravelerPricingToJson(
+    return _$$TravelerPricingImplToJson(
       this,
     );
   }
@@ -2261,10 +2416,10 @@ abstract class _TravelerPricing implements TravelerPricing {
           required final String? travelerType,
           required final OfferPrice? price,
           required final List<FareDetailsBySegment>? fareDetailsBySegment}) =
-      _$_TravelerPricing;
+      _$TravelerPricingImpl;
 
   factory _TravelerPricing.fromJson(Map<String, dynamic> json) =
-      _$_TravelerPricing.fromJson;
+      _$TravelerPricingImpl.fromJson;
 
   @override
   String? get travelerId;
@@ -2276,9 +2431,12 @@ abstract class _TravelerPricing implements TravelerPricing {
   OfferPrice? get price;
   @override
   List<FareDetailsBySegment>? get fareDetailsBySegment;
+
+  /// Create a copy of TravelerPricing
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_TravelerPricingCopyWith<_$_TravelerPricing> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TravelerPricingImplCopyWith<_$TravelerPricingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2295,8 +2453,12 @@ mixin _$FareDetailsBySegment {
   IncludedCheckedBags? get includedCheckedBags =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this FareDetailsBySegment to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FareDetailsBySegment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FareDetailsBySegmentCopyWith<FareDetailsBySegment> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2328,6 +2490,8 @@ class _$FareDetailsBySegmentCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FareDetailsBySegment
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2361,6 +2525,8 @@ class _$FareDetailsBySegmentCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of FareDetailsBySegment
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $IncludedCheckedBagsCopyWith<$Res>? get includedCheckedBags {
@@ -2376,11 +2542,11 @@ class _$FareDetailsBySegmentCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_FareDetailsBySegmentCopyWith<$Res>
+abstract class _$$FareDetailsBySegmentImplCopyWith<$Res>
     implements $FareDetailsBySegmentCopyWith<$Res> {
-  factory _$$_FareDetailsBySegmentCopyWith(_$_FareDetailsBySegment value,
-          $Res Function(_$_FareDetailsBySegment) then) =
-      __$$_FareDetailsBySegmentCopyWithImpl<$Res>;
+  factory _$$FareDetailsBySegmentImplCopyWith(_$FareDetailsBySegmentImpl value,
+          $Res Function(_$FareDetailsBySegmentImpl) then) =
+      __$$FareDetailsBySegmentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -2395,13 +2561,15 @@ abstract class _$$_FareDetailsBySegmentCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FareDetailsBySegmentCopyWithImpl<$Res>
-    extends _$FareDetailsBySegmentCopyWithImpl<$Res, _$_FareDetailsBySegment>
-    implements _$$_FareDetailsBySegmentCopyWith<$Res> {
-  __$$_FareDetailsBySegmentCopyWithImpl(_$_FareDetailsBySegment _value,
-      $Res Function(_$_FareDetailsBySegment) _then)
+class __$$FareDetailsBySegmentImplCopyWithImpl<$Res>
+    extends _$FareDetailsBySegmentCopyWithImpl<$Res, _$FareDetailsBySegmentImpl>
+    implements _$$FareDetailsBySegmentImplCopyWith<$Res> {
+  __$$FareDetailsBySegmentImplCopyWithImpl(_$FareDetailsBySegmentImpl _value,
+      $Res Function(_$FareDetailsBySegmentImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FareDetailsBySegment
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2411,7 +2579,7 @@ class __$$_FareDetailsBySegmentCopyWithImpl<$Res>
     Object? segmentClass = freezed,
     Object? includedCheckedBags = freezed,
   }) {
-    return _then(_$_FareDetailsBySegment(
+    return _then(_$FareDetailsBySegmentImpl(
       segmentId: freezed == segmentId
           ? _value.segmentId
           : segmentId // ignore: cast_nullable_to_non_nullable
@@ -2438,16 +2606,16 @@ class __$$_FareDetailsBySegmentCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FareDetailsBySegment implements _FareDetailsBySegment {
-  const _$_FareDetailsBySegment(
+class _$FareDetailsBySegmentImpl implements _FareDetailsBySegment {
+  const _$FareDetailsBySegmentImpl(
       {required this.segmentId,
       required this.cabin,
       required this.fareBasis,
       required this.segmentClass,
       required this.includedCheckedBags});
 
-  factory _$_FareDetailsBySegment.fromJson(Map<String, dynamic> json) =>
-      _$$_FareDetailsBySegmentFromJson(json);
+  factory _$FareDetailsBySegmentImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FareDetailsBySegmentImplFromJson(json);
 
   @override
   final String? segmentId;
@@ -2466,10 +2634,10 @@ class _$_FareDetailsBySegment implements _FareDetailsBySegment {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FareDetailsBySegment &&
+            other is _$FareDetailsBySegmentImpl &&
             (identical(other.segmentId, segmentId) ||
                 other.segmentId == segmentId) &&
             (identical(other.cabin, cabin) || other.cabin == cabin) &&
@@ -2481,21 +2649,24 @@ class _$_FareDetailsBySegment implements _FareDetailsBySegment {
                 other.includedCheckedBags == includedCheckedBags));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, segmentId, cabin, fareBasis,
       segmentClass, includedCheckedBags);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FareDetailsBySegment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FareDetailsBySegmentCopyWith<_$_FareDetailsBySegment> get copyWith =>
-      __$$_FareDetailsBySegmentCopyWithImpl<_$_FareDetailsBySegment>(
-          this, _$identity);
+  _$$FareDetailsBySegmentImplCopyWith<_$FareDetailsBySegmentImpl>
+      get copyWith =>
+          __$$FareDetailsBySegmentImplCopyWithImpl<_$FareDetailsBySegmentImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FareDetailsBySegmentToJson(
+    return _$$FareDetailsBySegmentImplToJson(
       this,
     );
   }
@@ -2508,10 +2679,10 @@ abstract class _FareDetailsBySegment implements FareDetailsBySegment {
           required final String? fareBasis,
           required final String? segmentClass,
           required final IncludedCheckedBags? includedCheckedBags}) =
-      _$_FareDetailsBySegment;
+      _$FareDetailsBySegmentImpl;
 
   factory _FareDetailsBySegment.fromJson(Map<String, dynamic> json) =
-      _$_FareDetailsBySegment.fromJson;
+      _$FareDetailsBySegmentImpl.fromJson;
 
   @override
   String? get segmentId;
@@ -2523,10 +2694,13 @@ abstract class _FareDetailsBySegment implements FareDetailsBySegment {
   String? get segmentClass;
   @override
   IncludedCheckedBags? get includedCheckedBags;
+
+  /// Create a copy of FareDetailsBySegment
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_FareDetailsBySegmentCopyWith<_$_FareDetailsBySegment> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FareDetailsBySegmentImplCopyWith<_$FareDetailsBySegmentImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 IncludedCheckedBags _$IncludedCheckedBagsFromJson(Map<String, dynamic> json) {
@@ -2537,8 +2711,12 @@ IncludedCheckedBags _$IncludedCheckedBagsFromJson(Map<String, dynamic> json) {
 mixin _$IncludedCheckedBags {
   int? get quantity => throw _privateConstructorUsedError;
 
+  /// Serializes this IncludedCheckedBags to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of IncludedCheckedBags
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $IncludedCheckedBagsCopyWith<IncludedCheckedBags> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2562,6 +2740,8 @@ class _$IncludedCheckedBagsCopyWithImpl<$Res, $Val extends IncludedCheckedBags>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of IncludedCheckedBags
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2577,30 +2757,32 @@ class _$IncludedCheckedBagsCopyWithImpl<$Res, $Val extends IncludedCheckedBags>
 }
 
 /// @nodoc
-abstract class _$$_IncludedCheckedBagsCopyWith<$Res>
+abstract class _$$IncludedCheckedBagsImplCopyWith<$Res>
     implements $IncludedCheckedBagsCopyWith<$Res> {
-  factory _$$_IncludedCheckedBagsCopyWith(_$_IncludedCheckedBags value,
-          $Res Function(_$_IncludedCheckedBags) then) =
-      __$$_IncludedCheckedBagsCopyWithImpl<$Res>;
+  factory _$$IncludedCheckedBagsImplCopyWith(_$IncludedCheckedBagsImpl value,
+          $Res Function(_$IncludedCheckedBagsImpl) then) =
+      __$$IncludedCheckedBagsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? quantity});
 }
 
 /// @nodoc
-class __$$_IncludedCheckedBagsCopyWithImpl<$Res>
-    extends _$IncludedCheckedBagsCopyWithImpl<$Res, _$_IncludedCheckedBags>
-    implements _$$_IncludedCheckedBagsCopyWith<$Res> {
-  __$$_IncludedCheckedBagsCopyWithImpl(_$_IncludedCheckedBags _value,
-      $Res Function(_$_IncludedCheckedBags) _then)
+class __$$IncludedCheckedBagsImplCopyWithImpl<$Res>
+    extends _$IncludedCheckedBagsCopyWithImpl<$Res, _$IncludedCheckedBagsImpl>
+    implements _$$IncludedCheckedBagsImplCopyWith<$Res> {
+  __$$IncludedCheckedBagsImplCopyWithImpl(_$IncludedCheckedBagsImpl _value,
+      $Res Function(_$IncludedCheckedBagsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of IncludedCheckedBags
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? quantity = freezed,
   }) {
-    return _then(_$_IncludedCheckedBags(
+    return _then(_$IncludedCheckedBagsImpl(
       quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
@@ -2611,11 +2793,11 @@ class __$$_IncludedCheckedBagsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_IncludedCheckedBags implements _IncludedCheckedBags {
-  const _$_IncludedCheckedBags({required this.quantity});
+class _$IncludedCheckedBagsImpl implements _IncludedCheckedBags {
+  const _$IncludedCheckedBagsImpl({required this.quantity});
 
-  factory _$_IncludedCheckedBags.fromJson(Map<String, dynamic> json) =>
-      _$$_IncludedCheckedBagsFromJson(json);
+  factory _$IncludedCheckedBagsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$IncludedCheckedBagsImplFromJson(json);
 
   @override
   final int? quantity;
@@ -2626,28 +2808,30 @@ class _$_IncludedCheckedBags implements _IncludedCheckedBags {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_IncludedCheckedBags &&
+            other is _$IncludedCheckedBagsImpl &&
             (identical(other.quantity, quantity) ||
                 other.quantity == quantity));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, quantity);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IncludedCheckedBags
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_IncludedCheckedBagsCopyWith<_$_IncludedCheckedBags> get copyWith =>
-      __$$_IncludedCheckedBagsCopyWithImpl<_$_IncludedCheckedBags>(
+  _$$IncludedCheckedBagsImplCopyWith<_$IncludedCheckedBagsImpl> get copyWith =>
+      __$$IncludedCheckedBagsImplCopyWithImpl<_$IncludedCheckedBagsImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_IncludedCheckedBagsToJson(
+    return _$$IncludedCheckedBagsImplToJson(
       this,
     );
   }
@@ -2655,15 +2839,18 @@ class _$_IncludedCheckedBags implements _IncludedCheckedBags {
 
 abstract class _IncludedCheckedBags implements IncludedCheckedBags {
   const factory _IncludedCheckedBags({required final int? quantity}) =
-      _$_IncludedCheckedBags;
+      _$IncludedCheckedBagsImpl;
 
   factory _IncludedCheckedBags.fromJson(Map<String, dynamic> json) =
-      _$_IncludedCheckedBags.fromJson;
+      _$IncludedCheckedBagsImpl.fromJson;
 
   @override
   int? get quantity;
+
+  /// Create a copy of IncludedCheckedBags
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_IncludedCheckedBagsCopyWith<_$_IncludedCheckedBags> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$IncludedCheckedBagsImplCopyWith<_$IncludedCheckedBagsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

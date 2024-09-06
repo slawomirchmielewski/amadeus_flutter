@@ -12,7 +12,7 @@ part of 'flight_availabilities_body.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 FlightAvailabilitiesBody _$FlightAvailabilitiesBodyFromJson(
     Map<String, dynamic> json) {
@@ -26,8 +26,12 @@ mixin _$FlightAvailabilitiesBody {
   List<FlightTraveler>? get travelers => throw _privateConstructorUsedError;
   List<String>? get sources => throw _privateConstructorUsedError;
 
+  /// Serializes this FlightAvailabilitiesBody to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FlightAvailabilitiesBody
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FlightAvailabilitiesBodyCopyWith<FlightAvailabilitiesBody> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$FlightAvailabilitiesBodyCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FlightAvailabilitiesBody
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -80,12 +86,12 @@ class _$FlightAvailabilitiesBodyCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_FlightAvailabilitiesBodyCopyWith<$Res>
+abstract class _$$FlightAvailabilitiesBodyImplCopyWith<$Res>
     implements $FlightAvailabilitiesBodyCopyWith<$Res> {
-  factory _$$_FlightAvailabilitiesBodyCopyWith(
-          _$_FlightAvailabilitiesBody value,
-          $Res Function(_$_FlightAvailabilitiesBody) then) =
-      __$$_FlightAvailabilitiesBodyCopyWithImpl<$Res>;
+  factory _$$FlightAvailabilitiesBodyImplCopyWith(
+          _$FlightAvailabilitiesBodyImpl value,
+          $Res Function(_$FlightAvailabilitiesBodyImpl) then) =
+      __$$FlightAvailabilitiesBodyImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -95,14 +101,17 @@ abstract class _$$_FlightAvailabilitiesBodyCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FlightAvailabilitiesBodyCopyWithImpl<$Res>
+class __$$FlightAvailabilitiesBodyImplCopyWithImpl<$Res>
     extends _$FlightAvailabilitiesBodyCopyWithImpl<$Res,
-        _$_FlightAvailabilitiesBody>
-    implements _$$_FlightAvailabilitiesBodyCopyWith<$Res> {
-  __$$_FlightAvailabilitiesBodyCopyWithImpl(_$_FlightAvailabilitiesBody _value,
-      $Res Function(_$_FlightAvailabilitiesBody) _then)
+        _$FlightAvailabilitiesBodyImpl>
+    implements _$$FlightAvailabilitiesBodyImplCopyWith<$Res> {
+  __$$FlightAvailabilitiesBodyImplCopyWithImpl(
+      _$FlightAvailabilitiesBodyImpl _value,
+      $Res Function(_$FlightAvailabilitiesBodyImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FlightAvailabilitiesBody
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -110,7 +119,7 @@ class __$$_FlightAvailabilitiesBodyCopyWithImpl<$Res>
     Object? travelers = freezed,
     Object? sources = freezed,
   }) {
-    return _then(_$_FlightAvailabilitiesBody(
+    return _then(_$FlightAvailabilitiesBodyImpl(
       originDestinations: freezed == originDestinations
           ? _value._originDestinations
           : originDestinations // ignore: cast_nullable_to_non_nullable
@@ -130,8 +139,8 @@ class __$$_FlightAvailabilitiesBodyCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$_FlightAvailabilitiesBody implements _FlightAvailabilitiesBody {
-  const _$_FlightAvailabilitiesBody(
+class _$FlightAvailabilitiesBodyImpl implements _FlightAvailabilitiesBody {
+  const _$FlightAvailabilitiesBodyImpl(
       {required final List<OriginDestination>? originDestinations,
       required final List<FlightTraveler>? travelers,
       required final List<String>? sources})
@@ -139,8 +148,8 @@ class _$_FlightAvailabilitiesBody implements _FlightAvailabilitiesBody {
         _travelers = travelers,
         _sources = sources;
 
-  factory _$_FlightAvailabilitiesBody.fromJson(Map<String, dynamic> json) =>
-      _$$_FlightAvailabilitiesBodyFromJson(json);
+  factory _$FlightAvailabilitiesBodyImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FlightAvailabilitiesBodyImplFromJson(json);
 
   final List<OriginDestination>? _originDestinations;
   @override
@@ -179,10 +188,10 @@ class _$_FlightAvailabilitiesBody implements _FlightAvailabilitiesBody {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FlightAvailabilitiesBody &&
+            other is _$FlightAvailabilitiesBodyImpl &&
             const DeepCollectionEquality()
                 .equals(other._originDestinations, _originDestinations) &&
             const DeepCollectionEquality()
@@ -190,7 +199,7 @@ class _$_FlightAvailabilitiesBody implements _FlightAvailabilitiesBody {
             const DeepCollectionEquality().equals(other._sources, _sources));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -198,16 +207,18 @@ class _$_FlightAvailabilitiesBody implements _FlightAvailabilitiesBody {
       const DeepCollectionEquality().hash(_travelers),
       const DeepCollectionEquality().hash(_sources));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FlightAvailabilitiesBody
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FlightAvailabilitiesBodyCopyWith<_$_FlightAvailabilitiesBody>
-      get copyWith => __$$_FlightAvailabilitiesBodyCopyWithImpl<
-          _$_FlightAvailabilitiesBody>(this, _$identity);
+  _$$FlightAvailabilitiesBodyImplCopyWith<_$FlightAvailabilitiesBodyImpl>
+      get copyWith => __$$FlightAvailabilitiesBodyImplCopyWithImpl<
+          _$FlightAvailabilitiesBodyImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FlightAvailabilitiesBodyToJson(
+    return _$$FlightAvailabilitiesBodyImplToJson(
       this,
     );
   }
@@ -217,10 +228,10 @@ abstract class _FlightAvailabilitiesBody implements FlightAvailabilitiesBody {
   const factory _FlightAvailabilitiesBody(
       {required final List<OriginDestination>? originDestinations,
       required final List<FlightTraveler>? travelers,
-      required final List<String>? sources}) = _$_FlightAvailabilitiesBody;
+      required final List<String>? sources}) = _$FlightAvailabilitiesBodyImpl;
 
   factory _FlightAvailabilitiesBody.fromJson(Map<String, dynamic> json) =
-      _$_FlightAvailabilitiesBody.fromJson;
+      _$FlightAvailabilitiesBodyImpl.fromJson;
 
   @override
   List<OriginDestination>? get originDestinations;
@@ -228,9 +239,12 @@ abstract class _FlightAvailabilitiesBody implements FlightAvailabilitiesBody {
   List<FlightTraveler>? get travelers;
   @override
   List<String>? get sources;
+
+  /// Create a copy of FlightAvailabilitiesBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_FlightAvailabilitiesBodyCopyWith<_$_FlightAvailabilitiesBody>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FlightAvailabilitiesBodyImplCopyWith<_$FlightAvailabilitiesBodyImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -246,8 +260,12 @@ mixin _$OriginDestination {
   DepartureDateTime? get departureDateTime =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this OriginDestination to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OriginDestination
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OriginDestinationCopyWith<OriginDestination> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -277,6 +295,8 @@ class _$OriginDestinationCopyWithImpl<$Res, $Val extends OriginDestination>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OriginDestination
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -305,6 +325,8 @@ class _$OriginDestinationCopyWithImpl<$Res, $Val extends OriginDestination>
     ) as $Val);
   }
 
+  /// Create a copy of OriginDestination
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DepartureDateTimeCopyWith<$Res>? get departureDateTime {
@@ -319,11 +341,11 @@ class _$OriginDestinationCopyWithImpl<$Res, $Val extends OriginDestination>
 }
 
 /// @nodoc
-abstract class _$$_OriginDestinationCopyWith<$Res>
+abstract class _$$OriginDestinationImplCopyWith<$Res>
     implements $OriginDestinationCopyWith<$Res> {
-  factory _$$_OriginDestinationCopyWith(_$_OriginDestination value,
-          $Res Function(_$_OriginDestination) then) =
-      __$$_OriginDestinationCopyWithImpl<$Res>;
+  factory _$$OriginDestinationImplCopyWith(_$OriginDestinationImpl value,
+          $Res Function(_$OriginDestinationImpl) then) =
+      __$$OriginDestinationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -337,13 +359,15 @@ abstract class _$$_OriginDestinationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_OriginDestinationCopyWithImpl<$Res>
-    extends _$OriginDestinationCopyWithImpl<$Res, _$_OriginDestination>
-    implements _$$_OriginDestinationCopyWith<$Res> {
-  __$$_OriginDestinationCopyWithImpl(
-      _$_OriginDestination _value, $Res Function(_$_OriginDestination) _then)
+class __$$OriginDestinationImplCopyWithImpl<$Res>
+    extends _$OriginDestinationCopyWithImpl<$Res, _$OriginDestinationImpl>
+    implements _$$OriginDestinationImplCopyWith<$Res> {
+  __$$OriginDestinationImplCopyWithImpl(_$OriginDestinationImpl _value,
+      $Res Function(_$OriginDestinationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OriginDestination
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -352,7 +376,7 @@ class __$$_OriginDestinationCopyWithImpl<$Res>
     Object? destinationLocationCode = freezed,
     Object? departureDateTime = freezed,
   }) {
-    return _then(_$_OriginDestination(
+    return _then(_$OriginDestinationImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -375,15 +399,15 @@ class __$$_OriginDestinationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_OriginDestination implements _OriginDestination {
-  const _$_OriginDestination(
+class _$OriginDestinationImpl implements _OriginDestination {
+  const _$OriginDestinationImpl(
       {required this.id,
       required this.originLocationCode,
       required this.destinationLocationCode,
       required this.departureDateTime});
 
-  factory _$_OriginDestination.fromJson(Map<String, dynamic> json) =>
-      _$$_OriginDestinationFromJson(json);
+  factory _$OriginDestinationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OriginDestinationImplFromJson(json);
 
   @override
   final String? id;
@@ -400,10 +424,10 @@ class _$_OriginDestination implements _OriginDestination {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OriginDestination &&
+            other is _$OriginDestinationImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.originLocationCode, originLocationCode) ||
                 other.originLocationCode == originLocationCode) &&
@@ -414,21 +438,23 @@ class _$_OriginDestination implements _OriginDestination {
                 other.departureDateTime == departureDateTime));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, originLocationCode,
       destinationLocationCode, departureDateTime);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OriginDestination
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OriginDestinationCopyWith<_$_OriginDestination> get copyWith =>
-      __$$_OriginDestinationCopyWithImpl<_$_OriginDestination>(
+  _$$OriginDestinationImplCopyWith<_$OriginDestinationImpl> get copyWith =>
+      __$$OriginDestinationImplCopyWithImpl<_$OriginDestinationImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OriginDestinationToJson(
+    return _$$OriginDestinationImplToJson(
       this,
     );
   }
@@ -440,10 +466,10 @@ abstract class _OriginDestination implements OriginDestination {
           required final String? originLocationCode,
           required final String? destinationLocationCode,
           required final DepartureDateTime? departureDateTime}) =
-      _$_OriginDestination;
+      _$OriginDestinationImpl;
 
   factory _OriginDestination.fromJson(Map<String, dynamic> json) =
-      _$_OriginDestination.fromJson;
+      _$OriginDestinationImpl.fromJson;
 
   @override
   String? get id;
@@ -453,9 +479,12 @@ abstract class _OriginDestination implements OriginDestination {
   String? get destinationLocationCode;
   @override
   DepartureDateTime? get departureDateTime;
+
+  /// Create a copy of OriginDestination
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_OriginDestinationCopyWith<_$_OriginDestination> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$OriginDestinationImplCopyWith<_$OriginDestinationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -468,8 +497,12 @@ mixin _$DepartureDateTime {
   String? get date => throw _privateConstructorUsedError;
   String? get time => throw _privateConstructorUsedError;
 
+  /// Serializes this DepartureDateTime to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DepartureDateTime
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DepartureDateTimeCopyWith<DepartureDateTime> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -493,6 +526,8 @@ class _$DepartureDateTimeCopyWithImpl<$Res, $Val extends DepartureDateTime>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DepartureDateTime
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -513,31 +548,33 @@ class _$DepartureDateTimeCopyWithImpl<$Res, $Val extends DepartureDateTime>
 }
 
 /// @nodoc
-abstract class _$$_DepartureDateTimeCopyWith<$Res>
+abstract class _$$DepartureDateTimeImplCopyWith<$Res>
     implements $DepartureDateTimeCopyWith<$Res> {
-  factory _$$_DepartureDateTimeCopyWith(_$_DepartureDateTime value,
-          $Res Function(_$_DepartureDateTime) then) =
-      __$$_DepartureDateTimeCopyWithImpl<$Res>;
+  factory _$$DepartureDateTimeImplCopyWith(_$DepartureDateTimeImpl value,
+          $Res Function(_$DepartureDateTimeImpl) then) =
+      __$$DepartureDateTimeImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? date, String? time});
 }
 
 /// @nodoc
-class __$$_DepartureDateTimeCopyWithImpl<$Res>
-    extends _$DepartureDateTimeCopyWithImpl<$Res, _$_DepartureDateTime>
-    implements _$$_DepartureDateTimeCopyWith<$Res> {
-  __$$_DepartureDateTimeCopyWithImpl(
-      _$_DepartureDateTime _value, $Res Function(_$_DepartureDateTime) _then)
+class __$$DepartureDateTimeImplCopyWithImpl<$Res>
+    extends _$DepartureDateTimeCopyWithImpl<$Res, _$DepartureDateTimeImpl>
+    implements _$$DepartureDateTimeImplCopyWith<$Res> {
+  __$$DepartureDateTimeImplCopyWithImpl(_$DepartureDateTimeImpl _value,
+      $Res Function(_$DepartureDateTimeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DepartureDateTime
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? date = freezed,
     Object? time = freezed,
   }) {
-    return _then(_$_DepartureDateTime(
+    return _then(_$DepartureDateTimeImpl(
       date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -552,11 +589,11 @@ class __$$_DepartureDateTimeCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DepartureDateTime implements _DepartureDateTime {
-  const _$_DepartureDateTime({required this.date, required this.time});
+class _$DepartureDateTimeImpl implements _DepartureDateTime {
+  const _$DepartureDateTimeImpl({required this.date, required this.time});
 
-  factory _$_DepartureDateTime.fromJson(Map<String, dynamic> json) =>
-      _$$_DepartureDateTimeFromJson(json);
+  factory _$DepartureDateTimeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DepartureDateTimeImplFromJson(json);
 
   @override
   final String? date;
@@ -569,28 +606,30 @@ class _$_DepartureDateTime implements _DepartureDateTime {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DepartureDateTime &&
+            other is _$DepartureDateTimeImpl &&
             (identical(other.date, date) || other.date == date) &&
             (identical(other.time, time) || other.time == time));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, date, time);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DepartureDateTime
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DepartureDateTimeCopyWith<_$_DepartureDateTime> get copyWith =>
-      __$$_DepartureDateTimeCopyWithImpl<_$_DepartureDateTime>(
+  _$$DepartureDateTimeImplCopyWith<_$DepartureDateTimeImpl> get copyWith =>
+      __$$DepartureDateTimeImplCopyWithImpl<_$DepartureDateTimeImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DepartureDateTimeToJson(
+    return _$$DepartureDateTimeImplToJson(
       this,
     );
   }
@@ -599,18 +638,21 @@ class _$_DepartureDateTime implements _DepartureDateTime {
 abstract class _DepartureDateTime implements DepartureDateTime {
   const factory _DepartureDateTime(
       {required final String? date,
-      required final String? time}) = _$_DepartureDateTime;
+      required final String? time}) = _$DepartureDateTimeImpl;
 
   factory _DepartureDateTime.fromJson(Map<String, dynamic> json) =
-      _$_DepartureDateTime.fromJson;
+      _$DepartureDateTimeImpl.fromJson;
 
   @override
   String? get date;
   @override
   String? get time;
+
+  /// Create a copy of DepartureDateTime
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_DepartureDateTimeCopyWith<_$_DepartureDateTime> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DepartureDateTimeImplCopyWith<_$DepartureDateTimeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -623,8 +665,12 @@ mixin _$FlightTraveler {
   String? get id => throw _privateConstructorUsedError;
   String? get travelerType => throw _privateConstructorUsedError;
 
+  /// Serializes this FlightTraveler to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FlightTraveler
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FlightTravelerCopyWith<FlightTraveler> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -648,6 +694,8 @@ class _$FlightTravelerCopyWithImpl<$Res, $Val extends FlightTraveler>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FlightTraveler
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -668,31 +716,33 @@ class _$FlightTravelerCopyWithImpl<$Res, $Val extends FlightTraveler>
 }
 
 /// @nodoc
-abstract class _$$_FlightTravelerCopyWith<$Res>
+abstract class _$$FlightTravelerImplCopyWith<$Res>
     implements $FlightTravelerCopyWith<$Res> {
-  factory _$$_FlightTravelerCopyWith(
-          _$_FlightTraveler value, $Res Function(_$_FlightTraveler) then) =
-      __$$_FlightTravelerCopyWithImpl<$Res>;
+  factory _$$FlightTravelerImplCopyWith(_$FlightTravelerImpl value,
+          $Res Function(_$FlightTravelerImpl) then) =
+      __$$FlightTravelerImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? id, String? travelerType});
 }
 
 /// @nodoc
-class __$$_FlightTravelerCopyWithImpl<$Res>
-    extends _$FlightTravelerCopyWithImpl<$Res, _$_FlightTraveler>
-    implements _$$_FlightTravelerCopyWith<$Res> {
-  __$$_FlightTravelerCopyWithImpl(
-      _$_FlightTraveler _value, $Res Function(_$_FlightTraveler) _then)
+class __$$FlightTravelerImplCopyWithImpl<$Res>
+    extends _$FlightTravelerCopyWithImpl<$Res, _$FlightTravelerImpl>
+    implements _$$FlightTravelerImplCopyWith<$Res> {
+  __$$FlightTravelerImplCopyWithImpl(
+      _$FlightTravelerImpl _value, $Res Function(_$FlightTravelerImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FlightTraveler
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? travelerType = freezed,
   }) {
-    return _then(_$_FlightTraveler(
+    return _then(_$FlightTravelerImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -707,11 +757,11 @@ class __$$_FlightTravelerCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FlightTraveler implements _FlightTraveler {
-  const _$_FlightTraveler({required this.id, required this.travelerType});
+class _$FlightTravelerImpl implements _FlightTraveler {
+  const _$FlightTravelerImpl({required this.id, required this.travelerType});
 
-  factory _$_FlightTraveler.fromJson(Map<String, dynamic> json) =>
-      _$$_FlightTravelerFromJson(json);
+  factory _$FlightTravelerImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FlightTravelerImplFromJson(json);
 
   @override
   final String? id;
@@ -724,28 +774,31 @@ class _$_FlightTraveler implements _FlightTraveler {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FlightTraveler &&
+            other is _$FlightTravelerImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.travelerType, travelerType) ||
                 other.travelerType == travelerType));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, travelerType);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FlightTraveler
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FlightTravelerCopyWith<_$_FlightTraveler> get copyWith =>
-      __$$_FlightTravelerCopyWithImpl<_$_FlightTraveler>(this, _$identity);
+  _$$FlightTravelerImplCopyWith<_$FlightTravelerImpl> get copyWith =>
+      __$$FlightTravelerImplCopyWithImpl<_$FlightTravelerImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FlightTravelerToJson(
+    return _$$FlightTravelerImplToJson(
       this,
     );
   }
@@ -754,17 +807,20 @@ class _$_FlightTraveler implements _FlightTraveler {
 abstract class _FlightTraveler implements FlightTraveler {
   const factory _FlightTraveler(
       {required final String? id,
-      required final String? travelerType}) = _$_FlightTraveler;
+      required final String? travelerType}) = _$FlightTravelerImpl;
 
   factory _FlightTraveler.fromJson(Map<String, dynamic> json) =
-      _$_FlightTraveler.fromJson;
+      _$FlightTravelerImpl.fromJson;
 
   @override
   String? get id;
   @override
   String? get travelerType;
+
+  /// Create a copy of FlightTraveler
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_FlightTravelerCopyWith<_$_FlightTraveler> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FlightTravelerImplCopyWith<_$FlightTravelerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

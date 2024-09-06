@@ -12,7 +12,7 @@ part of 'flight_offers_body.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 FlightOffersBody _$FlightOffersBodyFromJson(Map<String, dynamic> json) {
   return _FlightOffersBody.fromJson(json);
@@ -27,8 +27,12 @@ mixin _$FlightOffersBody {
   List<String>? get sources => throw _privateConstructorUsedError;
   SearchCriteria? get searchCriteria => throw _privateConstructorUsedError;
 
+  /// Serializes this FlightOffersBody to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FlightOffersBody
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FlightOffersBodyCopyWith<FlightOffersBody> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -59,6 +63,8 @@ class _$FlightOffersBodyCopyWithImpl<$Res, $Val extends FlightOffersBody>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FlightOffersBody
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class _$FlightOffersBodyCopyWithImpl<$Res, $Val extends FlightOffersBody>
     ) as $Val);
   }
 
+  /// Create a copy of FlightOffersBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SearchCriteriaCopyWith<$Res>? get searchCriteria {
@@ -106,11 +114,11 @@ class _$FlightOffersBodyCopyWithImpl<$Res, $Val extends FlightOffersBody>
 }
 
 /// @nodoc
-abstract class _$$_FlightOffersBodyCopyWith<$Res>
+abstract class _$$FlightOffersBodyImplCopyWith<$Res>
     implements $FlightOffersBodyCopyWith<$Res> {
-  factory _$$_FlightOffersBodyCopyWith(
-          _$_FlightOffersBody value, $Res Function(_$_FlightOffersBody) then) =
-      __$$_FlightOffersBodyCopyWithImpl<$Res>;
+  factory _$$FlightOffersBodyImplCopyWith(_$FlightOffersBodyImpl value,
+          $Res Function(_$FlightOffersBodyImpl) then) =
+      __$$FlightOffersBodyImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -125,13 +133,15 @@ abstract class _$$_FlightOffersBodyCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FlightOffersBodyCopyWithImpl<$Res>
-    extends _$FlightOffersBodyCopyWithImpl<$Res, _$_FlightOffersBody>
-    implements _$$_FlightOffersBodyCopyWith<$Res> {
-  __$$_FlightOffersBodyCopyWithImpl(
-      _$_FlightOffersBody _value, $Res Function(_$_FlightOffersBody) _then)
+class __$$FlightOffersBodyImplCopyWithImpl<$Res>
+    extends _$FlightOffersBodyCopyWithImpl<$Res, _$FlightOffersBodyImpl>
+    implements _$$FlightOffersBodyImplCopyWith<$Res> {
+  __$$FlightOffersBodyImplCopyWithImpl(_$FlightOffersBodyImpl _value,
+      $Res Function(_$FlightOffersBodyImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FlightOffersBody
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -141,7 +151,7 @@ class __$$_FlightOffersBodyCopyWithImpl<$Res>
     Object? sources = freezed,
     Object? searchCriteria = freezed,
   }) {
-    return _then(_$_FlightOffersBody(
+    return _then(_$FlightOffersBodyImpl(
       currencyCode: freezed == currencyCode
           ? _value.currencyCode
           : currencyCode // ignore: cast_nullable_to_non_nullable
@@ -168,8 +178,8 @@ class __$$_FlightOffersBodyCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FlightOffersBody implements _FlightOffersBody {
-  const _$_FlightOffersBody(
+class _$FlightOffersBodyImpl implements _FlightOffersBody {
+  const _$FlightOffersBodyImpl(
       {required this.currencyCode,
       required final List<OffersOriginDestination>? originDestinations,
       required final List<OfferBodyTraveler>? travelers,
@@ -179,8 +189,8 @@ class _$_FlightOffersBody implements _FlightOffersBody {
         _travelers = travelers,
         _sources = sources;
 
-  factory _$_FlightOffersBody.fromJson(Map<String, dynamic> json) =>
-      _$$_FlightOffersBodyFromJson(json);
+  factory _$FlightOffersBodyImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FlightOffersBodyImplFromJson(json);
 
   @override
   final String? currencyCode;
@@ -224,10 +234,10 @@ class _$_FlightOffersBody implements _FlightOffersBody {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FlightOffersBody &&
+            other is _$FlightOffersBodyImpl &&
             (identical(other.currencyCode, currencyCode) ||
                 other.currencyCode == currencyCode) &&
             const DeepCollectionEquality()
@@ -239,7 +249,7 @@ class _$_FlightOffersBody implements _FlightOffersBody {
                 other.searchCriteria == searchCriteria));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -249,15 +259,18 @@ class _$_FlightOffersBody implements _FlightOffersBody {
       const DeepCollectionEquality().hash(_sources),
       searchCriteria);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FlightOffersBody
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FlightOffersBodyCopyWith<_$_FlightOffersBody> get copyWith =>
-      __$$_FlightOffersBodyCopyWithImpl<_$_FlightOffersBody>(this, _$identity);
+  _$$FlightOffersBodyImplCopyWith<_$FlightOffersBodyImpl> get copyWith =>
+      __$$FlightOffersBodyImplCopyWithImpl<_$FlightOffersBodyImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FlightOffersBodyToJson(
+    return _$$FlightOffersBodyImplToJson(
       this,
     );
   }
@@ -269,10 +282,10 @@ abstract class _FlightOffersBody implements FlightOffersBody {
       required final List<OffersOriginDestination>? originDestinations,
       required final List<OfferBodyTraveler>? travelers,
       required final List<String>? sources,
-      required final SearchCriteria? searchCriteria}) = _$_FlightOffersBody;
+      required final SearchCriteria? searchCriteria}) = _$FlightOffersBodyImpl;
 
   factory _FlightOffersBody.fromJson(Map<String, dynamic> json) =
-      _$_FlightOffersBody.fromJson;
+      _$FlightOffersBodyImpl.fromJson;
 
   @override
   String? get currencyCode;
@@ -284,9 +297,12 @@ abstract class _FlightOffersBody implements FlightOffersBody {
   List<String>? get sources;
   @override
   SearchCriteria? get searchCriteria;
+
+  /// Create a copy of FlightOffersBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_FlightOffersBodyCopyWith<_$_FlightOffersBody> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FlightOffersBodyImplCopyWith<_$FlightOffersBodyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -303,8 +319,12 @@ mixin _$OffersOriginDestination {
   DepartureDateTimeRange? get departureDateTimeRange =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this OffersOriginDestination to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OffersOriginDestination
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OffersOriginDestinationCopyWith<OffersOriginDestination> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -335,6 +355,8 @@ class _$OffersOriginDestinationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OffersOriginDestination
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -363,6 +385,8 @@ class _$OffersOriginDestinationCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of OffersOriginDestination
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DepartureDateTimeRangeCopyWith<$Res>? get departureDateTimeRange {
@@ -378,11 +402,12 @@ class _$OffersOriginDestinationCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_OffersOriginDestinationCopyWith<$Res>
+abstract class _$$OffersOriginDestinationImplCopyWith<$Res>
     implements $OffersOriginDestinationCopyWith<$Res> {
-  factory _$$_OffersOriginDestinationCopyWith(_$_OffersOriginDestination value,
-          $Res Function(_$_OffersOriginDestination) then) =
-      __$$_OffersOriginDestinationCopyWithImpl<$Res>;
+  factory _$$OffersOriginDestinationImplCopyWith(
+          _$OffersOriginDestinationImpl value,
+          $Res Function(_$OffersOriginDestinationImpl) then) =
+      __$$OffersOriginDestinationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -396,14 +421,17 @@ abstract class _$$_OffersOriginDestinationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_OffersOriginDestinationCopyWithImpl<$Res>
+class __$$OffersOriginDestinationImplCopyWithImpl<$Res>
     extends _$OffersOriginDestinationCopyWithImpl<$Res,
-        _$_OffersOriginDestination>
-    implements _$$_OffersOriginDestinationCopyWith<$Res> {
-  __$$_OffersOriginDestinationCopyWithImpl(_$_OffersOriginDestination _value,
-      $Res Function(_$_OffersOriginDestination) _then)
+        _$OffersOriginDestinationImpl>
+    implements _$$OffersOriginDestinationImplCopyWith<$Res> {
+  __$$OffersOriginDestinationImplCopyWithImpl(
+      _$OffersOriginDestinationImpl _value,
+      $Res Function(_$OffersOriginDestinationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OffersOriginDestination
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -412,7 +440,7 @@ class __$$_OffersOriginDestinationCopyWithImpl<$Res>
     Object? destinationLocationCode = freezed,
     Object? departureDateTimeRange = freezed,
   }) {
-    return _then(_$_OffersOriginDestination(
+    return _then(_$OffersOriginDestinationImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -435,15 +463,15 @@ class __$$_OffersOriginDestinationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_OffersOriginDestination implements _OffersOriginDestination {
-  const _$_OffersOriginDestination(
+class _$OffersOriginDestinationImpl implements _OffersOriginDestination {
+  const _$OffersOriginDestinationImpl(
       {required this.id,
       required this.originLocationCode,
       required this.destinationLocationCode,
       required this.departureDateTimeRange});
 
-  factory _$_OffersOriginDestination.fromJson(Map<String, dynamic> json) =>
-      _$$_OffersOriginDestinationFromJson(json);
+  factory _$OffersOriginDestinationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OffersOriginDestinationImplFromJson(json);
 
   @override
   final String? id;
@@ -460,10 +488,10 @@ class _$_OffersOriginDestination implements _OffersOriginDestination {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OffersOriginDestination &&
+            other is _$OffersOriginDestinationImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.originLocationCode, originLocationCode) ||
                 other.originLocationCode == originLocationCode) &&
@@ -474,22 +502,23 @@ class _$_OffersOriginDestination implements _OffersOriginDestination {
                 other.departureDateTimeRange == departureDateTimeRange));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, originLocationCode,
       destinationLocationCode, departureDateTimeRange);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OffersOriginDestination
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OffersOriginDestinationCopyWith<_$_OffersOriginDestination>
-      get copyWith =>
-          __$$_OffersOriginDestinationCopyWithImpl<_$_OffersOriginDestination>(
-              this, _$identity);
+  _$$OffersOriginDestinationImplCopyWith<_$OffersOriginDestinationImpl>
+      get copyWith => __$$OffersOriginDestinationImplCopyWithImpl<
+          _$OffersOriginDestinationImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OffersOriginDestinationToJson(
+    return _$$OffersOriginDestinationImplToJson(
       this,
     );
   }
@@ -501,10 +530,10 @@ abstract class _OffersOriginDestination implements OffersOriginDestination {
           required final String? originLocationCode,
           required final String? destinationLocationCode,
           required final DepartureDateTimeRange? departureDateTimeRange}) =
-      _$_OffersOriginDestination;
+      _$OffersOriginDestinationImpl;
 
   factory _OffersOriginDestination.fromJson(Map<String, dynamic> json) =
-      _$_OffersOriginDestination.fromJson;
+      _$OffersOriginDestinationImpl.fromJson;
 
   @override
   String? get id;
@@ -514,9 +543,12 @@ abstract class _OffersOriginDestination implements OffersOriginDestination {
   String? get destinationLocationCode;
   @override
   DepartureDateTimeRange? get departureDateTimeRange;
+
+  /// Create a copy of OffersOriginDestination
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_OffersOriginDestinationCopyWith<_$_OffersOriginDestination>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$OffersOriginDestinationImplCopyWith<_$OffersOriginDestinationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -530,8 +562,12 @@ mixin _$DepartureDateTimeRange {
   String? get date => throw _privateConstructorUsedError;
   String? get time => throw _privateConstructorUsedError;
 
+  /// Serializes this DepartureDateTimeRange to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DepartureDateTimeRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DepartureDateTimeRangeCopyWith<DepartureDateTimeRange> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -556,6 +592,8 @@ class _$DepartureDateTimeRangeCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DepartureDateTimeRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -576,32 +614,36 @@ class _$DepartureDateTimeRangeCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_DepartureDateTimeRangeCopyWith<$Res>
+abstract class _$$DepartureDateTimeRangeImplCopyWith<$Res>
     implements $DepartureDateTimeRangeCopyWith<$Res> {
-  factory _$$_DepartureDateTimeRangeCopyWith(_$_DepartureDateTimeRange value,
-          $Res Function(_$_DepartureDateTimeRange) then) =
-      __$$_DepartureDateTimeRangeCopyWithImpl<$Res>;
+  factory _$$DepartureDateTimeRangeImplCopyWith(
+          _$DepartureDateTimeRangeImpl value,
+          $Res Function(_$DepartureDateTimeRangeImpl) then) =
+      __$$DepartureDateTimeRangeImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? date, String? time});
 }
 
 /// @nodoc
-class __$$_DepartureDateTimeRangeCopyWithImpl<$Res>
+class __$$DepartureDateTimeRangeImplCopyWithImpl<$Res>
     extends _$DepartureDateTimeRangeCopyWithImpl<$Res,
-        _$_DepartureDateTimeRange>
-    implements _$$_DepartureDateTimeRangeCopyWith<$Res> {
-  __$$_DepartureDateTimeRangeCopyWithImpl(_$_DepartureDateTimeRange _value,
-      $Res Function(_$_DepartureDateTimeRange) _then)
+        _$DepartureDateTimeRangeImpl>
+    implements _$$DepartureDateTimeRangeImplCopyWith<$Res> {
+  __$$DepartureDateTimeRangeImplCopyWithImpl(
+      _$DepartureDateTimeRangeImpl _value,
+      $Res Function(_$DepartureDateTimeRangeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DepartureDateTimeRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? date = freezed,
     Object? time = freezed,
   }) {
-    return _then(_$_DepartureDateTimeRange(
+    return _then(_$DepartureDateTimeRangeImpl(
       date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -616,11 +658,11 @@ class __$$_DepartureDateTimeRangeCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DepartureDateTimeRange implements _DepartureDateTimeRange {
-  const _$_DepartureDateTimeRange({required this.date, required this.time});
+class _$DepartureDateTimeRangeImpl implements _DepartureDateTimeRange {
+  const _$DepartureDateTimeRangeImpl({required this.date, required this.time});
 
-  factory _$_DepartureDateTimeRange.fromJson(Map<String, dynamic> json) =>
-      _$$_DepartureDateTimeRangeFromJson(json);
+  factory _$DepartureDateTimeRangeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DepartureDateTimeRangeImplFromJson(json);
 
   @override
   final String? date;
@@ -633,28 +675,30 @@ class _$_DepartureDateTimeRange implements _DepartureDateTimeRange {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DepartureDateTimeRange &&
+            other is _$DepartureDateTimeRangeImpl &&
             (identical(other.date, date) || other.date == date) &&
             (identical(other.time, time) || other.time == time));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, date, time);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DepartureDateTimeRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DepartureDateTimeRangeCopyWith<_$_DepartureDateTimeRange> get copyWith =>
-      __$$_DepartureDateTimeRangeCopyWithImpl<_$_DepartureDateTimeRange>(
-          this, _$identity);
+  _$$DepartureDateTimeRangeImplCopyWith<_$DepartureDateTimeRangeImpl>
+      get copyWith => __$$DepartureDateTimeRangeImplCopyWithImpl<
+          _$DepartureDateTimeRangeImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DepartureDateTimeRangeToJson(
+    return _$$DepartureDateTimeRangeImplToJson(
       this,
     );
   }
@@ -663,19 +707,22 @@ class _$_DepartureDateTimeRange implements _DepartureDateTimeRange {
 abstract class _DepartureDateTimeRange implements DepartureDateTimeRange {
   const factory _DepartureDateTimeRange(
       {required final String? date,
-      required final String? time}) = _$_DepartureDateTimeRange;
+      required final String? time}) = _$DepartureDateTimeRangeImpl;
 
   factory _DepartureDateTimeRange.fromJson(Map<String, dynamic> json) =
-      _$_DepartureDateTimeRange.fromJson;
+      _$DepartureDateTimeRangeImpl.fromJson;
 
   @override
   String? get date;
   @override
   String? get time;
+
+  /// Create a copy of DepartureDateTimeRange
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_DepartureDateTimeRangeCopyWith<_$_DepartureDateTimeRange> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DepartureDateTimeRangeImplCopyWith<_$DepartureDateTimeRangeImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 OfferBodyTraveler _$OfferBodyTravelerFromJson(Map<String, dynamic> json) {
@@ -687,8 +734,12 @@ mixin _$OfferBodyTraveler {
   String? get id => throw _privateConstructorUsedError;
   String? get travelerType => throw _privateConstructorUsedError;
 
+  /// Serializes this OfferBodyTraveler to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OfferBodyTraveler
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OfferBodyTravelerCopyWith<OfferBodyTraveler> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -712,6 +763,8 @@ class _$OfferBodyTravelerCopyWithImpl<$Res, $Val extends OfferBodyTraveler>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OfferBodyTraveler
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -732,31 +785,33 @@ class _$OfferBodyTravelerCopyWithImpl<$Res, $Val extends OfferBodyTraveler>
 }
 
 /// @nodoc
-abstract class _$$_OfferBodyTravelerCopyWith<$Res>
+abstract class _$$OfferBodyTravelerImplCopyWith<$Res>
     implements $OfferBodyTravelerCopyWith<$Res> {
-  factory _$$_OfferBodyTravelerCopyWith(_$_OfferBodyTraveler value,
-          $Res Function(_$_OfferBodyTraveler) then) =
-      __$$_OfferBodyTravelerCopyWithImpl<$Res>;
+  factory _$$OfferBodyTravelerImplCopyWith(_$OfferBodyTravelerImpl value,
+          $Res Function(_$OfferBodyTravelerImpl) then) =
+      __$$OfferBodyTravelerImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? id, String? travelerType});
 }
 
 /// @nodoc
-class __$$_OfferBodyTravelerCopyWithImpl<$Res>
-    extends _$OfferBodyTravelerCopyWithImpl<$Res, _$_OfferBodyTraveler>
-    implements _$$_OfferBodyTravelerCopyWith<$Res> {
-  __$$_OfferBodyTravelerCopyWithImpl(
-      _$_OfferBodyTraveler _value, $Res Function(_$_OfferBodyTraveler) _then)
+class __$$OfferBodyTravelerImplCopyWithImpl<$Res>
+    extends _$OfferBodyTravelerCopyWithImpl<$Res, _$OfferBodyTravelerImpl>
+    implements _$$OfferBodyTravelerImplCopyWith<$Res> {
+  __$$OfferBodyTravelerImplCopyWithImpl(_$OfferBodyTravelerImpl _value,
+      $Res Function(_$OfferBodyTravelerImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OfferBodyTraveler
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? travelerType = freezed,
   }) {
-    return _then(_$_OfferBodyTraveler(
+    return _then(_$OfferBodyTravelerImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -771,11 +826,11 @@ class __$$_OfferBodyTravelerCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_OfferBodyTraveler implements _OfferBodyTraveler {
-  const _$_OfferBodyTraveler({required this.id, required this.travelerType});
+class _$OfferBodyTravelerImpl implements _OfferBodyTraveler {
+  const _$OfferBodyTravelerImpl({required this.id, required this.travelerType});
 
-  factory _$_OfferBodyTraveler.fromJson(Map<String, dynamic> json) =>
-      _$$_OfferBodyTravelerFromJson(json);
+  factory _$OfferBodyTravelerImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OfferBodyTravelerImplFromJson(json);
 
   @override
   final String? id;
@@ -788,29 +843,31 @@ class _$_OfferBodyTraveler implements _OfferBodyTraveler {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OfferBodyTraveler &&
+            other is _$OfferBodyTravelerImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.travelerType, travelerType) ||
                 other.travelerType == travelerType));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, travelerType);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OfferBodyTraveler
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OfferBodyTravelerCopyWith<_$_OfferBodyTraveler> get copyWith =>
-      __$$_OfferBodyTravelerCopyWithImpl<_$_OfferBodyTraveler>(
+  _$$OfferBodyTravelerImplCopyWith<_$OfferBodyTravelerImpl> get copyWith =>
+      __$$OfferBodyTravelerImplCopyWithImpl<_$OfferBodyTravelerImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OfferBodyTravelerToJson(
+    return _$$OfferBodyTravelerImplToJson(
       this,
     );
   }
@@ -819,18 +876,21 @@ class _$_OfferBodyTraveler implements _OfferBodyTraveler {
 abstract class _OfferBodyTraveler implements OfferBodyTraveler {
   const factory _OfferBodyTraveler(
       {required final String? id,
-      required final String? travelerType}) = _$_OfferBodyTraveler;
+      required final String? travelerType}) = _$OfferBodyTravelerImpl;
 
   factory _OfferBodyTraveler.fromJson(Map<String, dynamic> json) =
-      _$_OfferBodyTraveler.fromJson;
+      _$OfferBodyTravelerImpl.fromJson;
 
   @override
   String? get id;
   @override
   String? get travelerType;
+
+  /// Create a copy of OfferBodyTraveler
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_OfferBodyTravelerCopyWith<_$_OfferBodyTraveler> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$OfferBodyTravelerImplCopyWith<_$OfferBodyTravelerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -843,8 +903,12 @@ mixin _$SearchCriteria {
   int? get maxFlightOffers => throw _privateConstructorUsedError;
   FlightFilters? get flightFilters => throw _privateConstructorUsedError;
 
+  /// Serializes this SearchCriteria to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SearchCriteria
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SearchCriteriaCopyWith<SearchCriteria> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -870,6 +934,8 @@ class _$SearchCriteriaCopyWithImpl<$Res, $Val extends SearchCriteria>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SearchCriteria
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -888,6 +954,8 @@ class _$SearchCriteriaCopyWithImpl<$Res, $Val extends SearchCriteria>
     ) as $Val);
   }
 
+  /// Create a copy of SearchCriteria
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FlightFiltersCopyWith<$Res>? get flightFilters {
@@ -902,11 +970,11 @@ class _$SearchCriteriaCopyWithImpl<$Res, $Val extends SearchCriteria>
 }
 
 /// @nodoc
-abstract class _$$_SearchCriteriaCopyWith<$Res>
+abstract class _$$SearchCriteriaImplCopyWith<$Res>
     implements $SearchCriteriaCopyWith<$Res> {
-  factory _$$_SearchCriteriaCopyWith(
-          _$_SearchCriteria value, $Res Function(_$_SearchCriteria) then) =
-      __$$_SearchCriteriaCopyWithImpl<$Res>;
+  factory _$$SearchCriteriaImplCopyWith(_$SearchCriteriaImpl value,
+          $Res Function(_$SearchCriteriaImpl) then) =
+      __$$SearchCriteriaImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? maxFlightOffers, FlightFilters? flightFilters});
@@ -916,20 +984,22 @@ abstract class _$$_SearchCriteriaCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SearchCriteriaCopyWithImpl<$Res>
-    extends _$SearchCriteriaCopyWithImpl<$Res, _$_SearchCriteria>
-    implements _$$_SearchCriteriaCopyWith<$Res> {
-  __$$_SearchCriteriaCopyWithImpl(
-      _$_SearchCriteria _value, $Res Function(_$_SearchCriteria) _then)
+class __$$SearchCriteriaImplCopyWithImpl<$Res>
+    extends _$SearchCriteriaCopyWithImpl<$Res, _$SearchCriteriaImpl>
+    implements _$$SearchCriteriaImplCopyWith<$Res> {
+  __$$SearchCriteriaImplCopyWithImpl(
+      _$SearchCriteriaImpl _value, $Res Function(_$SearchCriteriaImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SearchCriteria
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? maxFlightOffers = freezed,
     Object? flightFilters = freezed,
   }) {
-    return _then(_$_SearchCriteria(
+    return _then(_$SearchCriteriaImpl(
       maxFlightOffers: freezed == maxFlightOffers
           ? _value.maxFlightOffers
           : maxFlightOffers // ignore: cast_nullable_to_non_nullable
@@ -945,12 +1015,12 @@ class __$$_SearchCriteriaCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$_SearchCriteria implements _SearchCriteria {
-  const _$_SearchCriteria(
+class _$SearchCriteriaImpl implements _SearchCriteria {
+  const _$SearchCriteriaImpl(
       {required this.maxFlightOffers, required this.flightFilters});
 
-  factory _$_SearchCriteria.fromJson(Map<String, dynamic> json) =>
-      _$$_SearchCriteriaFromJson(json);
+  factory _$SearchCriteriaImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SearchCriteriaImplFromJson(json);
 
   @override
   final int? maxFlightOffers;
@@ -963,29 +1033,32 @@ class _$_SearchCriteria implements _SearchCriteria {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SearchCriteria &&
+            other is _$SearchCriteriaImpl &&
             (identical(other.maxFlightOffers, maxFlightOffers) ||
                 other.maxFlightOffers == maxFlightOffers) &&
             (identical(other.flightFilters, flightFilters) ||
                 other.flightFilters == flightFilters));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, maxFlightOffers, flightFilters);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SearchCriteria
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SearchCriteriaCopyWith<_$_SearchCriteria> get copyWith =>
-      __$$_SearchCriteriaCopyWithImpl<_$_SearchCriteria>(this, _$identity);
+  _$$SearchCriteriaImplCopyWith<_$SearchCriteriaImpl> get copyWith =>
+      __$$SearchCriteriaImplCopyWithImpl<_$SearchCriteriaImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SearchCriteriaToJson(
+    return _$$SearchCriteriaImplToJson(
       this,
     );
   }
@@ -994,18 +1067,21 @@ class _$_SearchCriteria implements _SearchCriteria {
 abstract class _SearchCriteria implements SearchCriteria {
   const factory _SearchCriteria(
       {required final int? maxFlightOffers,
-      required final FlightFilters? flightFilters}) = _$_SearchCriteria;
+      required final FlightFilters? flightFilters}) = _$SearchCriteriaImpl;
 
   factory _SearchCriteria.fromJson(Map<String, dynamic> json) =
-      _$_SearchCriteria.fromJson;
+      _$SearchCriteriaImpl.fromJson;
 
   @override
   int? get maxFlightOffers;
   @override
   FlightFilters? get flightFilters;
+
+  /// Create a copy of SearchCriteria
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SearchCriteriaCopyWith<_$_SearchCriteria> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SearchCriteriaImplCopyWith<_$SearchCriteriaImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1020,8 +1096,12 @@ mixin _$FlightFilters {
   CarrierRestrictions? get carrierRestrictions =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this FlightFilters to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FlightFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FlightFiltersCopyWith<FlightFilters> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1049,6 +1129,8 @@ class _$FlightFiltersCopyWithImpl<$Res, $Val extends FlightFilters>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FlightFilters
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1067,6 +1149,8 @@ class _$FlightFiltersCopyWithImpl<$Res, $Val extends FlightFilters>
     ) as $Val);
   }
 
+  /// Create a copy of FlightFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CarrierRestrictionsCopyWith<$Res>? get carrierRestrictions {
@@ -1082,11 +1166,11 @@ class _$FlightFiltersCopyWithImpl<$Res, $Val extends FlightFilters>
 }
 
 /// @nodoc
-abstract class _$$_FlightFiltersCopyWith<$Res>
+abstract class _$$FlightFiltersImplCopyWith<$Res>
     implements $FlightFiltersCopyWith<$Res> {
-  factory _$$_FlightFiltersCopyWith(
-          _$_FlightFilters value, $Res Function(_$_FlightFilters) then) =
-      __$$_FlightFiltersCopyWithImpl<$Res>;
+  factory _$$FlightFiltersImplCopyWith(
+          _$FlightFiltersImpl value, $Res Function(_$FlightFiltersImpl) then) =
+      __$$FlightFiltersImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1098,20 +1182,22 @@ abstract class _$$_FlightFiltersCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FlightFiltersCopyWithImpl<$Res>
-    extends _$FlightFiltersCopyWithImpl<$Res, _$_FlightFilters>
-    implements _$$_FlightFiltersCopyWith<$Res> {
-  __$$_FlightFiltersCopyWithImpl(
-      _$_FlightFilters _value, $Res Function(_$_FlightFilters) _then)
+class __$$FlightFiltersImplCopyWithImpl<$Res>
+    extends _$FlightFiltersCopyWithImpl<$Res, _$FlightFiltersImpl>
+    implements _$$FlightFiltersImplCopyWith<$Res> {
+  __$$FlightFiltersImplCopyWithImpl(
+      _$FlightFiltersImpl _value, $Res Function(_$FlightFiltersImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FlightFilters
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? cabinRestrictions = freezed,
     Object? carrierRestrictions = freezed,
   }) {
-    return _then(_$_FlightFilters(
+    return _then(_$FlightFiltersImpl(
       cabinRestrictions: freezed == cabinRestrictions
           ? _value._cabinRestrictions
           : cabinRestrictions // ignore: cast_nullable_to_non_nullable
@@ -1126,14 +1212,14 @@ class __$$_FlightFiltersCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FlightFilters implements _FlightFilters {
-  const _$_FlightFilters(
+class _$FlightFiltersImpl implements _FlightFilters {
+  const _$FlightFiltersImpl(
       {required final List<CabinRestriction>? cabinRestrictions,
       required this.carrierRestrictions})
       : _cabinRestrictions = cabinRestrictions;
 
-  factory _$_FlightFilters.fromJson(Map<String, dynamic> json) =>
-      _$$_FlightFiltersFromJson(json);
+  factory _$FlightFiltersImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FlightFiltersImplFromJson(json);
 
   final List<CabinRestriction>? _cabinRestrictions;
   @override
@@ -1155,32 +1241,34 @@ class _$_FlightFilters implements _FlightFilters {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FlightFilters &&
+            other is _$FlightFiltersImpl &&
             const DeepCollectionEquality()
                 .equals(other._cabinRestrictions, _cabinRestrictions) &&
             (identical(other.carrierRestrictions, carrierRestrictions) ||
                 other.carrierRestrictions == carrierRestrictions));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_cabinRestrictions),
       carrierRestrictions);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FlightFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FlightFiltersCopyWith<_$_FlightFilters> get copyWith =>
-      __$$_FlightFiltersCopyWithImpl<_$_FlightFilters>(this, _$identity);
+  _$$FlightFiltersImplCopyWith<_$FlightFiltersImpl> get copyWith =>
+      __$$FlightFiltersImplCopyWithImpl<_$FlightFiltersImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FlightFiltersToJson(
+    return _$$FlightFiltersImplToJson(
       this,
     );
   }
@@ -1190,18 +1278,21 @@ abstract class _FlightFilters implements FlightFilters {
   const factory _FlightFilters(
           {required final List<CabinRestriction>? cabinRestrictions,
           required final CarrierRestrictions? carrierRestrictions}) =
-      _$_FlightFilters;
+      _$FlightFiltersImpl;
 
   factory _FlightFilters.fromJson(Map<String, dynamic> json) =
-      _$_FlightFilters.fromJson;
+      _$FlightFiltersImpl.fromJson;
 
   @override
   List<CabinRestriction>? get cabinRestrictions;
   @override
   CarrierRestrictions? get carrierRestrictions;
+
+  /// Create a copy of FlightFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_FlightFiltersCopyWith<_$_FlightFilters> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FlightFiltersImplCopyWith<_$FlightFiltersImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1215,8 +1306,12 @@ mixin _$CabinRestriction {
   String? get coverage => throw _privateConstructorUsedError;
   List<String>? get originDestinationIds => throw _privateConstructorUsedError;
 
+  /// Serializes this CabinRestriction to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CabinRestriction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CabinRestrictionCopyWith<CabinRestriction> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1241,6 +1336,8 @@ class _$CabinRestrictionCopyWithImpl<$Res, $Val extends CabinRestriction>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CabinRestriction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1266,11 +1363,11 @@ class _$CabinRestrictionCopyWithImpl<$Res, $Val extends CabinRestriction>
 }
 
 /// @nodoc
-abstract class _$$_CabinRestrictionCopyWith<$Res>
+abstract class _$$CabinRestrictionImplCopyWith<$Res>
     implements $CabinRestrictionCopyWith<$Res> {
-  factory _$$_CabinRestrictionCopyWith(
-          _$_CabinRestriction value, $Res Function(_$_CabinRestriction) then) =
-      __$$_CabinRestrictionCopyWithImpl<$Res>;
+  factory _$$CabinRestrictionImplCopyWith(_$CabinRestrictionImpl value,
+          $Res Function(_$CabinRestrictionImpl) then) =
+      __$$CabinRestrictionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1278,13 +1375,15 @@ abstract class _$$_CabinRestrictionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CabinRestrictionCopyWithImpl<$Res>
-    extends _$CabinRestrictionCopyWithImpl<$Res, _$_CabinRestriction>
-    implements _$$_CabinRestrictionCopyWith<$Res> {
-  __$$_CabinRestrictionCopyWithImpl(
-      _$_CabinRestriction _value, $Res Function(_$_CabinRestriction) _then)
+class __$$CabinRestrictionImplCopyWithImpl<$Res>
+    extends _$CabinRestrictionCopyWithImpl<$Res, _$CabinRestrictionImpl>
+    implements _$$CabinRestrictionImplCopyWith<$Res> {
+  __$$CabinRestrictionImplCopyWithImpl(_$CabinRestrictionImpl _value,
+      $Res Function(_$CabinRestrictionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CabinRestriction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1292,7 +1391,7 @@ class __$$_CabinRestrictionCopyWithImpl<$Res>
     Object? coverage = freezed,
     Object? originDestinationIds = freezed,
   }) {
-    return _then(_$_CabinRestriction(
+    return _then(_$CabinRestrictionImpl(
       cabin: freezed == cabin
           ? _value.cabin
           : cabin // ignore: cast_nullable_to_non_nullable
@@ -1311,15 +1410,15 @@ class __$$_CabinRestrictionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CabinRestriction implements _CabinRestriction {
-  const _$_CabinRestriction(
+class _$CabinRestrictionImpl implements _CabinRestriction {
+  const _$CabinRestrictionImpl(
       {required this.cabin,
       required this.coverage,
       required final List<String>? originDestinationIds})
       : _originDestinationIds = originDestinationIds;
 
-  factory _$_CabinRestriction.fromJson(Map<String, dynamic> json) =>
-      _$$_CabinRestrictionFromJson(json);
+  factory _$CabinRestrictionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CabinRestrictionImplFromJson(json);
 
   @override
   final String? cabin;
@@ -1342,10 +1441,10 @@ class _$_CabinRestriction implements _CabinRestriction {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CabinRestriction &&
+            other is _$CabinRestrictionImpl &&
             (identical(other.cabin, cabin) || other.cabin == cabin) &&
             (identical(other.coverage, coverage) ||
                 other.coverage == coverage) &&
@@ -1353,20 +1452,23 @@ class _$_CabinRestriction implements _CabinRestriction {
                 .equals(other._originDestinationIds, _originDestinationIds));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, cabin, coverage,
       const DeepCollectionEquality().hash(_originDestinationIds));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CabinRestriction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CabinRestrictionCopyWith<_$_CabinRestriction> get copyWith =>
-      __$$_CabinRestrictionCopyWithImpl<_$_CabinRestriction>(this, _$identity);
+  _$$CabinRestrictionImplCopyWith<_$CabinRestrictionImpl> get copyWith =>
+      __$$CabinRestrictionImplCopyWithImpl<_$CabinRestrictionImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CabinRestrictionToJson(
+    return _$$CabinRestrictionImplToJson(
       this,
     );
   }
@@ -1374,12 +1476,13 @@ class _$_CabinRestriction implements _CabinRestriction {
 
 abstract class _CabinRestriction implements CabinRestriction {
   const factory _CabinRestriction(
-      {required final String? cabin,
-      required final String? coverage,
-      required final List<String>? originDestinationIds}) = _$_CabinRestriction;
+          {required final String? cabin,
+          required final String? coverage,
+          required final List<String>? originDestinationIds}) =
+      _$CabinRestrictionImpl;
 
   factory _CabinRestriction.fromJson(Map<String, dynamic> json) =
-      _$_CabinRestriction.fromJson;
+      _$CabinRestrictionImpl.fromJson;
 
   @override
   String? get cabin;
@@ -1387,9 +1490,12 @@ abstract class _CabinRestriction implements CabinRestriction {
   String? get coverage;
   @override
   List<String>? get originDestinationIds;
+
+  /// Create a copy of CabinRestriction
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_CabinRestrictionCopyWith<_$_CabinRestriction> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CabinRestrictionImplCopyWith<_$CabinRestrictionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1401,8 +1507,12 @@ CarrierRestrictions _$CarrierRestrictionsFromJson(Map<String, dynamic> json) {
 mixin _$CarrierRestrictions {
   List<String>? get excludedCarrierCodes => throw _privateConstructorUsedError;
 
+  /// Serializes this CarrierRestrictions to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CarrierRestrictions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CarrierRestrictionsCopyWith<CarrierRestrictions> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1426,6 +1536,8 @@ class _$CarrierRestrictionsCopyWithImpl<$Res, $Val extends CarrierRestrictions>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CarrierRestrictions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1441,30 +1553,32 @@ class _$CarrierRestrictionsCopyWithImpl<$Res, $Val extends CarrierRestrictions>
 }
 
 /// @nodoc
-abstract class _$$_CarrierRestrictionsCopyWith<$Res>
+abstract class _$$CarrierRestrictionsImplCopyWith<$Res>
     implements $CarrierRestrictionsCopyWith<$Res> {
-  factory _$$_CarrierRestrictionsCopyWith(_$_CarrierRestrictions value,
-          $Res Function(_$_CarrierRestrictions) then) =
-      __$$_CarrierRestrictionsCopyWithImpl<$Res>;
+  factory _$$CarrierRestrictionsImplCopyWith(_$CarrierRestrictionsImpl value,
+          $Res Function(_$CarrierRestrictionsImpl) then) =
+      __$$CarrierRestrictionsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<String>? excludedCarrierCodes});
 }
 
 /// @nodoc
-class __$$_CarrierRestrictionsCopyWithImpl<$Res>
-    extends _$CarrierRestrictionsCopyWithImpl<$Res, _$_CarrierRestrictions>
-    implements _$$_CarrierRestrictionsCopyWith<$Res> {
-  __$$_CarrierRestrictionsCopyWithImpl(_$_CarrierRestrictions _value,
-      $Res Function(_$_CarrierRestrictions) _then)
+class __$$CarrierRestrictionsImplCopyWithImpl<$Res>
+    extends _$CarrierRestrictionsCopyWithImpl<$Res, _$CarrierRestrictionsImpl>
+    implements _$$CarrierRestrictionsImplCopyWith<$Res> {
+  __$$CarrierRestrictionsImplCopyWithImpl(_$CarrierRestrictionsImpl _value,
+      $Res Function(_$CarrierRestrictionsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CarrierRestrictions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? excludedCarrierCodes = freezed,
   }) {
-    return _then(_$_CarrierRestrictions(
+    return _then(_$CarrierRestrictionsImpl(
       excludedCarrierCodes: freezed == excludedCarrierCodes
           ? _value._excludedCarrierCodes
           : excludedCarrierCodes // ignore: cast_nullable_to_non_nullable
@@ -1475,13 +1589,13 @@ class __$$_CarrierRestrictionsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CarrierRestrictions implements _CarrierRestrictions {
-  const _$_CarrierRestrictions(
+class _$CarrierRestrictionsImpl implements _CarrierRestrictions {
+  const _$CarrierRestrictionsImpl(
       {required final List<String>? excludedCarrierCodes})
       : _excludedCarrierCodes = excludedCarrierCodes;
 
-  factory _$_CarrierRestrictions.fromJson(Map<String, dynamic> json) =>
-      _$$_CarrierRestrictionsFromJson(json);
+  factory _$CarrierRestrictionsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CarrierRestrictionsImplFromJson(json);
 
   final List<String>? _excludedCarrierCodes;
   @override
@@ -1500,29 +1614,31 @@ class _$_CarrierRestrictions implements _CarrierRestrictions {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CarrierRestrictions &&
+            other is _$CarrierRestrictionsImpl &&
             const DeepCollectionEquality()
                 .equals(other._excludedCarrierCodes, _excludedCarrierCodes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_excludedCarrierCodes));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CarrierRestrictions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CarrierRestrictionsCopyWith<_$_CarrierRestrictions> get copyWith =>
-      __$$_CarrierRestrictionsCopyWithImpl<_$_CarrierRestrictions>(
+  _$$CarrierRestrictionsImplCopyWith<_$CarrierRestrictionsImpl> get copyWith =>
+      __$$CarrierRestrictionsImplCopyWithImpl<_$CarrierRestrictionsImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CarrierRestrictionsToJson(
+    return _$$CarrierRestrictionsImplToJson(
       this,
     );
   }
@@ -1531,15 +1647,18 @@ class _$_CarrierRestrictions implements _CarrierRestrictions {
 abstract class _CarrierRestrictions implements CarrierRestrictions {
   const factory _CarrierRestrictions(
           {required final List<String>? excludedCarrierCodes}) =
-      _$_CarrierRestrictions;
+      _$CarrierRestrictionsImpl;
 
   factory _CarrierRestrictions.fromJson(Map<String, dynamic> json) =
-      _$_CarrierRestrictions.fromJson;
+      _$CarrierRestrictionsImpl.fromJson;
 
   @override
   List<String>? get excludedCarrierCodes;
+
+  /// Create a copy of CarrierRestrictions
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_CarrierRestrictionsCopyWith<_$_CarrierRestrictions> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CarrierRestrictionsImplCopyWith<_$CarrierRestrictionsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

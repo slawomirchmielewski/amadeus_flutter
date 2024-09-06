@@ -6,8 +6,8 @@ part of 'flight_date.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FlightDate _$$_FlightDateFromJson(Map<String, dynamic> json) =>
-    _$_FlightDate(
+_$FlightDateImpl _$$FlightDateImplFromJson(Map<String, dynamic> json) =>
+    _$FlightDateImpl(
       type: json['type'] as String?,
       origin: json['origin'] as String?,
       destination: json['destination'] as String?,
@@ -18,7 +18,7 @@ _$_FlightDate _$$_FlightDateFromJson(Map<String, dynamic> json) =>
           : Price.fromJson(json['price'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_FlightDateToJson(_$_FlightDate instance) =>
+Map<String, dynamic> _$$FlightDateImplToJson(_$FlightDateImpl instance) =>
     <String, dynamic>{
       'type': instance.type,
       'origin': instance.origin,
@@ -28,10 +28,11 @@ Map<String, dynamic> _$$_FlightDateToJson(_$_FlightDate instance) =>
       'price': instance.price?.toJson(),
     };
 
-_$_Price _$$_PriceFromJson(Map<String, dynamic> json) => _$_Price(
+_$PriceImpl _$$PriceImplFromJson(Map<String, dynamic> json) => _$PriceImpl(
       total: (json['total'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$$_PriceToJson(_$_Price instance) => <String, dynamic>{
+Map<String, dynamic> _$$PriceImplToJson(_$PriceImpl instance) =>
+    <String, dynamic>{
       'total': instance.total,
     };

@@ -12,7 +12,7 @@ part of 'location.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Location _$LocationFromJson(Map<String, dynamic> json) {
   return _Location.fromJson(json);
@@ -32,8 +32,12 @@ mixin _$Location {
   Address? get address => throw _privateConstructorUsedError;
   Analytics? get analytics => throw _privateConstructorUsedError;
 
+  /// Serializes this Location to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Location
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LocationCopyWith<Location> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -72,6 +76,8 @@ class _$LocationCopyWithImpl<$Res, $Val extends Location>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Location
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -135,6 +141,8 @@ class _$LocationCopyWithImpl<$Res, $Val extends Location>
     ) as $Val);
   }
 
+  /// Create a copy of Location
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SelfCopyWith<$Res>? get self {
@@ -147,6 +155,8 @@ class _$LocationCopyWithImpl<$Res, $Val extends Location>
     });
   }
 
+  /// Create a copy of Location
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $GeoCodeCopyWith<$Res>? get geoCode {
@@ -159,6 +169,8 @@ class _$LocationCopyWithImpl<$Res, $Val extends Location>
     });
   }
 
+  /// Create a copy of Location
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AddressCopyWith<$Res>? get address {
@@ -171,6 +183,8 @@ class _$LocationCopyWithImpl<$Res, $Val extends Location>
     });
   }
 
+  /// Create a copy of Location
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AnalyticsCopyWith<$Res>? get analytics {
@@ -185,10 +199,11 @@ class _$LocationCopyWithImpl<$Res, $Val extends Location>
 }
 
 /// @nodoc
-abstract class _$$_LocationCopyWith<$Res> implements $LocationCopyWith<$Res> {
-  factory _$$_LocationCopyWith(
-          _$_Location value, $Res Function(_$_Location) then) =
-      __$$_LocationCopyWithImpl<$Res>;
+abstract class _$$LocationImplCopyWith<$Res>
+    implements $LocationCopyWith<$Res> {
+  factory _$$LocationImplCopyWith(
+          _$LocationImpl value, $Res Function(_$LocationImpl) then) =
+      __$$LocationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -215,13 +230,15 @@ abstract class _$$_LocationCopyWith<$Res> implements $LocationCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_LocationCopyWithImpl<$Res>
-    extends _$LocationCopyWithImpl<$Res, _$_Location>
-    implements _$$_LocationCopyWith<$Res> {
-  __$$_LocationCopyWithImpl(
-      _$_Location _value, $Res Function(_$_Location) _then)
+class __$$LocationImplCopyWithImpl<$Res>
+    extends _$LocationCopyWithImpl<$Res, _$LocationImpl>
+    implements _$$LocationImplCopyWith<$Res> {
+  __$$LocationImplCopyWithImpl(
+      _$LocationImpl _value, $Res Function(_$LocationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Location
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -237,7 +254,7 @@ class __$$_LocationCopyWithImpl<$Res>
     Object? address = freezed,
     Object? analytics = freezed,
   }) {
-    return _then(_$_Location(
+    return _then(_$LocationImpl(
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -289,8 +306,8 @@ class __$$_LocationCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$_Location implements _Location {
-  const _$_Location(
+class _$LocationImpl implements _Location {
+  const _$LocationImpl(
       {required this.type,
       required this.subType,
       required this.name,
@@ -303,8 +320,8 @@ class _$_Location implements _Location {
       required this.address,
       required this.analytics});
 
-  factory _$_Location.fromJson(Map<String, dynamic> json) =>
-      _$$_LocationFromJson(json);
+  factory _$LocationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LocationImplFromJson(json);
 
   @override
   final String? type;
@@ -335,10 +352,10 @@ class _$_Location implements _Location {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Location &&
+            other is _$LocationImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.subType, subType) || other.subType == subType) &&
             (identical(other.name, name) || other.name == name) &&
@@ -356,7 +373,7 @@ class _$_Location implements _Location {
                 other.analytics == analytics));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -372,15 +389,17 @@ class _$_Location implements _Location {
       address,
       analytics);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Location
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LocationCopyWith<_$_Location> get copyWith =>
-      __$$_LocationCopyWithImpl<_$_Location>(this, _$identity);
+  _$$LocationImplCopyWith<_$LocationImpl> get copyWith =>
+      __$$LocationImplCopyWithImpl<_$LocationImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_LocationToJson(
+    return _$$LocationImplToJson(
       this,
     );
   }
@@ -398,9 +417,10 @@ abstract class _Location implements Location {
       required final String? iataCode,
       required final GeoCode? geoCode,
       required final Address? address,
-      required final Analytics? analytics}) = _$_Location;
+      required final Analytics? analytics}) = _$LocationImpl;
 
-  factory _Location.fromJson(Map<String, dynamic> json) = _$_Location.fromJson;
+  factory _Location.fromJson(Map<String, dynamic> json) =
+      _$LocationImpl.fromJson;
 
   @override
   String? get type;
@@ -424,9 +444,12 @@ abstract class _Location implements Location {
   Address? get address;
   @override
   Analytics? get analytics;
+
+  /// Create a copy of Location
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_LocationCopyWith<_$_Location> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LocationImplCopyWith<_$LocationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -439,8 +462,12 @@ mixin _$Self {
   String? get href => throw _privateConstructorUsedError;
   List<String>? get methods => throw _privateConstructorUsedError;
 
+  /// Serializes this Self to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Self
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SelfCopyWith<Self> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -462,6 +489,8 @@ class _$SelfCopyWithImpl<$Res, $Val extends Self>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Self
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -482,27 +511,31 @@ class _$SelfCopyWithImpl<$Res, $Val extends Self>
 }
 
 /// @nodoc
-abstract class _$$_SelfCopyWith<$Res> implements $SelfCopyWith<$Res> {
-  factory _$$_SelfCopyWith(_$_Self value, $Res Function(_$_Self) then) =
-      __$$_SelfCopyWithImpl<$Res>;
+abstract class _$$SelfImplCopyWith<$Res> implements $SelfCopyWith<$Res> {
+  factory _$$SelfImplCopyWith(
+          _$SelfImpl value, $Res Function(_$SelfImpl) then) =
+      __$$SelfImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? href, List<String>? methods});
 }
 
 /// @nodoc
-class __$$_SelfCopyWithImpl<$Res> extends _$SelfCopyWithImpl<$Res, _$_Self>
-    implements _$$_SelfCopyWith<$Res> {
-  __$$_SelfCopyWithImpl(_$_Self _value, $Res Function(_$_Self) _then)
+class __$$SelfImplCopyWithImpl<$Res>
+    extends _$SelfCopyWithImpl<$Res, _$SelfImpl>
+    implements _$$SelfImplCopyWith<$Res> {
+  __$$SelfImplCopyWithImpl(_$SelfImpl _value, $Res Function(_$SelfImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Self
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? href = freezed,
     Object? methods = freezed,
   }) {
-    return _then(_$_Self(
+    return _then(_$SelfImpl(
       href: freezed == href
           ? _value.href
           : href // ignore: cast_nullable_to_non_nullable
@@ -517,11 +550,12 @@ class __$$_SelfCopyWithImpl<$Res> extends _$SelfCopyWithImpl<$Res, _$_Self>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Self implements _Self {
-  const _$_Self({required this.href, required final List<String>? methods})
+class _$SelfImpl implements _Self {
+  const _$SelfImpl({required this.href, required final List<String>? methods})
       : _methods = methods;
 
-  factory _$_Self.fromJson(Map<String, dynamic> json) => _$$_SelfFromJson(json);
+  factory _$SelfImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SelfImplFromJson(json);
 
   @override
   final String? href;
@@ -541,28 +575,30 @@ class _$_Self implements _Self {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Self &&
+            other is _$SelfImpl &&
             (identical(other.href, href) || other.href == href) &&
             const DeepCollectionEquality().equals(other._methods, _methods));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, href, const DeepCollectionEquality().hash(_methods));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Self
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SelfCopyWith<_$_Self> get copyWith =>
-      __$$_SelfCopyWithImpl<_$_Self>(this, _$identity);
+  _$$SelfImplCopyWith<_$SelfImpl> get copyWith =>
+      __$$SelfImplCopyWithImpl<_$SelfImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SelfToJson(
+    return _$$SelfImplToJson(
       this,
     );
   }
@@ -571,17 +607,21 @@ class _$_Self implements _Self {
 abstract class _Self implements Self {
   const factory _Self(
       {required final String? href,
-      required final List<String>? methods}) = _$_Self;
+      required final List<String>? methods}) = _$SelfImpl;
 
-  factory _Self.fromJson(Map<String, dynamic> json) = _$_Self.fromJson;
+  factory _Self.fromJson(Map<String, dynamic> json) = _$SelfImpl.fromJson;
 
   @override
   String? get href;
   @override
   List<String>? get methods;
+
+  /// Create a copy of Self
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SelfCopyWith<_$_Self> get copyWith => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SelfImplCopyWith<_$SelfImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 GeoCode _$GeoCodeFromJson(Map<String, dynamic> json) {
@@ -593,8 +633,12 @@ mixin _$GeoCode {
   double? get latitude => throw _privateConstructorUsedError;
   double? get longitude => throw _privateConstructorUsedError;
 
+  /// Serializes this GeoCode to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GeoCode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GeoCodeCopyWith<GeoCode> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -616,6 +660,8 @@ class _$GeoCodeCopyWithImpl<$Res, $Val extends GeoCode>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GeoCode
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -636,29 +682,32 @@ class _$GeoCodeCopyWithImpl<$Res, $Val extends GeoCode>
 }
 
 /// @nodoc
-abstract class _$$_GeoCodeCopyWith<$Res> implements $GeoCodeCopyWith<$Res> {
-  factory _$$_GeoCodeCopyWith(
-          _$_GeoCode value, $Res Function(_$_GeoCode) then) =
-      __$$_GeoCodeCopyWithImpl<$Res>;
+abstract class _$$GeoCodeImplCopyWith<$Res> implements $GeoCodeCopyWith<$Res> {
+  factory _$$GeoCodeImplCopyWith(
+          _$GeoCodeImpl value, $Res Function(_$GeoCodeImpl) then) =
+      __$$GeoCodeImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double? latitude, double? longitude});
 }
 
 /// @nodoc
-class __$$_GeoCodeCopyWithImpl<$Res>
-    extends _$GeoCodeCopyWithImpl<$Res, _$_GeoCode>
-    implements _$$_GeoCodeCopyWith<$Res> {
-  __$$_GeoCodeCopyWithImpl(_$_GeoCode _value, $Res Function(_$_GeoCode) _then)
+class __$$GeoCodeImplCopyWithImpl<$Res>
+    extends _$GeoCodeCopyWithImpl<$Res, _$GeoCodeImpl>
+    implements _$$GeoCodeImplCopyWith<$Res> {
+  __$$GeoCodeImplCopyWithImpl(
+      _$GeoCodeImpl _value, $Res Function(_$GeoCodeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GeoCode
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? latitude = freezed,
     Object? longitude = freezed,
   }) {
-    return _then(_$_GeoCode(
+    return _then(_$GeoCodeImpl(
       latitude: freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -673,11 +722,11 @@ class __$$_GeoCodeCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GeoCode implements _GeoCode {
-  const _$_GeoCode({required this.latitude, required this.longitude});
+class _$GeoCodeImpl implements _GeoCode {
+  const _$GeoCodeImpl({required this.latitude, required this.longitude});
 
-  factory _$_GeoCode.fromJson(Map<String, dynamic> json) =>
-      _$$_GeoCodeFromJson(json);
+  factory _$GeoCodeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GeoCodeImplFromJson(json);
 
   @override
   final double? latitude;
@@ -690,29 +739,31 @@ class _$_GeoCode implements _GeoCode {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GeoCode &&
+            other is _$GeoCodeImpl &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
                 other.longitude == longitude));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, latitude, longitude);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GeoCode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GeoCodeCopyWith<_$_GeoCode> get copyWith =>
-      __$$_GeoCodeCopyWithImpl<_$_GeoCode>(this, _$identity);
+  _$$GeoCodeImplCopyWith<_$GeoCodeImpl> get copyWith =>
+      __$$GeoCodeImplCopyWithImpl<_$GeoCodeImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GeoCodeToJson(
+    return _$$GeoCodeImplToJson(
       this,
     );
   }
@@ -721,17 +772,20 @@ class _$_GeoCode implements _GeoCode {
 abstract class _GeoCode implements GeoCode {
   const factory _GeoCode(
       {required final double? latitude,
-      required final double? longitude}) = _$_GeoCode;
+      required final double? longitude}) = _$GeoCodeImpl;
 
-  factory _GeoCode.fromJson(Map<String, dynamic> json) = _$_GeoCode.fromJson;
+  factory _GeoCode.fromJson(Map<String, dynamic> json) = _$GeoCodeImpl.fromJson;
 
   @override
   double? get latitude;
   @override
   double? get longitude;
+
+  /// Create a copy of GeoCode
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_GeoCodeCopyWith<_$_GeoCode> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GeoCodeImplCopyWith<_$GeoCodeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -748,8 +802,12 @@ mixin _$Address {
   String? get stateCode => throw _privateConstructorUsedError;
   String? get regionCode => throw _privateConstructorUsedError;
 
+  /// Serializes this Address to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Address
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AddressCopyWith<Address> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -777,6 +835,8 @@ class _$AddressCopyWithImpl<$Res, $Val extends Address>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Address
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -817,10 +877,10 @@ class _$AddressCopyWithImpl<$Res, $Val extends Address>
 }
 
 /// @nodoc
-abstract class _$$_AddressCopyWith<$Res> implements $AddressCopyWith<$Res> {
-  factory _$$_AddressCopyWith(
-          _$_Address value, $Res Function(_$_Address) then) =
-      __$$_AddressCopyWithImpl<$Res>;
+abstract class _$$AddressImplCopyWith<$Res> implements $AddressCopyWith<$Res> {
+  factory _$$AddressImplCopyWith(
+          _$AddressImpl value, $Res Function(_$AddressImpl) then) =
+      __$$AddressImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -833,12 +893,15 @@ abstract class _$$_AddressCopyWith<$Res> implements $AddressCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AddressCopyWithImpl<$Res>
-    extends _$AddressCopyWithImpl<$Res, _$_Address>
-    implements _$$_AddressCopyWith<$Res> {
-  __$$_AddressCopyWithImpl(_$_Address _value, $Res Function(_$_Address) _then)
+class __$$AddressImplCopyWithImpl<$Res>
+    extends _$AddressCopyWithImpl<$Res, _$AddressImpl>
+    implements _$$AddressImplCopyWith<$Res> {
+  __$$AddressImplCopyWithImpl(
+      _$AddressImpl _value, $Res Function(_$AddressImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Address
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -849,7 +912,7 @@ class __$$_AddressCopyWithImpl<$Res>
     Object? stateCode = freezed,
     Object? regionCode = freezed,
   }) {
-    return _then(_$_Address(
+    return _then(_$AddressImpl(
       cityName: freezed == cityName
           ? _value.cityName
           : cityName // ignore: cast_nullable_to_non_nullable
@@ -880,8 +943,8 @@ class __$$_AddressCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Address implements _Address {
-  const _$_Address(
+class _$AddressImpl implements _Address {
+  const _$AddressImpl(
       {required this.cityName,
       required this.cityCode,
       required this.countryName,
@@ -889,8 +952,8 @@ class _$_Address implements _Address {
       required this.stateCode,
       required this.regionCode});
 
-  factory _$_Address.fromJson(Map<String, dynamic> json) =>
-      _$$_AddressFromJson(json);
+  factory _$AddressImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AddressImplFromJson(json);
 
   @override
   final String? cityName;
@@ -911,10 +974,10 @@ class _$_Address implements _Address {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Address &&
+            other is _$AddressImpl &&
             (identical(other.cityName, cityName) ||
                 other.cityName == cityName) &&
             (identical(other.cityCode, cityCode) ||
@@ -929,20 +992,22 @@ class _$_Address implements _Address {
                 other.regionCode == regionCode));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, cityName, cityCode, countryName,
       countryCode, stateCode, regionCode);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Address
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AddressCopyWith<_$_Address> get copyWith =>
-      __$$_AddressCopyWithImpl<_$_Address>(this, _$identity);
+  _$$AddressImplCopyWith<_$AddressImpl> get copyWith =>
+      __$$AddressImplCopyWithImpl<_$AddressImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AddressToJson(
+    return _$$AddressImplToJson(
       this,
     );
   }
@@ -955,9 +1020,9 @@ abstract class _Address implements Address {
       required final String? countryName,
       required final String? countryCode,
       required final String? stateCode,
-      required final String? regionCode}) = _$_Address;
+      required final String? regionCode}) = _$AddressImpl;
 
-  factory _Address.fromJson(Map<String, dynamic> json) = _$_Address.fromJson;
+  factory _Address.fromJson(Map<String, dynamic> json) = _$AddressImpl.fromJson;
 
   @override
   String? get cityName;
@@ -971,9 +1036,12 @@ abstract class _Address implements Address {
   String? get stateCode;
   @override
   String? get regionCode;
+
+  /// Create a copy of Address
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_AddressCopyWith<_$_Address> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AddressImplCopyWith<_$AddressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -985,8 +1053,12 @@ Analytics _$AnalyticsFromJson(Map<String, dynamic> json) {
 mixin _$Analytics {
   Travelers? get travelers => throw _privateConstructorUsedError;
 
+  /// Serializes this Analytics to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Analytics
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AnalyticsCopyWith<Analytics> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1011,6 +1083,8 @@ class _$AnalyticsCopyWithImpl<$Res, $Val extends Analytics>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Analytics
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1024,6 +1098,8 @@ class _$AnalyticsCopyWithImpl<$Res, $Val extends Analytics>
     ) as $Val);
   }
 
+  /// Create a copy of Analytics
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TravelersCopyWith<$Res>? get travelers {
@@ -1038,10 +1114,11 @@ class _$AnalyticsCopyWithImpl<$Res, $Val extends Analytics>
 }
 
 /// @nodoc
-abstract class _$$_AnalyticsCopyWith<$Res> implements $AnalyticsCopyWith<$Res> {
-  factory _$$_AnalyticsCopyWith(
-          _$_Analytics value, $Res Function(_$_Analytics) then) =
-      __$$_AnalyticsCopyWithImpl<$Res>;
+abstract class _$$AnalyticsImplCopyWith<$Res>
+    implements $AnalyticsCopyWith<$Res> {
+  factory _$$AnalyticsImplCopyWith(
+          _$AnalyticsImpl value, $Res Function(_$AnalyticsImpl) then) =
+      __$$AnalyticsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Travelers? travelers});
@@ -1051,19 +1128,21 @@ abstract class _$$_AnalyticsCopyWith<$Res> implements $AnalyticsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AnalyticsCopyWithImpl<$Res>
-    extends _$AnalyticsCopyWithImpl<$Res, _$_Analytics>
-    implements _$$_AnalyticsCopyWith<$Res> {
-  __$$_AnalyticsCopyWithImpl(
-      _$_Analytics _value, $Res Function(_$_Analytics) _then)
+class __$$AnalyticsImplCopyWithImpl<$Res>
+    extends _$AnalyticsCopyWithImpl<$Res, _$AnalyticsImpl>
+    implements _$$AnalyticsImplCopyWith<$Res> {
+  __$$AnalyticsImplCopyWithImpl(
+      _$AnalyticsImpl _value, $Res Function(_$AnalyticsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Analytics
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? travelers = freezed,
   }) {
-    return _then(_$_Analytics(
+    return _then(_$AnalyticsImpl(
       travelers: freezed == travelers
           ? _value.travelers
           : travelers // ignore: cast_nullable_to_non_nullable
@@ -1074,11 +1153,11 @@ class __$$_AnalyticsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Analytics implements _Analytics {
-  const _$_Analytics({required this.travelers});
+class _$AnalyticsImpl implements _Analytics {
+  const _$AnalyticsImpl({required this.travelers});
 
-  factory _$_Analytics.fromJson(Map<String, dynamic> json) =>
-      _$$_AnalyticsFromJson(json);
+  factory _$AnalyticsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AnalyticsImplFromJson(json);
 
   @override
   final Travelers? travelers;
@@ -1089,27 +1168,29 @@ class _$_Analytics implements _Analytics {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Analytics &&
+            other is _$AnalyticsImpl &&
             (identical(other.travelers, travelers) ||
                 other.travelers == travelers));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, travelers);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Analytics
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AnalyticsCopyWith<_$_Analytics> get copyWith =>
-      __$$_AnalyticsCopyWithImpl<_$_Analytics>(this, _$identity);
+  _$$AnalyticsImplCopyWith<_$AnalyticsImpl> get copyWith =>
+      __$$AnalyticsImplCopyWithImpl<_$AnalyticsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AnalyticsToJson(
+    return _$$AnalyticsImplToJson(
       this,
     );
   }
@@ -1117,16 +1198,19 @@ class _$_Analytics implements _Analytics {
 
 abstract class _Analytics implements Analytics {
   const factory _Analytics({required final Travelers? travelers}) =
-      _$_Analytics;
+      _$AnalyticsImpl;
 
   factory _Analytics.fromJson(Map<String, dynamic> json) =
-      _$_Analytics.fromJson;
+      _$AnalyticsImpl.fromJson;
 
   @override
   Travelers? get travelers;
+
+  /// Create a copy of Analytics
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_AnalyticsCopyWith<_$_Analytics> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AnalyticsImplCopyWith<_$AnalyticsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1138,8 +1222,12 @@ Travelers _$TravelersFromJson(Map<String, dynamic> json) {
 mixin _$Travelers {
   int? get score => throw _privateConstructorUsedError;
 
+  /// Serializes this Travelers to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Travelers
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TravelersCopyWith<Travelers> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1162,6 +1250,8 @@ class _$TravelersCopyWithImpl<$Res, $Val extends Travelers>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Travelers
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1177,29 +1267,32 @@ class _$TravelersCopyWithImpl<$Res, $Val extends Travelers>
 }
 
 /// @nodoc
-abstract class _$$_TravelersCopyWith<$Res> implements $TravelersCopyWith<$Res> {
-  factory _$$_TravelersCopyWith(
-          _$_Travelers value, $Res Function(_$_Travelers) then) =
-      __$$_TravelersCopyWithImpl<$Res>;
+abstract class _$$TravelersImplCopyWith<$Res>
+    implements $TravelersCopyWith<$Res> {
+  factory _$$TravelersImplCopyWith(
+          _$TravelersImpl value, $Res Function(_$TravelersImpl) then) =
+      __$$TravelersImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? score});
 }
 
 /// @nodoc
-class __$$_TravelersCopyWithImpl<$Res>
-    extends _$TravelersCopyWithImpl<$Res, _$_Travelers>
-    implements _$$_TravelersCopyWith<$Res> {
-  __$$_TravelersCopyWithImpl(
-      _$_Travelers _value, $Res Function(_$_Travelers) _then)
+class __$$TravelersImplCopyWithImpl<$Res>
+    extends _$TravelersCopyWithImpl<$Res, _$TravelersImpl>
+    implements _$$TravelersImplCopyWith<$Res> {
+  __$$TravelersImplCopyWithImpl(
+      _$TravelersImpl _value, $Res Function(_$TravelersImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Travelers
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? score = freezed,
   }) {
-    return _then(_$_Travelers(
+    return _then(_$TravelersImpl(
       score: freezed == score
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
@@ -1210,11 +1303,11 @@ class __$$_TravelersCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Travelers implements _Travelers {
-  const _$_Travelers({required this.score});
+class _$TravelersImpl implements _Travelers {
+  const _$TravelersImpl({required this.score});
 
-  factory _$_Travelers.fromJson(Map<String, dynamic> json) =>
-      _$$_TravelersFromJson(json);
+  factory _$TravelersImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TravelersImplFromJson(json);
 
   @override
   final int? score;
@@ -1225,41 +1318,46 @@ class _$_Travelers implements _Travelers {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Travelers &&
+            other is _$TravelersImpl &&
             (identical(other.score, score) || other.score == score));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, score);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Travelers
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TravelersCopyWith<_$_Travelers> get copyWith =>
-      __$$_TravelersCopyWithImpl<_$_Travelers>(this, _$identity);
+  _$$TravelersImplCopyWith<_$TravelersImpl> get copyWith =>
+      __$$TravelersImplCopyWithImpl<_$TravelersImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TravelersToJson(
+    return _$$TravelersImplToJson(
       this,
     );
   }
 }
 
 abstract class _Travelers implements Travelers {
-  const factory _Travelers({required final int? score}) = _$_Travelers;
+  const factory _Travelers({required final int? score}) = _$TravelersImpl;
 
   factory _Travelers.fromJson(Map<String, dynamic> json) =
-      _$_Travelers.fromJson;
+      _$TravelersImpl.fromJson;
 
   @override
   int? get score;
+
+  /// Create a copy of Travelers
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_TravelersCopyWith<_$_Travelers> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TravelersImplCopyWith<_$TravelersImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

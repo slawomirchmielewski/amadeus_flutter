@@ -12,7 +12,7 @@ part of 'flight_date.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 FlightDate _$FlightDateFromJson(Map<String, dynamic> json) {
   return _FlightDate.fromJson(json);
@@ -27,8 +27,12 @@ mixin _$FlightDate {
   String? get returnDate => throw _privateConstructorUsedError;
   Price? get price => throw _privateConstructorUsedError;
 
+  /// Serializes this FlightDate to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FlightDate
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FlightDateCopyWith<FlightDate> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,6 +64,8 @@ class _$FlightDateCopyWithImpl<$Res, $Val extends FlightDate>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FlightDate
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -98,6 +104,8 @@ class _$FlightDateCopyWithImpl<$Res, $Val extends FlightDate>
     ) as $Val);
   }
 
+  /// Create a copy of FlightDate
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PriceCopyWith<$Res>? get price {
@@ -112,11 +120,11 @@ class _$FlightDateCopyWithImpl<$Res, $Val extends FlightDate>
 }
 
 /// @nodoc
-abstract class _$$_FlightDateCopyWith<$Res>
+abstract class _$$FlightDateImplCopyWith<$Res>
     implements $FlightDateCopyWith<$Res> {
-  factory _$$_FlightDateCopyWith(
-          _$_FlightDate value, $Res Function(_$_FlightDate) then) =
-      __$$_FlightDateCopyWithImpl<$Res>;
+  factory _$$FlightDateImplCopyWith(
+          _$FlightDateImpl value, $Res Function(_$FlightDateImpl) then) =
+      __$$FlightDateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -132,13 +140,15 @@ abstract class _$$_FlightDateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FlightDateCopyWithImpl<$Res>
-    extends _$FlightDateCopyWithImpl<$Res, _$_FlightDate>
-    implements _$$_FlightDateCopyWith<$Res> {
-  __$$_FlightDateCopyWithImpl(
-      _$_FlightDate _value, $Res Function(_$_FlightDate) _then)
+class __$$FlightDateImplCopyWithImpl<$Res>
+    extends _$FlightDateCopyWithImpl<$Res, _$FlightDateImpl>
+    implements _$$FlightDateImplCopyWith<$Res> {
+  __$$FlightDateImplCopyWithImpl(
+      _$FlightDateImpl _value, $Res Function(_$FlightDateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FlightDate
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -149,7 +159,7 @@ class __$$_FlightDateCopyWithImpl<$Res>
     Object? returnDate = freezed,
     Object? price = freezed,
   }) {
-    return _then(_$_FlightDate(
+    return _then(_$FlightDateImpl(
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -181,8 +191,8 @@ class __$$_FlightDateCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$_FlightDate implements _FlightDate {
-  const _$_FlightDate(
+class _$FlightDateImpl implements _FlightDate {
+  const _$FlightDateImpl(
       {required this.type,
       required this.origin,
       required this.destination,
@@ -190,8 +200,8 @@ class _$_FlightDate implements _FlightDate {
       required this.returnDate,
       required this.price});
 
-  factory _$_FlightDate.fromJson(Map<String, dynamic> json) =>
-      _$$_FlightDateFromJson(json);
+  factory _$FlightDateImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FlightDateImplFromJson(json);
 
   @override
   final String? type;
@@ -212,10 +222,10 @@ class _$_FlightDate implements _FlightDate {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FlightDate &&
+            other is _$FlightDateImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.origin, origin) || other.origin == origin) &&
             (identical(other.destination, destination) ||
@@ -227,20 +237,22 @@ class _$_FlightDate implements _FlightDate {
             (identical(other.price, price) || other.price == price));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, type, origin, destination, departureDate, returnDate, price);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FlightDate
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FlightDateCopyWith<_$_FlightDate> get copyWith =>
-      __$$_FlightDateCopyWithImpl<_$_FlightDate>(this, _$identity);
+  _$$FlightDateImplCopyWith<_$FlightDateImpl> get copyWith =>
+      __$$FlightDateImplCopyWithImpl<_$FlightDateImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FlightDateToJson(
+    return _$$FlightDateImplToJson(
       this,
     );
   }
@@ -253,10 +265,10 @@ abstract class _FlightDate implements FlightDate {
       required final String? destination,
       required final String? departureDate,
       required final String? returnDate,
-      required final Price? price}) = _$_FlightDate;
+      required final Price? price}) = _$FlightDateImpl;
 
   factory _FlightDate.fromJson(Map<String, dynamic> json) =
-      _$_FlightDate.fromJson;
+      _$FlightDateImpl.fromJson;
 
   @override
   String? get type;
@@ -270,9 +282,12 @@ abstract class _FlightDate implements FlightDate {
   String? get returnDate;
   @override
   Price? get price;
+
+  /// Create a copy of FlightDate
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_FlightDateCopyWith<_$_FlightDate> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FlightDateImplCopyWith<_$FlightDateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -284,8 +299,12 @@ Price _$PriceFromJson(Map<String, dynamic> json) {
 mixin _$Price {
   double? get total => throw _privateConstructorUsedError;
 
+  /// Serializes this Price to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Price
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PriceCopyWith<Price> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -307,6 +326,8 @@ class _$PriceCopyWithImpl<$Res, $Val extends Price>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Price
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -322,26 +343,31 @@ class _$PriceCopyWithImpl<$Res, $Val extends Price>
 }
 
 /// @nodoc
-abstract class _$$_PriceCopyWith<$Res> implements $PriceCopyWith<$Res> {
-  factory _$$_PriceCopyWith(_$_Price value, $Res Function(_$_Price) then) =
-      __$$_PriceCopyWithImpl<$Res>;
+abstract class _$$PriceImplCopyWith<$Res> implements $PriceCopyWith<$Res> {
+  factory _$$PriceImplCopyWith(
+          _$PriceImpl value, $Res Function(_$PriceImpl) then) =
+      __$$PriceImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double? total});
 }
 
 /// @nodoc
-class __$$_PriceCopyWithImpl<$Res> extends _$PriceCopyWithImpl<$Res, _$_Price>
-    implements _$$_PriceCopyWith<$Res> {
-  __$$_PriceCopyWithImpl(_$_Price _value, $Res Function(_$_Price) _then)
+class __$$PriceImplCopyWithImpl<$Res>
+    extends _$PriceCopyWithImpl<$Res, _$PriceImpl>
+    implements _$$PriceImplCopyWith<$Res> {
+  __$$PriceImplCopyWithImpl(
+      _$PriceImpl _value, $Res Function(_$PriceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Price
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? total = freezed,
   }) {
-    return _then(_$_Price(
+    return _then(_$PriceImpl(
       total: freezed == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -352,11 +378,11 @@ class __$$_PriceCopyWithImpl<$Res> extends _$PriceCopyWithImpl<$Res, _$_Price>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Price implements _Price {
-  const _$_Price({required this.total});
+class _$PriceImpl implements _Price {
+  const _$PriceImpl({required this.total});
 
-  factory _$_Price.fromJson(Map<String, dynamic> json) =>
-      _$$_PriceFromJson(json);
+  factory _$PriceImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PriceImplFromJson(json);
 
   @override
   final double? total;
@@ -367,40 +393,45 @@ class _$_Price implements _Price {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Price &&
+            other is _$PriceImpl &&
             (identical(other.total, total) || other.total == total));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, total);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Price
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PriceCopyWith<_$_Price> get copyWith =>
-      __$$_PriceCopyWithImpl<_$_Price>(this, _$identity);
+  _$$PriceImplCopyWith<_$PriceImpl> get copyWith =>
+      __$$PriceImplCopyWithImpl<_$PriceImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PriceToJson(
+    return _$$PriceImplToJson(
       this,
     );
   }
 }
 
 abstract class _Price implements Price {
-  const factory _Price({required final double? total}) = _$_Price;
+  const factory _Price({required final double? total}) = _$PriceImpl;
 
-  factory _Price.fromJson(Map<String, dynamic> json) = _$_Price.fromJson;
+  factory _Price.fromJson(Map<String, dynamic> json) = _$PriceImpl.fromJson;
 
   @override
   double? get total;
+
+  /// Create a copy of Price
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_PriceCopyWith<_$_Price> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PriceImplCopyWith<_$PriceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

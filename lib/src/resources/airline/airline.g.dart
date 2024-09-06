@@ -6,7 +6,8 @@ part of 'airline.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Airline _$$_AirlineFromJson(Map<String, dynamic> json) => _$_Airline(
+_$AirlineImpl _$$AirlineImplFromJson(Map<String, dynamic> json) =>
+    _$AirlineImpl(
       type: json['type'] as String?,
       iataCode: json['iataCode'] as String?,
       icaoCode: json['icaoCode'] as String?,
@@ -14,7 +15,7 @@ _$_Airline _$$_AirlineFromJson(Map<String, dynamic> json) => _$_Airline(
       commonName: json['commonName'] as String?,
     );
 
-Map<String, dynamic> _$$_AirlineToJson(_$_Airline instance) =>
+Map<String, dynamic> _$$AirlineImplToJson(_$AirlineImpl instance) =>
     <String, dynamic>{
       'type': instance.type,
       'iataCode': instance.iataCode,

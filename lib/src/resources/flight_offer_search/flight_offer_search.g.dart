@@ -6,8 +6,9 @@ part of 'flight_offer_search.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FlightOfferSearch _$$_FlightOfferSearchFromJson(Map<String, dynamic> json) =>
-    _$_FlightOfferSearch(
+_$FlightOfferSearchImpl _$$FlightOfferSearchImplFromJson(
+        Map<String, dynamic> json) =>
+    _$FlightOfferSearchImpl(
       type: json['type'] as String?,
       id: json['id'] as String?,
       source: json['source'] as String?,
@@ -15,7 +16,7 @@ _$_FlightOfferSearch _$$_FlightOfferSearchFromJson(Map<String, dynamic> json) =>
       nonHomogeneous: json['nonHomogeneous'] as bool?,
       oneWay: json['oneWay'] as bool?,
       lastTicketingDate: json['lastTicketingDate'] as String?,
-      numberOfBookableSeats: json['numberOfBookableSeats'] as int?,
+      numberOfBookableSeats: (json['numberOfBookableSeats'] as num?)?.toInt(),
       itineraries: (json['itineraries'] as List<dynamic>?)
           ?.map((e) => Itinerary.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -34,8 +35,8 @@ _$_FlightOfferSearch _$$_FlightOfferSearchFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_FlightOfferSearchToJson(
-        _$_FlightOfferSearch instance) =>
+Map<String, dynamic> _$$FlightOfferSearchImplToJson(
+        _$FlightOfferSearchImpl instance) =>
     <String, dynamic>{
       'type': instance.type,
       'id': instance.id,
@@ -53,20 +54,22 @@ Map<String, dynamic> _$$_FlightOfferSearchToJson(
           instance.travelerPricings?.map((e) => e.toJson()).toList(),
     };
 
-_$_Itinerary _$$_ItineraryFromJson(Map<String, dynamic> json) => _$_Itinerary(
+_$ItineraryImpl _$$ItineraryImplFromJson(Map<String, dynamic> json) =>
+    _$ItineraryImpl(
       duration: json['duration'] as String?,
       segments: (json['segments'] as List<dynamic>?)
           ?.map((e) => Segment.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$_ItineraryToJson(_$_Itinerary instance) =>
+Map<String, dynamic> _$$ItineraryImplToJson(_$ItineraryImpl instance) =>
     <String, dynamic>{
       'duration': instance.duration,
       'segments': instance.segments,
     };
 
-_$_Segment _$$_SegmentFromJson(Map<String, dynamic> json) => _$_Segment(
+_$SegmentImpl _$$SegmentImplFromJson(Map<String, dynamic> json) =>
+    _$SegmentImpl(
       departure: json['departure'] == null
           ? null
           : Departure.fromJson(json['departure'] as Map<String, dynamic>),
@@ -83,11 +86,11 @@ _$_Segment _$$_SegmentFromJson(Map<String, dynamic> json) => _$_Segment(
           : Operating.fromJson(json['operating'] as Map<String, dynamic>),
       duration: json['duration'] as String?,
       id: json['id'] as String?,
-      numberOfStops: json['numberOfStops'] as int?,
+      numberOfStops: (json['numberOfStops'] as num?)?.toInt(),
       blacklistedInEU: json['blacklistedInEU'] as bool?,
     );
 
-Map<String, dynamic> _$$_SegmentToJson(_$_Segment instance) =>
+Map<String, dynamic> _$$SegmentImplToJson(_$SegmentImpl instance) =>
     <String, dynamic>{
       'departure': instance.departure,
       'arrival': instance.arrival,
@@ -101,39 +104,42 @@ Map<String, dynamic> _$$_SegmentToJson(_$_Segment instance) =>
       'blacklistedInEU': instance.blacklistedInEU,
     };
 
-_$_Departure _$$_DepartureFromJson(Map<String, dynamic> json) => _$_Departure(
+_$DepartureImpl _$$DepartureImplFromJson(Map<String, dynamic> json) =>
+    _$DepartureImpl(
       iataCode: json['iataCode'] as String?,
       terminal: json['terminal'] as String?,
       at: json['at'] as String?,
     );
 
-Map<String, dynamic> _$$_DepartureToJson(_$_Departure instance) =>
+Map<String, dynamic> _$$DepartureImplToJson(_$DepartureImpl instance) =>
     <String, dynamic>{
       'iataCode': instance.iataCode,
       'terminal': instance.terminal,
       'at': instance.at,
     };
 
-_$_Aircraft _$$_AircraftFromJson(Map<String, dynamic> json) => _$_Aircraft(
+_$AircraftImpl _$$AircraftImplFromJson(Map<String, dynamic> json) =>
+    _$AircraftImpl(
       code: json['code'] as String?,
     );
 
-Map<String, dynamic> _$$_AircraftToJson(_$_Aircraft instance) =>
+Map<String, dynamic> _$$AircraftImplToJson(_$AircraftImpl instance) =>
     <String, dynamic>{
       'code': instance.code,
     };
 
-_$_Operating _$$_OperatingFromJson(Map<String, dynamic> json) => _$_Operating(
+_$OperatingImpl _$$OperatingImplFromJson(Map<String, dynamic> json) =>
+    _$OperatingImpl(
       carrierCode: json['carrierCode'] as String?,
     );
 
-Map<String, dynamic> _$$_OperatingToJson(_$_Operating instance) =>
+Map<String, dynamic> _$$OperatingImplToJson(_$OperatingImpl instance) =>
     <String, dynamic>{
       'carrierCode': instance.carrierCode,
     };
 
-_$_OfferPrice _$$_OfferPriceFromJson(Map<String, dynamic> json) =>
-    _$_OfferPrice(
+_$OfferPriceImpl _$$OfferPriceImplFromJson(Map<String, dynamic> json) =>
+    _$OfferPriceImpl(
       currency: json['currency'] as String?,
       total: json['total'] as String?,
       base: json['base'] as String?,
@@ -143,7 +149,7 @@ _$_OfferPrice _$$_OfferPriceFromJson(Map<String, dynamic> json) =>
       grandTotal: json['grandTotal'] as String?,
     );
 
-Map<String, dynamic> _$$_OfferPriceToJson(_$_OfferPrice instance) =>
+Map<String, dynamic> _$$OfferPriceImplToJson(_$OfferPriceImpl instance) =>
     <String, dynamic>{
       'currency': instance.currency,
       'total': instance.total,
@@ -152,32 +158,35 @@ Map<String, dynamic> _$$_OfferPriceToJson(_$_OfferPrice instance) =>
       'grandTotal': instance.grandTotal,
     };
 
-_$_Fees _$$_FeesFromJson(Map<String, dynamic> json) => _$_Fees(
+_$FeesImpl _$$FeesImplFromJson(Map<String, dynamic> json) => _$FeesImpl(
       amount: json['amount'] as String?,
       type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$_FeesToJson(_$_Fees instance) => <String, dynamic>{
+Map<String, dynamic> _$$FeesImplToJson(_$FeesImpl instance) =>
+    <String, dynamic>{
       'amount': instance.amount,
       'type': instance.type,
     };
 
-_$_PricingOptions _$$_PricingOptionsFromJson(Map<String, dynamic> json) =>
-    _$_PricingOptions(
+_$PricingOptionsImpl _$$PricingOptionsImplFromJson(Map<String, dynamic> json) =>
+    _$PricingOptionsImpl(
       fareType: (json['fareType'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
       includedCheckedBagsOnly: json['includedCheckedBagsOnly'] as bool?,
     );
 
-Map<String, dynamic> _$$_PricingOptionsToJson(_$_PricingOptions instance) =>
+Map<String, dynamic> _$$PricingOptionsImplToJson(
+        _$PricingOptionsImpl instance) =>
     <String, dynamic>{
       'fareType': instance.fareType,
       'includedCheckedBagsOnly': instance.includedCheckedBagsOnly,
     };
 
-_$_TravelerPricing _$$_TravelerPricingFromJson(Map<String, dynamic> json) =>
-    _$_TravelerPricing(
+_$TravelerPricingImpl _$$TravelerPricingImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TravelerPricingImpl(
       travelerId: json['travelerId'] as String?,
       fareOption: json['fareOption'] as String?,
       travelerType: json['travelerType'] as String?,
@@ -189,7 +198,8 @@ _$_TravelerPricing _$$_TravelerPricingFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_TravelerPricingToJson(_$_TravelerPricing instance) =>
+Map<String, dynamic> _$$TravelerPricingImplToJson(
+        _$TravelerPricingImpl instance) =>
     <String, dynamic>{
       'travelerId': instance.travelerId,
       'fareOption': instance.fareOption,
@@ -198,9 +208,9 @@ Map<String, dynamic> _$$_TravelerPricingToJson(_$_TravelerPricing instance) =>
       'fareDetailsBySegment': instance.fareDetailsBySegment,
     };
 
-_$_FareDetailsBySegment _$$_FareDetailsBySegmentFromJson(
+_$FareDetailsBySegmentImpl _$$FareDetailsBySegmentImplFromJson(
         Map<String, dynamic> json) =>
-    _$_FareDetailsBySegment(
+    _$FareDetailsBySegmentImpl(
       segmentId: json['segmentId'] as String?,
       cabin: json['cabin'] as String?,
       fareBasis: json['fareBasis'] as String?,
@@ -211,8 +221,8 @@ _$_FareDetailsBySegment _$$_FareDetailsBySegmentFromJson(
               json['includedCheckedBags'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_FareDetailsBySegmentToJson(
-        _$_FareDetailsBySegment instance) =>
+Map<String, dynamic> _$$FareDetailsBySegmentImplToJson(
+        _$FareDetailsBySegmentImpl instance) =>
     <String, dynamic>{
       'segmentId': instance.segmentId,
       'cabin': instance.cabin,
@@ -221,14 +231,14 @@ Map<String, dynamic> _$$_FareDetailsBySegmentToJson(
       'includedCheckedBags': instance.includedCheckedBags,
     };
 
-_$_IncludedCheckedBags _$$_IncludedCheckedBagsFromJson(
+_$IncludedCheckedBagsImpl _$$IncludedCheckedBagsImplFromJson(
         Map<String, dynamic> json) =>
-    _$_IncludedCheckedBags(
-      quantity: json['quantity'] as int?,
+    _$IncludedCheckedBagsImpl(
+      quantity: (json['quantity'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$_IncludedCheckedBagsToJson(
-        _$_IncludedCheckedBags instance) =>
+Map<String, dynamic> _$$IncludedCheckedBagsImplToJson(
+        _$IncludedCheckedBagsImpl instance) =>
     <String, dynamic>{
       'quantity': instance.quantity,
     };

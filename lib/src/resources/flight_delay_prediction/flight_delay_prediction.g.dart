@@ -6,9 +6,9 @@ part of 'flight_delay_prediction.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FlightDelayPrediction _$$_FlightDelayPredictionFromJson(
+_$FlightDelayPredictionImpl _$$FlightDelayPredictionImplFromJson(
         Map<String, dynamic> json) =>
-    _$_FlightDelayPrediction(
+    _$FlightDelayPredictionImpl(
       originLocationCode: json['originLocationCode'] as String?,
       destinationLocationCode: json['destinationLocationCode'] as String?,
       departureDate: json['departureDate'] as String?,
@@ -21,8 +21,8 @@ _$_FlightDelayPrediction _$$_FlightDelayPredictionFromJson(
       duration: json['duration'] as String?,
     );
 
-Map<String, dynamic> _$$_FlightDelayPredictionToJson(
-        _$_FlightDelayPrediction instance) =>
+Map<String, dynamic> _$$FlightDelayPredictionImplToJson(
+        _$FlightDelayPredictionImpl instance) =>
     <String, dynamic>{
       'originLocationCode': instance.originLocationCode,
       'destinationLocationCode': instance.destinationLocationCode,

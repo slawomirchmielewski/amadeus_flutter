@@ -6,7 +6,8 @@ part of 'traveler.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Traveler _$$_TravelerFromJson(Map<String, dynamic> json) => _$_Traveler(
+_$TravelerImpl _$$TravelerImplFromJson(Map<String, dynamic> json) =>
+    _$TravelerImpl(
       id: json['id'] as String?,
       dateOfBirth: json['dateOfBirth'] as String?,
       gender: json['gender'] as String?,
@@ -21,7 +22,7 @@ _$_Traveler _$$_TravelerFromJson(Map<String, dynamic> json) => _$_Traveler(
           : Contact.fromJson(json['contact'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_TravelerToJson(_$_Traveler instance) =>
+Map<String, dynamic> _$$TravelerImplToJson(_$TravelerImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'dateOfBirth': instance.dateOfBirth,
@@ -31,17 +32,19 @@ Map<String, dynamic> _$$_TravelerToJson(_$_Traveler instance) =>
       'contact': instance.contact?.toJson(),
     };
 
-_$_Name _$$_NameFromJson(Map<String, dynamic> json) => _$_Name(
+_$NameImpl _$$NameImplFromJson(Map<String, dynamic> json) => _$NameImpl(
       firstName: json['firstName'] as String?,
       lastName: json['lastName'] as String?,
     );
 
-Map<String, dynamic> _$$_NameToJson(_$_Name instance) => <String, dynamic>{
+Map<String, dynamic> _$$NameImplToJson(_$NameImpl instance) =>
+    <String, dynamic>{
       'firstName': instance.firstName,
       'lastName': instance.lastName,
     };
 
-_$_Document _$$_DocumentFromJson(Map<String, dynamic> json) => _$_Document(
+_$DocumentImpl _$$DocumentImplFromJson(Map<String, dynamic> json) =>
+    _$DocumentImpl(
       id: json['id'] as String?,
       number: json['number'] as String?,
       issuanceDate: json['issuanceDate'] as String?,
@@ -54,7 +57,7 @@ _$_Document _$$_DocumentFromJson(Map<String, dynamic> json) => _$_Document(
       holder: json['holder'] as bool,
     );
 
-Map<String, dynamic> _$$_DocumentToJson(_$_Document instance) =>
+Map<String, dynamic> _$$DocumentImplToJson(_$DocumentImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'number': instance.number,
@@ -68,26 +71,28 @@ Map<String, dynamic> _$$_DocumentToJson(_$_Document instance) =>
       'holder': instance.holder,
     };
 
-_$_Contact _$$_ContactFromJson(Map<String, dynamic> json) => _$_Contact(
+_$ContactImpl _$$ContactImplFromJson(Map<String, dynamic> json) =>
+    _$ContactImpl(
       phones: (json['phones'] as List<dynamic>?)
           ?.map((e) => Phone.fromJson(e as Map<String, dynamic>))
           .toList(),
       emailAddress: json['emailAddress'] as String?,
     );
 
-Map<String, dynamic> _$$_ContactToJson(_$_Contact instance) =>
+Map<String, dynamic> _$$ContactImplToJson(_$ContactImpl instance) =>
     <String, dynamic>{
       'phones': instance.phones,
       'emailAddress': instance.emailAddress,
     };
 
-_$_Phone _$$_PhoneFromJson(Map<String, dynamic> json) => _$_Phone(
+_$PhoneImpl _$$PhoneImplFromJson(Map<String, dynamic> json) => _$PhoneImpl(
       deviceType: json['deviceType'] as String?,
       countryCallingCode: json['countryCallingCode'] as String?,
       number: json['number'] as String?,
     );
 
-Map<String, dynamic> _$$_PhoneToJson(_$_Phone instance) => <String, dynamic>{
+Map<String, dynamic> _$$PhoneImplToJson(_$PhoneImpl instance) =>
+    <String, dynamic>{
       'deviceType': instance.deviceType,
       'countryCallingCode': instance.countryCallingCode,
       'number': instance.number,

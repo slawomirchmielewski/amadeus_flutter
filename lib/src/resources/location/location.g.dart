@@ -6,7 +6,8 @@ part of 'location.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Location _$$_LocationFromJson(Map<String, dynamic> json) => _$_Location(
+_$LocationImpl _$$LocationImplFromJson(Map<String, dynamic> json) =>
+    _$LocationImpl(
       type: json['type'] as String?,
       subType: json['subType'] as String?,
       name: json['name'] as String?,
@@ -28,7 +29,7 @@ _$_Location _$$_LocationFromJson(Map<String, dynamic> json) => _$_Location(
           : Analytics.fromJson(json['analytics'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_LocationToJson(_$_Location instance) =>
+Map<String, dynamic> _$$LocationImplToJson(_$LocationImpl instance) =>
     <String, dynamic>{
       'type': instance.type,
       'subType': instance.subType,
@@ -43,29 +44,32 @@ Map<String, dynamic> _$$_LocationToJson(_$_Location instance) =>
       'analytics': instance.analytics?.toJson(),
     };
 
-_$_Self _$$_SelfFromJson(Map<String, dynamic> json) => _$_Self(
+_$SelfImpl _$$SelfImplFromJson(Map<String, dynamic> json) => _$SelfImpl(
       href: json['href'] as String?,
       methods:
           (json['methods'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$_SelfToJson(_$_Self instance) => <String, dynamic>{
+Map<String, dynamic> _$$SelfImplToJson(_$SelfImpl instance) =>
+    <String, dynamic>{
       'href': instance.href,
       'methods': instance.methods,
     };
 
-_$_GeoCode _$$_GeoCodeFromJson(Map<String, dynamic> json) => _$_GeoCode(
+_$GeoCodeImpl _$$GeoCodeImplFromJson(Map<String, dynamic> json) =>
+    _$GeoCodeImpl(
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$$_GeoCodeToJson(_$_GeoCode instance) =>
+Map<String, dynamic> _$$GeoCodeImplToJson(_$GeoCodeImpl instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
     };
 
-_$_Address _$$_AddressFromJson(Map<String, dynamic> json) => _$_Address(
+_$AddressImpl _$$AddressImplFromJson(Map<String, dynamic> json) =>
+    _$AddressImpl(
       cityName: json['cityName'] as String?,
       cityCode: json['cityCode'] as String?,
       countryName: json['countryName'] as String?,
@@ -74,7 +78,7 @@ _$_Address _$$_AddressFromJson(Map<String, dynamic> json) => _$_Address(
       regionCode: json['regionCode'] as String?,
     );
 
-Map<String, dynamic> _$$_AddressToJson(_$_Address instance) =>
+Map<String, dynamic> _$$AddressImplToJson(_$AddressImpl instance) =>
     <String, dynamic>{
       'cityName': instance.cityName,
       'cityCode': instance.cityCode,
@@ -84,22 +88,24 @@ Map<String, dynamic> _$$_AddressToJson(_$_Address instance) =>
       'regionCode': instance.regionCode,
     };
 
-_$_Analytics _$$_AnalyticsFromJson(Map<String, dynamic> json) => _$_Analytics(
+_$AnalyticsImpl _$$AnalyticsImplFromJson(Map<String, dynamic> json) =>
+    _$AnalyticsImpl(
       travelers: json['travelers'] == null
           ? null
           : Travelers.fromJson(json['travelers'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_AnalyticsToJson(_$_Analytics instance) =>
+Map<String, dynamic> _$$AnalyticsImplToJson(_$AnalyticsImpl instance) =>
     <String, dynamic>{
       'travelers': instance.travelers,
     };
 
-_$_Travelers _$$_TravelersFromJson(Map<String, dynamic> json) => _$_Travelers(
-      score: json['score'] as int?,
+_$TravelersImpl _$$TravelersImplFromJson(Map<String, dynamic> json) =>
+    _$TravelersImpl(
+      score: (json['score'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$_TravelersToJson(_$_Travelers instance) =>
+Map<String, dynamic> _$$TravelersImplToJson(_$TravelersImpl instance) =>
     <String, dynamic>{
       'score': instance.score,
     };
