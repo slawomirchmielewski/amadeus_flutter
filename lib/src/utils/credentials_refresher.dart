@@ -1,6 +1,8 @@
 import 'package:oauth2/oauth2.dart';
 
-Future<void> refreshCredentials(Client client) async {
-  client.credentials
-      .refresh(identifier: client.identifier, secret: client.secret);
+Future<Client> refreshCredentials(Client client) async {
+  if (client.credentials.isExpired) {
+    return client.refreshCredentials();
+  }
+  return client;
 }

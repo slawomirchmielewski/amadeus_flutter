@@ -13,7 +13,7 @@ class FlightOffersSearch {
   })  : _client = client,
         _baseUrl = baseUrl;
 
-  final Client _client;
+  Client _client;
   final String _baseUrl;
 
   Future<http.Response> get({
@@ -32,7 +32,7 @@ class FlightOffersSearch {
     String? currencyCode,
     String? maxPrice,
   }) async {
-    refreshCredentials(_client);
+    _client = await refreshCredentials(_client);
     final Map<String, String?> map = {
       "originLocationCode": originLocationCode,
       "destinationLocationCode": destinationLocationCode,
@@ -60,6 +60,7 @@ class FlightOffersSearch {
     final body = jsonEncode(
       flightOffersBody.toJson(),
     );
+    _client = await refreshCredentials(_client);
 
     return _client.put(
       Uri.parse("$_baseUrl/v2/shopping/flight-offers"),

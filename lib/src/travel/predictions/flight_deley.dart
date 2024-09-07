@@ -11,7 +11,7 @@ class FlightDelay {
   })  : _client = client,
         _baseUrl = baseUrl;
 
-  late final Client _client;
+  late Client _client;
   late final String _baseUrl;
 
   Future<http.Response> get({
@@ -23,6 +23,7 @@ class FlightDelay {
     );
 
     return _client.get(
+      headers: {},
       Uri.parse("$_baseUrl/v1/travel/predictions/flight-delay$params"),
     );
   }

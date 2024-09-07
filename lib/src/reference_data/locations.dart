@@ -8,7 +8,7 @@ class Locations {
       : _client = client,
         _baseUrl = baseUrl;
 
-  final Client _client;
+  Client _client;
   final String _baseUrl;
 
   Future<http.Response> get({
@@ -17,7 +17,7 @@ class Locations {
     String? countryCode,
     String? view,
   }) async {
-    refreshCredentials(_client);
+    _client = await refreshCredentials(_client);
     final Map<String, String?> map = {
       "keyword": keyword,
       "subType": subType,
