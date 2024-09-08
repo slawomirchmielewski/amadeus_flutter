@@ -8,6 +8,7 @@ import 'package:amadeus_flutter/src/safety.dart';
 import 'package:amadeus_flutter/src/schedule.dart';
 import 'package:amadeus_flutter/src/shopping.dart';
 import 'package:amadeus_flutter/src/travel.dart';
+import 'package:amadeus_flutter/src/utils/init_data.dart';
 import 'package:oauth2/oauth2.dart' as oauth2;
 
 export 'package:amadeus_flutter/src/resources/resources.dart';
@@ -55,16 +56,31 @@ class Amadeus {
       clientSecret,
     );
 
-    amadeus.airport = Airport(client: client, baseUrl: baseUrl);
-    amadeus.analytics = Analytics(client: client, baseUrl: baseUrl);
-    amadeus.booking = Booking(client: client, baseUrl: baseUrl);
-    amadeus.eReputation = EReputation(client: client, baseUrl: baseUrl);
-    amadeus.referenceData = ReferenceData(client: client, baseUrl: baseUrl);
-    amadeus.shopping = Shopping(client: client, baseUrl: baseUrl);
-    amadeus.media = Media(client: client, baseUrl: baseUrl);
-    amadeus.safety = Safety(client: client, baseUrl: baseUrl);
-    amadeus.schedule = Schedule(client: client, baseUrl: baseUrl);
-    amadeus.travel = Travel(client: client, baseUrl: baseUrl);
+    final initData = InitData(
+      clientId: clientId,
+      clientSecret: clientSecret,
+      authorizationEndpoint: authorizationEndpoint,
+    );
+
+    amadeus.airport =
+        Airport(client: client, baseUrl: baseUrl, initData: initData);
+    amadeus.analytics =
+        Analytics(client: client, baseUrl: baseUrl, initData: initData);
+    amadeus.booking =
+        Booking(client: client, baseUrl: baseUrl, initData: initData);
+    amadeus.eReputation =
+        EReputation(client: client, baseUrl: baseUrl, initData: initData);
+    amadeus.referenceData =
+        ReferenceData(client: client, baseUrl: baseUrl, initData: initData);
+    amadeus.shopping =
+        Shopping(client: client, baseUrl: baseUrl, initData: initData);
+    amadeus.media = Media(client: client, baseUrl: baseUrl, initData: initData);
+    amadeus.safety =
+        Safety(client: client, baseUrl: baseUrl, initData: initData);
+    amadeus.schedule =
+        Schedule(client: client, baseUrl: baseUrl, initData: initData);
+    amadeus.travel =
+        Travel(client: client, baseUrl: baseUrl, initData: initData);
 
     return amadeus;
   }

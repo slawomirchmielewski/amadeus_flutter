@@ -3,19 +3,33 @@ import 'dart:convert';
 import 'package:amadeus_flutter/src/travel/trip_parser/trip_parser_result.dart';
 import 'package:amadeus_flutter/src/travel/trip_parser/trip_parser_status.dart';
 import 'package:amadeus_flutter/src/utils/credentials_refresher.dart';
+import 'package:amadeus_flutter/src/utils/init_data.dart';
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
 
 class TripParserJobs {
-  TripParserJobs({required Client client, required String baseUrl})
-      : _client = client,
-        _baseUrl = baseUrl {
-    tripParserStatus = TripParserStatus(client: client, baseUrl: baseUrl);
-    tripParserResult = TripParserResult(client: client, baseUrl: baseUrl);
+  TripParserJobs({
+    required Client client,
+    required String baseUrl,
+    required InitData initData,
+  })  : _client = client,
+        _baseUrl = baseUrl,
+        _initData = initData {
+    tripParserStatus = TripParserStatus(
+      client: client,
+      baseUrl: baseUrl,
+      initData: initData,
+    );
+    tripParserResult = TripParserResult(
+      client: client,
+      baseUrl: baseUrl,
+      initData: initData,
+    );
   }
 
-  late final Client _client;
-  late final String _baseUrl;
+  Client _client;
+  final String _baseUrl;
+  final InitData _initData;
 
   late TripParserResult tripParserResult;
   late TripParserStatus tripParserStatus;
@@ -26,7 +40,7 @@ class TripParserJobs {
     required String name,
     required String encoding,
   }) async {
-    refreshCredentials(_client);
+    _client = await refreshCredentials(_initData, _client);
     final Map<String, dynamic> map = {
       "payload": payload,
       "metadata": {

@@ -26,6 +26,5 @@ void main() async {
     final List<FlightOfferSearch> flights = data
         .map((e) => FlightOfferSearch.fromJson(e as Map<String, dynamic>))
         .toList();
-
   }
 }
