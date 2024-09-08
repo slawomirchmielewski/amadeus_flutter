@@ -5,8 +5,8 @@ import 'package:http/http.dart';
 
 void main() async {
   final amadeus = await Amadeus.build(
-    clientId: 'Ck4UbKyO2c5ecG9LWYnMGNY5szq2td8i',
-    clientSecret: 'jdj7rDEBvfe6yGHs',
+    clientId: 'clientId',
+    clientSecret: 'clientSecret',
   );
 
   final Response response = await amadeus.shopping.flightOffersSearch.get(
